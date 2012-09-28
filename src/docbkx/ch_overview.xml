@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!-- Product references -->
+        
+        <!ENTITY CS 'Cloud Servers'>
+<!ENTITY HOST 'dfw.servers.api.rackspacecloud.com'>
+<!ENTITY URL 'https://&HOST;/v2/'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="ch_overview">
+    <title>Overview</title>
+
+    <?dbhtml stop-chunking?>
+
+    <section xml:id="projects">
+        <title>Anatomy of a Project</title>
+        <para>Define components of a project.</para>
+        <para>What can be a project? Dev Guide, release notes, getting
+            started guide, admin guide, other?</para>
+        <para>anatomy of a pom file</para>
+        <para>anatomy of a book</para>
+        <para>generating output</para>
+        <para>editing source files</para>
+        <para>downloading source files</para>
+        <para>tools</para>
+        <para>A documentation project resides in a <emphasis
+                role="italic">project directory</emphasis>, which you
+            download from a git or subversion repository.</para>
+        <para>The contents of that directory varies, but it always
+            contains the following files and directories: <itemizedlist>
+                <listitem>
+                    <para><emphasis role="bold">pom.xml
+                            file</emphasis></para>
+                    <para>Maven uses the POM (Project Object Model)
+                        file to describe the project and to specify
+                        what the goals of a build should be.</para>
+                    <para>Maven (mvn) is the tool that you use to
+                        build documents. </para>
+                    <para>The goals of a build are specified as
+                        &lt;goals&gt; in the POM file. Currently, we
+                        have two possible goals, and generally use
+                        both of them: a PDF file and an HTML (webhelp)
+                        file. Here's what the &lt;goals&gt; clause
+                        usually looks like:</para>
+                    <programlisting>&lt;goals&gt;
+    &lt;goal&gt;generate-pdf&lt;/goal&gt;
+    &lt;goal&gt;generate-webhelp&lt;/goal&gt;
+&lt;/goals&gt;</programlisting>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">src
+                            directory</emphasis></para>
+                    <para>Contains the resources directory, which
+                        contains the source files and, potentially,
+                        other files such as images and program
+                        samples.</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">target
+                            directory</emphasis></para>
+                    <para>Contains the docbkx directory, which
+                        contains the products of the document
+                        build.</para>
+                </listitem>
+            </itemizedlist></para>
+    </section>
+
+
+
+
+</chapter>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+
+<!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject role="fo">
+<imagedata fileref="figures/Check_mark_23x20_02.svg"
+format="SVG" scale="60"/>
+</imageobject>
+<imageobject role="html">
+<imagedata fileref="../figures/Check_mark_23x20_02.png"
+format="PNG" />
+</imageobject>
+</inlinemediaobject>'>
+
+<!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject role="fo">
+<imagedata fileref="figures/Arrow_east.svg"
+format="SVG" scale="60"/>
+</imageobject>
+<imageobject role="html">
+<imagedata fileref="../figures/Arrow_east.png"
+format="PNG" />
+</imageobject>
+</inlinemediaobject>'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="ch_resources">
+    <title>Resources</title>
+    <para>For the latest version of this guide, see <link
+            xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/index.html"
+            xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns:m="http://www.w3.org/1998/Math/MathML"
+            xmlns:html="http://www.w3.org/1999/xhtml"
+                ><citetitle>Writers' Guide</citetitle></link> on the
+        Rackspace Cloud website. </para>
+    <para>Use the following resources in conjunction with this guide: <itemizedlist>
+            <listitem>
+                <para><link
+                        xlink:href="http://www.oasis-open.org/docbook/documentation/reference/html/docbook.html"
+                            ><citetitle>DocBook: The Definitive
+                            Guide</citetitle></link></para>
+            </listitem>
+            <listitem>
+                <para><link
+                        xlink:href="http://docbook.sourceforge.net/release/xsl/current/doc/fo/index.html"
+                        >DocBook XSL Stylesheets User Reference:
+                        Parameters</link></para>
+            </listitem>
+            <listitem>
+                <para><link
+                        xlink:href="http://docbook.sourceforge.net/release/xsl/current/doc/pi/pi-fo.html"
+                        >DocBook XSL Stylesheets User Reference:
+                        Processing Instructions</link></para>
+            </listitem>
+            <listitem>
+                <para><link
+                        xlink:href="http://www.sagehill.net/docbookxsl/"
+                        >DocBook XSL: The Complete Guide</link></para>
+            </listitem>
+            <listitem>
+                <para><link
+                        xlink:href="https://one.rackspace.com/display/RED/Maintaining+Documentation+Stored+in+git"
+                        >Maintaining Documentation Stored in
+                        git</link></para>
+            </listitem>
+            <listitem>
+                <para><link
+                        xlink:href="https://one.rackspace.com/display/RED/Maintaining+Documentation+Stored+in+SVN"
+                        >Maintaining Documentation Stored in
+                        SVN</link></para>
+            </listitem>
+        </itemizedlist></para>
+</chapter>

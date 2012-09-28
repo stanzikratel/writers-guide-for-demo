@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!-- Product references -->
+        
+        <!ENTITY CS 'Cloud Servers'>
+<!ENTITY HOST 'dfw.servers.api.rackspacecloud.com'>
+<!ENTITY URL 'https://&HOST;/v2/'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="ch_tag_ref">
+    <title>Tags Reference</title>
+    <info>
+        <raxm:metadata
+            xmlns:raxm="http://docs.rackspace.com/api/metadata">
+            <raxm:type>concept</raxm:type>
+            <raxm:product version="v2">servers</raxm:product>
+            <raxm:priority>2</raxm:priority>
+        </raxm:metadata>  
+    </info>
+    <?dbhtml stop-chunking?>
+    <para>The next generation Cloud Servers <link
+            xlink:href="http://www.rackspace.com/cloud/openstack/"
+            >powered by OpenStack</link> is a fast, reliable, and
+        scalable cloud compute solution that lets you provision
+            <glossterm>server</glossterm>s in the Rackspace cloud in
+        minutes. </para>
+    <para>Cloud Servers provides the core features of the OpenStack
+        Compute <glossterm>API</glossterm> v2 and also deploys certain
+        Rackspace extensions. The OpenStack Compute API and the
+        Rackspace extensions are known collectively as API v2. </para>
+    <para>The simple exercises in this guide help you get started with
+        the API v2. </para>
+    <para>For each exercise in this guide, you choose one of the
+        following methods to make API v2 calls: <itemizedlist>
+            <listitem>
+                <para><emphasis role="bold">The <link
+                    xlink:href="http://www.rackspace.com/knowledge_center/article/using-python-novaclient-with-the-rackspace-cloud"
+                            >nova client</link></emphasis>, with the
+                    optional <emphasis role="bold"><link
+                            xlink:href="http://rackerhacker.github.com/supernova/"
+                            >supernova client</link></emphasis>. We
+                    recommend that you use the nova client to run
+                    simple commands that make API v2 calls. The
+                    optional supernova client lets you use the nova
+                    client with multiple OpenStack nova environments.
+                    These open-source Python clients run on Linux or
+                    Mac OS X systems and are easy to learn and use.
+                    You can specify a debug parameter on any nova or
+                    supernova command to show the underlying API v2
+                    request for the command. This is a good way to
+                    become familiar with the API v2 requests. </para>
+
+                
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold"><link
+                            xlink:href="http://http://curl.haxx.se/"
+                            >cURL</link> commands</emphasis>. If you
+                    are familiar with or want to learn cURL commands,
+                    choose this method. With cURL, you send HTTP
+                    requests with embedded API v2 calls from the
+                    command line. The cURL examples in this guide
+                    include request bodies that are in JSON format.
+</para>
+            </listitem>
+        </itemizedlist>If you like, you can use cURL in one example
+        and switch to the nova or supernova client in the next
+        example. If you choose to use a cURL command for any example,
+        you must export the environment variables required to run the
+        cURL examples. </para>
+    <para>Each example, whether nova client or cURL, points you to the
+        next step in the process. </para>
+    <para>To use the API v2, it helps to be familiar with
+            <glossterm>HTTP</glossterm>/1.1, <glossterm
+            baseform="RESTful">ReSTful</glossterm> web services, the
+        Rackspace Cloud Servers service, and JSON or XML data
+        serialization formats.</para>
+
+    <para>We welcome feedback, comments, and bug reports at <link
+            xlink:href="http://www.rackspace.com/support/"
+            >http://www.rackspace.com/support/</link>. </para>
+  
+    
+    
+
+</chapter>
