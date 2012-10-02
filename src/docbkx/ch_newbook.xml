@@ -37,13 +37,7 @@ format="PNG" />
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-    xml:id="ch_tag_ref">
-    <title>Tags Reference</title>
-    
-    <?dbhtml stop-chunking?>
-    <para></para>
-  
-    
-    
-
+    xml:id="ch_newbook">
+    <title>Create a New Book</title>
+    <para/>
 </chapter>

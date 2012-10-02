@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+
+<!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject role="fo">
+<imagedata fileref="figures/Check_mark_23x20_02.svg"
+format="SVG" scale="60"/>
+</imageobject>
+<imageobject role="html">
+<imagedata fileref="../figures/Check_mark_23x20_02.png"
+format="PNG" />
+</imageobject>
+</inlinemediaobject>'>
+
+<!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject role="fo">
+<imagedata fileref="figures/Arrow_east.svg"
+format="SVG" scale="60"/>
+</imageobject>
+<imageobject role="html">
+<imagedata fileref="../figures/Arrow_east.png"
+format="PNG" />
+</imageobject>
+</inlinemediaobject>'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="ch_newapi">
+    <title>Add a New API Operation</title>
+    <para>This section describes how to add a new API operation to a
+        book. It uses the Cloud Servers product as an example.</para>
+    <section xml:id="more_stuff3">
+        <title>Determine the Category</title>
+        <para>Determine which API operation category the new API
+            belongs to. </para>
+        <para>For example, the Cloud Servers product contains the
+            following API operation categories: </para>
+        <itemizedlist>
+            <listitem>
+                <para>Servers</para>
+            </listitem>
+            <listitem>
+                <para>Server Addresses</para>
+            </listitem>
+            <listitem>
+                <para>Server Actions</para>
+            </listitem>
+            <listitem>
+                <para>Volume Attachment Actions</para>
+            </listitem>
+            <listitem>
+                <para>Flavors</para>
+            </listitem>
+            <listitem>
+                <para>Images</para>
+            </listitem>
+            <listitem>
+                <para>Metadata</para>
+            </listitem>
+        </itemizedlist>
+        <para>If the new API call belongs to one of these categories,
+            add the new information there. Otherwise, create a new
+            category.</para>
+    </section>
+    <section xml:id="more_stuff2">
+        <title>Describe </title>
+        <para>Some API calls require all API elements, while others
+            require only some elements.</para>
+        <para>The table below shows two examples of existing
+            descriptions, both containing required elements but
+            choosing different optional elements:<mediaobject>
+                <imageobject role="fo">
+                    <imagedata
+                        fileref="figures/SAMPLE-APIop-1verb.png"
+                        contentwidth="6in"/>
+                </imageobject>
+            </mediaobject><mediaobject>
+                <imageobject role="fo">
+                    <imagedata
+                        fileref="figures/SAMPLE-APIop-2verb.png"
+                        contentwidth="6in"/>
+                </imageobject>
+            </mediaobject></para>
+        <para>For the new information, consider each element and
+            decide whether it is required; if it is required, develop
+            it.</para>
+        <informaltable rules="all">
+            <thead>
+                <tr>
+                    <th>Required Element</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>title </td>
+                    <td>List Servers </td>
+                </tr>
+                <tr>
+                    <td>
+                        <para>table, with columns for <emphasis
+                                role="bold">verb</emphasis>, <emphasis
+                                role="bold">URI</emphasis>, and
+                                <emphasis role="bold"
+                                >description</emphasis>
+                        </para>
+                        <para> and at least one non-header row </para>
+                    </td>
+                    <td>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                   fileref="figures/SAMPLE-APIop-table.png"
+                                   contentwidth="6in"/>
+                            </imageobject>
+                        </mediaobject>
+                    </td>
+                </tr>
+                <tr>
+                    <td>normal response code(s) </td>
+                    <td>Normal Response Code(s): 200, 203 </td>
+                </tr>
+                <tr>
+                    <td>error response code(s) </td>
+                    <td>
+                        <para>Error Response Code(s):
+                            cloudServersFault (400, 500),
+                            serviceUnavailable (503), </para>
+                        <para> unauthorized (401), badRequest (400),
+                            overLimit (413) </para>
+                    </td>
+                </tr>
+                <tr>
+                    <td>explanation </td>
+                    <td>
+                        <emphasis role="italic">free-form
+                            text</emphasis>
+                    </td>
+                </tr>
+                <tr>
+                    <td>statement about request body </td>
+                    <td>This operation does not require a request
+                        body. </td>
+                </tr>
+            </tbody>
+        </informaltable>
+        <para>If an optional element will help readers understand,
+            develop it.</para>
+        <informaltable rules="all">
+            <thead>
+                <tr>
+                    <th>Optional Element </th>
+                    <th>Example </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>statement about status transition </td>
+                    <td>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                   fileref="figures/SAMPLE-APIop-status.png"
+                                   contentwidth="6in"/>
+                            </imageobject>
+                        </mediaobject>
+                    </td>
+                </tr>
+                <tr>
+                    <td><para>code samples for one or more: <itemizedlist>
+                                <listitem>
+                                   <para>XML request</para>
+                                </listitem>
+                                <listitem>
+                                   <para>JSON request</para>
+                                </listitem>
+                                <listitem>
+                                   <para>XML response</para>
+                                </listitem>
+                                <listitem>
+                                   <para>JSON response</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </td>
+                    <td>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                   fileref="figures/SAMPLE-APIop-request.png"
+                                   contentwidth="6in"/>
+                            </imageobject>
+                        </mediaobject>
+                    </td>
+                </tr>
+                <tr>
+                    <td>note </td>
+                    <td>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                   fileref="figures/SAMPLE-APIop-note.png"
+                                   contentwidth="6in"/>
+                            </imageobject>
+                        </mediaobject>
+                    </td>
+                </tr>
+            </tbody>
+        </informaltable>
+        <section xml:id="more_stuff">
+            <title>Integrate </title>
+            <para>In addition to the detailed description itself,
+                update other areas of the document that refer to it.
+                At least:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Update the "What's Changed?" section (near
+                        the front of the <emphasis role="italic"
+                            >Guide</emphasis>) to summarize this
+                        change.</para>
+                </listitem>
+                <listitem>
+                    <para>Update the one-page "API Operations
+                        Reference Summary" (the back cover of the
+                            <emphasis role="italic">Guide</emphasis>)
+                        to include this change. <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                   fileref="figures/COVER-BACK.png"
+                                   contentwidth="6in"/>
+                            </imageobject>
+                        </mediaobject></para>
+                </listitem>
+            </itemizedlist>
+        </section>
+    </section>
+</chapter>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+
+<!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject role="fo">
+<imagedata fileref="figures/Check_mark_23x20_02.svg"
+format="SVG" scale="60"/>
+</imageobject>
+<imageobject role="html">
+<imagedata fileref="../figures/Check_mark_23x20_02.png"
+format="PNG" />
+</imageobject>
+</inlinemediaobject>'>
+
+<!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject role="fo">
+<imagedata fileref="figures/Arrow_east.svg"
+format="SVG" scale="60"/>
+</imageobject>
+<imageobject role="html">
+<imagedata fileref="../figures/Arrow_east.png"
+format="PNG" />
+</imageobject>
+</inlinemediaobject>'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="ch_review">
+    <title>Review and Production Documents</title>
+    <para>You can create various versions of documents for review or
+        for external distribution.</para>
+    <section xml:id="review_docs">
+        <title>Document Versions</title>
+
+
+        <para>You can generate the following flavors of PDF or web
+            help output for a DocBook document:<table rules="all">
+                <caption>Document Versions</caption>
+                <col width="10%"/>
+                <col width="10%"/>
+                <col width="80%"/>
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Status bar/watermark text</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Reviewer</td>
+                        <td>REVIEWER</td>
+                        <td>In-progress document. Shows remarks and
+                            internal and external content.</td>
+                    </tr>
+                    <tr>
+                        <td>Internal</td>
+                        <td>INTERNAL</td>
+                        <td>Internal-only. Strips out all reviewer
+                            content but leaves in content flagged as
+                                <code>security="internal"</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>External</td>
+                        <td>None.</td>
+                        <td>Customer-facing.</td>
+                    </tr>
+                    <tr>
+                        <td>Draft</td>
+                        <td>DRAFT</td>
+                        <td>Add status="draft" to the &lt;book&gt; or
+                            &lt;article&gt; element. When
+                            status="draft" the watermark contains the
+                            word DRAFT and elements that contain
+                            security="draft" are included. If you do
+                            not add status="draft" to the root
+                            element, then elements with
+                            security="draft" are omitted.</td>
+                    </tr>
+                </tbody>
+            </table></para>
+    </section>
+    <section xml:id="filter">
+        <title>Filter Content</title>
+        <para>By using
+                <code>&lt;security&gt;internal&lt;/security&gt;</code>
+            in your pom.xml, you can produce internal-only and
+            external versions of same document where the external
+            version is a subset of the internal one.<table
+                frame="void">
+                <caption>Filter Content</caption>
+                <col width="35%"/>
+                <col width="65%"/>
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>&lt;para
+                                security="draft"&gt;...&lt;/para&gt;</code></td>
+                        <td>Filters out the specified content UNLESS
+                            the root element of the document has
+                                <code>status="draft"</code>, which
+                            causes the watermark bar to contain the
+                            word DRAFT automatically.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;para
+                                security="reviewer"&gt;...&lt;/para&gt;</code></td>
+                        <td><para>Filters out the specified content UNLESS
+                            you set
+                                <code>&lt;security&gt;reviewer&lt;/security&gt;</code>
+                            in your pom.xml. If you do set security to
+                            reviewer, the following things also
+                            happen: <itemizedlist>
+                                <listitem>
+                                   <para>Elements with
+                                   <code>security="writeronly"</code>
+                                   are filtered out.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>The watermark contains the
+                                   word REVIEW. Note that elements
+                                   flagged as reviewer appear with
+                                   yellow highlighting.</para>
+                                </listitem>
+                            </itemizedlist></para></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;para
+                            security="internal"&gt;...&lt;/para&gt;</code></td>
+                        <td>
+                            <para>Filters out the specified content
+                                UNLESS you set
+                                <code>&lt;security&gt;internal&lt;/security&gt;
+                                </code>in your pom.xml. If you do set
+                                security to reviewer, the following
+                                things also happen:</para>
+                            <itemizedlist>
+                                <listitem>
+                                    <para>Elements with
+                                        <code>security="external"</code>,
+                                        <code>security="reviewer"</code>,
+                                        and
+                                        <code>security="writeronly"</code>
+                                        are filtered out. Elements flagged
+                                   as <code>security="external"</code>
+                                   are filtered so that you could, if
+                                   you wanted, have mutually exclusive
+                                   versions of the same content for
+                                   external and internal
+                                   audiences.</para>
+                                </listitem>
+                                <listitem>
+                                   <para><code>&lt;remark&gt;</code>
+                                   elements are filtered out.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>The watermark contains the
+                                   word INTERNAL. Note that any
+                                   elements flagged as
+                                   <code>security="internal"</code>
+                                   appear blue in the output.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;para
+                                security="writeronly"&gt;...&lt;/para&gt;</code></td>
+                        <td>These elements are always filtered out.
+                            You can use it for stuff you want to
+                            suppress for now without deleting.</td>
+                    </tr>
+                </tbody>
+            </table></para>
+        <section xml:id="watermarks">
+            <title>Watermarks</title>
+            <para>In the body of the document, set
+                    <literal>status.bar.text</literal> to appear on
+                the title page and on the left edge of every page. For
+                example,</para>
+            <programlisting>&lt;?rax title.font.size="35px" subtitle.font.size="20px"?&gt;    
+   &lt;title&gt;Rackspace Cloud Load Balancers Developer Guide for Service Management&lt;/title&gt;
+   &lt;titleabbrev&gt;Rackspace Cloud LB Mgmt Guide&lt;/titleabbrev&gt;    
+   &lt;?rax status.bar.text="RAX INTERNAL"?&gt;    
+   &lt;info&gt;        
+ &lt;author&gt; </programlisting>
+            <para>This mark-up makes a cover page like this:</para>
+            <mediaobject>
+                <imageobject role="fo">
+                    <imagedata fileref="figures/cover-RAXINTERNAL.png"
+                        contentwidth="6in"/>
+                </imageobject>
+            </mediaobject>
+
+            <para>In pom.xml, set <code>&lt;security&gt;</code> to add
+                text to the left edge of every page. For
+                example:<programlisting>&lt;security&gt;internal&lt;/security&gt;</programlisting>If
+                pom.xml contains <code>&lt;?rax status.bar.text="RAX
+                    "?&gt;</code>, edges each page in repeating
+                    <literal>RAX INTERNAL</literal>.</para>
+        </section>
+    </section>
+    <section xml:id="xx">
+        <title>Status Bar</title>
+
+        <note>
+            <para>You can also add text to the watermark bar by adding
+                a processing instruction as a child of the root
+                element: <programlisting>&lt;?rax status.bar.text="CONFIDENTIAL" ?&gt;</programlisting></para>
+            <para>If the text is long, use 1.3.0-SNAPSHOT or later to
+                make it fit by controlling its size like
+                this: <programlisting>&lt;?rax status.bar.text.font.size="50px" status.bar.text="LIMITED AVAILABILITY" ?&gt;</programlisting></para>
+            <para>The default size of the text is about 71.3px; 50px
+                might be the right size for "LIMITED
+                AVAILABILITY".</para>
+        </note>
+        <para>The following images show what the output looks like
+            with <code>status="draft"</code> on the root element of
+            the document and
+                <code>&lt;security&gt;reviewer&lt;/security&gt;</code>
+            in the pom.xml file: <mediaobject>
+                <imageobject role="fo">
+                    <imagedata fileref="figures/watermark-pdf.png"
+                        contentwidth="6in"/>
+                </imageobject>
+            </mediaobject><mediaobject>
+                <imageobject role="fo">
+                    <imagedata fileref="figures/watermark-webhelp.png"
+                        contentwidth="6in"/>
+                </imageobject>
+            </mediaobject></para>
+
+    </section>
+    <section xml:id="search_engine_config">
+        <title>Configure Search Engines</title>
+        <para>We sometimes publish documents on docs.rackspace.com for
+            private betas. Though we do not list these documents on
+            the landing page, we send links to the document directly
+            to the users. To prevent random people from stumbling upon
+            the content from Google searches, add the following
+            parameter to your pom.xml
+            file:<programlisting>&lt;metaRobots&gt;1&lt;/metaRobots&gt; </programlisting></para>
+        <para>When you do this, the following tag is added to all web
+            help html
+            files:<programlisting>&lt;meta name="robots" content="NOINDEX, NOFOLLOW"/&gt;</programlisting>
+            This tag tells search engine spiders to skip this
+            content.</para>
+        <note>
+            <para>Remember to remove this parameter when you are ready
+                to leave private beta. </para>
+        </note>
+
+    </section>
+</chapter>
