@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter 
+    xmlns="http://docbook.org/ns/docbook"     
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    version="5.0-extension RaxBook-2.0"
+    xml:id="guide-to-1.6.0">
+  <info><title>Adapting your projects for the 1.6.0 release of the clouddocs
+      plugin</title></info>
+  <para>Version 1.6.0 of the <link
+      xlink:href="https://github.com/rackspace/clouddocs-maven-plugin"
+      >clouddocs-maven-plugin</link> contains a number of new features
+    designed to make life easier. However, these changes will also
+    require some changes in the way you maintain your
+      <filename>pom.xml</filename> and RackBook source files going
+    forward. This chapter outlines those changes in greater depth than
+    the <link
+      xlink:href="https://github.com/rackspace/clouddocs-maven-plugin#release-notes"
+      >release notes</link>.<itemizedlist>
+      <listitem>
+        <para>A major new feature of this version of the plugin is
+          that images are automatically handled for you. This saves
+          two steps and adds a level of validation: <itemizedlist>
+            <listitem>
+              <para>You no longer have to add a <tag>postProcess</tag>
+                section to your <filename>pom.xml</filename>
+                configuration to copy image files into the webhelp
+                output directory. The clouddocs-maven-plugin
+                automatically detects which images you use in your
+                document and copies them to the output directory.
+              </para>
+            </listitem>
+            <listitem>
+              <para>When you use <filename>.svg</filename> graphics,
+                you no longer have to create a
+                  <filename>.png</filename> version. Now, when you
+                generate webhelp, the clouddocs-maven-plugin
+                automatically converts the <filename>.svg</filename>
+                to a <filename>.png</filename> file and uses it
+                instead.</para>
+            </listitem>
+            <listitem>
+              <para>The system now checks for the availablity of
+                images before proceeding with the build. If any images
+                are missing from a book, the plugin stops the build
+                and reports which images are missing. </para>
+            </listitem>
+          </itemizedlist></para>
+      </listitem>
+      <listitem>
+        <para>When you generate Webhelp, by default the plugin now
+          automatically generates a pdf and puts it in the webhelp
+          directory. Note that the pdf build uses the same
+          configuration parameters as the webhelp. You can disable
+          this feature by setting
+            <tag>&lt;makePdf&gt;false&lt;/makePdf&gt;</tag> in your
+            <filename>pom.xml</filename>. </para>
+      </listitem>
+      <listitem>
+        <para>You can now control certain parameters from the command
+          line. For example, to build a <filename>pom.xml</filename>
+          locally as <code>security=reviewer</code> even though there
+          are other security settings in the
+            <filename>pom.xml</filename>, you can
+          build:<programlisting>mvn -Dsecurity=reviewer clean generate-sources</programlisting></para>
+      </listitem>
+    </itemizedlist></para>
+</chapter>
