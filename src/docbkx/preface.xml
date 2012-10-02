@@ -39,14 +39,38 @@ format="PNG" />
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_preface">
     <title>Preface</title>
+
     <para>This document describes the tool set for sourcing books
         stored in git and SVN, authoring, including Oxygen and the
         maven <literal>clouddocs</literal> plugin, and creating output
         for review.</para>
+    <para>OpenStack and Rackspace share a XML-based tool chain to
+        generate documentation artifacts from DocBook and WADL source.
+        The major components of this tool chain are:<itemizedlist>
+            <listitem>
+                <para>The tools and build logic to generate
+                    documentation artifacts. </para>
+            </listitem>
+            <listitem>
+                <para>A <link
+                        xlink:href="http://docs.rackspace.com/oxygen"
+                        >customized version</link> of the <link
+                        xlink:href="http://www.oxygenxml.com/">oXygen
+                        XML Editor</link> for creating XML source
+                    files.</para>
+            </listitem>
+        </itemizedlist>The tools and build logic to generate
+        documentation artifacts are implemented as a Maven plugin.
+        Apache Maven is a build automation tool. Maven reads a
+        project's configuration from a file, downloads any required
+        dependencies, such as the tools required to perform the build,
+        and then proceeds to produce the artifacts specified. </para>
     <section xml:id="audience">
         <title>Intended Audience</title>
-        <para>This guide assists writers who document the Rackspace
-            Cloud APIs.</para>
+        <para>This guide assists writers and developers who use these
+            writing tools to create documentation for OpenStack and
+            Rackspace. </para>
+
     </section>
 
 </preface>

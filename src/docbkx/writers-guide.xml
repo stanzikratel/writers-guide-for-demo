@@ -37,11 +37,16 @@
   <xi:include href="preface.xml"/>
   <xi:include href="ch_overview.xml"/> 
   <xi:include href="ch_install.xml"/> 
+
   <xi:include href="ch_github.xml"/> 
   <xi:include href="ch_newbook.xml"/> 
   <xi:include href="ch_newapi.xml"/> 
   <xi:include href="ch_tag_ref.xml"/> 
   <xi:include href="ch_review.xml"/> 
+
+
+  <xi:include href="prep-for-1.6.0.xml"/> 
+
   <xi:include href="ch_dochistory.xml"/> 
   <xi:include href="ch_resources.xml"/> 
 </book>
