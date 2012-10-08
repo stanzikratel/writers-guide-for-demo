@@ -28,9 +28,11 @@
     </legalnotice>
     <abstract>
       <para>This document is intended for writers who document the
-        Rackspace Cloud APIs. This document describes the tool set for
-        authoring, including Oxygen, the maven <literal>clouddocs</literal> plugin, and
-        git. </para>
+        Rackspace Cloud APIs and OpenStack APIs. This document
+        describes the tool set for sourcing books stored in git and
+        SVN, authoring, including Oxygen and the maven
+          <literal>clouddocs</literal> plugin, and creating output for
+        review.</para>
     </abstract>
   </info>
 

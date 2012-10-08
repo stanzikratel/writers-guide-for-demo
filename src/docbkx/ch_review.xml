@@ -39,8 +39,22 @@ format="PNG" />
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_review">
     <title>Review and Production Documents</title>
-    <para>You can create various versions of documents for review or
-        for external distribution.</para>
+    <para>You can create different versions of documents for review,
+        internal, or external distribution. </para>
+    <para>The following components of a document identify its version: <itemizedlist>
+            <listitem>
+                <para>Watermark text</para>
+            </listitem>
+            <listitem>
+                <para>Status bar text</para>
+            </listitem>
+            <listitem>
+                <para>Whether remarks appear in the document</para>
+            </listitem>
+            <listitem>
+                <para>Search engine configuration</para>
+            </listitem>
+        </itemizedlist></para>
     <section xml:id="review_docs">
         <title>Document Versions</title>
 

@@ -380,20 +380,18 @@ format="PNG" />
                     <section xml:id="build_failure_mvn">
                         <title>Build failure due to Maven
                             settings</title>
-                        <section xml:id="problem_build_failure_mvn">
-                            <title>Problem</title>
-                        </section>
-                        <section xml:id="solution_build_failure_mvn">
-                            <title>Solution</title>
-                            <para>Hide settings.xml so it's not found
-                                by a project that doesn't like it;
-                                bring settings.xml back so it is found
-                                by a project that does like it. <link
+                
+                           
+                                <para>Hide settings.xml so it's not
+                                   found by a project that doesn't
+                                   like it; bring settings.xml back so
+                                   it is found by a project that does
+                                   like it. <link
                                    xlink:href="https://one.rackspace.com/display/RED/Troubleshooting+build+failures"
                                    >Troubleshooting build
                                    failures</link> includes 2 scripts
-                                to do those things.</para>
-                        </section>
+                                   to do those things.</para>
+                        
                     </section>
                 </section>
 

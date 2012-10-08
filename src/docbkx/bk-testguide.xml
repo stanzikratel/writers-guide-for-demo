@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0"
+  xml:id="writers-guide" status="DRAFT">
+  <title>Test Guide</title>
+  <info>
+    <copyright>
+      <year>2012</year>
+      <holder>Rackspace US, Inc.</holder>
+    </copyright>
+    <releaseinfo>v1.0</releaseinfo>
+    <productname>Content Team</productname>
+    <pubdate>2012-09-27</pubdate>
+    <revhistory>
+      <revision>
+        <date>2012-09-27</date>
+        <revdescription>
+          <para>Initial doc creation.</para>
+        </revdescription>
+      </revision>
+    </revhistory>
+    <legalnotice role="rs-api">
+      <annotation>
+        <remark>Copyright details are filled in by the
+          template.</remark>
+      </annotation>
+    </legalnotice>
+    <abstract>
+      <para>Test.</para>
+    </abstract>
+  </info>
+
+</book>
