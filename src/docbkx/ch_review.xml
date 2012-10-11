@@ -38,30 +38,283 @@ format="PNG" />
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_review">
-    <title>Review and Production Documents</title>
-    <para>You can create different versions of documents for review,
-        internal, or external distribution. </para>
-    <para>The following components of a document identify its version: <itemizedlist>
+    <title>Draft and Production Documents</title>
+    <variablelist>
+        <varlistentry>
+            <term>Drafts</term>
             <listitem>
-                <para>Watermark text</para>
+                <para>You can create documents for review. A review
+                    document is a draft. Drafts are identified by the
+                        <literal>DRAFT</literal> watermark and status
+                    bar. The watermark and status bar on a draft can
+                    also indicate the status of the product, such as
+                        <literal>PREVIEW</literal> or <literal>LIMITED
+                        AVAILABILITY</literal>, or whether the
+                    document is internal-only. Draft documents appear
+                    on the <link xlink:href="docs-beta.rackspace.com"
+                        >docs-beta.rackspace.com</link> site.</para>
+                <para>After a document has been reviewed, you can
+                    create production documents for internal or
+                    external distribution. </para>
+                <para>A review draft is identified by a watermark and
+                    status bar labeled <guilabel>Draft</guilabel>. To
+                    configure a document as a draft, set the
+                        <markup>status</markup> attribute to
+                        <literal>draft</literal> on the
+                        <markup>book</markup> or
+                        <markup>article</markup> element. You can also
+                    create text in the document that appears in the
+                    draft document but is removed when you omit the
+                        <markup>status="draft"</markup>
+                    attribute</para>
             </listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Documents for internal distribution</term>
             <listitem>
-                <para>Status bar text</para>
+                <para>Documents for internal distribution contain
+                    internal content appropriate for Rackspace
+                    employees. These documents appear on the <link
+                        xlink:href="docs-internal.rackspace.com"
+                        >docs-internal.rackspace.com</link> site.
+                </para>
             </listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Documents for external distribution</term>
             <listitem>
-                <para>Whether remarks appear in the document</para>
+                <para>Documents for external distribution contain
+                    content appropriate for Rackspace customers and
+                    appear on the <link
+                        xlink:href="docs.rackspace.com"
+                        >docs.rackspace.com</link> site. </para>
+                <para>For example, you might want to document a
+                    product that is in preview. Initially, you'll want
+                    to create a draft version of the preview document
+                    for review. After the preview launches publicly,
+                    you can remove the draft status of your document
+                    but leave the document version at preview. This
+                    section describes how to accomplish this.</para>
+                <para>Sometimes, you must publish documents on
+                    docs.rackspace.com for private betas. Though these
+                    documents are not listed on the landing page, your
+                    product team sends links to the document directly
+                    to users. To prevent random people from finding
+                    the content in Google searches, you must configure
+                    your search engine. See <xref
+                        linkend="search_engine_config"/>.</para>
             </listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Watermarks and status bars</term>
             <listitem>
-                <para>Search engine configuration</para>
+                <para>&lt;status="DRAFT"> &lt;?rax
+                    status.bar.text="RAX INTERNAL"?&gt;</para>
+                <para>A line of text that appears on the cover page of
+                    PDF output. For example, for a preview document,
+                    you might configure a <guilabel>PREVIEW</guilabel>
+                    watermark, as shown in the following figure: <mediaobject>
+                        <imageobject role="fo">
+                            <imagedata fileref="figures/watermark.png"
+                                contentwidth="4in"/>
+                        </imageobject>
+                    </mediaobject></para>
+                <para>Does not appear in webhelp output.</para>
+                <para>Appears as vertical text on left edge of PDF or
+                    webhelp output. <mediaobject>
+                        <imageobject role="fo">
+                            <imagedata fileref="figures/statusbar.png"
+                                contentwidth="4in"/>
+                        </imageobject>
+                    </mediaobject></para>
             </listitem>
-        </itemizedlist></para>
-    <section xml:id="review_docs">
-        <title>Document Versions</title>
+        </varlistentry>
+        <varlistentry>
+            <term>Commenting tools</term>
+            <listitem>
+                <para/>
+            </listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Content Filtering</term>
+            <listitem>
+                <para/>
+            </listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Meta robots</term>
+            <listitem>
+                <para/>
+            </listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Google analytics</term>
+            <listitem>
+                <para>We use <link
+                        xlink:href="http://www.google.com/analytics/"
+                        >Google Analytics</link> to observe which
+                    pages are being read, what links are being
+                    followed, what searches are leading readers to our
+                    doc, and other facts that may help us plan ongoing
+                    document development.</para>
+            </listitem>
+        </varlistentry>
+    </variablelist>
 
 
+
+
+
+    <section xml:id="drafts">
+        <title>Drafts</title>
+        <para>. <procedure>
+                <title>To create a draft document</title>
+                <step>
+                    <para>In the main XML file for your book or
+                        release notes, add the
+                            <markup>status="draft"</markup> attribute
+                        to the book or article element. For
+                        example:<programlisting>&lt;book xmlns="http://docbook.org/ns/docbook"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:m="http://www.w3.org/1998/Math/MathML"
+  xmlns:html="http://www.w3.org/1999/xhtml" version="5.0"
+  <emphasis role="bold">status="draft"</emphasis> xml:id="cn-releasenotes"></programlisting></para>
+                </step>
+                <step>
+                    <para>To configure content to be visible only in
+                        the draft version of the document, add the
+                        security="draft" attribute to the content. For
+                        example: <programlisting/></para>
+                </step>
+            </procedure></para>
+    </section>
+    <section xml:id="watermark_concept">
+        <title>Watermark and Status Bar</title>
+
+        <note>
+            <para>You can also add text to the watermark bar by adding
+                a processing instruction as a child of the root
+                element: <programlisting>&lt;?rax status.bar.text="CONFIDENTIAL" ?&gt;</programlisting></para>
+            <para>If the text is long, use 1.3.0-SNAPSHOT or later to
+                make it fit by controlling its size like
+                this: <programlisting>&lt;?rax status.bar.text.font.size="50px" status.bar.text="LIMITED AVAILABILITY" ?&gt;</programlisting></para>
+            <para>The default size of the text is about 71.3px; 50px
+                might be the right size for "LIMITED
+                AVAILABILITY".</para>
+        </note>
+        <para>The following images show what the output looks like
+            with <code>status="draft"</code> on the root element of
+            the document and
+                <code>&lt;security&gt;reviewer&lt;/security&gt;</code>
+            in the pom.xml file: <mediaobject>
+                <imageobject role="fo">
+                    <imagedata fileref="figures/watermark-pdf.png"
+                        contentwidth="6in"/>
+                </imageobject>
+            </mediaobject><mediaobject>
+                <imageobject role="fo">
+                    <imagedata fileref="figures/watermark-webhelp.png"
+                        contentwidth="6in"/>
+                </imageobject>
+            </mediaobject></para>
+
+    </section>
+    <section xml:id="watermark_proc">
+        <title>Configure the Watermark and Status Bar</title>
+        <para>A watermark is a line of text that appears on the cover
+            page of PDF output and that identifies the product and
+            document version. </para>
+        <para>Watermarks do not appear in webhelp output, though
+            status bars do. </para>
+        <para>For example, to create a draft for the preview version
+            of a product, you would set the document status to
+                <literal>DRAFT</literal> and configure a
+                <guilabel>PREVIEW</guilabel> watermark. The cover
+            shows a <guilabel>DRAFT PREVIEW</guilabel> watermark, as
+            shown in the following figure: <mediaobject>
+                <imageobject role="fo">
+                    <imagedata fileref="figures/watermarkdraft.png"
+                        contentwidth="4in"/>
+                </imageobject>
+            </mediaobject>When the product launches as preview, you
+            would remove the DRAFT status, but leave the
+                <guilabel>PREVIEW</guilabel> watermark, as shown in
+            the following figure: <mediaobject>
+                <imageobject role="fo">
+                    <imagedata fileref="figures/watermark.png"
+                        contentwidth="4in"/>
+                </imageobject>
+            </mediaobject></para>
+        <para>
+            <procedure>
+                <title>To configure a watermark in your
+                    document</title>
+                <step>
+                    <title>Configure the draft status</title>
+                    <para>If the document is not a draft, skip this
+                        step and proceed to <xref linkend="security"
+                        />. </para>
+                    <para>If the document is a draft, set the
+                            <literal>status</literal> attribute to
+                            <literal>DRAFT</literal> on the
+                            <literal>book</literal> or
+                            <literal>article</literal> tag, as
+                        follows:
+                        <programlisting>&lt;book  
+    xmlns="http://docbook.org/ns/docbook" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude" 
+    xmlns:svg="http://www.w3.org/2000/svg"
+    version="5.0" 
+    xml:id="example-foo" <emphasis role="bold">status="DRAFT"</emphasis>&gt;
+...
+&lt;/book&gt;</programlisting></para>
+                </step>
+                <step xml:id="security">
+                    <title>Configure the document security</title>
+                    <para>you can use one of the following tags, or
+                        both tags in conjunction with each other: In
+                        the body of the document, set
+                            <literal>status.bar.text</literal> to
+                        appear on the title page and on the left edge
+                        of every page. For example,</para>
+                    <programlisting>&lt;?rax title.font.size="35px" subtitle.font.size="20px"?&gt;    
+   &lt;title&gt;Rackspace Cloud Load Balancers Developer Guide for Service Management&lt;/title&gt;
+   &lt;titleabbrev&gt;Rackspace Cloud LB Mgmt Guide&lt;/titleabbrev&gt;    
+   &lt;?rax status.bar.text="RAX INTERNAL"?&gt;    
+   &lt;info&gt;        
+ &lt;author&gt; </programlisting>
+                    <para>This mark-up makes a cover page like
+                        this:</para>
+                    <mediaobject>
+                        <imageobject role="fo">
+                            <imagedata
+                                fileref="figures/cover-RAXINTERNAL.png"
+                                contentwidth="6in"/>
+                        </imageobject>
+                    </mediaobject>
+                    <para>In pom.xml, set
+                            <code>&lt;security&gt;</code> to add text
+                        to the left edge of every page. For
+                        example:<programlisting>&lt;security&gt;internal&lt;/security&gt;</programlisting>If
+                        pom.xml contains <code>&lt;?rax
+                            status.bar.text="RAX "?&gt;</code>, edges
+                        each page in repeating <literal>RAX
+                            INTERNAL</literal>.</para>
+                </step>
+
+                <step>
+                    <para/>
+                </step>
+            </procedure>
+        </para>
+
+        <para/>
         <para>You can generate the following flavors of PDF or web
-            help output for a DocBook document:<table rules="all">
-                <caption>Document Versions</caption>
+            help output for a DocBook document:<informaltable
+                rules="all">
                 <col width="10%"/>
                 <col width="10%"/>
                 <col width="80%"/>
@@ -105,8 +358,9 @@ format="PNG" />
                             security="draft" are omitted.</td>
                     </tr>
                 </tbody>
-            </table></para>
+            </informaltable></para>
     </section>
+
     <section xml:id="filter">
         <title>Filter Content</title>
         <para>By using
@@ -137,43 +391,43 @@ format="PNG" />
                     <tr>
                         <td><code>&lt;para
                                 security="reviewer"&gt;...&lt;/para&gt;</code></td>
-                        <td><para>Filters out the specified content UNLESS
-                            you set
-                                <code>&lt;security&gt;reviewer&lt;/security&gt;</code>
-                            in your pom.xml. If you do set security to
-                            reviewer, the following things also
-                            happen: <itemizedlist>
-                                <listitem>
+                        <td><para>Filters out the specified content
+                                UNLESS you set
+                                   <code>&lt;security&gt;reviewer&lt;/security&gt;</code>
+                                in your pom.xml. If you do set
+                                security to reviewer, the following
+                                things also happen: <itemizedlist>
+                                   <listitem>
                                    <para>Elements with
                                    <code>security="writeronly"</code>
                                    are filtered out.</para>
-                                </listitem>
-                                <listitem>
+                                   </listitem>
+                                   <listitem>
                                    <para>The watermark contains the
                                    word REVIEW. Note that elements
                                    flagged as reviewer appear with
                                    yellow highlighting.</para>
-                                </listitem>
-                            </itemizedlist></para></td>
+                                   </listitem>
+                                </itemizedlist></para></td>
                     </tr>
                     <tr>
                         <td><code>&lt;para
-                            security="internal"&gt;...&lt;/para&gt;</code></td>
+                                security="internal"&gt;...&lt;/para&gt;</code></td>
                         <td>
                             <para>Filters out the specified content
                                 UNLESS you set
-                                <code>&lt;security&gt;internal&lt;/security&gt;
+                                   <code>&lt;security&gt;internal&lt;/security&gt;
                                 </code>in your pom.xml. If you do set
                                 security to reviewer, the following
                                 things also happen:</para>
                             <itemizedlist>
                                 <listitem>
-                                    <para>Elements with
-                                        <code>security="external"</code>,
-                                        <code>security="reviewer"</code>,
-                                        and
-                                        <code>security="writeronly"</code>
-                                        are filtered out. Elements flagged
+                                   <para>Elements with
+                                   <code>security="external"</code>,
+                                   <code>security="reviewer"</code>,
+                                   and
+                                   <code>security="writeronly"</code>
+                                   are filtered out. Elements flagged
                                    as <code>security="external"</code>
                                    are filtered so that you could, if
                                    you wanted, have mutually exclusive
@@ -204,83 +458,120 @@ format="PNG" />
                     </tr>
                 </tbody>
             </table></para>
-        <section xml:id="watermarks">
-            <title>Watermarks</title>
-            <para>In the body of the document, set
-                    <literal>status.bar.text</literal> to appear on
-                the title page and on the left edge of every page. For
-                example,</para>
-            <programlisting>&lt;?rax title.font.size="35px" subtitle.font.size="20px"?&gt;    
-   &lt;title&gt;Rackspace Cloud Load Balancers Developer Guide for Service Management&lt;/title&gt;
-   &lt;titleabbrev&gt;Rackspace Cloud LB Mgmt Guide&lt;/titleabbrev&gt;    
-   &lt;?rax status.bar.text="RAX INTERNAL"?&gt;    
-   &lt;info&gt;        
- &lt;author&gt; </programlisting>
-            <para>This mark-up makes a cover page like this:</para>
-            <mediaobject>
-                <imageobject role="fo">
-                    <imagedata fileref="figures/cover-RAXINTERNAL.png"
-                        contentwidth="6in"/>
-                </imageobject>
-            </mediaobject>
-
-            <para>In pom.xml, set <code>&lt;security&gt;</code> to add
-                text to the left edge of every page. For
-                example:<programlisting>&lt;security&gt;internal&lt;/security&gt;</programlisting>If
-                pom.xml contains <code>&lt;?rax status.bar.text="RAX
-                    "?&gt;</code>, edges each page in repeating
-                    <literal>RAX INTERNAL</literal>.</para>
-        </section>
-    </section>
-    <section xml:id="xx">
-        <title>Status Bar</title>
-
-        <note>
-            <para>You can also add text to the watermark bar by adding
-                a processing instruction as a child of the root
-                element: <programlisting>&lt;?rax status.bar.text="CONFIDENTIAL" ?&gt;</programlisting></para>
-            <para>If the text is long, use 1.3.0-SNAPSHOT or later to
-                make it fit by controlling its size like
-                this: <programlisting>&lt;?rax status.bar.text.font.size="50px" status.bar.text="LIMITED AVAILABILITY" ?&gt;</programlisting></para>
-            <para>The default size of the text is about 71.3px; 50px
-                might be the right size for "LIMITED
-                AVAILABILITY".</para>
-        </note>
-        <para>The following images show what the output looks like
-            with <code>status="draft"</code> on the root element of
-            the document and
-                <code>&lt;security&gt;reviewer&lt;/security&gt;</code>
-            in the pom.xml file: <mediaobject>
-                <imageobject role="fo">
-                    <imagedata fileref="figures/watermark-pdf.png"
-                        contentwidth="6in"/>
-                </imageobject>
-            </mediaobject><mediaobject>
-                <imageobject role="fo">
-                    <imagedata fileref="figures/watermark-webhelp.png"
-                        contentwidth="6in"/>
-                </imageobject>
-            </mediaobject></para>
 
     </section>
     <section xml:id="search_engine_config">
-        <title>Configure Search Engines</title>
-        <para>We sometimes publish documents on docs.rackspace.com for
-            private betas. Though we do not list these documents on
-            the landing page, we send links to the document directly
-            to the users. To prevent random people from stumbling upon
-            the content from Google searches, add the following
-            parameter to your pom.xml
-            file:<programlisting>&lt;metaRobots&gt;1&lt;/metaRobots&gt; </programlisting></para>
-        <para>When you do this, the following tag is added to all web
-            help html
-            files:<programlisting>&lt;meta name="robots" content="NOINDEX, NOFOLLOW"/&gt;</programlisting>
-            This tag tells search engine spiders to skip this
-            content.</para>
+        <title>Configure Search Engines to Ignore Content</title>
+        <para>Sometimes, you must publish documents on
+            docs.rackspace.com for private betas. Though these
+            documents are not listed on the landing page, your product
+            team sends links to the document directly to users. To
+            prevent random people from finding the content in Google
+            searches, you must configure your search engine to ignore content.<procedure>
+                <title>To configure search engines to ignore
+                    content</title>
+                <step>
+                    <para>Add the following parameter to your pom.xml
+                        file:<programlisting>&lt;metaRobots&gt;1&lt;/metaRobots&gt; </programlisting></para>
+                    <para>When you do this, the following tag is added
+                        to all web help HTML
+                        files:<programlisting>&lt;meta name="robots" content="NOINDEX, NOFOLLOW"/&gt;</programlisting>
+                        This tag tells search engine spiders to skip
+                        this content.</para>
+                </step>
+            </procedure></para>
         <note>
             <para>Remember to remove this parameter when you are ready
                 to leave private beta. </para>
         </note>
 
+    </section>
+    <section xml:id="commenting">
+        <title>Configure a Commenting Tool</title>
+        <para>You can configure your content to use the <link
+                xlink:href="http://disqus.com">Disqus</link> or hash
+            commenting tool. </para>
+        <para>HashCode can be used either internally or externally. If
+            you post on docs-internal or docs-beta, then they're
+            internal only. If you post on docs.rackspace.com, then
+            they'd be external as well. The difference is that with
+            the HashCode system, the comments are stored on our server
+            and there's no integration with Facebook etc. The deal
+            with Disqus is that even if you use it on internal
+            content, the comments are stored on Disqus' servers and
+            may be exposed to the outside world via integration with
+            other social media sites like facebook. So depending on
+            your settings if you make a comment on some content with
+            Disqus, that comment may be shared with your Facebook
+            friends and twitter followers even though the content you
+            commented on was inside our vpn. </para>
+        <para>
+            <procedure>
+                <title>To configure a commenting tool</title>
+                <para>Add the following parameter to your pom.xml
+                    file:<programlisting>&lt;enableDisqus&gt;intranet&lt;/enableDisqus&gt; </programlisting></para>
+                <para>When you do this, the following tag is added to
+                    all web help html
+                    files:<programlisting>&lt;meta name="robots" content="NOINDEX, NOFOLLOW"/&gt;</programlisting>
+                    This tag tells search engine spiders to skip this
+                    content.</para>
+
+                <step>
+                    <para/>
+                </step>
+            </procedure>
+        </para>
+        <para/>
+        <note>
+            <para>Remember to remove this parameter when you are ready
+                to leave private beta. </para>
+        </note>
+
+    </section>
+    <section xml:id="set_google_analytics">
+        <title>Suppress or Collect Google Analytics</title>
+        <para><note>
+                <para>If your document uses the 1.0.5-SNAPSHOT
+                    formatting plugin or later and its branding is set
+                    to <literal>rackspace</literal>, Google Analytics
+                    is enabled and the Google Analytics ID is set. If
+                    the doc tools team changes this default handling
+                    in the future, all projects would need to enable
+                    Google Analytics explicitly.</para>
+            </note></para>
+        <para><procedure>
+                <title>To suppress Google analytics</title>
+                <step>
+                    <para>Add the following line to the
+                            <literal>configuration</literal> section
+                        in the pom.xml file:</para>
+                    <programlisting language="xml">&lt;enableGoogleAnalytics>0&lt;/enableGoogleAnalytics></programlisting>
+                </step>
+            </procedure>
+            <procedure>
+                <title>To collect Google analytics</title>
+                <step>
+                    <para>Add the following lines to the
+                            <literal>configuration</literal> section
+                        in the pom.xml file:
+                        <programlisting language="xml">&lt;enableGoogleAnalytics>1&lt;/enableGoogleAnalytics>
+&lt;googleAnalyticsId&gt;UA-23102455-4&lt;/googleAnalyticsId&gt;</programlisting></para>
+                    <para>The <literal>UA-23102455-4</literal> value
+                        identifies our Google Analytics account.
+                    </para>
+                </step>
+            </procedure></para>
+    </section>
+    <section xml:id="publish_beta">
+        <title>Publish Content to docs-beta.rackspace.com</title>
+        <para/>
+    </section>
+    <section xml:id="publish_internal">
+        <title>Publish Content to docs-internal.rackspace.com</title>
+        <para/>
+    </section>
+    <section xml:id="publish">
+        <title>Publish Content to docs.rackspace.com</title>
+        <para/>
     </section>
 </chapter>
