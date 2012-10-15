@@ -38,73 +38,64 @@ format="PNG" />
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_review">
+    <?dbhtml stop-chunking?>
     <title>Draft and Production Documents</title>
+
+
+    <para>You can create <emphasis role="italic">draft
+            documents</emphasis> for review. Drafts are identified by
+        the <literal>DRAFT</literal> watermark and status bar. The
+        watermark and status bar on a draft can also indicate the
+        status of the product, such as <literal>PREVIEW</literal> or
+            <literal>LIMITED AVAILABILITY</literal>, or whether the
+        document is internal-only. Draft documents appear on the <link
+            xlink:href="docs-beta.rackspace.com"
+            >docs-beta.rackspace.com</link> site. To configure a
+        document as a draft, set the <markup>status</markup> attribute
+        to <literal>draft</literal> on the <markup>book</markup> or
+            <markup>article</markup> element. You can also create text
+        in the document that appears in only the draft document but is
+        removed when you remove the <markup>status="draft"</markup>
+        attribute. To add additional text to the watermark and status
+        bar, see <xref linkend="watermark_proc"/>.</para>
+    <para>After a document has been reviewed, you can create <emphasis
+            role="italic">production documents</emphasis> for internal
+        or external distribution. For example, you might want to
+        document a product that is in preview. Initially, you'll want
+        to create a draft version of the preview document for review.
+        After the preview launches publicly, you can remove the draft
+        status of your document but leave the document version at
+        preview. </para>
+
+
+
+    <itemizedlist>
+        <listitem>
+
+            <para security="draft">Documents for internal distribution contain internal
+                content appropriate for Rackspace employees. These
+                documents might also contain external content. These
+                documents appear on the <link
+                    xlink:href="docs-internal.rackspace.com"
+                    >docs-internal.rackspace.com</link> site. </para>
+        </listitem>
+        <listitem>
+            <para>Documents for external distribution contain content
+                appropriate for Rackspace customers and appear on the
+                    <link xlink:href="docs.rackspace.com"
+                    >docs.rackspace.com</link> site. Sometimes, you
+                must publish documents on docs.rackspace.com for
+                private betas. Though these documents are not listed
+                on the landing page, your product team sends links to
+                the document directly to users. To prevent random
+                people from finding the content in Google searches,
+                you must configure your search engine. See <xref
+                    linkend="search_engine_config"/>.</para>
+
+        </listitem>
+    </itemizedlist>
+
     <variablelist>
-        <varlistentry>
-            <term>Drafts</term>
-            <listitem>
-                <para>You can create documents for review. A review
-                    document is a draft. Drafts are identified by the
-                        <literal>DRAFT</literal> watermark and status
-                    bar. The watermark and status bar on a draft can
-                    also indicate the status of the product, such as
-                        <literal>PREVIEW</literal> or <literal>LIMITED
-                        AVAILABILITY</literal>, or whether the
-                    document is internal-only. Draft documents appear
-                    on the <link xlink:href="docs-beta.rackspace.com"
-                        >docs-beta.rackspace.com</link> site.</para>
-                <para>After a document has been reviewed, you can
-                    create production documents for internal or
-                    external distribution. </para>
-                <para>A review draft is identified by a watermark and
-                    status bar labeled <guilabel>Draft</guilabel>. To
-                    configure a document as a draft, set the
-                        <markup>status</markup> attribute to
-                        <literal>draft</literal> on the
-                        <markup>book</markup> or
-                        <markup>article</markup> element. You can also
-                    create text in the document that appears in the
-                    draft document but is removed when you omit the
-                        <markup>status="draft"</markup>
-                    attribute</para>
-            </listitem>
-        </varlistentry>
-        <varlistentry>
-            <term>Documents for internal distribution</term>
-            <listitem>
-                <para>Documents for internal distribution contain
-                    internal content appropriate for Rackspace
-                    employees. These documents appear on the <link
-                        xlink:href="docs-internal.rackspace.com"
-                        >docs-internal.rackspace.com</link> site.
-                </para>
-            </listitem>
-        </varlistentry>
-        <varlistentry>
-            <term>Documents for external distribution</term>
-            <listitem>
-                <para>Documents for external distribution contain
-                    content appropriate for Rackspace customers and
-                    appear on the <link
-                        xlink:href="docs.rackspace.com"
-                        >docs.rackspace.com</link> site. </para>
-                <para>For example, you might want to document a
-                    product that is in preview. Initially, you'll want
-                    to create a draft version of the preview document
-                    for review. After the preview launches publicly,
-                    you can remove the draft status of your document
-                    but leave the document version at preview. This
-                    section describes how to accomplish this.</para>
-                <para>Sometimes, you must publish documents on
-                    docs.rackspace.com for private betas. Though these
-                    documents are not listed on the landing page, your
-                    product team sends links to the document directly
-                    to users. To prevent random people from finding
-                    the content in Google searches, you must configure
-                    your search engine. See <xref
-                        linkend="search_engine_config"/>.</para>
-            </listitem>
-        </varlistentry>
         <varlistentry>
             <term>Watermarks and status bars</term>
             <listitem>
@@ -129,12 +120,7 @@ format="PNG" />
                     </mediaobject></para>
             </listitem>
         </varlistentry>
-        <varlistentry>
-            <term>Commenting tools</term>
-            <listitem>
-                <para/>
-            </listitem>
-        </varlistentry>
+
         <varlistentry>
             <term>Content Filtering</term>
             <listitem>
@@ -150,45 +136,154 @@ format="PNG" />
         <varlistentry>
             <term>Google analytics</term>
             <listitem>
-                <para>We use <link
+                <para>Configure your content to use <link
                         xlink:href="http://www.google.com/analytics/"
                         >Google Analytics</link> to observe which
                     pages are being read, what links are being
                     followed, what searches are leading readers to our
-                    doc, and other facts that may help us plan ongoing
-                    document development.</para>
+                    content, and other information that might help you
+                    update content. See <xref
+                        linkend="google_analytics"/>.</para>
+            </listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Commenting tools</term>
+            <listitem>
+                <para>You can configure your document to use the <link
+                        xlink:href="http://disqus.com">Disqus</link>
+                    or HashCode commenting tool:</para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para><emphasis role="bold"
+                                   >HashCode</emphasis>. Collects
+                                comments on internal and external
+                                content. If you publish a document on
+                                docs-internal or docs-beta, the
+                                comments are viewable internally only.
+                                If you publish a document on
+                                docs.rackspace.com, the comments are
+                                viewable internally and externally.
+                                Comments are stored on a Rackspace
+                                server and are not integrated with
+                                Facebook and other social media tools.
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para><emphasis role="bold"
+                                   >Disqus</emphasis>. Collects
+                                comments on internal and external
+                                content. Comments are stored on a
+                                Disqus server and might be exposed to
+                                the outside world through integration
+                                social media sites like Facebook.
+                                Depending on your settings, if you
+                                make a comment on content with Disqus,
+                                that comment might be shared with your
+                                Facebook friends and Twitter followers
+                                even if you commented while inside the
+                                Rackspace VPN. </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+                <para>See <xref linkend="commenting"/>.</para>
             </listitem>
         </varlistentry>
     </variablelist>
+    <table frame="void">
+        <caption>Document types</caption>
+
+        <thead>
+            <tr>
+                <th>Document</th>
+                <th>Watermark and status bar</th>
+                <th>Location</th>
+                <th>Content filtering</th>
+                <th>Search engines</th>
+                <th>Google analytics</th>
+                <th>Commenting</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Draft</td>
+                <td><para>DRAFT </para>
+                    <para>Can include additional text such as PREVIEW
+                        or LIMITED AVAILABILITY</para></td>
+                <td>docs-beta.rackspace.com</td>
+                <td/>
+                <td>Set to 1</td>
+                <td>Set to 0</td>
+                <td>HashCode</td>
+            </tr>
+            <tr>
+                <td>Internal</td>
+                <td>INTERNAL</td>
+                <td>docs-internal.rackspace.com</td>
+                <td/>
+                <td>Set to 1</td>
+                <td>Set to 0</td>
+                <td>HashCode</td>
+            </tr>
+            <tr>
+                <td>External</td>
+                <td>None, or text indicating product status, such as
+                    PREVIEW</td>
+                <td>docs.rackspace.com</td>
+                <td/>
+                <td>Not applicable</td>
+                <td>Set to 1</td>
+                <td>Disqus</td>
+            </tr>
+            <tr>
+                <td>External private betas</td>
+                <td/>
+                <td>docs.rackspace.com</td>
+                <td/>
+                <td>Set to 1</td>
+                <td>Set to 0</td>
+                <td>HashCode</td>
+            </tr>
+        </tbody>
+    </table>
 
 
 
 
 
     <section xml:id="drafts">
-        <title>Drafts</title>
-        <para>. <procedure>
+        <title>Create Drafts</title>
+        <para>Draft documents contain the <literal>DRAFT</literal>
+            watermark and status bar. A draft document can also
+            contain draft-only text that appears in the draft but is
+            removed when you remove the
+                <markup>status="draft"</markup> tag from the
+                <markup>book</markup> or <markup>article</markup>
+            element.</para>
+        <para>
+            <procedure>
                 <title>To create a draft document</title>
                 <step>
                     <para>In the main XML file for your book or
                         release notes, add the
                             <markup>status="draft"</markup> attribute
-                        to the book or article element. For
+                        to the <markup>book</markup> or
+                            <markup>article</markup> element. </para>
+                    <para>For
                         example:<programlisting>&lt;book xmlns="http://docbook.org/ns/docbook"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns:xi="http://www.w3.org/2001/XInclude"
-  xmlns:svg="http://www.w3.org/2000/svg"
-  xmlns:m="http://www.w3.org/1998/Math/MathML"
-  xmlns:html="http://www.w3.org/1999/xhtml" version="5.0"
-  <emphasis role="bold">status="draft"</emphasis> xml:id="cn-releasenotes"></programlisting></para>
+  xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0"
+  xml:id="writers-guide" <emphasis role="bold">status="DRAFT"</emphasis>&gt;</programlisting></para>
                 </step>
                 <step>
-                    <para>To configure content to be visible only in
-                        the draft version of the document, add the
-                        security="draft" attribute to the content. For
-                        example: <programlisting/></para>
+                    <para>To configure content to be visible in the
+                        draft document only, add the
+                            <markup>security="draft"</markup>
+                        attribute to the content. For example:
+                        <programlisting>&lt;para security="draft"&gt;Documents for internal distribution contain internal content appropriate for Rackspace employees.&lt;/para&gt;</programlisting></para>
                 </step>
-            </procedure></para>
+            </procedure>
+        </para>
     </section>
     <section xml:id="watermark_concept">
         <title>Watermark and Status Bar</title>
@@ -461,17 +556,19 @@ format="PNG" />
 
     </section>
     <section xml:id="search_engine_config">
-        <title>Configure Search Engines to Ignore Content</title>
+        <title>Configure Search Engine Spiders to Ignore
+            Content</title>
         <para>Sometimes, you must publish documents on
             docs.rackspace.com for private betas. Though these
             documents are not listed on the landing page, your product
             team sends links to the document directly to users. To
-            prevent random people from finding the content in Google
-            searches, you must configure your search engine to ignore content.<procedure>
-                <title>To configure search engines to ignore
+            prevent random people from finding the content in Internet
+            searches, configure search engine spiders to ignore content.<procedure>
+                <title>To configure search engine spiders to ignore
                     content</title>
                 <step>
-                    <para>Add the following parameter to your pom.xml
+                    <para>Add the <markup>metaRobots</markup> tag to
+                        your pom.xml
                         file:<programlisting>&lt;metaRobots&gt;1&lt;/metaRobots&gt; </programlisting></para>
                     <para>When you do this, the following tag is added
                         to all web help HTML
@@ -486,50 +583,9 @@ format="PNG" />
         </note>
 
     </section>
-    <section xml:id="commenting">
-        <title>Configure a Commenting Tool</title>
-        <para>You can configure your content to use the <link
-                xlink:href="http://disqus.com">Disqus</link> or hash
-            commenting tool. </para>
-        <para>HashCode can be used either internally or externally. If
-            you post on docs-internal or docs-beta, then they're
-            internal only. If you post on docs.rackspace.com, then
-            they'd be external as well. The difference is that with
-            the HashCode system, the comments are stored on our server
-            and there's no integration with Facebook etc. The deal
-            with Disqus is that even if you use it on internal
-            content, the comments are stored on Disqus' servers and
-            may be exposed to the outside world via integration with
-            other social media sites like facebook. So depending on
-            your settings if you make a comment on some content with
-            Disqus, that comment may be shared with your Facebook
-            friends and twitter followers even though the content you
-            commented on was inside our vpn. </para>
-        <para>
-            <procedure>
-                <title>To configure a commenting tool</title>
-                <para>Add the following parameter to your pom.xml
-                    file:<programlisting>&lt;enableDisqus&gt;intranet&lt;/enableDisqus&gt; </programlisting></para>
-                <para>When you do this, the following tag is added to
-                    all web help html
-                    files:<programlisting>&lt;meta name="robots" content="NOINDEX, NOFOLLOW"/&gt;</programlisting>
-                    This tag tells search engine spiders to skip this
-                    content.</para>
 
-                <step>
-                    <para/>
-                </step>
-            </procedure>
-        </para>
-        <para/>
-        <note>
-            <para>Remember to remove this parameter when you are ready
-                to leave private beta. </para>
-        </note>
-
-    </section>
-    <section xml:id="set_google_analytics">
-        <title>Suppress or Collect Google Analytics</title>
+    <section xml:id="google_analytics">
+        <title>Configure Google Analytics</title>
         <para><note>
                 <para>If your document uses the 1.0.5-SNAPSHOT
                     formatting plugin or later and its branding is set
@@ -539,7 +595,19 @@ format="PNG" />
                     in the future, all projects would need to enable
                     Google Analytics explicitly.</para>
             </note></para>
-        <para><procedure>
+        <para>Use the <markup>&lt;googleAnalytics&gt;</markup> tag to
+            suppress or collect Google analytics. Valid values are:<itemizedlist>
+                <listitem>
+                    <para><markup>0</markup>. Suppresses Google
+                        analytics. Use this setting for drafts and
+                        internal-only documents.</para>
+                </listitem>
+                <listitem>
+                    <para><markup>1</markup>. Collects Google
+                        analytics. Use this setting for
+                        customer-facing documents.</para>
+                </listitem>
+            </itemizedlist><procedure>
                 <title>To suppress Google analytics</title>
                 <step>
                     <para>Add the following line to the
@@ -547,8 +615,7 @@ format="PNG" />
                         in the pom.xml file:</para>
                     <programlisting language="xml">&lt;enableGoogleAnalytics>0&lt;/enableGoogleAnalytics></programlisting>
                 </step>
-            </procedure>
-            <procedure>
+            </procedure><procedure>
                 <title>To collect Google analytics</title>
                 <step>
                     <para>Add the following lines to the
@@ -562,16 +629,39 @@ format="PNG" />
                 </step>
             </procedure></para>
     </section>
-    <section xml:id="publish_beta">
-        <title>Publish Content to docs-beta.rackspace.com</title>
-        <para/>
-    </section>
-    <section xml:id="publish_internal">
-        <title>Publish Content to docs-internal.rackspace.com</title>
-        <para/>
-    </section>
-    <section xml:id="publish">
-        <title>Publish Content to docs.rackspace.com</title>
-        <para/>
+    <section xml:id="commenting">
+        <title>Configure a Commenting Tool</title>
+        <para>Use the <markup>enableDisqus</markup> tag to configure
+            the <link xlink:href="http://disqus.com">Disqus</link> or
+            HashCode commenting tool. Valid values are:</para>
+        <itemizedlist>
+            <listitem>
+               
+                    <para><literal>intranet</literal>. Uses HashCode.
+                        Set to <literal>internet</literal> to use
+                        Disqus.</para>
+                
+            </listitem>
+        </itemizedlist>
+
+        <procedure>
+            <title>To configure the HashCode commenting tool</title>
+            <step>
+                <para>Add the following line to the
+                        <markup>configuration</markup> section in your
+                    pom.xml file:</para>
+                <programlisting>&lt;enableDisqus&gt;intranet&lt;/enableDisqus&gt; </programlisting>
+            </step>
+        </procedure>
+        <procedure>
+            <title>To configure the Disqus commenting tool</title>
+            <step>
+                <para>Add the following line to the
+                        <markup>configuration</markup> section in your
+                    pom.xml file:</para>
+                <programlisting>&lt;enableDisqus&gt;internet&lt;/enableDisqus&gt; </programlisting>
+            </step>
+        </procedure>
+
     </section>
 </chapter>
