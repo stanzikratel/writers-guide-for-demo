@@ -13,24 +13,16 @@
 <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
 
 <!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
-<imageobject role="fo">
+<imageobject>
 <imagedata fileref="figures/Check_mark_23x20_02.svg"
 format="SVG" scale="60"/>
-</imageobject>
-<imageobject role="html">
-<imagedata fileref="../figures/Check_mark_23x20_02.png"
-format="PNG" />
 </imageobject>
 </inlinemediaobject>'>
 
 <!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
-<imageobject role="fo">
+<imageobject>
 <imagedata fileref="figures/Arrow_east.svg"
 format="SVG" scale="60"/>
-</imageobject>
-<imageobject role="html">
-<imagedata fileref="../figures/Arrow_east.png"
-format="PNG" />
 </imageobject>
 </inlinemediaobject>'>
 ]>
@@ -81,13 +73,13 @@ format="PNG" />
         <para>The table below shows two examples of existing
             descriptions, both containing required elements but
             choosing different optional elements:<mediaobject>
-                <imageobject role="fo">
+                <imageobject>
                     <imagedata
                         fileref="figures/SAMPLE-APIop-1verb.png"
                         contentwidth="6in"/>
                 </imageobject>
             </mediaobject><mediaobject>
-                <imageobject role="fo">
+                <imageobject>
                     <imagedata
                         fileref="figures/SAMPLE-APIop-2verb.png"
                         contentwidth="6in"/>
