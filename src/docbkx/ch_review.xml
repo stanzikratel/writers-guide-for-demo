@@ -328,10 +328,12 @@ format="SVG" scale="60"/>
     xml:id="example-foo" <emphasis role="bold">status="draft"</emphasis>&gt;
 ...
 &lt;/book&gt;</programlisting>
-                </para><para>The watermark and status bar text appear as:<programlisting>Draft</programlisting></para>
+                </para>
+                <para>The watermark and status bar text appear
+                    as:<programlisting>DRAFT</programlisting></para>
             </step>
             <step xml:id="security">
-                <title>Configure the document security</title>
+                <title>Configure document security</title>
                 <para>In the pom.xml file for your document, add the
                         <markup>security</markup> tag to the
                     appropriate <literal>configuration</literal>
@@ -339,27 +341,31 @@ format="SVG" scale="60"/>
                         <literal>security</literal> tag are:<itemizedlist>
                         <listitem>
                             <para><literal>internal</literal>. Adds
-                                the INTERNAL watermark and status bar
-                                text and filters in any
+                                the <literal>INTERNAL</literal>
+                                watermark and status bar text, and
+                                filters in any
                                    <code>security="internal"</code>
                                 tagged content.</para>
                         </listitem>
                         <listitem>
                             <para><literal>reviewer</literal>. Adds
-                                the REVIEWER watermark and status bar
-                                text and filters in any
+                                the <literal>REVIEWER</literal>
+                                watermark and status bar text, and
+                                filters in any
                                    <code>security="reviewer"</code>
                                 tagged content.</para>
                         </listitem>
                         <listitem>
                             <para><literal>writeronly</literal>. Adds
-                                the WRITERONLY watermark and status
-                                bar text and filters in any
+                                the <literal>WRITERONLY</literal>
+                                watermark and status bar text, and
+                                filters in any
                                    <code>security="writeronly"</code>
                                 tagged content.</para>
                         </listitem>
                     </itemizedlist></para>
-                <para>For example:</para>
+                <para>For example, you might add the following
+                        <literal>security</literal> tag:</para>
                 <para>
                     <programlisting>&lt;configuration>
 	&lt;includes> cs-adminguide.xml &lt;/includes>
@@ -369,12 +375,12 @@ format="SVG" scale="60"/>
 ...
 &lt;/configuration></programlisting>
                 </para>
-                <para>If you did not tag your document as draft, the
+                <para>If you did not tag your document as a draft, the
                     watermark and status bar text appears
                     as:<programlisting>INTERNAL</programlisting>If you
-                    tagged your document as draft, the watermark and
+                    tagged your document as a draft, the watermark and
                     status bar text appears
-                    as:<programlisting>Draft - INTERNAL</programlisting></para>
+                    as:<programlisting>DRAFT - INTERNAL</programlisting></para>
             </step>
             <step>
                 <title>Add custom watermark and status bar
@@ -389,13 +395,26 @@ format="SVG" scale="60"/>
      <emphasis role="bold">status.bar.text="RAX INTERNAL"</emphasis> 
      canonical.url.base="http://docs.rackspace.com/servers/api/v2/cs-adminguide/content"?>
 &lt;titleabbrev>Cloud Servers™ Admin Guide&lt;/titleabbrev></programlisting>
-                <para>If you tagged your document as a draft, the
-                    watermark and status bar text appears
-                    as:<programlisting>Draft - INTERNAL</programlisting></para>
-                <para>If your document is not tagged as draft, the
-                    watermark and status bar text appears
-                    as:<programlisting>INTERNAL</programlisting></para>
-               <!-- <para>This mark-up makes a cover page like
+                <para>If the text is long, use 1.3.0-SNAPSHOT or later
+                    to make it fit and control its size through the
+                        <code>status.bar.text.font.size</code> tag, as
+                    follows: <programlisting>&lt;?rax status.bar.text.font.size="50px" status.bar.text="LIMITED AVAILABILITY" ?&gt;</programlisting></para>
+                <para>The default size of the text is about 71.3px;
+                    50px might be the right size for "LIMITED
+                    AVAILABILITY".</para>
+                <para>If you did not tag your document as a draft or
+                    with a <code>security</code> tag, the watermark
+                    and status bar text appears
+                    as:<programlisting>RAX INTERNAL</programlisting>If
+                    you tagged your document as a draft, the watermark
+                    and status bar text appears
+                    as:<programlisting>DRAFT - RAX INTERNAL</programlisting></para>
+                <para>If you tagged your document as a draft and with
+                    a <code>security</code> tag, such as
+                        <code>internal</code>, the watermark and
+                    status bar text appears as
+                    follows:<programlisting>DRAFT - INTERNAL - RAX INTERNAL</programlisting></para>
+                <!-- <para>This mark-up makes a cover page like
                     this:</para>
                 <mediaobject>
                     <imageobject>
@@ -412,24 +431,12 @@ format="SVG" scale="60"/>
                     page in repeating <literal>RAX
                     INTERNAL</literal>.</para> -->
             </step>
-            <step>
+            <!-- <step>
                 <para/>
                 <para>You can configure the watermark and status bar
                     text through any of the following
                     &lt;status="DRAFT"> </para>
-                <note>
-                    <para>You can also add text to the watermark bar
-                        by adding a processing instruction as a child
-                        of the root
-                        element: <programlisting>&lt;?rax status.bar.text="CONFIDENTIAL" ?&gt;</programlisting></para>
-                    <para>If the text is long, use 1.3.0-SNAPSHOT or
-                        later to make it fit by controlling its size
-                        like
-                        this: <programlisting>&lt;?rax status.bar.text.font.size="50px" status.bar.text="LIMITED AVAILABILITY" ?&gt;</programlisting></para>
-                    <para>The default size of the text is about
-                        71.3px; 50px might be the right size for
-                        "LIMITED AVAILABILITY".</para>
-                </note>
+                <note/>
                 <para>The following images show what the output looks
                     like with <code>status="draft"</code> on the root
                     element of the document and
@@ -467,7 +474,7 @@ format="SVG" scale="60"/>
                                 contentwidth="4in"/>
                         </imageobject>
                     </mediaobject></para>
-            </step>
+            </step> -->
         </procedure>
     </section>
 
@@ -524,8 +531,7 @@ format="SVG" scale="60"/>
                 <code>&lt;security&gt;internal&lt;/security&gt;</code>
             in your pom.xml, you can produce internal-only and
             external versions of same document where the external
-            version is a subset of the internal one.<table
-                frame="void">
+            version is a subset of the internal one.<table rules="all">
                 <caption>Filter Content</caption>
                 <col width="35%"/>
                 <col width="65%"/>
