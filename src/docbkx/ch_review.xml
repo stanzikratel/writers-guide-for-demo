@@ -190,8 +190,7 @@ format="SVG" scale="60"/>
                     <td><emphasis role="bold">Watermark and status bar
                             text</emphasis></td>
                     <td><literal>Draft</literal> or <literal>Draft -
-                                <emphasis role="italic"
-                                >release_type</emphasis></literal>
+                                &lt;release_type&gt;</literal>
                         where <emphasis role="italic"
                             >release_type</emphasis> is
                             <literal>Internal</literal>,
