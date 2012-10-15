@@ -72,7 +72,7 @@ format="PNG" />
     <itemizedlist>
         <listitem>
 
-            <para security="draft">Documents for internal distribution contain internal
+            <para>Documents for internal distribution contain internal
                 content appropriate for Rackspace employees. These
                 documents might also contain external content. These
                 documents appear on the <link
@@ -190,7 +190,22 @@ format="PNG" />
             </listitem>
         </varlistentry>
     </variablelist>
-    <table frame="void">
+    <informaltable rules="all">
+        <thead>
+            <tr>
+                <th/>
+                <th>Draft</th>
+                <th>Internal</th>
+                <th>External Private Beta</th>
+                <th>External</th>
+            </tr>
+        
+        </thead>
+        <tbody>
+            <tr><td>Watermark and status bar</td></tr>
+        </tbody>
+    </informaltable>
+    <table rules="all">
         <caption>Document types</caption>
 
         <thead>
@@ -286,7 +301,7 @@ format="PNG" />
         </para>
     </section>
     <section xml:id="watermark_concept">
-        <title>Watermark and Status Bar</title>
+        <title>Add Watermark and Status Bar</title>
 
         <note>
             <para>You can also add text to the watermark bar by adding
@@ -633,14 +648,15 @@ format="PNG" />
         <title>Configure a Commenting Tool</title>
         <para>Use the <markup>enableDisqus</markup> tag to configure
             the <link xlink:href="http://disqus.com">Disqus</link> or
-            HashCode commenting tool. Valid values are:</para>
+            HashCode commenting tool. </para>
+        <para>Valid values are:</para>
         <itemizedlist>
             <listitem>
-               
-                    <para><literal>intranet</literal>. Uses HashCode.
-                        Set to <literal>internet</literal> to use
-                        Disqus.</para>
-                
+                <para><literal>intranet</literal>. Uses HashCode.
+                </para>
+            </listitem>
+            <listitem>
+                <para><literal>internet</literal>. Uses Disqus.</para>
             </listitem>
         </itemizedlist>
 
