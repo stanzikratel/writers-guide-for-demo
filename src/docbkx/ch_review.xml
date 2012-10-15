@@ -52,18 +52,18 @@ format="SVG" scale="60"/>
                     <para>The watermark and status bar text appears on
                         the cover page of PDF output, and as vertical
                         text on the left edge of PDF or HTML output. </para>
-                    <para>For example, for a preview document, you
-                        might configure a <guilabel>PREVIEW</guilabel>
-                        watermark, which appears as watermark text on
-                        the cover page of the PDF and as vertical text
-                        on left edge of the PDF and HTML
-                        output.</para>
                     <para>To add boilerplate watermark and status bar
                         text, use the <code>status</code> and
-                            <code>security</code> tags. </para>
-                    <para>To add custom text, use the <code>&lt;?rax
-                            status.bar.text="Some Text" ?&gt;</code>
-                        processing instruction.</para>
+                            <code>security</code> tags. For example,
+                        if you set status="draft", the boilerplate
+                        text, <literal>DRAFT</literal>, appears as the
+                        watermark and status bar text. </para>
+                    <para>To add custom watermark and status bar text,
+                        use the <code>&lt;?rax status.bar.text="Some
+                            Text" ?&gt;</code> processing instruction.
+                        For example, for a preview document, you might
+                        configure custom watermark and status bar text
+                        of <guilabel>PREVIEW</guilabel>.</para>
                     <para>For how to add boilerplate or custom
                         watermark and status bar text, see <xref
                             linkend="watermark_proc"/>.</para>
@@ -72,22 +72,29 @@ format="SVG" scale="60"/>
             <varlistentry>
                 <term><emphasis role="bold">Location</emphasis></term>
                 <listitem>
-                    <para>We host content in the following locations:<itemizedlist>
+                    <para>Writers host content in the following locations:<itemizedlist>
                             <listitem>
-                                <para>docs-beta.rackspace.com. Review
-                                   drafts.</para>
+                                <para><link
+                                   xlink:href="docs-beta.rackspace.com"
+                                   >docs-beta.rackspace.com</link>.
+                                   Review drafts.</para>
                             </listitem>
                             <listitem>
-                                <para>docs-internal.rackspace.com.
+                                <para><link
+                                   xlink:href="docs-internal.rackspace.com"
+                                   >docs-internal.rackspace.com</link>.
                                    Internal and external content for
                                    Rackspace employees.</para>
                             </listitem>
                             <listitem>
-                                <para>docs.rackspace.com. External
-                                   content, including private beta,
-                                   preview, limited availability, and
-                                   unlimited availability
-                                   customer-facing content.</para>
+                                <para><link
+                                   xlink:href="docs.rackspace.com"
+                                   >docs.rackspace.com</link>.
+                                   External content, including private
+                                   beta, preview, limited
+                                   availability, and unlimited
+                                   availability customer-facing
+                                   content.</para>
                             </listitem>
                         </itemizedlist></para>
                     <para>For how to publish content to these
@@ -103,15 +110,14 @@ format="SVG" scale="60"/>
                         filter content into any type of document. You
                         tag the content that you want to filter into
                         the document, and you set the
-                            <code>profileSecurity</code> tag in the
-                        pom.xml file to the security type. For
-                        example, to add content that appears in the
-                        draft version of the document only, tag the
-                        content as follows:
+                            <code>security</code> tag in the pom.xml
+                        file to the security type. For example, to add
+                        content that appears in the draft version of
+                        the document only, tag the content as follows:
                         <programlisting>&lt;para security="reviewer"&gt;...&lt;/para&gt;</programlisting></para>
                     <para>Then add the following tag to the
-                        appropriate configuration section for your
-                        output in the pom.xml
+                        appropriate <literal>configuration</literal>
+                        section for your output in the pom.xml
                         file:<programlisting>&lt;security&gt;reviewer&lt;/security&gt;</programlisting></para>
                     <para>For how to filter content, see <xref
                             linkend="filter_content"/>.</para>
@@ -208,7 +214,7 @@ format="SVG" scale="60"/>
             <col width="20%"/>
             <thead>
                 <tr>
-                    <th/>
+                    <td/>
                     <th>Draft</th>
                     <th>Internal</th>
                     <th>External Private Beta</th>
@@ -217,21 +223,18 @@ format="SVG" scale="60"/>
 
             </thead>
             <tbody>
-                <tr>
-                    <td>Contains</td>
-                    <td>Review content.</td>
-                    <td>Internal content appropriate for Rackspace
-                        employees. These documents might also contain
-                        external content. </td>
-                    <td>External content for private beta
-                        customers.</td>
-                    <td>External content for preview, limited
-                        availability, or unlimited availability
-                        customers.</td>
+                <tr valign="top">
+                    <th>Content</th>
+                    <td>Review.</td>
+                    <td>Internal, appropriate for Rackspace employees.
+                        These documents might also contain external
+                        content. </td>
+                    <td>External, for private beta customers.</td>
+                    <td>External, for preview, limited availability,
+                        or unlimited availability customers.</td>
                 </tr>
-                <tr>
-                    <td><emphasis role="bold">Watermark and status bar
-                            text</emphasis></td>
+                <tr valign="top">
+                    <th>Watermark and status bar text</th>
                     <td><literal>Draft</literal> or <literal>Draft -
                             &lt;release_type&gt;</literal> where
                             <emphasis role="italic"
@@ -247,41 +250,37 @@ format="SVG" scale="60"/>
                     <td><literal>Preview</literal>, <literal>Limited
                             Availability</literal>, or none.</td>
                 </tr>
-                <tr>
-                    <td><emphasis role="bold">Location</emphasis></td>
+                <tr valign="top">
+                    <th>Location</th>
                     <td>docs-beta.rackspace.com</td>
                     <td>docs-internal.rackspace.com</td>
                     <td>docs.rackspace.com</td>
                     <td>docs.rackspace.com</td>
                 </tr>
-                <tr>
-                    <td><emphasis role="bold">Content
-                            filtering</emphasis></td>
+                <tr valign="top">
+                    <th>Content filtering</th>
                     <td><code>security="draft"</code> and other</td>
                     <td><code>security="internal"</code> and
                         other</td>
                     <td>Any</td>
                     <td>Any</td>
                 </tr>
-                <tr>
-                    <td><emphasis role="bold">Search engine
-                            spiders</emphasis></td>
+                <tr valign="top">
+                    <th>Search engine spiders</th>
                     <td>Disabled</td>
                     <td>Disabled</td>
                     <td>Disabled</td>
                     <td>Enabled</td>
                 </tr>
-                <tr>
-                    <td><emphasis role="bold">Google
-                            analytics</emphasis></td>
+                <tr valign="top">
+                    <th>Google analytics</th>
                     <td>Disabled</td>
                     <td>Disabled</td>
                     <td>Disabled</td>
                     <td>Enabled</td>
                 </tr>
-                <tr>
-                    <td><emphasis role="bold">Commenting
-                            system</emphasis></td>
+                <tr valign="top">
+                    <th>Commenting system</th>
                     <td>HashCode</td>
                     <td>HashCode</td>
                     <td>HashCode or Disqus</td>
@@ -290,164 +289,149 @@ format="SVG" scale="60"/>
             </tbody>
         </informaltable>
     </para>
-
-
-    <section xml:id="drafts">
-        <title>Create Drafts</title>
-        <para>Draft documents contain the <literal>DRAFT</literal>
-            watermark and status bar. A draft document can also
-            contain draft-only text that appears in the draft but is
-            removed when you remove the
-                <markup>status="draft"</markup> tag from the
-                <markup>book</markup> or <markup>article</markup>
-            element.</para>
-        <para>
-            <procedure>
-                <title>To create a draft document</title>
-                <step>
-                    <para>In the main XML file for your book or
-                        release notes, add the
-                            <markup>status="draft"</markup> attribute
-                        to the <markup>book</markup> or
-                            <markup>article</markup> element. </para>
-                    <para>For
-                        example:<programlisting>&lt;book xmlns="http://docbook.org/ns/docbook"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0"
-  xml:id="writers-guide" <emphasis role="bold">status="DRAFT"</emphasis>&gt;</programlisting></para>
-                </step>
-                <step>
-                    <para>To configure content to be visible in the
-                        draft document only, add the
-                            <markup>security="draft"</markup>
-                        attribute to the content. For example:
-                        <programlisting>&lt;para security="draft"&gt;Documents for internal distribution contain internal content appropriate for Rackspace employees.&lt;/para&gt;</programlisting></para>
-                </step>
-            </procedure>
-        </para>
-    </section>
+    <para>The following procedures describe how to implement these
+        characteristics in your document.</para>
 
     <section xml:id="watermark_proc">
         <title>Add Watermark and Status Bar Text</title>
-        <para>The <code>status</code> and <code>security</code> tags
-            produce boilerplate watermark and status bar text, but you
-            can also configure custom text. </para>
-        <para>You can configure the watermark and status bar text
-            through any of the following &lt;status="DRAFT"> &lt;?rax
-            status.bar.text="RAX INTERNAL"?&gt;</para>
-        <para>A watermark is a line of text that appears on the cover
-            page of PDF output and that identifies the product and
-            document version. </para>
-        <para>Watermarks do not appear in webhelp output, though
-            status bars do. </para>
-        <note>
-            <para>You can also add text to the watermark bar by adding
-                a processing instruction as a child of the root
-                element: <programlisting>&lt;?rax status.bar.text="CONFIDENTIAL" ?&gt;</programlisting></para>
-            <para>If the text is long, use 1.3.0-SNAPSHOT or later to
-                make it fit by controlling its size like
-                this: <programlisting>&lt;?rax status.bar.text.font.size="50px" status.bar.text="LIMITED AVAILABILITY" ?&gt;</programlisting></para>
-            <para>The default size of the text is about 71.3px; 50px
-                might be the right size for "LIMITED
-                AVAILABILITY".</para>
-        </note>
-        <para>The following images show what the output looks like
-            with <code>status="draft"</code> on the root element of
-            the document and
-                <code>&lt;security&gt;reviewer&lt;/security&gt;</code>
-            in the pom.xml file: <mediaobject>
-                <imageobject>
-                    <imagedata fileref="figures/watermark-pdf.png"
-                        contentwidth="6in"/>
-                </imageobject>
-            </mediaobject><mediaobject>
-                <imageobject>
-                    <imagedata fileref="figures/watermark-webhelp.png"
-                        contentwidth="6in"/>
-                </imageobject>
-            </mediaobject></para>
-        <para>For example, to create a draft for the preview version
-            of a product, you would set the document status to
-                <literal>DRAFT</literal> and configure a
-                <guilabel>PREVIEW</guilabel> watermark. The cover
-            shows a <guilabel>DRAFT PREVIEW</guilabel> watermark, as
-            shown in the following figure: <mediaobject>
-                <imageobject>
-                    <imagedata fileref="figures/watermarkdraft.png"
-                        contentwidth="4in"/>
-                </imageobject>
-            </mediaobject>When the product launches as preview, you
-            would remove the DRAFT status, but leave the
-                <guilabel>PREVIEW</guilabel> watermark, as shown in
-            the following figure: <mediaobject>
-                <imageobject>
-                    <imagedata fileref="figures/watermark.png"
-                        contentwidth="4in"/>
-                </imageobject>
-            </mediaobject></para>
-        <para>
-            <procedure>
-                <title>To configure a watermark in your
-                    document</title>
-                <step>
-                    <title>Configure the draft status</title>
-                    <para>If the document is not a draft, skip this
-                        step and proceed to <xref linkend="security"
-                        />. </para>
-                    <para>If the document is a draft, set the
-                            <literal>status</literal> attribute to
-                            <literal>DRAFT</literal> on the
-                            <literal>book</literal> or
-                            <literal>article</literal> tag, as
-                        follows:
-                        <programlisting>&lt;book  
+        <para>The watermark and status bar text appears on the cover
+            page of PDF output, and as vertical text on the left edge
+            of PDF or HTML output. </para>
+        <para>Use the <code>status</code> and <code>security</code>
+            tags to add boilerplate watermark and status bar
+            text.</para>
+        <para>Use the <code>&lt;?rax status.bar.text="Some
+                Text"?&gt;</code> processing instruction to add custom
+            watermark and status bar text. </para>
+
+        <procedure>
+            <title>To add watermark and status bar text to your
+                document</title>
+
+
+            <step>
+                <title>Create a draft document</title>
+                <para>If your document is not a draft, skip this step
+                    and proceed to <xref linkend="security"/>. </para>
+                <para>In the main XML file for your document, add the
+                        <markup>status="draft"</markup> tag to the
+                        <markup>book</markup> or
+                        <markup>article</markup> tag, as
+                    follows:</para>
+                <para>
+                    <programlisting>&lt;book  
     xmlns="http://docbook.org/ns/docbook" 
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xi="http://www.w3.org/2001/XInclude" 
     xmlns:svg="http://www.w3.org/2000/svg"
     version="5.0" 
-    xml:id="example-foo" <emphasis role="bold">status="DRAFT"</emphasis>&gt;
+    xml:id="example-foo" <emphasis role="bold">status="draft"</emphasis>&gt;
 ...
-&lt;/book&gt;</programlisting></para>
-                </step>
-                <step xml:id="security">
-                    <title>Configure the document security</title>
-                    <para>you can use one of the following tags, or
-                        both tags in conjunction with each other: In
-                        the body of the document, set
-                            <literal>status.bar.text</literal> to
-                        appear on the title page and on the left edge
-                        of every page. For example,</para>
-                    <programlisting>&lt;?rax title.font.size="35px" subtitle.font.size="20px"?&gt;    
+&lt;/book&gt;</programlisting>
+                </para>
+            </step>
+            <step xml:id="security">
+                <title>Configure the document security</title>
+                <para>In the pom.xml file for your document, add the
+                        <markup>security</markup> tag to the
+                    appropriate configuration section. For
+                    example:</para>
+                <para>
+                    <programlisting>&lt;configuration>
+	&lt;includes> cs-adminguide.xml &lt;/includes>
+	&lt;chapterAutolabel>1&lt;/chapterAutolabel>
+	&lt;formalProcedures>0&lt;/formalProcedures>
+   <emphasis role="bold">&lt;security>internal&lt;/security></emphasis>	
+...
+&lt;/configuration></programlisting>
+                </para></step><step><title>xx</title>
+                <para>you can use one of the following tags, or both
+                    tags in conjunction with each other: </para>
+                <para>In the body of the document, set
+                        <literal>status.bar.text</literal> to appear
+                    on the title page and on the left edge of every
+                    page. For example,</para>
+                <programlisting>&lt;?rax title.font.size="35px" subtitle.font.size="20px"?&gt;    
    &lt;title&gt;Rackspace Cloud Load Balancers Developer Guide for Service Management&lt;/title&gt;
    &lt;titleabbrev&gt;Rackspace Cloud LB Mgmt Guide&lt;/titleabbrev&gt;    
    &lt;?rax status.bar.text="RAX INTERNAL"?&gt;    
    &lt;info&gt;        
  &lt;author&gt; </programlisting>
-                    <para>This mark-up makes a cover page like
-                        this:</para>
-                    <mediaobject>
+                <para>This mark-up makes a cover page like
+                    this:</para>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata
+                            fileref="figures/cover-RAXINTERNAL.png"
+                            contentwidth="6in"/>
+                    </imageobject>
+                </mediaobject>
+                <para>In pom.xml, set <code>&lt;security&gt;</code> to
+                    add text to the left edge of every page. For
+                    example:<programlisting>&lt;security&gt;internal&lt;/security&gt;</programlisting>If
+                    pom.xml contains <code>&lt;?rax
+                        status.bar.text="RAX "?&gt;</code>, edges each
+                    page in repeating <literal>RAX
+                    INTERNAL</literal>.</para>
+            </step>
+            <step>
+                <para/>
+                <para>You can configure the watermark and status bar
+                    text through any of the following
+                    &lt;status="DRAFT"> </para>
+                <note>
+                    <para>You can also add text to the watermark bar
+                        by adding a processing instruction as a child
+                        of the root
+                        element: <programlisting>&lt;?rax status.bar.text="CONFIDENTIAL" ?&gt;</programlisting></para>
+                    <para>If the text is long, use 1.3.0-SNAPSHOT or
+                        later to make it fit by controlling its size
+                        like
+                        this: <programlisting>&lt;?rax status.bar.text.font.size="50px" status.bar.text="LIMITED AVAILABILITY" ?&gt;</programlisting></para>
+                    <para>The default size of the text is about
+                        71.3px; 50px might be the right size for
+                        "LIMITED AVAILABILITY".</para>
+                </note>
+                <para>The following images show what the output looks
+                    like with <code>status="draft"</code> on the root
+                    element of the document and
+                        <code>&lt;security&gt;reviewer&lt;/security&gt;</code>
+                    in the pom.xml file: <mediaobject>
                         <imageobject>
                             <imagedata
-                                fileref="figures/cover-RAXINTERNAL.png"
+                                fileref="figures/watermark-pdf.png"
                                 contentwidth="6in"/>
                         </imageobject>
-                    </mediaobject>
-                    <para>In pom.xml, set
-                            <code>&lt;security&gt;</code> to add text
-                        to the left edge of every page. For
-                        example:<programlisting>&lt;security&gt;internal&lt;/security&gt;</programlisting>If
-                        pom.xml contains <code>&lt;?rax
-                            status.bar.text="RAX "?&gt;</code>, edges
-                        each page in repeating <literal>RAX
-                            INTERNAL</literal>.</para>
-                </step>
+                    </mediaobject><mediaobject>
+                        <imageobject>
+                            <imagedata
+                                fileref="figures/watermark-webhelp.png"
+                                contentwidth="6in"/>
+                        </imageobject>
+                    </mediaobject></para>
+                <para>For example, to create a draft for the preview
+                    version of a product, you would set the document
+                    status to <literal>DRAFT</literal> and configure a
+                        <guilabel>PREVIEW</guilabel> watermark. The
+                    cover shows a <guilabel>DRAFT PREVIEW</guilabel>
+                    watermark, as shown in the following figure: <mediaobject>
+                        <imageobject>
+                            <imagedata
+                                fileref="figures/watermarkdraft.png"
+                                contentwidth="4in"/>
+                        </imageobject>
+                    </mediaobject>When the product launches as
+                    preview, you would remove the DRAFT status, but
+                    leave the <guilabel>PREVIEW</guilabel> watermark,
+                    as shown in the following figure: <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="figures/watermark.png"
+                                contentwidth="4in"/>
+                        </imageobject>
+                    </mediaobject></para>
+            </step>
+        </procedure>
 
-                <step>
-                    <para/>
-                </step>
-            </procedure>
-        </para>
 
         <para/>
         <para>You can generate the following flavors of PDF or web
@@ -596,6 +580,16 @@ format="SVG" scale="60"/>
                     </tr>
                 </tbody>
             </table></para>
+        <procedure>
+            <title>To filter content</title>
+            <step>
+                <para>To configure content to be visible in the draft
+                    document only, add the
+                        <markup>security="draft"</markup> attribute to
+                    the content. For example:
+                    <programlisting>&lt;para security="draft"&gt;Documents for internal distribution contain internal content appropriate for Rackspace employees.&lt;/para&gt;</programlisting></para>
+            </step>
+        </procedure>
 
     </section>
     <section xml:id="search_engine_config">
