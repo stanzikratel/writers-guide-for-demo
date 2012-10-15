@@ -35,67 +35,108 @@ format="SVG" scale="60"/>
 
 
     <para>You can create <emphasis role="italic">draft
-            documents</emphasis> for review or <emphasis role="italic"
-            >production documents</emphasis> for internal or external
-        distribution. </para>
+            documents</emphasis> for review, or <emphasis
+            role="italic">production documents</emphasis> for internal
+        or external distribution. </para>
     <para>A document's type is identified by its watermark and status
-        bar text, its location, whether search engine spiders and
+        bar text, its location, what type of content, if any, is
+        filtered into the document, whether search engine spiders and
         Google analytics are enabled for the document, and what type
         of commenting system is configured for the document. </para>
     <para>
         <variablelist>
             <varlistentry>
-                <term>Watermark and status bar text</term>
+                <term><emphasis role="bold">Watermark and status bar
+                        text</emphasis></term>
                 <listitem>
                     <para>The watermark and status bar text appears on
                         the cover page of PDF output, and as vertical
                         text on the left edge of PDF or HTML output. </para>
                     <para>For example, for a preview document, you
                         might configure a <guilabel>PREVIEW</guilabel>
-                        watermark, as shown in the following figure: <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                   fileref="figures/watermark.png"
-                                   contentwidth="2.6in"/>
-                            </imageobject>
-                        </mediaobject></para>
-                    <para>This text also appears as vertical text on
-                        left edge of the PDF and HTML output, as shown
-                        in the following figure. <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                   fileref="figures/statusbar.png"
-                                   contentwidth="2.6in"/>
-                            </imageobject>
-                        </mediaobject></para>
-                    <para>For how to configure watermark and status bar text, see <xref linkend="watermark_proc"/>.</para>
+                        watermark, which appears as watermark text on
+                        the cover page of the PDF and as vertical text
+                        on left edge of the PDF and HTML
+                        output.</para>
+                    <para>To add boilerplate watermark and status bar
+                        text, use the <code>status</code> and
+                            <code>security</code> tags. </para>
+                    <para>To add custom text, use the <code>&lt;?rax
+                            status.bar.text="Some Text" ?&gt;</code>
+                        processing instruction.</para>
+                    <para>For how to add boilerplate or custom
+                        watermark and status bar text, see <xref
+                            linkend="watermark_proc"/>.</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
-                <term>Content Filtering</term>
+                <term><emphasis role="bold">Location</emphasis></term>
                 <listitem>
-                    <para>You can use the security tag to filter
-                        content into any type of document. You tag the
-                        content that you want to filter into the
-                        document, and you set the profileSecurity tag
-                        in the pom.xml file to the security type. For
+                    <para>We host content in the following locations:<itemizedlist>
+                            <listitem>
+                                <para>docs-beta.rackspace.com. Review
+                                   drafts.</para>
+                            </listitem>
+                            <listitem>
+                                <para>docs-internal.rackspace.com.
+                                   Internal and external content for
+                                   Rackspace employees.</para>
+                            </listitem>
+                            <listitem>
+                                <para>docs.rackspace.com. External
+                                   content, including private beta,
+                                   preview, limited availability, and
+                                   unlimited availability
+                                   customer-facing content.</para>
+                            </listitem>
+                        </itemizedlist></para>
+                    <para>For how to publish content to these
+                        locations, see <xref linkend="ch_publish"
+                        />.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis role="bold">Content
+                        Filtering</emphasis></term>
+                <listitem>
+                    <para>You can use the <code>security</code> tag to
+                        filter content into any type of document. You
+                        tag the content that you want to filter into
+                        the document, and you set the
+                            <code>profileSecurity</code> tag in the
+                        pom.xml file to the security type. For
                         example, to add content that appears in the
                         draft version of the document only, tag the
-                        content as follows: <programlisting/></para>
+                        content as follows:
+                        <programlisting>&lt;para security="reviewer"&gt;...&lt;/para&gt;</programlisting></para>
                     <para>Then add the following tag to the
                         appropriate configuration section for your
                         output in the pom.xml
-                        file:<programlisting/></para>
+                        file:<programlisting>&lt;security&gt;reviewer&lt;/security&gt;</programlisting></para>
+                    <para>For how to filter content, see <xref
+                            linkend="filter_content"/>.</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
-                <term>Meta robots</term>
+                <term><emphasis role="bold">Search engine
+                        spiders</emphasis></term>
                 <listitem>
-                    <para/>
+                    <para>Sometimes, you must publish documents on
+                        docs.rackspace.com for private betas. These
+                        documents are not listed on the landing page,
+                        but your product team sends links to the
+                        document directly to users. To prevent random
+                        people from finding the content in Internet
+                        searches, you can configure search engine
+                        spiders to ignore content.</para>
+                    <para>For how to configure search engine spiders
+                        to ignore content, see <xref
+                            linkend="search_engine_config"/>.</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
-                <term>Google analytics</term>
+                <term><emphasis role="bold">Google
+                        analytics</emphasis></term>
                 <listitem>
                     <para>Configure your content to use <link
                             xlink:href="http://www.google.com/analytics/"
@@ -103,12 +144,14 @@ format="SVG" scale="60"/>
                         pages are being read, what links are being
                         followed, what searches are leading readers to
                         our content, and other information that might
-                        help you update content. See <xref
-                            linkend="google_analytics"/>.</para>
+                        help you update content. </para>
+                    <para>See <xref linkend="google_analytics"
+                        />.</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
-                <term>Commenting tools</term>
+                <term><emphasis role="bold">Commenting
+                        tools</emphasis></term>
                 <listitem>
                     <para>You can configure your document to use the
                             <link xlink:href="http://disqus.com"
@@ -190,8 +233,8 @@ format="SVG" scale="60"/>
                     <td><emphasis role="bold">Watermark and status bar
                             text</emphasis></td>
                     <td><literal>Draft</literal> or <literal>Draft -
-                                &lt;release_type&gt;</literal>
-                        where <emphasis role="italic"
+                            &lt;release_type&gt;</literal> where
+                            <emphasis role="italic"
                             >release_type</emphasis> is
                             <literal>Internal</literal>,
                             <literal>Private Beta</literal>,
@@ -283,9 +326,20 @@ format="SVG" scale="60"/>
             </procedure>
         </para>
     </section>
-    <section xml:id="watermark_concept">
-        <title>Add Watermark and Status Bar</title>
 
+    <section xml:id="watermark_proc">
+        <title>Add Watermark and Status Bar Text</title>
+        <para>The <code>status</code> and <code>security</code> tags
+            produce boilerplate watermark and status bar text, but you
+            can also configure custom text. </para>
+        <para>You can configure the watermark and status bar text
+            through any of the following &lt;status="DRAFT"> &lt;?rax
+            status.bar.text="RAX INTERNAL"?&gt;</para>
+        <para>A watermark is a line of text that appears on the cover
+            page of PDF output and that identifies the product and
+            document version. </para>
+        <para>Watermarks do not appear in webhelp output, though
+            status bars do. </para>
         <note>
             <para>You can also add text to the watermark bar by adding
                 a processing instruction as a child of the root
@@ -312,18 +366,6 @@ format="SVG" scale="60"/>
                         contentwidth="6in"/>
                 </imageobject>
             </mediaobject></para>
-
-    </section>
-    <section xml:id="watermark_proc">
-        <title>Configure the Watermark and Status Bar</title>
-        <para>You can configure the watermark and status bar text
-            through any of the following &lt;status="DRAFT"> &lt;?rax
-            status.bar.text="RAX INTERNAL"?&gt;</para>
-        <para>A watermark is a line of text that appears on the cover
-            page of PDF output and that identifies the product and
-            document version. </para>
-        <para>Watermarks do not appear in webhelp output, though
-            status bars do. </para>
         <para>For example, to create a draft for the preview version
             of a product, you would set the document status to
                 <literal>DRAFT</literal> and configure a
@@ -457,7 +499,7 @@ format="SVG" scale="60"/>
             </informaltable></para>
     </section>
 
-    <section xml:id="filter">
+    <section xml:id="filter_content">
         <title>Filter Content</title>
         <para>By using
                 <code>&lt;security&gt;internal&lt;/security&gt;</code>
