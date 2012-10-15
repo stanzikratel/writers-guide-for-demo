@@ -49,7 +49,7 @@
 					<xincludeSupported>true</xincludeSupported>
 					<pdfUrl>../bk-writers-guide.pdf</pdfUrl>
 					<enableDisqus>intranet</enableDisqus>
-					<security>internal</security>
+					<!-- <security>internal</security> -->
 					<feedbackEmail>david.cramer@rackspace.com</feedbackEmail>
 					<!-- <preProcess> -->
 					<!--   <copy todir="target/docbkx/webhelp/example/content/figures"> -->

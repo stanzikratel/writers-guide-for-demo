@@ -328,14 +328,38 @@ format="SVG" scale="60"/>
     xml:id="example-foo" <emphasis role="bold">status="draft"</emphasis>&gt;
 ...
 &lt;/book&gt;</programlisting>
-                </para>
+                </para><para>The watermark and status bar text appear as:<programlisting>Draft</programlisting></para>
             </step>
             <step xml:id="security">
                 <title>Configure the document security</title>
                 <para>In the pom.xml file for your document, add the
                         <markup>security</markup> tag to the
-                    appropriate configuration section. For
-                    example:</para>
+                    appropriate <literal>configuration</literal>
+                    section. Valid values for the
+                        <literal>security</literal> tag are:<itemizedlist>
+                        <listitem>
+                            <para><literal>internal</literal>. Adds
+                                the INTERNAL watermark and status bar
+                                text and filters in any
+                                   <code>security="internal"</code>
+                                tagged content.</para>
+                        </listitem>
+                        <listitem>
+                            <para><literal>reviewer</literal>. Adds
+                                the REVIEWER watermark and status bar
+                                text and filters in any
+                                   <code>security="reviewer"</code>
+                                tagged content.</para>
+                        </listitem>
+                        <listitem>
+                            <para><literal>writeronly</literal>. Adds
+                                the WRITERONLY watermark and status
+                                bar text and filters in any
+                                   <code>security="writeronly"</code>
+                                tagged content.</para>
+                        </listitem>
+                    </itemizedlist></para>
+                <para>For example:</para>
                 <para>
                     <programlisting>&lt;configuration>
 	&lt;includes> cs-adminguide.xml &lt;/includes>
@@ -344,20 +368,34 @@ format="SVG" scale="60"/>
    <emphasis role="bold">&lt;security>internal&lt;/security></emphasis>	
 ...
 &lt;/configuration></programlisting>
-                </para></step><step><title>xx</title>
-                <para>you can use one of the following tags, or both
-                    tags in conjunction with each other: </para>
-                <para>In the body of the document, set
-                        <literal>status.bar.text</literal> to appear
-                    on the title page and on the left edge of every
-                    page. For example,</para>
-                <programlisting>&lt;?rax title.font.size="35px" subtitle.font.size="20px"?&gt;    
-   &lt;title&gt;Rackspace Cloud Load Balancers Developer Guide for Service Management&lt;/title&gt;
-   &lt;titleabbrev&gt;Rackspace Cloud LB Mgmt Guide&lt;/titleabbrev&gt;    
-   &lt;?rax status.bar.text="RAX INTERNAL"?&gt;    
-   &lt;info&gt;        
- &lt;author&gt; </programlisting>
-                <para>This mark-up makes a cover page like
+                </para>
+                <para>If you did not tag your document as draft, the
+                    watermark and status bar text appears
+                    as:<programlisting>INTERNAL</programlisting>If you
+                    tagged your document as draft, the watermark and
+                    status bar text appears
+                    as:<programlisting>Draft - INTERNAL</programlisting></para>
+            </step>
+            <step>
+                <title>Add custom watermark and status bar
+                    text</title>
+                <para>Add the following processing instruction and
+                    tags beneath the <literal>title</literal> tag in
+                    the main XML file for your document: </para>
+                <programlisting>&lt;title>Next Generation Cloud Servers™ Administrator Guide&lt;/title>
+&lt;?rax title.font.size="32px" 
+      pdf.url="../../cs-adminguide-2-latest.pdf" 
+     <emphasis role="bold">status.bar.text.font.size="40px"</emphasis>
+     <emphasis role="bold">status.bar.text="RAX INTERNAL"</emphasis> 
+     canonical.url.base="http://docs.rackspace.com/servers/api/v2/cs-adminguide/content"?>
+&lt;titleabbrev>Cloud Servers™ Admin Guide&lt;/titleabbrev></programlisting>
+                <para>If you tagged your document as a draft, the
+                    watermark and status bar text appears
+                    as:<programlisting>Draft - INTERNAL</programlisting></para>
+                <para>If your document is not tagged as draft, the
+                    watermark and status bar text appears
+                    as:<programlisting>INTERNAL</programlisting></para>
+               <!-- <para>This mark-up makes a cover page like
                     this:</para>
                 <mediaobject>
                     <imageobject>
@@ -372,7 +410,7 @@ format="SVG" scale="60"/>
                     pom.xml contains <code>&lt;?rax
                         status.bar.text="RAX "?&gt;</code>, edges each
                     page in repeating <literal>RAX
-                    INTERNAL</literal>.</para>
+                    INTERNAL</literal>.</para> -->
             </step>
             <step>
                 <para/>
@@ -431,9 +469,10 @@ format="SVG" scale="60"/>
                     </mediaobject></para>
             </step>
         </procedure>
+    </section>
 
-
-        <para/>
+    <section xml:id="filter_content">
+        <title>Filter Content</title>
         <para>You can generate the following flavors of PDF or web
             help output for a DocBook document:<informaltable
                 rules="all">
@@ -481,10 +520,6 @@ format="SVG" scale="60"/>
                     </tr>
                 </tbody>
             </informaltable></para>
-    </section>
-
-    <section xml:id="filter_content">
-        <title>Filter Content</title>
         <para>By using
                 <code>&lt;security&gt;internal&lt;/security&gt;</code>
             in your pom.xml, you can produce internal-only and
