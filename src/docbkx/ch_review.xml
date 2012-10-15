@@ -13,24 +13,16 @@
 <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
 
 <!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
-<imageobject role="fo">
+<imageobject>
 <imagedata fileref="figures/Check_mark_23x20_02.svg"
 format="SVG" scale="60"/>
-</imageobject>
-<imageobject role="html">
-<imagedata fileref="../figures/Check_mark_23x20_02.png"
-format="PNG" />
 </imageobject>
 </inlinemediaobject>'>
 
 <!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
-<imageobject role="fo">
+<imageobject>
 <imagedata fileref="figures/Arrow_east.svg"
 format="SVG" scale="60"/>
-</imageobject>
-<imageobject role="html">
-<imagedata fileref="../figures/Arrow_east.png"
-format="PNG" />
 </imageobject>
 </inlinemediaobject>'>
 ]>
@@ -105,7 +97,7 @@ format="PNG" />
                     PDF output. For example, for a preview document,
                     you might configure a <guilabel>PREVIEW</guilabel>
                     watermark, as shown in the following figure: <mediaobject>
-                        <imageobject role="fo">
+                        <imageobject>
                             <imagedata fileref="figures/watermark.png"
                                 contentwidth="4in"/>
                         </imageobject>
@@ -113,7 +105,7 @@ format="PNG" />
                 <para>Does not appear in webhelp output.</para>
                 <para>Appears as vertical text on left edge of PDF or
                     webhelp output. <mediaobject>
-                        <imageobject role="fo">
+                        <imageobject>
                             <imagedata fileref="figures/statusbar.png"
                                 contentwidth="4in"/>
                         </imageobject>
@@ -319,12 +311,12 @@ format="PNG" />
             the document and
                 <code>&lt;security&gt;reviewer&lt;/security&gt;</code>
             in the pom.xml file: <mediaobject>
-                <imageobject role="fo">
+                <imageobject>
                     <imagedata fileref="figures/watermark-pdf.png"
                         contentwidth="6in"/>
                 </imageobject>
             </mediaobject><mediaobject>
-                <imageobject role="fo">
+                <imageobject>
                     <imagedata fileref="figures/watermark-webhelp.png"
                         contentwidth="6in"/>
                 </imageobject>
@@ -344,7 +336,7 @@ format="PNG" />
                 <guilabel>PREVIEW</guilabel> watermark. The cover
             shows a <guilabel>DRAFT PREVIEW</guilabel> watermark, as
             shown in the following figure: <mediaobject>
-                <imageobject role="fo">
+                <imageobject>
                     <imagedata fileref="figures/watermarkdraft.png"
                         contentwidth="4in"/>
                 </imageobject>
@@ -352,7 +344,7 @@ format="PNG" />
             would remove the DRAFT status, but leave the
                 <guilabel>PREVIEW</guilabel> watermark, as shown in
             the following figure: <mediaobject>
-                <imageobject role="fo">
+                <imageobject>
                     <imagedata fileref="figures/watermark.png"
                         contentwidth="4in"/>
                 </imageobject>
@@ -399,7 +391,7 @@ format="PNG" />
                     <para>This mark-up makes a cover page like
                         this:</para>
                     <mediaobject>
-                        <imageobject role="fo">
+                        <imageobject>
                             <imagedata
                                 fileref="figures/cover-RAXINTERNAL.png"
                                 contentwidth="6in"/>
