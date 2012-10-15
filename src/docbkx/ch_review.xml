@@ -35,227 +35,219 @@ format="SVG" scale="60"/>
 
 
     <para>You can create <emphasis role="italic">draft
-            documents</emphasis> for review. Drafts are identified by
-        the <literal>DRAFT</literal> watermark and status bar. The
-        watermark and status bar on a draft can also indicate the
-        status of the product, such as <literal>PREVIEW</literal> or
-            <literal>LIMITED AVAILABILITY</literal>, or whether the
-        document is internal-only. Draft documents appear on the <link
-            xlink:href="docs-beta.rackspace.com"
-            >docs-beta.rackspace.com</link> site. To configure a
-        document as a draft, set the <markup>status</markup> attribute
-        to <literal>draft</literal> on the <markup>book</markup> or
-            <markup>article</markup> element. You can also create text
-        in the document that appears in only the draft document but is
-        removed when you remove the <markup>status="draft"</markup>
-        attribute. To add additional text to the watermark and status
-        bar, see <xref linkend="watermark_proc"/>.</para>
-    <para>After a document has been reviewed, you can create <emphasis
-            role="italic">production documents</emphasis> for internal
-        or external distribution. For example, you might want to
-        document a product that is in preview. Initially, you'll want
-        to create a draft version of the preview document for review.
-        After the preview launches publicly, you can remove the draft
-        status of your document but leave the document version at
-        preview. </para>
-
-
-
-    <itemizedlist>
-        <listitem>
-
-            <para>Documents for internal distribution contain internal
-                content appropriate for Rackspace employees. These
-                documents might also contain external content. These
-                documents appear on the <link
-                    xlink:href="docs-internal.rackspace.com"
-                    >docs-internal.rackspace.com</link> site. </para>
-        </listitem>
-        <listitem>
-            <para>Documents for external distribution contain content
-                appropriate for Rackspace customers and appear on the
-                    <link xlink:href="docs.rackspace.com"
-                    >docs.rackspace.com</link> site. Sometimes, you
-                must publish documents on docs.rackspace.com for
-                private betas. Though these documents are not listed
-                on the landing page, your product team sends links to
-                the document directly to users. To prevent random
-                people from finding the content in Google searches,
-                you must configure your search engine. See <xref
-                    linkend="search_engine_config"/>.</para>
-
-        </listitem>
-    </itemizedlist>
-
-    <variablelist>
-        <varlistentry>
-            <term>Watermarks and status bars</term>
-            <listitem>
-                <para>&lt;status="DRAFT"> &lt;?rax
-                    status.bar.text="RAX INTERNAL"?&gt;</para>
-                <para>A line of text that appears on the cover page of
-                    PDF output. For example, for a preview document,
-                    you might configure a <guilabel>PREVIEW</guilabel>
-                    watermark, as shown in the following figure: <mediaobject>
-                        <imageobject>
-                            <imagedata fileref="figures/watermark.png"
-                                contentwidth="4in"/>
-                        </imageobject>
-                    </mediaobject></para>
-                <para>Does not appear in webhelp output.</para>
-                <para>Appears as vertical text on left edge of PDF or
-                    webhelp output. <mediaobject>
-                        <imageobject>
-                            <imagedata fileref="figures/statusbar.png"
-                                contentwidth="4in"/>
-                        </imageobject>
-                    </mediaobject></para>
-            </listitem>
-        </varlistentry>
-
-        <varlistentry>
-            <term>Content Filtering</term>
-            <listitem>
-                <para/>
-            </listitem>
-        </varlistentry>
-        <varlistentry>
-            <term>Meta robots</term>
-            <listitem>
-                <para/>
-            </listitem>
-        </varlistentry>
-        <varlistentry>
-            <term>Google analytics</term>
-            <listitem>
-                <para>Configure your content to use <link
-                        xlink:href="http://www.google.com/analytics/"
-                        >Google Analytics</link> to observe which
-                    pages are being read, what links are being
-                    followed, what searches are leading readers to our
-                    content, and other information that might help you
-                    update content. See <xref
-                        linkend="google_analytics"/>.</para>
-            </listitem>
-        </varlistentry>
-        <varlistentry>
-            <term>Commenting tools</term>
-            <listitem>
-                <para>You can configure your document to use the <link
-                        xlink:href="http://disqus.com">Disqus</link>
-                    or HashCode commenting tool:</para>
-                <para>
-                    <itemizedlist>
-                        <listitem>
-                            <para><emphasis role="bold"
+            documents</emphasis> for review or <emphasis role="italic"
+            >production documents</emphasis> for internal or external
+        distribution. </para>
+    <para>A document's type is identified by its watermark and status
+        bar text, its location, whether search engine spiders and
+        Google analytics are enabled for the document, and what type
+        of commenting system is configured for the document. </para>
+    <para>
+        <variablelist>
+            <varlistentry>
+                <term>Watermark and status bar text</term>
+                <listitem>
+                    <para>The watermark and status bar text appears on
+                        the cover page of PDF output, and as vertical
+                        text on the left edge of PDF or HTML output. </para>
+                    <para>For example, for a preview document, you
+                        might configure a <guilabel>PREVIEW</guilabel>
+                        watermark, as shown in the following figure: <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                   fileref="figures/watermark.png"
+                                   contentwidth="2.6in"/>
+                            </imageobject>
+                        </mediaobject></para>
+                    <para>This text also appears as vertical text on
+                        left edge of the PDF and HTML output, as shown
+                        in the following figure. <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                   fileref="figures/statusbar.png"
+                                   contentwidth="2.6in"/>
+                            </imageobject>
+                        </mediaobject></para>
+                    <para>For how to configure watermark and status bar text, see <xref linkend="watermark_proc"/>.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term>Content Filtering</term>
+                <listitem>
+                    <para>You can use the security tag to filter
+                        content into any type of document. You tag the
+                        content that you want to filter into the
+                        document, and you set the profileSecurity tag
+                        in the pom.xml file to the security type. For
+                        example, to add content that appears in the
+                        draft version of the document only, tag the
+                        content as follows: <programlisting/></para>
+                    <para>Then add the following tag to the
+                        appropriate configuration section for your
+                        output in the pom.xml
+                        file:<programlisting/></para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term>Meta robots</term>
+                <listitem>
+                    <para/>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term>Google analytics</term>
+                <listitem>
+                    <para>Configure your content to use <link
+                            xlink:href="http://www.google.com/analytics/"
+                            >Google Analytics</link> to observe which
+                        pages are being read, what links are being
+                        followed, what searches are leading readers to
+                        our content, and other information that might
+                        help you update content. See <xref
+                            linkend="google_analytics"/>.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term>Commenting tools</term>
+                <listitem>
+                    <para>You can configure your document to use the
+                            <link xlink:href="http://disqus.com"
+                            >Disqus</link> or HashCode commenting
+                        tool:</para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para><emphasis role="bold"
                                    >HashCode</emphasis>. Collects
-                                comments on internal and external
-                                content. If you publish a document on
-                                docs-internal or docs-beta, the
-                                comments are viewable internally only.
-                                If you publish a document on
-                                docs.rackspace.com, the comments are
-                                viewable internally and externally.
-                                Comments are stored on a Rackspace
-                                server and are not integrated with
-                                Facebook and other social media tools.
-                            </para>
-                        </listitem>
-                        <listitem>
-                            <para><emphasis role="bold"
+                                   comments on internal and external
+                                   content. If you publish a document
+                                   on docs-internal or docs-beta, the
+                                   comments are viewable internally
+                                   only. If you publish a document on
+                                   docs.rackspace.com, the comments
+                                   are viewable internally and
+                                   externally. Comments are stored on
+                                   a Rackspace server and are not
+                                   integrated with Facebook and other
+                                   social media tools. </para>
+                            </listitem>
+                            <listitem>
+                                <para><emphasis role="bold"
                                    >Disqus</emphasis>. Collects
-                                comments on internal and external
-                                content. Comments are stored on a
-                                Disqus server and might be exposed to
-                                the outside world through integration
-                                social media sites like Facebook.
-                                Depending on your settings, if you
-                                make a comment on content with Disqus,
-                                that comment might be shared with your
-                                Facebook friends and Twitter followers
-                                even if you commented while inside the
-                                Rackspace VPN. </para>
-                        </listitem>
-                    </itemizedlist>
-                </para>
-                <para>See <xref linkend="commenting"/>.</para>
-            </listitem>
-        </varlistentry>
-    </variablelist>
-    <informaltable rules="all">
-        <thead>
-            <tr>
-                <th/>
-                <th>Draft</th>
-                <th>Internal</th>
-                <th>External Private Beta</th>
-                <th>External</th>
-            </tr>
-        
-        </thead>
-        <tbody>
-            <tr><td>Watermark and status bar</td></tr>
-        </tbody>
-    </informaltable>
-    <table rules="all">
-        <caption>Document types</caption>
+                                   comments on internal and external
+                                   content. Comments are stored on a
+                                   Disqus server and might be exposed
+                                   to the outside world through
+                                   integration social media sites like
+                                   Facebook. Depending on your
+                                   settings, if you make a comment on
+                                   content with Disqus, that comment
+                                   might be shared with your Facebook
+                                   friends and Twitter followers even
+                                   if you commented while inside the
+                                   Rackspace VPN. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para>See <xref linkend="commenting"/>.</para>
+                </listitem>
+            </varlistentry>
+        </variablelist>
+    </para>
+    <para>The following table describes each type of document and its
+        characteristics:</para>
+    <para>
+        <informaltable rules="all">
+            <col width="20%"/>
+            <col width="20%"/>
+            <col width="20%"/>
+            <col width="20%"/>
+            <col width="20%"/>
+            <thead>
+                <tr>
+                    <th/>
+                    <th>Draft</th>
+                    <th>Internal</th>
+                    <th>External Private Beta</th>
+                    <th>External</th>
+                </tr>
 
-        <thead>
-            <tr>
-                <th>Document</th>
-                <th>Watermark and status bar</th>
-                <th>Location</th>
-                <th>Content filtering</th>
-                <th>Search engines</th>
-                <th>Google analytics</th>
-                <th>Commenting</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Draft</td>
-                <td><para>DRAFT </para>
-                    <para>Can include additional text such as PREVIEW
-                        or LIMITED AVAILABILITY</para></td>
-                <td>docs-beta.rackspace.com</td>
-                <td/>
-                <td>Set to 1</td>
-                <td>Set to 0</td>
-                <td>HashCode</td>
-            </tr>
-            <tr>
-                <td>Internal</td>
-                <td>INTERNAL</td>
-                <td>docs-internal.rackspace.com</td>
-                <td/>
-                <td>Set to 1</td>
-                <td>Set to 0</td>
-                <td>HashCode</td>
-            </tr>
-            <tr>
-                <td>External</td>
-                <td>None, or text indicating product status, such as
-                    PREVIEW</td>
-                <td>docs.rackspace.com</td>
-                <td/>
-                <td>Not applicable</td>
-                <td>Set to 1</td>
-                <td>Disqus</td>
-            </tr>
-            <tr>
-                <td>External private betas</td>
-                <td/>
-                <td>docs.rackspace.com</td>
-                <td/>
-                <td>Set to 1</td>
-                <td>Set to 0</td>
-                <td>HashCode</td>
-            </tr>
-        </tbody>
-    </table>
-
-
-
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Contains</td>
+                    <td>Review content.</td>
+                    <td>Internal content appropriate for Rackspace
+                        employees. These documents might also contain
+                        external content. </td>
+                    <td>External content for private beta
+                        customers.</td>
+                    <td>External content for preview, limited
+                        availability, or unlimited availability
+                        customers.</td>
+                </tr>
+                <tr>
+                    <td><emphasis role="bold">Watermark and status bar
+                            text</emphasis></td>
+                    <td><literal>Draft</literal> or <literal>Draft -
+                                <emphasis role="italic"
+                                >release_type</emphasis></literal>
+                        where <emphasis role="italic"
+                            >release_type</emphasis> is
+                            <literal>Internal</literal>,
+                            <literal>Private Beta</literal>,
+                            <literal>Preview</literal>,
+                            <literal>Limited Availability</literal>,
+                        or none.</td>
+                    <td><literal>Internal</literal> or <literal>Draft
+                            - Internal</literal></td>
+                    <td><literal>Private Beta</literal></td>
+                    <td><literal>Preview</literal>, <literal>Limited
+                            Availability</literal>, or none.</td>
+                </tr>
+                <tr>
+                    <td><emphasis role="bold">Location</emphasis></td>
+                    <td>docs-beta.rackspace.com</td>
+                    <td>docs-internal.rackspace.com</td>
+                    <td>docs.rackspace.com</td>
+                    <td>docs.rackspace.com</td>
+                </tr>
+                <tr>
+                    <td><emphasis role="bold">Content
+                            filtering</emphasis></td>
+                    <td><code>security="draft"</code> and other</td>
+                    <td><code>security="internal"</code> and
+                        other</td>
+                    <td>Any</td>
+                    <td>Any</td>
+                </tr>
+                <tr>
+                    <td><emphasis role="bold">Search engine
+                            spiders</emphasis></td>
+                    <td>Disabled</td>
+                    <td>Disabled</td>
+                    <td>Disabled</td>
+                    <td>Enabled</td>
+                </tr>
+                <tr>
+                    <td><emphasis role="bold">Google
+                            analytics</emphasis></td>
+                    <td>Disabled</td>
+                    <td>Disabled</td>
+                    <td>Disabled</td>
+                    <td>Enabled</td>
+                </tr>
+                <tr>
+                    <td><emphasis role="bold">Commenting
+                            system</emphasis></td>
+                    <td>HashCode</td>
+                    <td>HashCode</td>
+                    <td>HashCode or Disqus</td>
+                    <td>Disqus</td>
+                </tr>
+            </tbody>
+        </informaltable>
+    </para>
 
 
     <section xml:id="drafts">
@@ -325,6 +317,9 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="watermark_proc">
         <title>Configure the Watermark and Status Bar</title>
+        <para>You can configure the watermark and status bar text
+            through any of the following &lt;status="DRAFT"> &lt;?rax
+            status.bar.text="RAX INTERNAL"?&gt;</para>
         <para>A watermark is a line of text that appears on the cover
             page of PDF output and that identifies the product and
             document version. </para>
