@@ -43,199 +43,6 @@ format="SVG" scale="60"/>
         filtered into the document, whether search engine spiders and
         Google analytics are enabled for the document, and what type
         of commenting system is configured for the document. </para>
-    <para>
-        <variablelist>
-            <varlistentry>
-                <term><emphasis role="bold">Watermark and status bar
-                        text</emphasis></term>
-                <listitem>
-                    <para>The watermark and status bar text appears on
-                        the cover page of PDF output, and as vertical
-                        text on the left edge of PDF or HTML output. </para>
-                    <para>To add boilerplate watermark and status bar
-                        text, use the <code>status</code> and
-                            <code>security</code> tags. For example,
-                        if you set <code>status="draft"</code>, the
-                        boilerplate text, <guilabel>DRAFT</guilabel>,
-                        appears as the watermark and status bar text.
-                        If you set
-                            <code>&lt;security>internal&lt;/security></code>,
-                        the boilerplate text,
-                            <guilabel>INTERNAL</guilabel>, appears as
-                        the watermark and status bar text. </para>
-                    <para>To add custom watermark and status bar text,
-                        use the <code>&lt;?rax status.bar.text="Some
-                            Text" ?&gt;</code> processing instruction.
-                        For example, for a preview document, you might
-                        configure custom watermark and status bar text
-                        of <guilabel>PREVIEW</guilabel>.</para>
-                    <para>For how to add boilerplate or custom
-                        watermark and status bar text, see <xref
-                            linkend="watermark_proc"/>.</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis role="bold">Location</emphasis></term>
-                <listitem>
-                    <para>Writers publish content to the following locations:<itemizedlist>
-                            <listitem>
-                                <para><link
-                                   xlink:href="docs-beta.rackspace.com"
-                                   >docs-beta.rackspace.com</link>.
-                                   Review drafts.</para>
-                            </listitem>
-                            <listitem>
-                                <para><link
-                                   xlink:href="docs-internal.rackspace.com"
-                                   >docs-internal.rackspace.com</link>.
-                                   Internal and external content for
-                                   Rackspace employees.</para>
-                            </listitem>
-                            <listitem>
-                                <para><link
-                                   xlink:href="docs.rackspace.com"
-                                   >docs.rackspace.com</link>.
-                                   External content, including private
-                                   beta, preview, limited
-                                   availability, and unlimited
-                                   availability content for Rackspace
-                                   customers.</para>
-                            </listitem>
-                        </itemizedlist></para>
-                    <para>For how to publish content to these
-                        locations, see <xref linkend="ch_publish"
-                        />.</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis role="bold">Content
-                        Filtering</emphasis></term>
-                <listitem>
-                    <para>You can filter content into or out of any
-                        type of document. You can generate the
-                        following flavors of a document by filtering content:<itemizedlist>
-                            <listitem>
-                                <para>Draft. Draft document for
-                                   review.</para>
-                            </listitem>
-                            <listitem>
-                                <para>Reviewer. In-progress document.
-                                </para>
-                            </listitem>
-                            <listitem>
-                                <para>Writer-only. Content tagged as
-                                   <literal>writeronly</literal> is
-                                   always filtered out. Use this tag
-                                   to suppress content without
-                                   deleting it. </para>
-                            </listitem>
-                            <listitem>
-                                <para>Internal. Internal-only. Use to
-                                   produce internal-only and external
-                                   versions of same document where the
-                                   external version is a subset of the
-                                   internal one.</para>
-                            </listitem>
-                            <listitem>
-                                <para>External.
-                                   Customer-facing.</para>
-                            </listitem>
-                        </itemizedlist></para>
-                    <para>For how to filter content, see <xref
-                            linkend="filter_content"/>.</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis role="bold">Search engine
-                        spiders</emphasis></term>
-                <listitem>
-                    <para>Sometimes, you must publish documents on
-                            <link xlink:href="docs.rackspace.com"
-                            >docs.rackspace.com</link> for private
-                        betas. These documents are not listed on the
-                        landing page, but your product team sends
-                        links to the document directly to users. To
-                        prevent random people from finding the content
-                        in Internet searches, you can configure search
-                        engine spiders to ignore content.</para>
-                    <para>For how to configure search engine spiders
-                        to ignore content, see <xref
-                            linkend="search_engine_config"/>.</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis role="bold">Google
-                        analytics</emphasis></term>
-                <listitem>
-                    <para>To observe which pages are being read, what
-                        links are being followed, what searches are
-                        leading readers to our content, and other
-                        information that might help you update
-                        content, you can configure your content to use
-                            <link
-                            xlink:href="http://www.google.com/analytics/"
-                            >Google Analytics</link>.</para>
-                    <para>For how to configure Google analytics, see
-                            <xref linkend="google_analytics"/>.</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis role="bold">Commenting
-                        tools</emphasis></term>
-                <listitem>
-                    <para>You can configure your document to use the
-                            <link xlink:href="http://disqus.com"
-                            >Disqus</link> or HashCode commenting
-                        tool:</para>
-                    <para>
-                        <itemizedlist>
-                            <listitem>
-                                <para><emphasis role="bold"
-                                   >HashCode</emphasis>. Collects
-                                   comments on internal and external
-                                   content. If you publish a document
-                                   on <link
-                                   xlink:href="docs-internal.rackspace.com"
-                                   >docs-internal.rackspace.com</link>
-                                   or <link
-                                   xlink:href="docs-beta.rackspace.com"
-                                   >docs-beta.rackspace.com</link>,
-                                   the comments are viewable
-                                   internally only. </para>
-                                <para>If you publish a document on
-                                   <link
-                                   xlink:href="docs.rackspace.com"
-                                   >docs.rackspace.com</link>, the
-                                   comments are viewable internally
-                                   and externally. Comments are stored
-                                   on a Rackspace server and are not
-                                   integrated with Facebook and other
-                                   social media tools. </para>
-                            </listitem>
-                            <listitem>
-                                <para><emphasis role="bold"
-                                   >Disqus</emphasis>. Collects
-                                   comments on internal and external
-                                   content. Comments are stored on a
-                                   Disqus server and might be exposed
-                                   through integration social media
-                                   sites like Facebook. Depending on
-                                   your settings, if you make a
-                                   comment on content with Disqus,
-                                   that comment might be shared with
-                                   your Facebook friends and Twitter
-                                   followers even if you commented
-                                   while inside the Rackspace VPN.
-                                </para>
-                            </listitem>
-                        </itemizedlist>
-                    </para>
-                    <para>For how to configure a commenting tool, see
-                            <xref linkend="commenting"/>.</para>
-                </listitem>
-            </varlistentry>
-        </variablelist>
-    </para>
     <para>The following table describes each type of document and its
             characteristics:<table rules="all">
             <caption>Draft and Production Documents</caption>
@@ -322,34 +129,69 @@ format="SVG" scale="60"/>
         </table></para>
 
     <para>The following procedures describe how to implement these
-        characteristics in your document.</para>
+        characteristics in your document. <itemizedlist>
+
+            <listitem>
+                <para><xref linkend="watermark_proc"/></para>
+            </listitem>
+
+
+            <listitem>
+                <para><xref linkend="ch_publish"/></para>
+            </listitem>
+
+            <listitem>
+                <para><xref linkend="filter_content"/></para>
+            </listitem>
+
+            <listitem>
+                <para><xref linkend="search_engine_config"/></para>
+            </listitem>
+
+            <listitem>
+                <para><xref linkend="google_analytics"/></para>
+            </listitem>
+
+            <listitem>
+                <para><xref linkend="commenting"/></para>
+            </listitem>
+        </itemizedlist></para>
 
     <section xml:id="watermark_proc">
         <title>Add Watermark and Status Bar Text</title>
         <para>The watermark and status bar text appears on the cover
             page of PDF output, and as vertical text on the left edge
             of PDF or HTML output. </para>
-        <para>Use the <code>status</code> and <code>security</code>
-            tags to add boilerplate watermark and status bar
-            text.</para>
-        <para>Use the <code>&lt;?rax status.bar.text="Some
-                Text"?&gt;</code> processing instruction to add custom
-            watermark and status bar text. </para>
+        <para>To add boilerplate watermark and status bar text, use
+            the <code>status</code> and <code>security</code> tags.
+            For example, if you set <code>status="draft"</code>, the
+            boilerplate text, <guilabel>DRAFT</guilabel>, appears as
+            the watermark and status bar text. If you set
+                <code>&lt;security>internal&lt;/security></code>, the
+            boilerplate text, <guilabel>INTERNAL</guilabel>, appears
+            as the watermark and status bar text. </para>
+        <para>To add custom watermark and status bar text, use the
+                <code>&lt;?rax status.bar.text="Some Text"
+                ?&gt;</code> processing instruction. For example, for
+            a preview document, you might configure custom watermark
+            and status bar text of
+            <guilabel>PREVIEW</guilabel>.</para>
         <note>
             <para>If you use all three methods, the
                     <guilabel>DRAFT</guilabel> watermark and status
                 bar text is appended with the text set by the
                     <code>security</code> tag, which is appended with
-                the text set in the processing instruction. For
-                example, if you set <code>status="draft"</code> and
-                    <code>&lt;security>internal&lt;/security></code>
+                the text set in the processing instruction. </para>
+            <para>For example, if you set <code>status="draft"</code>,
+                    <code>&lt;security>internal&lt;/security></code>,
                 and <code>&lt;?rax
                     status.bar.text="PREVIEW"?&gt;</code>, the
-                watermark and status bar text appears as follows:
-                    <guilabel>DRAFT - INTERNAL - PREVIEW</guilabel>.
-                If the text is too long, it might be truncated in the
-                watermark. You can control the size of the watermark
-                and status bar text through the
+                watermark and status bar text appears as:
+                    <guilabel>DRAFT - INTERNAL - PREVIEW</guilabel>. </para>
+            <para>If the text is too long, it might be truncated in
+                the watermark. </para>
+            <para>You can control the size of the watermark and status
+                bar text through the
                         <code>status.bar.text.font.size="<varname>nn</varname>px"</code>
                 tag in the processing instruction.</para>
         </note>
@@ -469,9 +311,31 @@ format="SVG" scale="60"/>
 
     <section xml:id="filter_content">
         <title>Filter Content</title>
-        <para>You can filter content into or out of any type of
-            document. To filter content, you tag content with the
-                <code>security</code> tag.</para>
+        <para>To filter content into or out of a document, you tag the
+            content with the <code>security</code> tag. You can filter
+            content to generate the following flavors of a document:<itemizedlist>
+                <listitem>
+                    <para>Draft. Draft document for review.</para>
+                </listitem>
+                <listitem>
+                    <para>Reviewer. In-progress document. </para>
+                </listitem>
+                <listitem>
+                    <para>Writer-only. Content tagged as
+                            <literal>writeronly</literal> is always
+                        filtered out. Use this tag to suppress content
+                        without deleting it. </para>
+                </listitem>
+                <listitem>
+                    <para>Internal. Internal-only. Use to produce
+                        internal-only and external versions of same
+                        document where the external version is a
+                        subset of the internal one.</para>
+                </listitem>
+                <listitem>
+                    <para>External. Customer-facing.</para>
+                </listitem>
+            </itemizedlist></para>
         <procedure>
             <title>To filter content</title>
             <step>
@@ -539,9 +403,8 @@ format="SVG" scale="60"/>
                     the document. For example:
                     <programlisting>&lt;para security="internal"&gt;Documents for internal distribution contain internal content appropriate for Rackspace employees.&lt;/para&gt;</programlisting></para>
                 <para>Valid values for the <literal>security</literal>
-                    tag are:<table rules="all">
-                        <caption>Valid values for security
-                            tag</caption>
+                    tag are:<informaltable rules="all">
+
                         <col width="10%"/>
                         <col width="45%"/>
                         <col width="45%"/>
@@ -553,7 +416,7 @@ format="SVG" scale="60"/>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr valign="top">
                                 <td><code>internal</code></td>
                                 <td><para>If
                                    <code>&lt;security>internal&lt;/security></code>
@@ -592,7 +455,7 @@ format="SVG" scale="60"/>
                                    </listitem>
                                    </itemizedlist></para></td>
                             </tr>
-                            <tr>
+                            <tr valign="top">
                                 <td><code>external</code></td>
                                 <td><para>For external content, you do
                                    not need to add any filters, </para>
@@ -627,7 +490,7 @@ format="SVG" scale="60"/>
                                    </listitem>
                                    </itemizedlist></para></td>
                             </tr>
-                            <tr>
+                            <tr valign="top">
                                 <td><code>reviewer</code></td>
                                 <td><para>If
                                    <code>&lt;security>reviewer&lt;/security></code>
@@ -662,7 +525,7 @@ format="SVG" scale="60"/>
                                    </listitem>
                                    </itemizedlist></para></td>
                             </tr>
-                            <tr>
+                            <tr valign="top">
                                 <td><code>writeronly</code></td>
                                 <td><para>If
                                    <code>&lt;security>writeronly&lt;/security></code>
@@ -695,7 +558,7 @@ format="SVG" scale="60"/>
                                    </para></td>
                             </tr>
                         </tbody>
-                    </table></para>
+                    </informaltable></para>
             </step>
         </procedure>
 
@@ -703,12 +566,14 @@ format="SVG" scale="60"/>
     <section xml:id="search_engine_config">
         <title>Configure Search Engine Spiders to Ignore
             Content</title>
-        <para>Sometimes, you must publish documents on
-            docs.rackspace.com for private betas. Though these
-            documents are not listed on the landing page, your product
-            team sends links to the document directly to users. To
-            prevent random people from finding the content in Internet
-            searches, configure search engine spiders to ignore content.<procedure>
+        <para>Sometimes, you must publish documents on <link
+                xlink:href="docs.rackspace.com"
+                >docs.rackspace.com</link> for private betas. These
+            documents are not listed on the landing page, but your
+            product team sends links to the document directly to
+            users. To prevent random people from finding the content
+            in Internet searches, you can configure search engine
+            spiders to ignore content.<procedure>
                 <title>To configure search engine spiders to ignore
                     content</title>
                 <step>
@@ -731,17 +596,25 @@ format="SVG" scale="60"/>
 
     <section xml:id="google_analytics">
         <title>Configure Google Analytics</title>
-        <para><note>
-                <para>If your document uses the 1.0.5-SNAPSHOT
-                    formatting plugin or later and its branding is set
-                    to <literal>rackspace</literal>, Google Analytics
-                    is enabled and the Google Analytics ID is set. If
-                    the doc tools team changes this default handling
-                    in the future, all projects would need to enable
-                    Google Analytics explicitly.</para>
-            </note></para>
+        <para>To observe which pages are being read, what links are
+            being followed, what searches are leading readers to our
+            content, and other information that might help you update
+            content, you can configure your content to use <link
+                xlink:href="http://www.google.com/analytics/">Google
+                Analytics</link>.</para>
+        <note>
+
+            <para>If your document uses the 1.0.5-SNAPSHOT formatting
+                plugin or later and branding is set to
+                    <literal>rackspace</literal>, Google Analytics is
+                enabled and the Google Analytics ID is set. </para>
+            <para>If the doc tools team changes this default handling
+                in the future, all projects would need to enable
+                Google Analytics explicitly.</para>
+        </note>
         <para>Use the <markup>&lt;googleAnalytics&gt;</markup> tag to
-            suppress or collect Google analytics. Valid values are:<itemizedlist>
+            suppress or collect Google analytics. </para>
+        <para>Valid values are:<itemizedlist>
                 <listitem>
                     <para><markup>0</markup>. Suppresses Google
                         analytics. Use this setting for drafts and
@@ -776,6 +649,42 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="commenting">
         <title>Configure a Commenting Tool</title>
+        <para>You can configure your document to use the <link
+                xlink:href="http://disqus.com">Disqus</link> or
+            HashCode commenting tool:</para>
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para><emphasis role="bold">HashCode</emphasis>.
+                        Collects comments on internal and external
+                        content. If you publish a document on <link
+                            xlink:href="docs-internal.rackspace.com"
+                            >docs-internal.rackspace.com</link> or
+                            <link xlink:href="docs-beta.rackspace.com"
+                            >docs-beta.rackspace.com</link>, the
+                        comments are viewable internally only. </para>
+                    <para>If you publish a document on <link
+                            xlink:href="docs.rackspace.com"
+                            >docs.rackspace.com</link>, the comments
+                        are viewable internally and externally.
+                        Comments are stored on a Rackspace server and
+                        are not integrated with Facebook and other
+                        social media tools. </para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">Disqus</emphasis>.
+                        Collects comments on internal and external
+                        content. Comments are stored on a Disqus
+                        server and might be exposed through
+                        integration social media sites like Facebook.
+                        Depending on your settings, if you make a
+                        comment on content with Disqus, that comment
+                        might be shared with your Facebook friends and
+                        Twitter followers even if you commented while
+                        inside the Rackspace VPN. </para>
+                </listitem>
+            </itemizedlist>
+        </para>
         <para>Use the <markup>enableDisqus</markup> tag to configure
             the <link xlink:href="http://disqus.com">Disqus</link> or
             HashCode commenting tool. </para>

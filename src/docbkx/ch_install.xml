@@ -38,29 +38,44 @@ format="SVG" scale="60"/>
     <para><link xlink:href="http://docs.rackspace.com/oxygen/"
             >http://docs.rackspace.com/oxygen/</link></para>
     <para>On the web start page, click the appropriate link to launch
-        the Rackspace/OpenStack edition of SyncRO Soft's &lt;oXygen/>
-        XML Editor or Author.</para>
-    <para>Use the editor to edit RackBook documents and WADL files. </para>
-    <para>The total size of the Java web start bundle is about 87 MBs.
-        When you run the application for the first time, Java Web
+        the Rackspace/OpenStack edition of SyncRO Soft's
+            <code>&lt;oXygen/></code> XML Editor or Author.</para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>Run <code>&lt;oXygen/></code> Author:
+                    Appropriate for editing Rackbook (DocBook)
+                    documents and WADL files. </para>
+            </listitem>
+            <listitem>
+                <para>Run <code>&lt;oXygen/></code> Editor:
+                    Appropriate for editing Rackbook (DocBook)
+                    documents and WADL files. Also includes XSD and
+                    XSLT-related features. </para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para>The download should only take a few minutes on a reasonably
+        fast connection. </para>
+    <para>The total size of the Java web start bundle is about 87 MBs. </para>
+    <para>When you run the application for the first time, Java Web
         Start downloads the entire package, which contains 15 jar
-        files. </para>
+        files. When the Java Web Start finishes the download, press
+            <guilabel>Start</guilabel>. After the application
+        launches, you must supply a valid oXygen Editor or Author
+        license. </para>
     <para>When you launch the application again in the future, JWS
         check only for modified jar files (an upgrade) and downloads
         them if necessary. If no new jars are found or network
         connectivity is not available, the application starts
-        immediately. Press "Start" when the Java TM Web Start finishes
-        the download. Once the application launches, you must supply a
-        valid oXygen Editor or Author license. Run &lt;oXygen/>
-        Author: Appropriate for editing Rackbook (DocBook) documents
-        and WADL files. Run &lt;oXygen/> Editor: Appropriate for
-        editing Rackbook (DocBook) documents and WADL files. Also
-        includes XSD and XSLT-related features. The download should
-        only take a few minutes on a reasonably fast connection. <note>
+        immediately. </para>
+    <para>
+        <note>
             <para>If you install oXygen through JWS and then add
                 oXygen plugins to that installation, those plugins are
                 removed when oXygen is updated.</para>
-        </note></para>
+        </note>
+    </para>
 
 
 

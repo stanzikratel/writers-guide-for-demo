@@ -60,6 +60,7 @@
 					<!-- </preProcess> -->
 					<branding>rackspace</branding>
 					<showXslMessages>true</showXslMessages>
+					<formalProcedures>0</formalProcedures>
 				</configuration>
 			</plugin>
 		</plugins>
