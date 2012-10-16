@@ -111,233 +111,36 @@ format="SVG" scale="60"/>
                 <term><emphasis role="bold">Content
                         Filtering</emphasis></term>
                 <listitem>
-                   <!-- <para>You can use the <code>security</code> tag to
-                        filter content into any type of document. You
-                        tag the content that you want to filter into
-                        the document, and you set the
-                            <code>security</code> tag in the pom.xml
-                        file to the security type. For example, to add
-                        content that appears in the draft version of
-                        the document only, tag the content as follows:
-                        <programlisting>&lt;para security="reviewer"&gt;...&lt;/para&gt;</programlisting></para>
-                    <para>Then add the following tag to the
-                        appropriate <literal>configuration</literal>
-                        section for your output in the
-                            <filename>pom.xml</filename>
-                        file:<programlisting>&lt;security&gt;reviewer&lt;/security&gt;</programlisting></para> -->
                     <para>You can filter content into or out of any
-                        document. You can generate the following
-                        flavors of a document:</para>
-                    <informaltable rules="all">
-                        <col width="10%"/>
-                     
-                        <col width="20%"/>
-                        <col width="70%"/>
-                        <thead>
-                            <tr>
-                                <th>Flavor</th>
-                                <th>Tags</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Draft</td>
-                                <td>
-                                   <para><code>&lt;para
-                                   security="draft"&gt;...&lt;/para&gt;</code></para></td>
-                                <td><para>Draft document for
+                        type of document. You can generate the
+                        following flavors of a document by filtering content:<itemizedlist>
+                            <listitem>
+                                <para>Draft. Draft document for
                                    review.</para>
-                                   <para>
-                                   <itemizedlist>
-                                   <listitem>
-                                   <para>If
-                                   <code>status="draft"</code> on the
-                                   <code>book</code> or
-                                   <code>article</code> tag,
-                                   draft-tagged content is filtered
-                                   in. </para>
-                                   </listitem>
-                                   <listitem>
-                                   <para>If you omit
-                                   <code>status="draft"</code>,
-                                   draft-tagged content is filtered
-                                   out.</para>
-                                   </listitem>
-                                   </itemizedlist>
-                                   </para></td>
-                            </tr>
-                            <tr>
-                                <td>Reviewer</td>
-                                <td>
-                                   <para><code>&lt;para
-                                   security="reviewer"&gt;...&lt;/para&gt;</code></para></td>
-                                <td><para>In-progress document. </para>
-                                   <para>
-                                   <itemizedlist>
-                                   <listitem>
-                                   <para>If
-                                   <code>&lt;security>reviewer&lt;/security></code>
-                                   in the <filename>pom.xml</filename>
-                                   file, shows remarks and
-                                   internal-tagged and external
-                                   content. The following things also
-                                   happen: <itemizedlist>
-                                   <listitem>
-                                   <para>Elements with
-                                   <code>security="writeronly"</code>
-                                   are filtered out.</para>
-                                   </listitem>
-                                   <listitem>
-                                   <para>Elements tagged as reviewer
-                                   appear with yellow
-                                   highlighting.</para>
-                                   </listitem>
-                                   </itemizedlist></para>
-                                   </listitem>
-                                   <listitem>
-                                   <para>If you omit
-                                   <code>&lt;security>reviewer&lt;/security></code>
-                                   from the
-                                   <filename>pom.xml</filename> file,
-                                   filters out reviewer-tagged
-                                   content. </para>
-                                   </listitem>
-                                   </itemizedlist>
-                                   </para></td>
-                            </tr>
-                            <tr>
-                                <td>Writeronly</td>
-                                <td>
-                                   <para><code>&lt;para
-                                   security="writeronly"&gt;...&lt;/para&gt;</code></para>
-                                </td>
-                                <td><para>Content tagged as
+                            </listitem>
+                            <listitem>
+                                <para>Reviewer. In-progress document.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>Writer-only. Content tagged as
                                    <literal>writeronly</literal> is
                                    always filtered out. Use this tag
                                    to suppress content without
-                                   deleting it. <note>
-                                   <para>If you set
-                                   <code>&lt;security>writeronly&lt;/security></code>
-                                   in the pom.xml file, the watermark
-                                   and status bar text appears as
-                                   <guilabel>WRITERONLY</guilabel>.</para>
-                                   </note></para></td>
-                            </tr>
-                            <tr>
-                                <td>Internal</td>
-                                <td>
-                                   <para><code>&lt;para
-                                   security="internal"&gt;...&lt;/para&gt;</code></para>
-                                </td>
-                                <td>
-                                   <para>Internal-only. </para>
-                                   <para>
-                                   <itemizedlist>
-                                   <listitem>
-                                   <para>If
-                                   <code>&lt;security>internal&lt;/security></code>
-                                   in the <filename>pom.xml</filename>
-                                   file, filters out reviewer-tagged
-                                   content but filters in
-                                   internal-tagged content. Use to
+                                   deleting it. </para>
+                            </listitem>
+                            <listitem>
+                                <para>Internal. Internal-only. Use to
                                    produce internal-only and external
                                    versions of same document where the
                                    external version is a subset of the
-                                   internal one. The following things
-                                   also happen:</para>
-                                   <itemizedlist>
-                                   <listitem>
-                                   <para>Content tagged as
-                                   <code>security="external"</code>,
-                                   <code>security="reviewer"</code>,
-                                   and
-                                   <code>security="writeronly"</code>
-                                   are filtered out. </para>
-                                   </listitem>
-                                   <listitem>
-                                   <para>Content tagged as
-                                   <code>security="internal"</code>
-                                   are filtered in so that you can
-                                   have mutually exclusive versions of
-                                   the same content for external and
-                                   internal audiences.</para>
-                                   </listitem>
-                                   <listitem>
-                                   <para><code>&lt;remark&gt;</code>
-                                   elements are filtered out.</para>
-                                   </listitem>
-                                   <listitem>
-                                   <para>Content tagged as
-                                   <code>internal</code> appears in
-                                   blue.</para>
-                                   </listitem>
-                                   </itemizedlist>
-                                   </listitem>
-                                   <listitem>
-                                   <para>If you omit
-                                   <code>&lt;security>internal&lt;/security></code>
-                                   from the
-                                   <filename>pom.xml</filename> file,
-                                   filters out the internal-tagged
-                                   content. </para>
-                                   </listitem>
-                                   </itemizedlist>
-                                   </para>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>External</td>
-                                <td>None, or <code>&lt;para
-                                   security="external"&gt;...&lt;/para&gt;</code></td>
-                                <td><para>Customer-facing.</para>
-                                   <para>
-                                   <itemizedlist>
-                                   <listitem>
-                                   <para>If
-                                   <code>&lt;security>external&lt;/security></code>
-                                   in the <filename>pom.xml</filename>
-                                   file, filters out reviewer-tagged
-                                   content but filters in
-                                   external-tagged content. The
-                                   following things also
-                                   happen:</para>
-                                   <itemizedlist>
-                                   <listitem>
-                                   <para>Content tagged as
-                                   <code>security="internal"</code>,
-                                   <code>security="reviewer"</code>,
-                                   and
-                                   <code>security="writeronly"</code>
-                                   are filtered out. </para>
-                                   </listitem>
-                                   <listitem>
-                                   <para>Content tagged as
-                                   <code>security="external"</code>
-                                   are filtered in so that you can
-                                   have mutually exclusive versions of
-                                   the same content for external and
-                                   internal audiences.</para>
-                                   </listitem>
-                                   <listitem>
-                                   <para><code>&lt;remark&gt;</code>
-                                   elements are filtered out.</para>
-                                   </listitem>
-                                   </itemizedlist>
-                                   </listitem>
-                                   <listitem>
-                                   <para>If you omit
-                                   <code>&lt;security>external&lt;/security></code>
-                                   from the
-                                   <filename>pom.xml</filename> file,
-                                   filters out the external-tagged
-                                   content. </para>
-                                   </listitem>
-                                   </itemizedlist>
-                                   </para></td>
-                            </tr>
-                        </tbody>
-                    </informaltable>
+                                   internal one.</para>
+                            </listitem>
+                            <listitem>
+                                <para>External.
+                                   Customer-facing.</para>
+                            </listitem>
+                        </itemizedlist></para>
                     <para>For how to filter content, see <xref
                             linkend="filter_content"/>.</para>
                 </listitem>
@@ -532,6 +335,24 @@ format="SVG" scale="60"/>
         <para>Use the <code>&lt;?rax status.bar.text="Some
                 Text"?&gt;</code> processing instruction to add custom
             watermark and status bar text. </para>
+        <note>
+            <para>If you use all three methods, the
+                    <guilabel>DRAFT</guilabel> watermark and status
+                bar text is appended with the text set by the
+                    <code>security</code> tag, which is appended with
+                the text set in the processing instruction. For
+                example, if you set <code>status="draft"</code> and
+                    <code>&lt;security>internal&lt;/security></code>
+                and <code>&lt;?rax
+                    status.bar.text="PREVIEW"?&gt;</code>, the
+                watermark and status bar text appears as follows:
+                    <guilabel>DRAFT - INTERNAL - PREVIEW</guilabel>.
+                If the text is too long, it might be truncated in the
+                watermark. You can control the size of the watermark
+                and status bar text through the
+                        <code>status.bar.text.font.size="<varname>nn</varname>px"</code>
+                tag in the processing instruction.</para>
+        </note>
 
         <procedure>
             <title>To add watermark and status bar text to your
@@ -549,7 +370,7 @@ format="SVG" scale="60"/>
                     follows:</para>
                 <para>
                     <programlisting>&lt;book  
-    xmlns="http://docbook.org/ns/docbook" 
+                        xmlns="http://docbook.org/ns/docbook" 
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xi="http://www.w3.org/2001/XInclude" 
     xmlns:svg="http://www.w3.org/2000/svg"
@@ -648,22 +469,30 @@ format="SVG" scale="60"/>
 
     <section xml:id="filter_content">
         <title>Filter Content</title>
-        <para>You can filter content into or out of any document. </para>
+        <para>You can filter content into or out of any type of
+            document. To filter content, you tag content with the
+                <code>security</code> tag.</para>
         <procedure>
             <title>To filter content</title>
             <step>
                 <title>Create a draft document</title>
                 <para>To configure content to be visible in the draft
                     document only, add the
-                        <markup>security="draft"</markup> attribute to
-                    the content. </para>
-                <para>In the main XML file for your document, add the
                         <markup>status="draft"</markup> tag to the
                         <markup>book</markup> or
-                        <markup>article</markup> tag, as
-                    follows:</para>
-                <para>
-                    <programlisting>&lt;book  
+                        <markup>article</markup> tag, and add the
+                        <markup>security="draft"</markup> tag to the
+                    content. </para>
+                <substeps>
+                    <step>
+                        <para>In the main XML file for your document,
+                            first add the
+                                <markup>status="draft"</markup> tag to
+                            the <markup>book</markup> or
+                                <markup>article</markup> tag, as
+                            follows:</para>
+                        <para>
+                            <programlisting>&lt;book  
     xmlns="http://docbook.org/ns/docbook" 
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xi="http://www.w3.org/2001/XInclude" 
@@ -672,14 +501,22 @@ format="SVG" scale="60"/>
     xml:id="example-foo" <emphasis role="bold">status="draft"</emphasis>&gt;
 ...
 &lt;/book&gt;</programlisting>
-                </para>
-                <para>Then, tag any content that you want to appear in
-                    the draft document only. For example:
-                    <programlisting>&lt;para security="draft"&gt;Documents for draft distribution contain draft content appropriate for reviewers.&lt;/para&gt;</programlisting></para>
-                <para>After the document moves from draft to
-                    production status, remove the
-                        <code>status="draft"</code> tag from the main
-                    XML file.</para>
+                        </para>
+                    </step>
+                    <step>
+                        <para>Then, tag any content that you want to
+                            appear in the draft document only. For
+                            example:
+                            <programlisting>&lt;para security="draft"&gt;Documents for draft distribution contain draft content appropriate for reviewers.&lt;/para&gt;</programlisting></para>
+                    </step>
+                    <step>
+                        <para>After the document moves from draft to
+                            production status, remove the
+                                <code>status="draft"</code> tag from
+                            the main XML file.</para>
+                    </step>
+                </substeps>
+
             </step>
             <step>
                 <title>Configure document security</title>
@@ -687,41 +524,6 @@ format="SVG" scale="60"/>
                     your document, add the <markup>security</markup>
                     tag to the appropriate
                         <literal>configuration</literal> section. </para>
-                <para>Valid values for the <literal>security</literal>
-                    tag are:<itemizedlist>
-                        <listitem>
-                            <para><literal>internal</literal>. If
-                                   <code>&lt;security>internal&lt;/security></code>
-                                in the <filename>pom.xml</filename>
-                                file, filters in any
-                                   <code>security="internal"</code>
-                                tagged content. Otherwise, filters out
-                                this content.</para>
-                        </listitem>
-                        <listitem>
-                            <para><literal>external</literal>. If
-                                   <code>&lt;security>external&lt;/security></code>
-                                in the <filename>pom.xml</filename>
-                                file, filters in any
-                                   <code>security="external"</code>
-                                tagged content. Otherwise, filters out
-                                this content.</para>
-                        </listitem>
-                        <listitem>
-                            <para><literal>reviewer</literal>. If
-                                   <code>&lt;security>reviewer&lt;/security></code>
-                                in the <filename>pom.xml</filename>
-                                file, filters in any
-                                   <code>security="reviewer"</code>
-                                tagged content. Otherwise, filters out
-                                this content.</para>
-                        </listitem>
-                        <listitem>
-                            <para><literal>writeronly</literal>.
-                                Always filters out this
-                                content.</para>
-                        </listitem>
-                    </itemizedlist></para>
                 <para>For example, you might add the following
                         <literal>security</literal> tag:</para>
                 <para>
@@ -736,6 +538,164 @@ format="SVG" scale="60"/>
                 <para>Then, tag any content that you want to appear in
                     the document. For example:
                     <programlisting>&lt;para security="internal"&gt;Documents for internal distribution contain internal content appropriate for Rackspace employees.&lt;/para&gt;</programlisting></para>
+                <para>Valid values for the <literal>security</literal>
+                    tag are:<table rules="all">
+                        <caption>Valid values for security
+                            tag</caption>
+                        <col width="10%"/>
+                        <col width="45%"/>
+                        <col width="45%"/>
+                        <thead>
+                            <tr>
+                                <th>Value</th>
+                                <th>If security is enabled</th>
+                                <th>If security is disabled</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>internal</code></td>
+                                <td><para>If
+                                   <code>&lt;security>internal&lt;/security></code>
+                                   is set in the
+                                   <filename>pom.xml</filename> file:<itemizedlist>
+                                   <listitem>
+                                   <para>Filters in
+                                   <code>security="internal"</code>
+                                   tagged content, </para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>Content tagged as
+                                   <code>security="internal"</code>
+                                   appears in blue.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>Filters out
+                                   <code>security="reviewer"</code>,
+                                   <code>security="external"</code>,
+                                   <code>security="reviewer"</code>,
+                                   and
+                                   <code>security="writeronly"</code>
+                                   tagged content, and
+                                   <code>&lt;remark&gt;</code>
+                                   elements.</para>
+                                   </listitem>
+                                   </itemizedlist></para></td>
+                                <td><para>If
+                                   <code>&lt;security>internal&lt;/security></code>
+                                   is not set in the
+                                   <filename>pom.xml</filename> file: <itemizedlist>
+                                   <listitem>
+                                   <para>Filters out
+                                   <code>security="internal"</code>
+                                   tagged content.</para>
+                                   </listitem>
+                                   </itemizedlist></para></td>
+                            </tr>
+                            <tr>
+                                <td><code>external</code></td>
+                                <td><para>For external content, you do
+                                   not need to add any filters, </para>
+                                   <para>However, if
+                                   <code>&lt;security>external&lt;/security></code>
+                                   is set in the
+                                   <filename>pom.xml</filename> file:<itemizedlist>
+                                   <listitem>
+                                   <para>Filters in
+                                   <code>security="external"</code>
+                                   tagged content.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>Filters out
+                                   <code>security="internal"</code>,
+                                   <code>security="reviewer"</code>,
+                                   and
+                                   <code>security="writeronly"</code>
+                                   tagged content, and
+                                   <code>&lt;remark&gt;</code>
+                                   elements.</para>
+                                   </listitem>
+                                   </itemizedlist></para></td>
+                                <td><para>If
+                                   <code>&lt;security>external&lt;/security></code>
+                                   is not set in the
+                                   <filename>pom.xml</filename> file:<itemizedlist>
+                                   <listitem>
+                                   <para>Filters out
+                                   <code>security="external"</code>
+                                   tagged content.</para>
+                                   </listitem>
+                                   </itemizedlist></para></td>
+                            </tr>
+                            <tr>
+                                <td><code>reviewer</code></td>
+                                <td><para>If
+                                   <code>&lt;security>reviewer&lt;/security></code>
+                                   is set in the
+                                   <filename>pom.xml</filename> file:<itemizedlist>
+                                   <listitem>
+                                   <para>Filters in any
+                                   <code>security="reviewer"</code>,
+                                   <code>security="internal"</code>,
+                                   <code>security="external"</code>
+                                   tagged content, and
+                                   <code>&lt;remark&gt;</code>
+                                   elements.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>Content tagged as
+                                   <code>security="reviewer"</code>
+                                   appears with yellow highlighting. </para>
+                                   <para>Filters out
+                                   <code>security="writeronly"</code>
+                                   tagged content. </para>
+                                   </listitem>
+                                   </itemizedlist></para></td>
+                                <td><para>If
+                                   <code>&lt;security>reviewer&lt;/security></code>
+                                   is not set in the
+                                   <filename>pom.xml</filename> file:<itemizedlist>
+                                   <listitem>
+                                   <para>Filters out
+                                   <code>security="reviewer"</code>
+                                   tagged content.</para>
+                                   </listitem>
+                                   </itemizedlist></para></td>
+                            </tr>
+                            <tr>
+                                <td><code>writeronly</code></td>
+                                <td><para>If
+                                   <code>&lt;security>writeronly&lt;/security></code>
+                                   is set in the
+                                   <filename>pom.xml</filename> file:<itemizedlist>
+                                   <listitem>
+                                   <para>Filters out
+                                   <code>security="writeronly"</code>
+                                   tagged content.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>The watermark and status bar
+                                   text appears as
+                                   <guilabel>WRITERONLY</guilabel>.</para>
+                                   </listitem>
+                                   </itemizedlist></para></td>
+                                <td>
+                                   <para>If
+                                   <code>&lt;security>writeronly&lt;/security></code>
+                                   is not set in the
+                                   <filename>pom.xml</filename>
+                                   file:</para><para>
+                                   <itemizedlist>
+                                   <listitem>
+                                   <para>Filters out
+                                   <code>security="writeronly"</code>
+                                   tagged content.</para>
+                                   </listitem>
+                                   </itemizedlist>
+                                   </para></td>
+                            </tr>
+                        </tbody>
+                    </table></para>
             </step>
         </procedure>
 
