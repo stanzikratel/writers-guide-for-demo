@@ -55,9 +55,14 @@ format="SVG" scale="60"/>
                     <para>To add boilerplate watermark and status bar
                         text, use the <code>status</code> and
                             <code>security</code> tags. For example,
-                        if you set status="draft", the boilerplate
-                        text, <literal>DRAFT</literal>, appears as the
-                        watermark and status bar text. </para>
+                        if you set <code>status="draft"</code>, the
+                        boilerplate text, <guilabel>DRAFT</guilabel>,
+                        appears as the watermark and status bar text.
+                        If you set
+                            <code>&lt;security>internal&lt;/security></code>,
+                        the boilerplate text,
+                            <guilabel>INTERNAL</guilabel>, appears as
+                        the watermark and status bar text. </para>
                     <para>To add custom watermark and status bar text,
                         use the <code>&lt;?rax status.bar.text="Some
                             Text" ?&gt;</code> processing instruction.
@@ -72,7 +77,7 @@ format="SVG" scale="60"/>
             <varlistentry>
                 <term><emphasis role="bold">Location</emphasis></term>
                 <listitem>
-                    <para>Writers host content in the following locations:<itemizedlist>
+                    <para>Writers publish content to the following locations:<itemizedlist>
                             <listitem>
                                 <para><link
                                    xlink:href="docs-beta.rackspace.com"
@@ -93,8 +98,8 @@ format="SVG" scale="60"/>
                                    External content, including private
                                    beta, preview, limited
                                    availability, and unlimited
-                                   availability customer-facing
-                                   content.</para>
+                                   availability content for Rackspace
+                                   customers.</para>
                             </listitem>
                         </itemizedlist></para>
                     <para>For how to publish content to these
@@ -117,7 +122,8 @@ format="SVG" scale="60"/>
                         <programlisting>&lt;para security="reviewer"&gt;...&lt;/para&gt;</programlisting></para>
                     <para>Then add the following tag to the
                         appropriate <literal>configuration</literal>
-                        section for your output in the pom.xml
+                        section for your output in the
+                            <filename>pom.xml</filename>
                         file:<programlisting>&lt;security&gt;reviewer&lt;/security&gt;</programlisting></para>
                     <para>For how to filter content, see <xref
                             linkend="filter_content"/>.</para>
@@ -128,13 +134,14 @@ format="SVG" scale="60"/>
                         spiders</emphasis></term>
                 <listitem>
                     <para>Sometimes, you must publish documents on
-                        docs.rackspace.com for private betas. These
-                        documents are not listed on the landing page,
-                        but your product team sends links to the
-                        document directly to users. To prevent random
-                        people from finding the content in Internet
-                        searches, you can configure search engine
-                        spiders to ignore content.</para>
+                            <link xlink:href="docs.rackspace.com"
+                            >docs.rackspace.com</link> for private
+                        betas. These documents are not listed on the
+                        landing page, but your product team sends
+                        links to the document directly to users. To
+                        prevent random people from finding the content
+                        in Internet searches, you can configure search
+                        engine spiders to ignore content.</para>
                     <para>For how to configure search engine spiders
                         to ignore content, see <xref
                             linkend="search_engine_config"/>.</para>
@@ -144,15 +151,16 @@ format="SVG" scale="60"/>
                 <term><emphasis role="bold">Google
                         analytics</emphasis></term>
                 <listitem>
-                    <para>Configure your content to use <link
+                    <para>To observe which pages are being read, what
+                        links are being followed, what searches are
+                        leading readers to our content, and other
+                        information that might help you update
+                        content, you can configure your content to use
+                            <link
                             xlink:href="http://www.google.com/analytics/"
-                            >Google Analytics</link> to observe which
-                        pages are being read, what links are being
-                        followed, what searches are leading readers to
-                        our content, and other information that might
-                        help you update content. </para>
-                    <para>See <xref linkend="google_analytics"
-                        />.</para>
+                            >Google Analytics</link>.</para>
+                    <para>For how to configure Google analytics, see
+                            <xref linkend="google_analytics"/>.</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
@@ -170,13 +178,21 @@ format="SVG" scale="60"/>
                                    >HashCode</emphasis>. Collects
                                    comments on internal and external
                                    content. If you publish a document
-                                   on docs-internal or docs-beta, the
+                                   on <link
+                                   xlink:href="docs-internal.rackspace.com"
+                                   >docs-internal.rackspace.com</link>
+                                   or <link
+                                   xlink:href="docs-beta.rackspace.com"
+                                   >docs-beta.rackspace.com</link>,
+                                   the comments are viewable
+                                   internally only. </para>
+                                <para>If you publish a document on
+                                   <link
+                                   xlink:href="docs.rackspace.com"
+                                   >docs.rackspace.com</link>, the
                                    comments are viewable internally
-                                   only. If you publish a document on
-                                   docs.rackspace.com, the comments
-                                   are viewable internally and
-                                   externally. Comments are stored on
-                                   a Rackspace server and are not
+                                   and externally. Comments are stored
+                                   on a Rackspace server and are not
                                    integrated with Facebook and other
                                    social media tools. </para>
                             </listitem>
@@ -186,109 +202,110 @@ format="SVG" scale="60"/>
                                    comments on internal and external
                                    content. Comments are stored on a
                                    Disqus server and might be exposed
-                                   to the outside world through
-                                   integration social media sites like
-                                   Facebook. Depending on your
-                                   settings, if you make a comment on
-                                   content with Disqus, that comment
-                                   might be shared with your Facebook
-                                   friends and Twitter followers even
-                                   if you commented while inside the
-                                   Rackspace VPN. </para>
+                                   through integration social media
+                                   sites like Facebook. Depending on
+                                   your settings, if you make a
+                                   comment on content with Disqus,
+                                   that comment might be shared with
+                                   your Facebook friends and Twitter
+                                   followers even if you commented
+                                   while inside the Rackspace VPN.
+                                </para>
                             </listitem>
                         </itemizedlist>
                     </para>
-                    <para>See <xref linkend="commenting"/>.</para>
+                    <para>For how to configure a commenting tool, see
+                            <xref linkend="commenting"/>.</para>
                 </listitem>
             </varlistentry>
         </variablelist>
     </para>
     <para>The following table describes each type of document and its
-        characteristics:</para>
-    <para>
-        <informaltable rules="all">
-            <col width="20%"/>
-            <col width="20%"/>
-            <col width="20%"/>
-            <col width="20%"/>
-            <col width="20%"/>
+            characteristics:<table frame="void">
+            <caption/>
+            <col width="12%"/>
+            <col width="12%"/>
+            <col width="12%"/>
+            <col width="12%"/>
+            <col width="12%"/>
+            <col width="12%"/>
+            <col width="12%"/>
+            <col width="12%"/>
             <thead>
                 <tr>
-                    <td/>
-                    <th>Draft</th>
-                    <th>Internal</th>
-                    <th>External Private Beta</th>
-                    <th>External</th>
+                    <th>Document type</th>
+                    <th>Content</th>
+                    <th>Watermark and status bar text</th>
+                    <th>Location</th>
+                    <th>Content filtering</th>
+                    <th>Search engine spiders</th>
+                    <th>Google analytics</th>
+                    <th>Commenting tool</th>
                 </tr>
-
             </thead>
             <tbody>
-                <tr valign="top">
-                    <th>Content</th>
+                <tr>
+                    <td>Draft</td>
                     <td>Review.</td>
+                    <td><guilabel>Draft</guilabel> or <guilabel>Draft
+                            - &lt;release_type&gt;</guilabel> where
+                            <emphasis role="italic"
+                            >release_type</emphasis> is
+                            <guilabel>Internal</guilabel>,
+                            <guilabel>Private Beta</guilabel>,
+                            <guilabel>Preview</guilabel>,
+                            <guilabel>Limited Availability</guilabel>,
+                        or none.</td>
+                    <td><link xlink:href="docs-beta.rackspace.com"
+                            >docs-beta.rackspace.com</link></td>
+                    <td><code>security="draft"</code> and other</td>
+                    <td>Disabled</td>
+                    <td>Disabled</td>
+                    <td>HashCode</td>
+                </tr>
+                <tr>
+                    <td>Internal</td>
                     <td>Internal, appropriate for Rackspace employees.
                         These documents might also contain external
                         content. </td>
-                    <td>External, for private beta customers.</td>
-                    <td>External, for preview, limited availability,
-                        or unlimited availability customers.</td>
-                </tr>
-                <tr valign="top">
-                    <th>Watermark and status bar text</th>
-                    <td><literal>Draft</literal> or <literal>Draft -
-                            &lt;release_type&gt;</literal> where
-                            <emphasis role="italic"
-                            >release_type</emphasis> is
-                            <literal>Internal</literal>,
-                            <literal>Private Beta</literal>,
-                            <literal>Preview</literal>,
-                            <literal>Limited Availability</literal>,
-                        or none.</td>
-                    <td><literal>Internal</literal> or <literal>Draft
-                            - Internal</literal></td>
-                    <td><literal>Private Beta</literal></td>
-                    <td><literal>Preview</literal>, <literal>Limited
-                            Availability</literal>, or none.</td>
-                </tr>
-                <tr valign="top">
-                    <th>Location</th>
-                    <td>docs-beta.rackspace.com</td>
-                    <td>docs-internal.rackspace.com</td>
-                    <td>docs.rackspace.com</td>
-                    <td>docs.rackspace.com</td>
-                </tr>
-                <tr valign="top">
-                    <th>Content filtering</th>
-                    <td><code>security="draft"</code> and other</td>
+                    <td><guilabel>Internal</guilabel> or
+                            <guilabel>Draft - Internal</guilabel></td>
+                    <td><link xlink:href="docs-internal.racksapce.com"
+                            >docs-internal.rackspace.com</link></td>
                     <td><code>security="internal"</code> and
                         other</td>
-                    <td>Any</td>
-                    <td>Any</td>
-                </tr>
-                <tr valign="top">
-                    <th>Search engine spiders</th>
                     <td>Disabled</td>
                     <td>Disabled</td>
-                    <td>Disabled</td>
-                    <td>Enabled</td>
-                </tr>
-                <tr valign="top">
-                    <th>Google analytics</th>
-                    <td>Disabled</td>
-                    <td>Disabled</td>
-                    <td>Disabled</td>
-                    <td>Enabled</td>
-                </tr>
-                <tr valign="top">
-                    <th>Commenting system</th>
                     <td>HashCode</td>
-                    <td>HashCode</td>
+                </tr>
+                <tr>
+                    <td>External private beta</td>
+                    <td>External, for private beta customers.</td>
+                    <td><guilabel>Private Beta</guilabel></td>
+                    <td><link xlink:href="docs.rackspace.com"
+                            >docs.rackspace.com</link></td>
+                    <td>Any</td>
+                    <td>Disabled</td>
+                    <td>Disabled</td>
                     <td>HashCode or Disqus</td>
+                </tr>
+                <tr>
+                    <td>External</td>
+                    <td>External, for preview, limited availability,
+                        or unlimited availability customers.</td>
+                    <td><guilabel>Preview</guilabel>,
+                            <guilabel>Limited Availability</guilabel>,
+                        or none.</td>
+                    <td><link xlink:href="docs.rackspace.com"
+                            >docs.rackspace.com</link></td>
+                    <td>Any</td>
+                    <td>Enabled</td>
+                    <td>Enabled</td>
                     <td>Disqus</td>
                 </tr>
             </tbody>
-        </informaltable>
-    </para>
+        </table></para>
+
     <para>The following procedures describe how to implement these
         characteristics in your document.</para>
 
@@ -329,37 +346,321 @@ format="SVG" scale="60"/>
 ...
 &lt;/book&gt;</programlisting>
                 </para>
-                <para>The watermark and status bar text appear
-                    as:<programlisting>DRAFT</programlisting></para>
+                <para>The watermark and status bar text appears as
+                        <guilabel>DRAFT</guilabel>.</para>
             </step>
             <step xml:id="security">
                 <title>Configure document security</title>
-                <para>In the pom.xml file for your document, add the
-                        <markup>security</markup> tag to the
-                    appropriate <literal>configuration</literal>
-                    section. Valid values for the
-                        <literal>security</literal> tag are:<itemizedlist>
+                <para>In the <filename>pom.xml</filename> file for
+                    your document, add the <markup>security</markup>
+                    tag to the appropriate
+                        <literal>configuration</literal> section.
+                    Valid values for the <literal>security</literal>
+                    tag are:<itemizedlist>
                         <listitem>
                             <para><literal>internal</literal>. Adds
-                                the <literal>INTERNAL</literal>
-                                watermark and status bar text, and
-                                filters in any
+                                the <guilabel>INTERNAL</guilabel>
+                                watermark and status bar text.</para>
+                        </listitem>
+                        <listitem>
+                            <para><literal>reviewer</literal>. Adds
+                                the <guilabel>REVIEWER</guilabel>
+                                watermark and status bar text.</para>
+                        </listitem>
+                        <listitem>
+                            <para><literal>writeronly</literal>. Adds
+                                the <guilabel>WRITERONLY</guilabel>
+                                watermark and status bar text.</para>
+                        </listitem>
+                    </itemizedlist></para>
+                <para>For example, you might add the following
+                        <literal>security</literal> tag:</para>
+                <para>
+                    <programlisting>&lt;configuration>
+	&lt;includes> cs-adminguide.xml &lt;/includes>
+	&lt;chapterAutolabel>1&lt;/chapterAutolabel>
+	&lt;formalProcedures>0&lt;/formalProcedures>
+   <emphasis role="bold">&lt;security>internal&lt;/security></emphasis>	
+...
+&lt;/configuration></programlisting>
+                </para>
+                <para>If you did not tag your document as a draft, the
+                    watermark and status bar text appears as
+                        <guilabel>INTERNAL</guilabel>. If you tagged
+                    your document as a draft, the watermark and status
+                    bar text appears as <guilabel>DRAFT -
+                        INTERNAL</guilabel>.</para>
+            </step>
+            <step>
+                <title>Add custom watermark and status bar
+                    text</title>
+                <para>Add the following processing instruction and
+                    tags beneath the <literal>title</literal> tag in
+                    the main XML file for your document: </para>
+                <programlisting>&lt;title>Next Generation Cloud Servers™ Administrator Guide&lt;/title>
+&lt;?rax title.font.size="32px" 
+      pdf.url="../../cs-adminguide-2-latest.pdf" 
+     <emphasis role="bold">status.bar.text.font.size="40px"</emphasis>
+     <emphasis role="bold">status.bar.text="RAX INTERNAL"</emphasis> 
+     canonical.url.base="http://docs.rackspace.com/servers/api/v2/cs-adminguide/content"?>
+&lt;titleabbrev>Cloud Servers™ Admin Guide&lt;/titleabbrev></programlisting>
+                <para>If you did not tag your document as a draft or
+                    with a <code>security</code> tag, the watermark
+                    and status bar text appears as <guilabel>RAX
+                        INTERNAL</guilabel>. If you tagged your
+                    document as a draft, the watermark and status bar
+                    text appears as <guilabel>DRAFT - RAX
+                        INTERNAL</guilabel>. </para>
+                <para>If you tagged your document as a draft and with
+                    a <code>security</code> tag, such as
+                        <code>internal</code>, the watermark and
+                    status bar text appears as follows <guilabel>DRAFT
+                        - INTERNAL - RAX INTERNAL</guilabel>.</para>
+            </step>
+            <step>
+                <title>Adjust the size of the watermark and status bar
+                    text</title>
+                <para>The default size of the watermark and status bar
+                    text is about 71.3px.</para>
+                <para>If the watermark and status bar text is long,
+                    use 1.3.0-SNAPSHOT or later in your
+                        <filename>pom.xml</filename> file. </para>
+                <para>Then, add the
+                        <code>status.bar.text.font.size</code> tag to
+                    adjust the size of the watermark and status bar
+                    text through, as
+                    follows: <programlisting>&lt;?rax status.bar.text.font.size="50px" status.bar.text="LIMITED AVAILABILITY" ?&gt;</programlisting></para>
+            </step>
+        </procedure>
+    </section>
+
+    <section xml:id="filter_content">
+        <title>Filter Content</title>
+        <para>You can filter content into any document. You can
+            generate the following flavors of a
+                document:<informaltable rules="all">
+                <col width="10%"/>
+                <col width="10%"/>
+                <col width="20%"/>
+                <col width="40%"/>
+                <thead>
+                    <tr>
+                        <th>Flavor</th>
+                        <th>Tags</th>
+                        <th>Status bar/watermark text</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Draft</td>
+                        <td>
+                            <para><code>&lt;para
+                                   security="draft"&gt;...&lt;/para&gt;</code></para></td>
+                        <td><guilabel>DRAFT</guilabel></td>
+                        <td><para>Draft document for review.</para>
+                            <para>
+                                <itemizedlist>
+                                   <listitem>
+                                   <para>If
+                                   <code>status="draft"</code> on the
+                                   <code>book</code> or
+                                   <code>article</code> tag,
+                                   draft-tagged content is filtered
+                                   in. </para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>If you omit
+                                   <code>status="draft"</code>,
+                                   draft-tagged content is filtered
+                                   out.</para>
+                                   </listitem>
+                                </itemizedlist>
+                            </para></td>
+                    </tr>
+                    <tr>
+                        <td>Reviewer</td>
+                        <td>
+                            <para><code>&lt;para
+                                   security="reviewer"&gt;...&lt;/para&gt;</code></para></td>
+                        <td><guilabel>REVIEWER</guilabel></td>
+                        <td><para>In-progress document. </para>
+                            <para>
+                                <itemizedlist>
+                                   <listitem>
+                                   <para>If
+                                   <code>&lt;security>reviewer&lt;/security></code>
+                                   in the <filename>pom.xml</filename>
+                                   file, shows remarks and
+                                   internal-tagged and external
+                                   content. The following things also
+                                   happen: <itemizedlist>
+                                   <listitem>
+                                   <para>Elements with
+                                   <code>security="writeronly"</code>
+                                   are filtered out.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>Elements tagged as reviewer
+                                   appear with yellow
+                                   highlighting.</para>
+                                   </listitem>
+                                   </itemizedlist></para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>If you omit
+                                   <code>&lt;security>reviewer&lt;/security></code>
+                                   from the
+                                   <filename>pom.xml</filename> file,
+                                   filters out reviewer-tagged
+                                   content. </para>
+                                   </listitem>
+                                </itemizedlist>
+                            </para></td>
+                    </tr>
+                    <tr>
+                        <td>Writeronly</td>
+                        <td>
+                            <para><code>&lt;para
+                                   security="writeronly"&gt;...&lt;/para&gt;</code></para>
+                        </td>
+                        <td><guilabel>WRITERONLY</guilabel></td>
+                        <td><para>Content tagged as <literal>writeronly</literal> is always
+                                filtered out. Use this tag to suppress
+                                content without deleting it. <note>
+                                   <para>If you set
+                                   <code>&lt;security>writeronly&lt;/security></code>
+                                   in the pom.xml file, the watermark
+                                   and status bar text appears as
+                                   <guilabel>WRITERONLY</guilabel>.</para>
+                                </note></para></td>
+                    </tr>
+                    <tr>
+                        <td>Internal</td>
+                        <td>
+                            <para><code>&lt;para
+                                   security="internal"&gt;...&lt;/para&gt;</code></para>
+                        </td>
+                        <td><guilabel>INTERNAL</guilabel></td>
+                        <td>
+                            <para>Internal-only. </para>
+                            <para>
+                                <itemizedlist>
+                                   <listitem>
+                                   <para>If
+                                   <code>&lt;security>internal&lt;/security></code>
+                                   in the <filename>pom.xml</filename>
+                                   file, filters out reviewer-tagged
+                                   content but filters in
+                                   internal-tagged content. Use to
+                                   produce internal-only and external
+                                   versions of same document where the
+                                   external version is a subset of the
+                                   internal one.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>Filters out the specified
+                                   content UNLESS you set
+                                   <code>&lt;security&gt;internal&lt;/security&gt;
+                                   </code>in your pom.xml. If you do
+                                   set security to reviewer, the
+                                   following things also
+                                   happen:</para>
+                                   <itemizedlist>
+                                   <listitem>
+                                   <para>Elements with
+                                   <code>security="external"</code>,
+                                   <code>security="reviewer"</code>,
+                                   and
+                                   <code>security="writeronly"</code>
+                                   are filtered out. Elements flagged
+                                   as <code>security="external"</code>
+                                   are filtered so that you could, if
+                                   you wanted, have mutually exclusive
+                                   versions of the same content for
+                                   external and internal
+                                   audiences.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para><code>&lt;remark&gt;</code>
+                                   elements are filtered out.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>The watermark contains the
+                                   word INTERNAL. Note that any
+                                   elements flagged as
+                                   <code>security="internal"</code>
+                                   appear blue in the output.</para>
+                                   </listitem>
+                                   </itemizedlist>
+                                   </listitem>
+                                </itemizedlist>
+                            </para>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>External</td>
+                        <td>None.</td>
+                        <td>None.</td>
+                        <td>Customer-facing.</td>
+                    </tr>
+                </tbody>
+            </informaltable></para>
+        <procedure>
+            <title>To filter content</title>
+            <step>
+                <title>Create a draft document</title>
+                <para>To configure content to be visible in the draft
+                    document only, add the
+                        <markup>security="draft"</markup> attribute to
+                    the content. </para>
+                <para>In the main XML file for your document, add the
+                        <markup>status="draft"</markup> tag to the
+                        <markup>book</markup> or
+                        <markup>article</markup> tag, as
+                    follows:</para>
+                <para>
+                    <programlisting>&lt;book  
+    xmlns="http://docbook.org/ns/docbook" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude" 
+    xmlns:svg="http://www.w3.org/2000/svg"
+    version="5.0" 
+    xml:id="example-foo" <emphasis role="bold">status="draft"</emphasis>&gt;
+...
+&lt;/book&gt;</programlisting>
+                </para>
+                <para>Then, tag any content that you want to appear in
+                    the draft document only. For example:
+                    <programlisting>&lt;para security="draft"&gt;Documents for draft distribution contain draft content appropriate for reviewers.&lt;/para&gt;</programlisting></para>
+                <para>After the document moves from draft to
+                    production status, remove the
+                        <code>status="draft"</code> tag from the main
+                    XML file.</para>
+            </step>
+            <step>
+                <title>Configure document security</title>
+                <para>In the <filename>pom.xml</filename> file for
+                    your document, add the <markup>security</markup>
+                    tag to the appropriate
+                        <literal>configuration</literal> section. </para>
+                <para>Valid values for the <literal>security</literal>
+                    tag are:<itemizedlist>
+                        <listitem>
+                            <para><literal>internal</literal>. Filters
+                                in any
                                    <code>security="internal"</code>
                                 tagged content.</para>
                         </listitem>
                         <listitem>
-                            <para><literal>reviewer</literal>. Adds
-                                the <literal>REVIEWER</literal>
-                                watermark and status bar text, and
-                                filters in any
+                            <para><literal>reviewer</literal>. Filters
+                                in any
                                    <code>security="reviewer"</code>
                                 tagged content.</para>
                         </listitem>
                         <listitem>
-                            <para><literal>writeronly</literal>. Adds
-                                the <literal>WRITERONLY</literal>
-                                watermark and status bar text, and
-                                filters in any
+                            <para><literal>writeronly</literal>.
+                                Filters in any
                                    <code>security="writeronly"</code>
                                 tagged content.</para>
                         </listitem>
@@ -375,260 +676,9 @@ format="SVG" scale="60"/>
 ...
 &lt;/configuration></programlisting>
                 </para>
-                <para>If you did not tag your document as a draft, the
-                    watermark and status bar text appears
-                    as:<programlisting>INTERNAL</programlisting>If you
-                    tagged your document as a draft, the watermark and
-                    status bar text appears
-                    as:<programlisting>DRAFT - INTERNAL</programlisting></para>
-            </step>
-            <step>
-                <title>Add custom watermark and status bar
-                    text</title>
-                <para>Add the following processing instruction and
-                    tags beneath the <literal>title</literal> tag in
-                    the main XML file for your document: </para>
-                <programlisting>&lt;title>Next Generation Cloud Servers™ Administrator Guide&lt;/title>
-&lt;?rax title.font.size="32px" 
-      pdf.url="../../cs-adminguide-2-latest.pdf" 
-     <emphasis role="bold">status.bar.text.font.size="40px"</emphasis>
-     <emphasis role="bold">status.bar.text="RAX INTERNAL"</emphasis> 
-     canonical.url.base="http://docs.rackspace.com/servers/api/v2/cs-adminguide/content"?>
-&lt;titleabbrev>Cloud Servers™ Admin Guide&lt;/titleabbrev></programlisting>
-                <para>If the text is long, use 1.3.0-SNAPSHOT or later
-                    to make it fit and control its size through the
-                        <code>status.bar.text.font.size</code> tag, as
-                    follows: <programlisting>&lt;?rax status.bar.text.font.size="50px" status.bar.text="LIMITED AVAILABILITY" ?&gt;</programlisting></para>
-                <para>The default size of the text is about 71.3px;
-                    50px might be the right size for "LIMITED
-                    AVAILABILITY".</para>
-                <para>If you did not tag your document as a draft or
-                    with a <code>security</code> tag, the watermark
-                    and status bar text appears
-                    as:<programlisting>RAX INTERNAL</programlisting>If
-                    you tagged your document as a draft, the watermark
-                    and status bar text appears
-                    as:<programlisting>DRAFT - RAX INTERNAL</programlisting></para>
-                <para>If you tagged your document as a draft and with
-                    a <code>security</code> tag, such as
-                        <code>internal</code>, the watermark and
-                    status bar text appears as
-                    follows:<programlisting>DRAFT - INTERNAL - RAX INTERNAL</programlisting></para>
-                <!-- <para>This mark-up makes a cover page like
-                    this:</para>
-                <mediaobject>
-                    <imageobject>
-                        <imagedata
-                            fileref="figures/cover-RAXINTERNAL.png"
-                            contentwidth="6in"/>
-                    </imageobject>
-                </mediaobject>
-                <para>In pom.xml, set <code>&lt;security&gt;</code> to
-                    add text to the left edge of every page. For
-                    example:<programlisting>&lt;security&gt;internal&lt;/security&gt;</programlisting>If
-                    pom.xml contains <code>&lt;?rax
-                        status.bar.text="RAX "?&gt;</code>, edges each
-                    page in repeating <literal>RAX
-                    INTERNAL</literal>.</para> -->
-            </step>
-            <!-- <step>
-                <para/>
-                <para>You can configure the watermark and status bar
-                    text through any of the following
-                    &lt;status="DRAFT"> </para>
-                <note/>
-                <para>The following images show what the output looks
-                    like with <code>status="draft"</code> on the root
-                    element of the document and
-                        <code>&lt;security&gt;reviewer&lt;/security&gt;</code>
-                    in the pom.xml file: <mediaobject>
-                        <imageobject>
-                            <imagedata
-                                fileref="figures/watermark-pdf.png"
-                                contentwidth="6in"/>
-                        </imageobject>
-                    </mediaobject><mediaobject>
-                        <imageobject>
-                            <imagedata
-                                fileref="figures/watermark-webhelp.png"
-                                contentwidth="6in"/>
-                        </imageobject>
-                    </mediaobject></para>
-                <para>For example, to create a draft for the preview
-                    version of a product, you would set the document
-                    status to <literal>DRAFT</literal> and configure a
-                        <guilabel>PREVIEW</guilabel> watermark. The
-                    cover shows a <guilabel>DRAFT PREVIEW</guilabel>
-                    watermark, as shown in the following figure: <mediaobject>
-                        <imageobject>
-                            <imagedata
-                                fileref="figures/watermarkdraft.png"
-                                contentwidth="4in"/>
-                        </imageobject>
-                    </mediaobject>When the product launches as
-                    preview, you would remove the DRAFT status, but
-                    leave the <guilabel>PREVIEW</guilabel> watermark,
-                    as shown in the following figure: <mediaobject>
-                        <imageobject>
-                            <imagedata fileref="figures/watermark.png"
-                                contentwidth="4in"/>
-                        </imageobject>
-                    </mediaobject></para>
-            </step> -->
-        </procedure>
-    </section>
-
-    <section xml:id="filter_content">
-        <title>Filter Content</title>
-        <para>You can generate the following flavors of PDF or web
-            help output for a DocBook document:<informaltable
-                rules="all">
-                <col width="10%"/>
-                <col width="10%"/>
-                <col width="80%"/>
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Status bar/watermark text</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Reviewer</td>
-                        <td>REVIEWER</td>
-                        <td>In-progress document. Shows remarks and
-                            internal and external content.</td>
-                    </tr>
-                    <tr>
-                        <td>Internal</td>
-                        <td>INTERNAL</td>
-                        <td>Internal-only. Strips out all reviewer
-                            content but leaves in content flagged as
-                                <code>security="internal"</code>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>External</td>
-                        <td>None.</td>
-                        <td>Customer-facing.</td>
-                    </tr>
-                    <tr>
-                        <td>Draft</td>
-                        <td>DRAFT</td>
-                        <td>Add status="draft" to the &lt;book&gt; or
-                            &lt;article&gt; element. When
-                            status="draft" the watermark contains the
-                            word DRAFT and elements that contain
-                            security="draft" are included. If you do
-                            not add status="draft" to the root
-                            element, then elements with
-                            security="draft" are omitted.</td>
-                    </tr>
-                </tbody>
-            </informaltable></para>
-        <para>By using
-                <code>&lt;security&gt;internal&lt;/security&gt;</code>
-            in your pom.xml, you can produce internal-only and
-            external versions of same document where the external
-            version is a subset of the internal one.<table rules="all">
-                <caption>Filter Content</caption>
-                <col width="35%"/>
-                <col width="65%"/>
-                <thead>
-                    <tr>
-                        <th>Tag</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>&lt;para
-                                security="draft"&gt;...&lt;/para&gt;</code></td>
-                        <td>Filters out the specified content UNLESS
-                            the root element of the document has
-                                <code>status="draft"</code>, which
-                            causes the watermark bar to contain the
-                            word DRAFT automatically.</td>
-                    </tr>
-                    <tr>
-                        <td><code>&lt;para
-                                security="reviewer"&gt;...&lt;/para&gt;</code></td>
-                        <td><para>Filters out the specified content
-                                UNLESS you set
-                                   <code>&lt;security&gt;reviewer&lt;/security&gt;</code>
-                                in your pom.xml. If you do set
-                                security to reviewer, the following
-                                things also happen: <itemizedlist>
-                                   <listitem>
-                                   <para>Elements with
-                                   <code>security="writeronly"</code>
-                                   are filtered out.</para>
-                                   </listitem>
-                                   <listitem>
-                                   <para>The watermark contains the
-                                   word REVIEW. Note that elements
-                                   flagged as reviewer appear with
-                                   yellow highlighting.</para>
-                                   </listitem>
-                                </itemizedlist></para></td>
-                    </tr>
-                    <tr>
-                        <td><code>&lt;para
-                                security="internal"&gt;...&lt;/para&gt;</code></td>
-                        <td>
-                            <para>Filters out the specified content
-                                UNLESS you set
-                                   <code>&lt;security&gt;internal&lt;/security&gt;
-                                </code>in your pom.xml. If you do set
-                                security to reviewer, the following
-                                things also happen:</para>
-                            <itemizedlist>
-                                <listitem>
-                                   <para>Elements with
-                                   <code>security="external"</code>,
-                                   <code>security="reviewer"</code>,
-                                   and
-                                   <code>security="writeronly"</code>
-                                   are filtered out. Elements flagged
-                                   as <code>security="external"</code>
-                                   are filtered so that you could, if
-                                   you wanted, have mutually exclusive
-                                   versions of the same content for
-                                   external and internal
-                                   audiences.</para>
-                                </listitem>
-                                <listitem>
-                                   <para><code>&lt;remark&gt;</code>
-                                   elements are filtered out.</para>
-                                </listitem>
-                                <listitem>
-                                   <para>The watermark contains the
-                                   word INTERNAL. Note that any
-                                   elements flagged as
-                                   <code>security="internal"</code>
-                                   appear blue in the output.</para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>&lt;para
-                                security="writeronly"&gt;...&lt;/para&gt;</code></td>
-                        <td>These elements are always filtered out.
-                            You can use it for stuff you want to
-                            suppress for now without deleting.</td>
-                    </tr>
-                </tbody>
-            </table></para>
-        <procedure>
-            <title>To filter content</title>
-            <step>
-                <para>To configure content to be visible in the draft
-                    document only, add the
-                        <markup>security="draft"</markup> attribute to
-                    the content. For example:
-                    <programlisting>&lt;para security="draft"&gt;Documents for internal distribution contain internal content appropriate for Rackspace employees.&lt;/para&gt;</programlisting></para>
+                <para>Then, tag any content that you want to appear in
+                    the document. For example:
+                    <programlisting>&lt;para security="internal"&gt;Documents for internal distribution contain internal content appropriate for Rackspace employees.&lt;/para&gt;</programlisting></para>
             </step>
         </procedure>
 
