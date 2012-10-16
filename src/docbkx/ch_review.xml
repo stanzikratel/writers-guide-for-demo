@@ -40,36 +40,38 @@ format="SVG" scale="60"/>
         or external distribution. </para>
     <para>A document's type is identified by its watermark and status
         bar text, its location, what type of content, if any, is
-        filtered into the document, whether search engine spiders and
-        Google analytics are enabled for the document, and what type
-        of commenting system is configured for the document. </para>
+        filtered into or out of the document, whether search engine
+        spiders and Google analytics are enabled, and what type of
+        commenting system is configured for the document. </para>
     <para>The following table describes each type of document and its
             characteristics:<table rules="all">
             <caption>Draft and Production Documents</caption>
-            <col width="12%"/>
-            <col width="12%"/>
-            <col width="12%"/>
-            <col width="12%"/>
-            <col width="12%"/>
-            <col width="12%"/>
-            <col width="12%"/>
-            <col width="12%"/>
+            <col width="14%"/>
+
+            <col width="14%"/>
+            <col width="14%"/>
+            <col width="14%"/>
+            <col width="14%"/>
+            <col width="14%"/>
+            <col width="14%"/>
             <thead>
                 <tr>
                     <th>Document type</th>
-                    <th>Content</th>
+
                     <th>Watermark and status bar text</th>
-                    <th>Location</th>
+
                     <th>Content filtering</th>
                     <th>Search engine spiders</th>
                     <th>Google analytics</th>
                     <th>Commenting tool</th>
+                    <th>Location</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Draft</td>
-                    <td>Review.</td>
+                    <td><para>Draft</para>
+                        <para>Contains review content.</para></td>
+
                     <td><guilabel>Draft</guilabel> or <guilabel>Draft
                             - &lt;release_type&gt;</guilabel> where
                             <emphasis role="italic"
@@ -79,81 +81,87 @@ format="SVG" scale="60"/>
                             <guilabel>Preview</guilabel>,
                             <guilabel>Limited Availability</guilabel>,
                         or none.</td>
-                    <td><link xlink:href="docs-beta.rackspace.com"
-                            >docs-beta.rackspace.com</link></td>
+
+
                     <td><code>security="draft"</code> and other</td>
                     <td>Disabled</td>
                     <td>Disabled</td>
                     <td>HashCode</td>
+                    <td><link xlink:href="docs-beta.rackspace.com"
+                            >docs-beta.rackspace.com</link></td>
                 </tr>
                 <tr>
-                    <td>Internal</td>
-                    <td>Internal, for Rackspace employees. These
-                        documents might also contain external content. </td>
+                    <td><para>Internal</para>
+                        <para>Contains internal content for Rackspace
+                            employees. Might also contain external
+                            content.</para></td>
+
                     <td><guilabel>Internal</guilabel> or
                             <guilabel>Draft - Internal</guilabel></td>
-                    <td><link xlink:href="docs-internal.racksapce.com"
-                            >docs-internal.rackspace.com</link></td>
+
                     <td><code>security="internal"</code> and
                         other</td>
                     <td>Disabled</td>
                     <td>Disabled</td>
                     <td>HashCode</td>
+                    <td><link xlink:href="docs-internal.racksapce.com"
+                            >docs-internal.rackspace.com</link></td>
                 </tr>
                 <tr>
-                    <td>External private beta</td>
-                    <td>External, for private beta customers.</td>
+                    <td><para>External private beta</para>
+                        <para>Contains external content for private
+                            beta customers.</para></td>
+
                     <td><guilabel>Private Beta</guilabel></td>
-                    <td><link xlink:href="docs.rackspace.com"
-                            >docs.rackspace.com</link></td>
+
                     <td>Any</td>
                     <td>Disabled</td>
                     <td>Disabled</td>
                     <td>HashCode or Disqus</td>
+                    <td><link xlink:href="docs.rackspace.com"
+                            >docs.rackspace.com</link></td>
                 </tr>
                 <tr>
-                    <td>External</td>
-                    <td>External, for preview, limited availability,
-                        or unlimited availability customers.</td>
+                    <td><para>External</para>
+                        <para>Contains external contents for preview,
+                            limited availability, or unlimited
+                            availability customers.</para></td>
+
                     <td><guilabel>Preview</guilabel>,
                             <guilabel>Limited Availability</guilabel>,
                         or none.</td>
-                    <td><link xlink:href="docs.rackspace.com"
-                            >docs.rackspace.com</link></td>
+
                     <td>Any</td>
                     <td>Enabled</td>
                     <td>Enabled</td>
                     <td>Disqus</td>
+                    <td><link xlink:href="docs.rackspace.com"
+                            >docs.rackspace.com</link></td>
                 </tr>
             </tbody>
         </table></para>
 
-    <para>The following procedures describe how to implement these
-        characteristics in your document. <itemizedlist>
-
+    <para>The following topics describe how to implement these
+        characteristics in your document:<itemizedlist>
             <listitem>
                 <para><xref linkend="watermark_proc"/></para>
-            </listitem>
-
-
-            <listitem>
-                <para><xref linkend="ch_publish"/></para>
             </listitem>
 
             <listitem>
                 <para><xref linkend="filter_content"/></para>
             </listitem>
-
             <listitem>
                 <para><xref linkend="search_engine_config"/></para>
             </listitem>
-
             <listitem>
                 <para><xref linkend="google_analytics"/></para>
             </listitem>
-
             <listitem>
                 <para><xref linkend="commenting"/></para>
+            </listitem>
+
+            <listitem>
+                <para><xref linkend="ch_publish"/></para>
             </listitem>
         </itemizedlist></para>
 
@@ -195,12 +203,9 @@ format="SVG" scale="60"/>
                         <code>status.bar.text.font.size="<varname>nn</varname>px"</code>
                 tag in the processing instruction.</para>
         </note>
-
         <procedure>
             <title>To add watermark and status bar text to your
                 document</title>
-
-
             <step>
                 <title>Create a draft document</title>
                 <para>If your document is not a draft, skip this step
@@ -210,9 +215,9 @@ format="SVG" scale="60"/>
                         <markup>book</markup> or
                         <markup>article</markup> tag, as
                     follows:</para>
-                <para>
-                    <programlisting>&lt;book  
-                        xmlns="http://docbook.org/ns/docbook" 
+
+                <programlisting>&lt;book  
+    xmlns="http://docbook.org/ns/docbook" 
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xi="http://www.w3.org/2001/XInclude" 
     xmlns:svg="http://www.w3.org/2000/svg"
@@ -220,7 +225,7 @@ format="SVG" scale="60"/>
     xml:id="example-foo" <emphasis role="bold">status="draft"</emphasis>&gt;
 ...
 &lt;/book&gt;</programlisting>
-                </para>
+
                 <para>The watermark and status bar text appears as
                         <guilabel>DRAFT</guilabel>.</para>
             </step>
@@ -261,10 +266,10 @@ format="SVG" scale="60"/>
                 </para>
                 <para>If you did not tag your document as a draft, the
                     watermark and status bar text appears as
-                        <guilabel>INTERNAL</guilabel>. If you tagged
-                    your document as a draft, the watermark and status
-                    bar text appears as <guilabel>DRAFT -
-                        INTERNAL</guilabel>.</para>
+                        <guilabel>INTERNAL</guilabel>. </para>
+                <para>If you tagged your document as a draft, the
+                    watermark and status bar text appears as
+                        <guilabel>DRAFT - INTERNAL</guilabel>.</para>
             </step>
             <step>
                 <title>Add custom watermark and status bar
@@ -293,8 +298,8 @@ format="SVG" scale="60"/>
                         - INTERNAL - RAX INTERNAL</guilabel>.</para>
             </step>
             <step>
-                <title>Adjust the size of the watermark and status bar
-                    text</title>
+                <title>Adjust the watermark and status bar text
+                    size</title>
                 <para>The default size of the watermark and status bar
                     text is about 71.3px.</para>
                 <para>If the watermark and status bar text is long,
@@ -573,20 +578,21 @@ format="SVG" scale="60"/>
             product team sends links to the document directly to
             users. To prevent random people from finding the content
             in Internet searches, you can configure search engine
-            spiders to ignore content.<procedure>
-                <title>To configure search engine spiders to ignore
-                    content</title>
-                <step>
-                    <para>Add the <markup>metaRobots</markup> tag to
-                        your pom.xml
-                        file:<programlisting>&lt;metaRobots&gt;1&lt;/metaRobots&gt; </programlisting></para>
-                    <para>When you do this, the following tag is added
-                        to all web help HTML
-                        files:<programlisting>&lt;meta name="robots" content="NOINDEX, NOFOLLOW"/&gt;</programlisting>
-                        This tag tells search engine spiders to skip
-                        this content.</para>
-                </step>
-            </procedure></para>
+            spiders to ignore content.</para>
+        <procedure>
+            <title>To configure search engine spiders to ignore
+                content</title>
+            <step>
+                <para>Add the <markup>metaRobots</markup> tag to your
+                    pom.xml
+                    file:<programlisting>&lt;metaRobots&gt;1&lt;/metaRobots&gt; </programlisting></para>
+                <para>When you do this, the following tag is added to
+                    all web help HTML
+                    files:<programlisting>&lt;meta name="robots" content="NOINDEX, NOFOLLOW"/&gt;</programlisting>
+                    This tag tells search engine spiders to skip this
+                    content.</para>
+            </step>
+        </procedure>
         <note>
             <para>Remember to remove this parameter when you are ready
                 to leave private beta. </para>
@@ -652,39 +658,38 @@ format="SVG" scale="60"/>
         <para>You can configure your document to use the <link
                 xlink:href="http://disqus.com">Disqus</link> or
             HashCode commenting tool:</para>
-        <para>
-            <itemizedlist>
-                <listitem>
-                    <para><emphasis role="bold">HashCode</emphasis>.
-                        Collects comments on internal and external
-                        content. If you publish a document on <link
-                            xlink:href="docs-internal.rackspace.com"
-                            >docs-internal.rackspace.com</link> or
-                            <link xlink:href="docs-beta.rackspace.com"
-                            >docs-beta.rackspace.com</link>, the
-                        comments are viewable internally only. </para>
-                    <para>If you publish a document on <link
-                            xlink:href="docs.rackspace.com"
-                            >docs.rackspace.com</link>, the comments
-                        are viewable internally and externally.
-                        Comments are stored on a Rackspace server and
-                        are not integrated with Facebook and other
-                        social media tools. </para>
-                </listitem>
-                <listitem>
-                    <para><emphasis role="bold">Disqus</emphasis>.
-                        Collects comments on internal and external
-                        content. Comments are stored on a Disqus
-                        server and might be exposed through
-                        integration social media sites like Facebook.
-                        Depending on your settings, if you make a
-                        comment on content with Disqus, that comment
-                        might be shared with your Facebook friends and
-                        Twitter followers even if you commented while
-                        inside the Rackspace VPN. </para>
-                </listitem>
-            </itemizedlist>
-        </para>
+
+        <itemizedlist>
+            <listitem>
+                <para><emphasis role="bold">HashCode</emphasis>.
+                    Collects comments on internal and external
+                    content. If you publish a document on <link
+                        xlink:href="docs-internal.rackspace.com"
+                        >docs-internal.rackspace.com</link> or <link
+                        xlink:href="docs-beta.rackspace.com"
+                        >docs-beta.rackspace.com</link>, the comments
+                    are viewable internally only. </para>
+                <para>If you publish a document on <link
+                        xlink:href="docs.rackspace.com"
+                        >docs.rackspace.com</link>, the comments are
+                    viewable internally and externally. Comments are
+                    stored on a Rackspace server and are not
+                    integrated with Facebook and other social media
+                    tools. </para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">Disqus</emphasis>.
+                    Collects comments on internal and external
+                    content. Comments are stored on a Disqus server
+                    and might be exposed through integration social
+                    media sites like Facebook. Depending on your
+                    settings, if you make a comment on content with
+                    Disqus, that comment might be shared with your
+                    Facebook friends and Twitter followers even if you
+                    commented while inside the Rackspace VPN. </para>
+            </listitem>
+        </itemizedlist>
+
         <para>Use the <markup>enableDisqus</markup> tag to configure
             the <link xlink:href="http://disqus.com">Disqus</link> or
             HashCode commenting tool. </para>
