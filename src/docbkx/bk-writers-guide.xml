@@ -44,6 +44,7 @@
   <xi:include href="ch_newbook.xml"/> 
   <xi:include href="ch_newapi.xml"/> 
   <xi:include href="ch_tag_ref.xml"/> 
+  <xi:include href="ch_tables.xml"/> 
   <xi:include href="ch_review.xml"/> 
   <xi:include href="ch_publish_content.xml"/> 
   <xi:include href="ch_troubleshooting.xml"/> 
