@@ -196,24 +196,35 @@ format="SVG" scale="60"/>
                             contains them, which causes them to
                             overstrike the contents of an adjacent
                             cell or to disappear off the edge of the
-                            page. </para>
+                            page, as shown in the following figure:<mediaobject>
+                                <imageobject>
+                                    <imagedata
+                                        fileref="figures/table-PDF-nowrapURLintable.png"
+                                        contentwidth="6in"/>
+                                </imageobject>
+                            </mediaobject> </para>
 
                     </listitem>
                 </varlistentry>
                 <varlistentry>
                     <term>Solution</term>
                     <listitem>
-                        <para>Turn the table and give it a crazy
-                            size.</para>
-                        <para>Turning the table on its side helped a
-                            little, since it meant I could lose a
-                            separate column for version, but it still
-                            left some impolite overflow into the
-                            neighbor's yard. By specifying column
-                            widths that add up to greater than 100% of
-                            the space reserved for the table, it got
-                            better enough to
-                            publish.<programlisting language="xml"><xi:include href="samples/tables.xml" parse="text"/></programlisting></para>
+                        <para>First, manually update the table so that
+                            the rows become columns, and the columns
+                            become rows, as shown in the following
+                            figure:</para>
+                        
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                   fileref="figures/table-PDF-force2edge.png"
+                                   contentwidth="6in"/>
+                            </imageobject>
+                        </mediaobject>
+                        <para>Then, specify column widths that add up
+                            to greater than 100% of the space reserved
+                            for the table, as shown in the following
+                            markup:<programlisting language="xml"><xi:include href="samples/table.xml" parse="text"/></programlisting></para>
                     </listitem>
                 </varlistentry>
             </variablelist>

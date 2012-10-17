@@ -14,62 +14,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>US-Based Endpoint</td>
-            <td>
-                <link
-                    xlink:href="https://identity.api.rackspacecloud.com/v1"
-                    >https://identity.api.rackspacecloud.com/v1</link>
-            </td>
-            <td>
-                <link
-                    xlink:href="https://identity.api.rackspacecloud.com/v1.1"
-                    >https://identity.api.rackspacecloud.com/v1.1</link>
-            </td>
-            <td>
-                <link
-                    xlink:href="https://identity.api.rackspacecloud.com/v2.0"
-                    >https://identity.api.rackspacecloud.com/v2.0</link>
-            </td>
-        </tr>
-        <tr>
-            <td>UK-Based Endpoint</td>
-            <td>
-                <link
-                    xlink:href="https://lon.identity.api.rackspacecloud.com/v1"
-                    >https://lon.identity.api.rackspacecloud.com/v1</link>
-            </td>
-            <td>
-                <link
-                    xlink:href="https://lon.identity.api.rackspacecloud.com/v1.1"
-                    >https://lon.identity.api.rackspacecloud.com/v1.1</link>
-            </td>
-            <td>
-                <link
-                    xlink:href="https://lon.identity.api.rackspacecloud.com/v2.0"
-                    >https://lon.identity.api.rackspacecloud.com/v2.0</link>
-            </td>
-        </tr>
-        <tr>
-            <td>Documentation</td>
-            <td> No standalone documentation is available for Auth
-                1.0, but you can see Auth1.0 in use in <link
-                    xlink:href="http://docs.rackspace.com/servers/api/v1.0/cs-devguide/content/Authentication-d1e506.html"
-                    >First Generation Cloud Servers™ Developer Guide -
-                    API v1.0: Section 3.1, Authentication</link>
-            </td>
-            <td>
-                <link
-                    xlink:href="http://docs.rackspace.com/auth/api/v1.1/auth-client-devguide/content/index.html"
-                    >Cloud Authentication Client Developer Guide - API
-                    v1.1</link>
-            </td>
-            <td>
-                <link
-                    xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/QuickStart-000.html"
-                    >Cloud Identity Client Developer Guide - API
-                    v2.0</link>
-            </td>
-        </tr>
+...
     </tbody>
 </table>
