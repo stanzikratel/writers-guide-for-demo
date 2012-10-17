@@ -34,7 +34,44 @@ format="SVG" scale="60"/>
     <title>Publish Content</title>
     <section xml:id="publish_beta">
         <title>Publish Content to docs-beta.rackspace.com</title>
-        <para/>
+        <para>Copy content from your local machine to <link
+                xlink:href="http://docs-beta.rackspace.com/drafts/"
+                >http://docs-beta.rackspace.com/drafts/</link> for
+            internal review.</para>
+        <procedure>
+            <title>To publish to docs-beta.rackspace.com</title>
+            <step>
+                <title>Copy content to docs-beta.rackspace.com</title>
+
+                <para>Change directory to the location of your source
+                    files. For example:</para>
+                <programlisting>cd /auth-doc/target/docbkx/webhelp/</programlisting>
+
+
+                <para>List the contents of the directory to confirm
+                    that you see the directory you want to upload,
+                    such as /auth-client-devguide/ For
+                    example:<programlisting>ls</programlisting></para>
+
+                <para>Copy the contents of the directory to the <link
+                        xlink:hred="docs-beta.rackspace.com"
+                        >docs-beta.rackspace.com</link> site:</para>
+                <programlisting>scp -r auth-client-devguide docs-beta.rackspace.com:/var/www/drafts</programlisting>
+
+
+            </step>
+            <step>
+                <title>Verify content is published</title>
+
+                <para>Open <link
+                        xlink:href="http://docs-beta.rackspace.com/drafts/"
+                        >http://docs-beta.rackspace.com/drafts/</link>
+                    and confirm that the new /auth-client-devguide/ is
+                    listed and usable.</para>
+
+
+            </step>
+        </procedure>
     </section>
     <section xml:id="publish_internal">
         <title>Publish Content to docs-internal.rackspace.com</title>
