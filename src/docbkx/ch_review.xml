@@ -44,7 +44,7 @@ format="SVG" scale="60"/>
         spiders and Google analytics are enabled, and what type of
         commenting system is configured for the document. </para>
     <para>The following table describes each type of document and its
-            characteristics:<table rules="all">
+            characteristics:<table rules="all" frame="border">
             <caption>Draft and Production Documents</caption>
             <col width="20%"/>
 

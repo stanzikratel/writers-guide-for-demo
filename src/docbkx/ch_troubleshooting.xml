@@ -99,11 +99,77 @@ format="SVG" scale="60"/>
                 </tr>
             </tbody>
         </informaltable>
-        
-        
+
+
     </section>
 
+    <section xml:id="build_failure">
+        <title>Build failure due to date format</title>
+        <para> </para>
+        <section xml:id="problem_build_failure">
+            <title>Problem</title>
+            <para>An old draft document uses an old version of the
+                DocBook plugin, probably 1.0.2-SNAPSHOT. Changing its
+                pom.xml to use the current version of the DocBook
+                plugin, such as 1.0.4, causes the build to
+                fail.</para>
+            <para> mvn clean install -X generates mountains of
+                unhelpful debug info, with this near the end:</para>
+            <para>Bad Month value</para>
+            <para> [INFO]
+                ----------------------------------------------------------------------- </para>
+            <para> -</para>
+            <para> [INFO] BUILD FAILURE</para>
+            <para> [INFO]
+                ----------------------------------------------------------------------- </para>
+            <para> -</para>
+            <para> [INFO] Total time: 6.871s</para>
+            <para> [INFO] Finished at: Wed Jul 27 15:24:56 CDT
+                2011</para>
+            <para> [INFO] Final Memory: 5M/81M</para>
+            <para> [INFO]
+                ----------------------------------------------------------------------- </para>
+            <para> -</para>
+            <para> [ERROR] Failed to execute goal
+                    com.rackspace.cloud.<link
+                    xlink:href="http://apiclouddocs-maven-plugin:1.0.4:generate-pdf"
+                    >api:clouddocs-maven-plugin:1.0.4:generate-pdf</link>
+                (default) on project cbs-ext-docs: Failed to transform
+                rax-cbs.xml. Processing terminated by <link
+                    xlink:href="http://xslmessage">xsl:message</link>
+                at line 126 -&gt; [Help 1]</para>
+            <para>
+                org.apache.maven.lifecycle.LifecycleExecutionException:
+                Failed to execute goal com.rackspace.cloud.<link
+                    xlink:href="http://apiclouddocs-maven-plugin:1.0.4:generate-pdf"
+                    >api:clouddocs-maven-plugin:1.0.4:generate-pdf</link>
+                (default) on project cbs-ext-docs: Failed to transform
+                rax-cbs.xml.</para>
+        </section>
+        <section xml:id="solution_build_failure">
+            <title>Solution</title>
+            <para>"Bad Month value" is the key.</para>
+            <para> Prior to 1.0.4, the publication date was expressed
+                as mm/dd/yy; since then, it's expressed as yyyy-mm-dd,
+                and the old format causes the build to fail.</para>
+            <para> In &lt;book&gt;&lt;info&gt; find &lt;pubdate&gt;.
+                Be sure it's shaped like
+                &lt;pubdate&gt;2011-07-22&lt;/pubdate&gt;. Then retry
+                the build.</para>
+        </section>
+        <section xml:id="build_failure_mvn">
+            <title>Build failure due to Maven settings</title>
 
+
+            <para>Hide settings.xml so it's not found by a project
+                that doesn't like it; bring settings.xml back so it is
+                found by a project that does like it. <link
+                    xlink:href="https://one.rackspace.com/display/RED/Troubleshooting+build+failures"
+                    >Troubleshooting build failures</link> includes 2
+                scripts to do those things. </para>
+
+        </section>
+    </section>
 
 
 

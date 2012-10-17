@@ -37,37 +37,90 @@ format="SVG" scale="60"/>
         <para>Copy content from your local machine to <link
                 xlink:href="http://docs-beta.rackspace.com/drafts/"
                 >http://docs-beta.rackspace.com/drafts/</link> for
-            internal review.</para>
+            internal review. The docs-beta.rackspace.com server hosts
+            both docs-beta and docs-internal.</para>
         <procedure>
             <title>To publish to docs-beta.rackspace.com</title>
             <step>
-                <title>Copy content to docs-beta.rackspace.com</title>
+                <title>Set up a directory on
+                    docs-beta.rackspace.com</title>
+                <para>Enter the following command to connect to the
+                        <link xlink:href="docs-beta.rackspace.com"
+                        >docs-beta.rackspace.com</link>
+                    server:<programlisting>ssh docs-beta.rackspace.com </programlisting>The
+                    following login information appears:
+                    <programlisting>dcramer@anatine ~
+$ ssh docs-beta.rackspace.com
+Linux dcramer01 2.6.35.4-rscloud #8 SMP Mon Sep 20 15:54:33 UTC 2010
+x86_64 GNU/Linux
+Ubuntu 10.10
 
-                <para>Change directory to the location of your source
-                    files. For example:</para>
-                <programlisting>cd /auth-doc/target/docbkx/webhelp/</programlisting>
+Welcome to Ubuntu!
+* Documentation:  https://help.ubuntu.com/
+You have new mail.
+Last login: Wed Jul 18 18:14:55 2012 from 50.56.230.37</programlisting>Change
+                    directory to the directory where you want to place
+                    your content. Most API documents appear in the
+                        <filename>/var/www/servers/api</filename>
+                    directory. You can also post documents in the
+                        <filename>/var/www/drafts</filename>
+                    directory, or you can create a new directory
+                    beneath the <filename>/var/www</filename>
+                    directory. </para>
+                <para>For example, to post to the
+                        <filename>/var/www/servers/api</filename>
+                    directory, enter the following command:
+                    <programlisting>cd /var/www/servers/api</programlisting>Enter
+                    the following command to see the contents of the
+                    directory:<programlisting>ls -al </programlisting>To
+                    add permissions for your content, you must edit or
+                    create the <filename>.htaccess</filename> file. </para>
+                <para>Enter the following command:
+                    <programlisting>nano .htaccess</programlisting>If
+                    the <filename>.htaccess</filename> file does not
+                    exist in the directory yet, the command creates
+                    the file. </para>
+                <para>Add lines like the following for your new
+                    content:<programlisting>DirectoryIndex api.xsd
+AddType application/xml wadl
+AddType application/xml xsd
+
+Redirect 301 /servers/api/cs-devguide-latest.pdf         http://docs-beta.rackspace.com/servers/api/v1.0/cs-devguide-20110914.pdf
+Redirect 301 /servers/api/cs-devguide-latest/index.html  http://docs-beta.rackspace.com/servers/api/v1.0/cs-devguide/content/index.html</programlisting></para>
+            </step>
+            <step><title>Generate output for your content</title><para>Change directory to the location of your
+                        <filename>pom.xml</filename> file. </para>
+                <para>Enter the following command to generate output
+                    for your
+                    content:<programlisting>mvn clean generate-sources</programlisting></para></step>
+            <step>
+                <title>Copy output to docs-beta.rackspace.com</title>
+
+                <para>Change directory to the location of your output
+                    files. </para>
+                <para>For example:</para>
+                <programlisting>cd /2.0/cloud-servers/target/docbkx/webhelp/cs-devguide</programlisting>
 
 
-                <para>List the contents of the directory to confirm
-                    that you see the directory you want to upload,
-                    such as /auth-client-devguide/ For
-                    example:<programlisting>ls</programlisting></para>
+                <para>Enter the following command to confirm that you
+                    see the output that you want to
+                    upload:<programlisting>ls</programlisting></para>
 
                 <para>Copy the contents of the directory to the <link
                         xlink:href="docs-beta.rackspace.com"
                         >docs-beta.rackspace.com</link> site:</para>
-                <programlisting>scp -r auth-client-devguide docs-beta.rackspace.com:/var/www/drafts</programlisting>
+                <programlisting>scp -r target/docbkx/webhelp/cs-devguide docs-beta.rackspace.com:/var/www/servers/api/v2/</programlisting>
 
 
             </step>
             <step>
-                <title>Verify content is published</title>
+                <title>Verify that output is published</title>
 
                 <para>Open <link
-                        xlink:href="http://docs-beta.rackspace.com/drafts/"
-                        >http://docs-beta.rackspace.com/drafts/</link>
-                    and confirm that the new /auth-client-devguide/ is
-                    listed and usable.</para>
+                        xlink:href="http://docs-beta.rackspace.com/servers/api/v2"
+                        >http://docs-beta.rackspace.com/servers/api/v2/</link>
+                    to confirm that your output was posted and is
+                    usable.</para>
 
 
             </step>
