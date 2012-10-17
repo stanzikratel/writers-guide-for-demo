@@ -539,6 +539,12 @@ format="SVG" scale="60"/>
                                    text appears as
                                    <guilabel>WRITERONLY</guilabel>.</para>
                                    </listitem>
+                                   <listitem>
+                                   <para>Content tagged as
+                                   <literal>writeronly</literal>
+                                   appears in red in the source
+                                   XML.</para>
+                                   </listitem>
                                    </itemizedlist></para></td>
                                 <td>
                                    <para>If
@@ -551,6 +557,12 @@ format="SVG" scale="60"/>
                                    <para>Filters out
                                    <code>security="writeronly"</code>
                                    tagged content.</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>Content tagged as
+                                   <literal>writeronly</literal>
+                                   appears in red in the source
+                                   XML.</para>
                                    </listitem>
                                    </itemizedlist>
                                    </para></td>
