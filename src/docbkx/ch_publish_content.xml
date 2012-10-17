@@ -54,7 +54,7 @@ format="SVG" scale="60"/>
                     example:<programlisting>ls</programlisting></para>
 
                 <para>Copy the contents of the directory to the <link
-                        xlink:hred="docs-beta.rackspace.com"
+                        xlink:href="docs-beta.rackspace.com"
                         >docs-beta.rackspace.com</link> site:</para>
                 <programlisting>scp -r auth-client-devguide docs-beta.rackspace.com:/var/www/drafts</programlisting>
 
