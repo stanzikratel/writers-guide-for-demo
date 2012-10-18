@@ -57,16 +57,15 @@ format="SVG" scale="60"/>
                 <para>Table alignment</para>
                 <para><xref linkend="table_alignment"/></para>
             </listitem>
-          
+
             <listitem>
                 <para>Cell spacing and padding</para>
-                <para><link xlink:href="http://www.sagehill.net/docbookxsl/CellSpacing.html">Cell spacing and cell padding</link></para>
+                <para><link
+                        xlink:href="http://www.sagehill.net/docbookxsl/CellSpacing.html"
+                        >Cell spacing and cell padding</link></para>
             </listitem>
             <listitem>
                 <para>Cell alignment and spanning</para>
-            </listitem>
-            <listitem>
-                <para>Row height</para>
             </listitem>
             <listitem>
                 <para>Borders</para>
@@ -320,17 +319,23 @@ format="SVG" scale="60"/>
                     xlink:href="http://www.sagehill.net/docbookxsl/TableAlignment.html"
                     >Table alignment</link>.</para>
         </section>
-        <section xml:id="row_height"><title>Row Height</title>
-            <para>To control the vertical height of a row, place the
-                following processing instruction in that row:</para>
-            <programlisting>&lt;row&gt;<emphasis role="bold">&lt;?dbhtml row-height="20"
-        ?&gt;</emphasis>
-  &lt;entry&gt;...&lt;/entry&gt;
-  &lt;entry&gt;...&lt;/entry&gt;
-&lt;/row&gt;</programlisting>
-        <para>Currently this only works for HTML output. The following
-                is an example that sets a row height to 20
-                pixels.</para></section>
+        <section xml:id="cell_alignment">
+            <title>Cell Alignment and Spanning</title>
+            <para>To control the horizontal and vertical positioning
+                of content in a cell, use the <literal>align</literal>
+                and <literal>valign</literal> attributes,
+                respectively. </para>
+            <para>The scope of these attributes depends on the table
+                element in which you define the attributes. <procedure>
+                    <title>To define cell alignments and
+                        spanning</title>
+                    <step>
+                        <title>Set the horizontal aligment</title>
+                        <para>Add the align attribute to any of the
+                            following </para>
+                    </step>
+                </procedure></para>
+        </section>
     </section>
     <section xml:id="troubleshooting_tables">
         <title>Troubleshoot Tables</title>
@@ -476,7 +481,21 @@ format="SVG" scale="60"/>
             </variablelist>
 
 
-
+            <table rules="all">
+                <caption>Test</caption>
+                <thead valign="top">
+                    <tr>
+                        <th>sadfssafafasfasfdasfadsadsfafaadsfdasff</th>
+                        <th>sadfsaffasfafafadafddfafadfads</th>
+                    </tr>
+                </thead>
+                <tbody valign="bottom">
+                    <tr>
+                        <td>x</td>
+                        <td>x</td>
+                    </tr>
+                </tbody>
+            </table>
 
 
         </section>

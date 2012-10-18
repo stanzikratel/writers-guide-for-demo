@@ -32,12 +32,11 @@ format="SVG" scale="60"/>
     xml:id="ch_resources">
     <title>Resources</title>
     <para>For the latest version of this guide, see <link
-            xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/index.html"
+        xlink:href="http://docs-beta.rackspace.com/writers/writers-guide/content/index.html"
             xmlns:svg="http://www.w3.org/2000/svg"
             xmlns:m="http://www.w3.org/1998/Math/MathML"
             xmlns:html="http://www.w3.org/1999/xhtml"
-                ><citetitle>Writers' Guide</citetitle></link> on the
-        Rackspace Cloud website. </para>
+                ><citetitle>Content Team Tools Guide</citetitle></link>. </para>
     <para>Use the following resources in conjunction with this guide: <itemizedlist>
             <listitem>
                 <para><link

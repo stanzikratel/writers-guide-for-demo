@@ -43,9 +43,7 @@ format="SVG" scale="60"/>
             <listitem>
                 <para>Watermark and status bar text</para>
             </listitem>
-            <listitem>
-                <para>Location on the web</para>
-            </listitem>
+
             <listitem>
                 <para>What type of content, if any, is filtered into
                     or out of the document</para>
@@ -58,12 +56,14 @@ format="SVG" scale="60"/>
                 <para>What type of commenting system is configured for
                     the document</para>
             </listitem>
+            <listitem>
+                <para>Location on the web</para>
+            </listitem>
         </itemizedlist></para>
-    <para>The following table describes each type of document and its
+    <para>The following table describes each document type and its
             characteristics:<table rules="all" frame="border">
             <caption>Draft and Production Documents</caption>
             <col width="20%"/>
-
             <col width="20%"/>
             <col width="10%"/>
             <col width="10%"/>
@@ -73,9 +73,7 @@ format="SVG" scale="60"/>
             <thead>
                 <tr>
                     <th>Document type</th>
-
                     <th>Watermark and status bar text</th>
-
                     <th>Content filtering</th>
                     <th>Search engine spiders</th>
                     <th>Google analytics</th>
@@ -84,14 +82,14 @@ format="SVG" scale="60"/>
                 </tr>
             </thead>
             <tbody>
-                <tr><?dbhtml row-height="100"?>
-                    <td><para>Draft</para>
-                        <para>Contains review content.</para></td>
-
+                <tr>
+                    <?dbhtml row-height="500px" ?>
+                    <td>
+                        <para>Draft</para>
+                        <para>Contains review content.</para>
+                    </td>
                     <td><guilabel>Draft</guilabel>
                     </td>
-
-
                     <td><code>security="draft"</code> and other</td>
                     <td>Disabled</td>
                     <td>Disabled</td>
@@ -100,14 +98,14 @@ format="SVG" scale="60"/>
                             >docs-beta.rackspace.com</link></td>
                 </tr>
                 <tr>
-                    <td><para>Internal</para>
+                    <td>
+                        <para>Internal</para>
                         <para>Contains internal content for Rackspace
                             employees. Might also contain external
-                            content.</para></td>
-
+                            content.</para>
+                    </td>
                     <td><guilabel>Internal</guilabel>
                     </td>
-
                     <td><code>security="internal"</code> and
                         other</td>
                     <td>Disabled</td>
@@ -117,12 +115,12 @@ format="SVG" scale="60"/>
                             >docs-internal.rackspace.com</link></td>
                 </tr>
                 <tr>
-                    <td><para>External private beta</para>
+                    <td>
+                        <para>External private beta</para>
                         <para>Contains external content for private
-                            beta customers.</para></td>
-
+                            beta customers.</para>
+                    </td>
                     <td><guilabel>Private Beta</guilabel></td>
-
                     <td>Any</td>
                     <td>Disabled</td>
                     <td>Disabled</td>
@@ -131,15 +129,15 @@ format="SVG" scale="60"/>
                             >docs.rackspace.com</link></td>
                 </tr>
                 <tr>
-                    <td><para>External</para>
+                    <td>
+                        <para>External</para>
                         <para>Contains external contents for preview,
                             limited availability, or unlimited
-                            availability customers.</para></td>
-
+                            availability customers.</para>
+                    </td>
                     <td><guilabel>Preview</guilabel>,
                             <guilabel>Limited Availability</guilabel>,
                         or none.</td>
-
                     <td>Any</td>
                     <td>Enabled</td>
                     <td>Enabled</td>
