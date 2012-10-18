@@ -30,8 +30,8 @@ format="SVG" scale="60"/>
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_newapi">
-    <title>Add a New API Operation</title>
-    <para>This section describes how to add a new API operation to a
+    <title>Add an API Operation</title>
+    <para>This section describes how to add an API operation to a
         book. It uses the Cloud Servers product as an example.</para>
     <section xml:id="more_stuff3">
         <title>Determine the Category</title>

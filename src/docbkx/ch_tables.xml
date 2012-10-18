@@ -31,9 +31,189 @@ format="SVG" scale="60"/>
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_tables">
     <title>Tables</title>
-    <para>Types of tables, when to use tables versus when to use
-        lists.</para>
+    <para>You can create the following types of tables:<itemizedlist>
+            <listitem>
+                <para><emphasis role="bold">Informal</emphasis>. No
+                    caption. Tagged with <code>&lt;table></code> tag.
+                    Use if you want the table title to be listed in
+                    the table of contents or if you want to
+                    cross-reference the table from another section in
+                    your book.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">Formal</emphasis>.
+                    Requires a caption. Tagged with
+                        <code>&lt;informaltable></code> tag.</para>
+            </listitem>
+        </itemizedlist></para>
+    <para>For either type of table, you can control the table width,
+        table alignments, column widths, cell spacing and padding,
+        cell alignment and spanning, row height, borders, and other
+        table properties.</para>
+    <section>
+        <title>Guidelines for Tables</title>
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para>Capitalize only the first word of table
+                        captions and table headings. </para>
+                </listitem>
+                <listitem>
+                    <para>Attribute tables: <itemizedlist>
+                            <listitem>
+                                <para>Write the first sentence of a
+                                   description with an implied
+                                   subject. </para>
+                                <para>For example, if the attribute is
+                                   <guilabel>name</guilabel>, the
+                                   description might be <quote>Server
+                                   name, which becomes the initial
+                                   host name of the server.
+                                   </quote></para>
+                            </listitem>
+                            <listitem>
+                                <para>For attributes, include the
+                                   valid values and default value at
+                                   the end of the description. Use the
+                                   format <quote>Valid values
+                                   are:</quote> and <quote>Default is
+                                   X.</quote>
+                                </para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+
+                <listitem>
+                    <para>Use parallel structure. </para>
+                </listitem>
+                <listitem>
+                    <para>If the table descriptions or construction is
+                        complex, consider using a variable or itemized
+                        list. </para>
+                </listitem>
+                <listitem>
+                    <para>Avoid putting a variable list in a table.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>Lead-in sentences for tables:<itemizedlist>
+                            <listitem>
+                                <para>Use a lead-in sentence for
+                                   tables. </para>
+                            </listitem>
+                            <listitem>
+                                <para>Use complete sentences for
+                                   lead-in sentences, and use a colon
+                                   as ending punctuation. </para>
+                            </listitem>
+                            <listitem>
+                                <para>Use the style: The following
+                                   table (describes/shows/lists) X:
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>Put the lead-in sentence in a
+                                   separate paragraph directly before
+                                   the object of the lead-in. </para>
+                            </listitem>
+                            <listitem>
+                                <para>Do not use “following” as a
+                                   noun, such as “The following is an
+                                   example of...”</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+
+            </itemizedlist>
+        </para>
+    </section>
     <?dbhtml stop-chunking?>
+    <section xml:id="create_table">
+        <title>Create Tables</title>
+        <para>The easiest way to create a table in the Author view in
+            Oxygen. </para>
+        <para>
+            <procedure>
+                <title>To create a table</title>
+                <step>
+                    <para>In Author mode, click
+                            <guimenu>Rackbook</guimenu>
+                        <guimenuitem>Table</guimenuitem>
+                        <guisubmenu>Insert Table</guisubmenu>.</para>
+                    <para>The <guilabel>Insert Table</guilabel> dialog box appears.</para>
+                </step><step><para>Make the following selections:<informaltable frame="void">
+                            <col width="25%"/>
+                            <col width="75%"/>
+                            <thead>
+                                <tr>
+                                   <th>Property</th>
+                                   <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                   <td>Model</td>
+                                   <td><para>Select <guilabel>HTML</guilabel>. </para>
+                                   <para>DocBook tables are written
+                                   using either <emphasis
+                                   role="italic">CALS</emphasis> or
+                                   HTML table elements. CALS is an
+                                   SGML standard developed by the US
+                                   military. DocBook added HTML table
+                                   elements, starting with version 4.3
+                                   of the DocBook DTD. When you create
+                                   tables, choose the HTML format.
+                                   Though the CALS table elements are
+                                   supported, you can convert CALS
+                                   tables to HTML format. See <xref
+                                   linkend="rebuild_cals"/>. </para></td>
+                                </tr>
+                                <tr>
+                                    <td>Title</td>
+                                    <td><para>For a formal table, enter a
+                                   table title. Capitalize only the
+                                   first word of the table title.</para>
+                                   <para>For an informal table, clear
+                                   the <guilabel>Title</guilabel>
+                                   selection.</para></td>
+                                </tr>
+                                <tr>
+                                    <td>Table Size</td>
+                                    <td><para>Select or enter the number of
+                                   rows and columns in the table.</para></td>
+                                </tr>
+                                <tr>
+                                    <td>Generate table header</td>
+                                    <td><para>Accept the default to generate a table head row. Clear this
+                                   selection to omit a table head
+                                   row.</para></td>
+                                </tr>
+                                <tr>
+                                    <td>Generate table footer</td>
+                                    <td>Select to generate a table
+                                   footer. Otherwise, accept the
+                                   default, which is to omit a table
+                                   footer.</td>
+                                </tr>
+                                <tr>
+                                    <td>Column widths</td>
+                                    <td>Select
+                                   <guilabel>proportional</guilabel>,
+                                   <guilabel>dynamic</guilabel>, or
+                                   <guilabel>fixed</guilabel>.</td>
+                                </tr>
+                                <tr>
+                                   <td>Frame</td>
+                                   <td>Select
+                                   <guilabel>void</guilabel>. You will
+                                   manually change this after your
+                                   table is created.</td>
+                                </tr>
+                            </tbody>
+                        </informaltable></para></step>
+            </procedure>
+        </para>
+    </section>
     <section xml:id="format_tables">
         <title>Format Tables</title>
         <para>To control the overall width of a table and the width of
@@ -198,11 +378,12 @@ format="SVG" scale="60"/>
                             cell or to disappear off the edge of the
                             page, as shown in the following figure:<mediaobject>
                                 <imageobject>
-                                    <imagedata
-                                        fileref="figures/table-PDF-nowrapURLintable.png"
-                                        contentwidth="6in"/>
+                                   <imagedata
+                                   fileref="figures/table-PDF-nowrapURLintable.png"
+                                   contentwidth="6in"/>
                                 </imageobject>
-                            </mediaobject> </para>
+                            </mediaobject>
+                        </para>
 
                     </listitem>
                 </varlistentry>
@@ -213,7 +394,7 @@ format="SVG" scale="60"/>
                             the rows become columns, and the columns
                             become rows, as shown in the following
                             figure:</para>
-                        
+
                         <mediaobject>
                             <imageobject>
                                 <imagedata
