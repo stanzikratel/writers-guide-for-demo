@@ -330,9 +330,58 @@ format="SVG" scale="60"/>
                     <title>To define cell alignments and
                         spanning</title>
                     <step>
-                        <title>Set the horizontal aligment</title>
-                        <para>Add the align attribute to any of the
-                            following </para>
+                        <title>Set the horizontal alignment</title>
+                        <para>Add the <literal>align</literal>
+                            attribute to any of the following table tags:<itemizedlist>
+                                <listitem>
+                                   <para><literal>thead</literal></para>
+                                </listitem>
+                                <listitem>
+                                   <para><literal>th</literal></para>
+                                </listitem>
+                                <listitem>
+                                   <para><literal>tbody</literal></para>
+                                </listitem>
+                                <listitem>
+                                   <para><literal>tr</literal></para>
+                                </listitem>
+                                <listitem>
+                                   <para><literal>td</literal></para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>Valid values for the
+                                <literal>align</literal> attribute are:<itemizedlist>
+                                <listitem>
+                                   <para><literal>baseline</literal>.
+                                   All cells in the same row as a cell
+                                   whose <literal>valign</literal>
+                                   attribute has this value should
+                                   have their textual data positioned
+                                   so that the first text line occurs
+                                   on a baseline common to all cells
+                                   in the row. This constraint does
+                                   not apply to subsequent text lines
+                                   in these cells.</para>
+                                </listitem>
+                                <listitem>
+                                   <para><literal>top</literal>.
+                                   Aligns to top of cell. Flushes cell
+                                   data with the top of the cell. </para>
+                                </listitem>
+                                <listitem>
+                                   <para><literal>middle</literal>.
+                                   Aligns to center of cell or row.
+                                   Centers cell data horizontally in
+                                   the cell. Default value is
+                                   <literal>middle</literal>.</para>
+                                </listitem>
+                                <listitem>
+                                   <para><literal>bottom</literal>.
+                                   Aligns to bottom of cell or row.
+                                   Flushes cell data with the bottom
+                                   of the cell.</para>
+                                </listitem>
+                            </itemizedlist></para>
                     </step>
                 </procedure></para>
         </section>
@@ -483,7 +532,7 @@ format="SVG" scale="60"/>
 
             <table rules="all">
                 <caption>Test</caption>
-                <thead valign="top">
+                <thead valign="baseline">
                     <tr>
                         <th>sadfssafafasfasfdasfadsadsfafaadsfdasff</th>
                         <th>sadfsaffasfafafadafddfafadfads</th>
