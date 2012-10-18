@@ -38,11 +38,27 @@ format="SVG" scale="60"/>
             documents</emphasis> for review, or <emphasis
             role="italic">production documents</emphasis> for internal
         or external distribution. </para>
-    <para>A document's type is identified by its watermark and status
-        bar text, its location, what type of content, if any, is
-        filtered into or out of the document, whether search engine
-        spiders and Google analytics are enabled, and what type of
-        commenting system is configured for the document. </para>
+    <para>A document's type is identified by the following
+        characteristics: <itemizedlist>
+            <listitem>
+                <para>Watermark and status bar text</para>
+            </listitem>
+            <listitem>
+                <para>Location on the web</para>
+            </listitem>
+            <listitem>
+                <para>What type of content, if any, is filtered into
+                    or out of the document</para>
+            </listitem>
+            <listitem>
+                <para>Whether search engine spiders and Google
+                    analytics are enabled</para>
+            </listitem>
+            <listitem>
+                <para>What type of commenting system is configured for
+                    the document</para>
+            </listitem>
+        </itemizedlist></para>
     <para>The following table describes each type of document and its
             characteristics:<table rules="all" frame="border">
             <caption>Draft and Production Documents</caption>
@@ -170,7 +186,9 @@ format="SVG" scale="60"/>
             the watermark and status bar text. If you set
                 <code>&lt;security>internal&lt;/security></code>, the
             boilerplate text, <guilabel>INTERNAL</guilabel>, appears
-            as the watermark and status bar text. </para>
+            as the watermark and status bar text. <xref
+                linkend="watermark_procedure"/> describes where to add
+            these tags.</para>
         <para>To add custom watermark and status bar text, use the
                 <code>&lt;?rax status.bar.text="Some Text"
                 ?&gt;</code> processing instruction. For example, for
@@ -192,11 +210,14 @@ format="SVG" scale="60"/>
             <para>If the text is too long, it might be truncated in
                 the watermark. </para>
             <para>You can control the size of the watermark and status
-                bar text through the
+                bar text. Use the
                         <code>status.bar.text.font.size="<varname>nn</varname>px"</code>
-                tag in the processing instruction.</para>
+                tag, where <varname>nn</varname> specifies the point
+                size for the type. For example,
+                    <code>status.bar.text.font.size="40px"</code> sets
+                the font size to 40 points.</para>
         </note>
-        <procedure>
+        <procedure xml:id="watermark_procedure">
             <title>To add watermark and status bar text to your
                 document</title>
             <step>
@@ -223,7 +244,7 @@ format="SVG" scale="60"/>
                         <guilabel>DRAFT</guilabel>.</para>
             </step>
             <step xml:id="security">
-                <title>Configure document security</title>
+                <title>Configure security</title>
                 <para>In the <filename>pom.xml</filename> file for
                     your document, add the <markup>security</markup>
                     tag to the appropriate
@@ -301,7 +322,7 @@ format="SVG" scale="60"/>
                 <para>Then, add the
                         <code>status.bar.text.font.size</code> tag to
                     adjust the size of the watermark and status bar
-                    text through, as
+                    text, as
                     follows: <programlisting>&lt;?rax status.bar.text.font.size="50px" status.bar.text="LIMITED AVAILABILITY" ?&gt;</programlisting></para>
             </step>
         </procedure>
@@ -367,8 +388,8 @@ format="SVG" scale="60"/>
                     </step>
                     <step>
                         <para>Then, tag any content that you want to
-                            appear in the draft document only. For
-                            example:
+                            appear only in the draft version of the
+                            document. For example:
                             <programlisting>&lt;para security="draft"&gt;Documents for draft distribution contain draft content appropriate for reviewers.&lt;/para&gt;</programlisting></para>
                     </step>
                     <step>
@@ -381,7 +402,7 @@ format="SVG" scale="60"/>
 
             </step>
             <step>
-                <title>Configure document security</title>
+                <title>Configure security</title>
                 <para>In the <filename>pom.xml</filename> file for
                     your document, add the <markup>security</markup>
                     tag to the appropriate
@@ -397,8 +418,9 @@ format="SVG" scale="60"/>
 ...
 &lt;/configuration></programlisting>
                 </para>
-                <para>Then, tag any content that you want to appear in
-                    the document. For example:
+                <para>Then, tag any content that you want to appear
+                    only in the internal version of the document. For
+                    example:
                     <programlisting>&lt;para security="internal"&gt;Documents for internal distribution contain internal content appropriate for Rackspace employees.&lt;/para&gt;</programlisting></para>
                 <para>Valid values for the <literal>security</literal>
                     tag are:<informaltable rules="all">
@@ -434,7 +456,6 @@ format="SVG" scale="60"/>
                                    <para>Filters out
                                    <code>security="reviewer"</code>,
                                    <code>security="external"</code>,
-                                   <code>security="reviewer"</code>,
                                    and
                                    <code>security="writeronly"</code>
                                    tagged content, and
@@ -506,7 +527,8 @@ format="SVG" scale="60"/>
                                    <listitem>
                                    <para>Content tagged as
                                    <code>security="reviewer"</code>
-                                   appears with yellow highlighting. </para>
+                                   appears with yellow highlighting in
+                                   the PDF output only. </para>
                                    <para>Filters out
                                    <code>security="writeronly"</code>
                                    tagged content. </para>
