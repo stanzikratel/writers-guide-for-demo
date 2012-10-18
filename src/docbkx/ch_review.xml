@@ -84,7 +84,7 @@ format="SVG" scale="60"/>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr><?dbhtml row-height="100"?>
                     <td><para>Draft</para>
                         <para>Contains review content.</para></td>
 

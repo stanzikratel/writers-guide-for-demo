@@ -34,24 +34,47 @@ format="SVG" scale="60"/>
     <para>You can create the following types of tables:<itemizedlist>
             <listitem>
                 <para><emphasis role="bold">Formal</emphasis>.
-                    Requires a caption. </para>
+                    Requires a caption. Are listed in the list of
+                    tables, and you can cross-reference them from
+                    other sections in your book or from other
+                    books.</para>
                 <para>Tagged with <code>&lt;table></code> tag. </para>
-                <para>Use if you want the table title to be listed in
-                    the table of contents or if you want to
-                    cross-reference the table from another section in
-                    your book.</para>
             </listitem>
             <listitem>
                 <para><emphasis role="bold">Informal</emphasis>. No
-                    caption. </para>
+                    caption. Are not listed in the list of tables. </para>
                 <para>Tagged with <code>&lt;informaltable></code>
                     tag.</para>
             </listitem>
         </itemizedlist></para>
-    <para>For either type of table, you can control the table width,
-        table alignments, column widths, cell spacing and padding,
-        cell alignment and spanning, row height, borders, and other
-        table properties.</para>
+    <para>For either type of table, you can control the following
+        table characteristics: <itemizedlist>
+            <listitem>
+                <para>Table and column widths </para>
+                <para><xref linkend="table_width"/></para>
+            </listitem>
+            <listitem>
+                <para>Table alignment</para>
+                <para><xref linkend="table_alignment"/></para>
+            </listitem>
+          
+            <listitem>
+                <para>Cell spacing and padding</para>
+                <para><link xlink:href="http://www.sagehill.net/docbookxsl/CellSpacing.html">Cell spacing and cell padding</link></para>
+            </listitem>
+            <listitem>
+                <para>Cell alignment and spanning</para>
+            </listitem>
+            <listitem>
+                <para>Row height</para>
+            </listitem>
+            <listitem>
+                <para>Borders</para>
+            </listitem>
+            <listitem>
+                <para>Other table properties</para>
+            </listitem>
+        </itemizedlist></para>
     <section xml:id="table_guidelines">
         <title>Guidelines for Tables</title>
         <para>
@@ -279,15 +302,35 @@ format="SVG" scale="60"/>
       &lt;/tbody&gt;
     &lt;/table&gt;</programlisting>
             <para>When you create a table, check its appearance in all
-                generated output formats. Column widths that are
-                appropriate in HTML output might be unusable in PDF
-                output. </para>
-            <para>To describe a table differently for each output
-                format, see <link
+                outputs. Column widths that appear correctly in HTML
+                output might be incorrect in PDF output. </para>
+            <para>To describe a table differently for each type of
+                output, see <link
                     xlink:href="https://one.rackspace.com/display/RED/Troubleshooting+badly+formatted+tables"
                     >Troubleshooting badly formatted
                 tables</link>.</para>
         </section>
+        <section xml:id="table_alignment">
+            <title>Table Alignment</title>
+            <para>Tables that are less that the full page <anchor
+                    xml:id="d0e50945"/><anchor xml:id="d0e50950"
+                    /><anchor xml:id="d0e50955"/>width are generally
+                left-aligned. If you want a different alignment for
+                tables in HTML output, then you can use CSS. See <link
+                    xlink:href="http://www.sagehill.net/docbookxsl/TableAlignment.html"
+                    >Table alignment</link>.</para>
+        </section>
+        <section xml:id="row_height"><title>Row Height</title>
+            <para>To control the vertical height of a row, place the
+                following processing instruction in that row:</para>
+            <programlisting>&lt;row&gt;<emphasis role="bold">&lt;?dbhtml row-height="20"
+        ?&gt;</emphasis>
+  &lt;entry&gt;...&lt;/entry&gt;
+  &lt;entry&gt;...&lt;/entry&gt;
+&lt;/row&gt;</programlisting>
+        <para>Currently this only works for HTML output. The following
+                is an example that sets a row height to 20
+                pixels.</para></section>
     </section>
     <section xml:id="troubleshooting_tables">
         <title>Troubleshoot Tables</title>
