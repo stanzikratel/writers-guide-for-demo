@@ -50,7 +50,7 @@ format="SVG" scale="60"/>
         table alignments, column widths, cell spacing and padding,
         cell alignment and spanning, row height, borders, and other
         table properties.</para>
-    <section>
+    <section xml:id="table_guidelines">
         <title>Guidelines for Tables</title>
         <para>
             <itemizedlist>
