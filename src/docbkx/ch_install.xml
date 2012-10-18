@@ -31,50 +31,87 @@ format="SVG" scale="60"/>
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_install">
-    <title>Download Oxygen Author</title>
+    <title>Install or Update oXygen</title>
 
     <?dbhtml stop-chunking?>
-    <para>Download Oxygen Author from the following link: </para>
-    <para><link xlink:href="http://docs.rackspace.com/oxygen/"
-            >http://docs.rackspace.com/oxygen/</link></para>
-    <para>On the web start page, click the appropriate link to launch
-        the Rackspace/OpenStack edition of SyncRO Soft's
-            <code>&lt;oXygen/></code> XML Editor or Author.</para>
-    <para>
-        <itemizedlist>
-            <listitem>
-                <para>Run <code>&lt;oXygen/></code> Author: Use to
-                    edit Rackbook (DocBook) documents and WADL files. </para>
-            </listitem>
-            <listitem>
-                <para>Run <code>&lt;oXygen/></code> Editor: Use to
-                    edit Rackbook (DocBook) documents and WADL files.
-                    Also includes XSD and XSLT-related features. </para>
-            </listitem>
-        </itemizedlist>
-    </para>
-    <para>The total size of the Java web start (JWS) bundle is about
-        87 MBs. The download should only take a few minutes on a
-        reasonably fast connection. </para>
-    <para>When you run the application for the first time, JWS
-        downloads the entire package, which contains 15 jar files.
-        When JWS finishes the download, press
-            <guilabel>Start</guilabel>. After the application
-        launches, you must supply a valid oXygen Editor or Author
-        license. </para>
-    <para>When you launch the application again in the future, JWS
-        checks only for modified jar files (an upgrade) and downloads
-        them if necessary. If no new jars are found or network
-        connectivity is not available, the application starts
-        immediately. </para>
-    <para>
-        <note>
-            <para>If you install oXygen through JWS and add oXygen
-                plugins to that installation, those plugins are
-                removed when oXygen is updated.</para>
-        </note>
-    </para>
 
+
+    <para>To install or update oXygen Author or Editor, you use a Java
+        web start (JWS) application. </para>
+    <para>When you run the JWS application for the first time, JWS
+        downloads the entire package, which contains multiple jar
+        files. The download takes a few minutes on a reasonably fast
+        connection. </para>
+
+
+    <procedure>
+        <title>To download oXygen Author or Editor</title>
+        <step>
+            <para>Click the following link: </para>
+            <para><link xlink:href="http://docs.rackspace.com/oxygen/"
+                    >http://docs.rackspace.com/oxygen/</link></para>
+        </step>
+        <step>
+            <para>On the web start page, click one of the following
+                links:</para>
+            <itemizedlist>
+                <listitem>
+                    <para><emphasis role="bold">Run
+                                <code>&lt;oXygen/></code>
+                            Author:</emphasis> Typically used by
+                        technical writers to edit Rackbook (DocBook)
+                        documents and WADL files. </para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">Run
+                                <code>&lt;oXygen/></code>
+                            Editor:</emphasis> Typically used by
+                        members of the DocTools team to edit Rackbook
+                        (DocBook) documents and WADL files. Also
+                        includes XSD and XSLT-related features.
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </step>
+        <step>
+            <para>When JWS finishes the download, click
+                    <guilabel>Start</guilabel>. </para>
+            <para>After the oXygen application launches for the first
+                time, you must supply an oXygen Author or Editor
+                license. If you do not have one, request one from a
+                member of the DocTools team or your manager.</para>
+            <para>The download adds an icon to the Dock, which looks
+                like this:<mediaobject>
+                    <imageobject>
+                        <imagedata fileref="figures/oxygen_coffee.png"
+                            contentwidth="1in"/>
+                    </imageobject>
+                </mediaobject> The download adds an application icon
+                to your <filename class="directory"
+                    >Applications</filename> folder, which looks like this:<mediaobject>
+                    <imageobject>
+                        <imagedata fileref="figures/oxygen_A.png" contentwidth="1in"/>
+                    </imageobject>
+                </mediaobject></para>
+        </step>
+        <step>
+            <para>To start oXygen after the initial installation, add
+                the application to your Dock from your <filename
+                    class="directory">Applications</filename> folder,
+                or use JWS to download and update the oXygen.</para>
+            <para>When you launch the JWS application again to upgrade
+                oXygen, JWS downloads modified jar files only. If no
+                new jars are found or network connectivity is
+                unavailable, oXygen Author or Editor starts
+                immediately. </para>
+            <note>
+                <para>If you install oXygen Author or Editor through
+                    JWS and add oXygen plugins to that installation,
+                    those plugins are removed when you use JWS to
+                    update oXygen.</para>
+            </note>
+        </step>
+    </procedure>
 
 
 

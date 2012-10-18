@@ -45,9 +45,9 @@
 					</execution>
 				</executions>
 				<configuration>
-					<includes>bk-writers-guide.xml</includes>
+					<includes>writers-guide.xml</includes>
 					<xincludeSupported>true</xincludeSupported>
-					<pdfUrl>../bk-writers-guide.pdf</pdfUrl>
+					<pdfUrl>../writers-guide.pdf</pdfUrl>
 					<enableDisqus>intranet</enableDisqus>
 					<!-- <security>internal</security> -->
 					<feedbackEmail>david.cramer@rackspace.com</feedbackEmail>

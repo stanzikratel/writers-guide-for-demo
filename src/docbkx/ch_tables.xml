@@ -33,17 +33,19 @@ format="SVG" scale="60"/>
     <title>Tables</title>
     <para>You can create the following types of tables:<itemizedlist>
             <listitem>
-                <para><emphasis role="bold">Informal</emphasis>. No
-                    caption. Tagged with <code>&lt;table></code> tag.
-                    Use if you want the table title to be listed in
+                <para><emphasis role="bold">Formal</emphasis>.
+                    Requires a caption. </para>
+                <para>Tagged with <code>&lt;table></code> tag. </para>
+                <para>Use if you want the table title to be listed in
                     the table of contents or if you want to
                     cross-reference the table from another section in
                     your book.</para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Formal</emphasis>.
-                    Requires a caption. Tagged with
-                        <code>&lt;informaltable></code> tag.</para>
+                <para><emphasis role="bold">Informal</emphasis>. No
+                    caption. </para>
+                <para>Tagged with <code>&lt;informaltable></code>
+                    tag.</para>
             </listitem>
         </itemizedlist></para>
     <para>For either type of table, you can control the table width,
@@ -130,18 +132,23 @@ format="SVG" scale="60"/>
     <?dbhtml stop-chunking?>
     <section xml:id="create_table">
         <title>Create Tables</title>
-        <para>The easiest way to create a table in the Author view in
-            Oxygen. </para>
+        <para>The easiest way to create a table is in the Author view
+            in oXygen. </para>
         <para>
             <procedure>
                 <title>To create a table</title>
                 <step>
                     <para>In Author mode, click
-                            <guimenu>Rackbook</guimenu>
-                        <guimenuitem>Table</guimenuitem>
-                        <guisubmenu>Insert Table</guisubmenu>.</para>
-                    <para>The <guilabel>Insert Table</guilabel> dialog box appears.</para>
-                </step><step><para>Make the following selections:<informaltable frame="void">
+                            <guimenu>Rackbook</guimenu> >
+                            <guimenuitem>Table</guimenuitem> >
+                            <guisubmenu>Insert
+                        Table</guisubmenu>.</para>
+                    <para>The <guilabel>Insert Table</guilabel> dialog
+                        box appears.</para>
+                </step>
+                <step>
+                    <para>Make the following selections:<informaltable
+                            rules="all">
                             <col width="25%"/>
                             <col width="75%"/>
                             <thead>
@@ -151,121 +158,136 @@ format="SVG" scale="60"/>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr valign="top">
                                    <td>Model</td>
-                                   <td><para>Select <guilabel>HTML</guilabel>. </para>
+                                   <td><para>Select
+                                   <guilabel>HTML</guilabel>. </para>
                                    <para>DocBook tables are written
-                                   using either <emphasis
-                                   role="italic">CALS</emphasis> or
-                                   HTML table elements. CALS is an
-                                   SGML standard developed by the US
-                                   military. DocBook added HTML table
-                                   elements, starting with version 4.3
-                                   of the DocBook DTD. When you create
-                                   tables, choose the HTML format.
-                                   Though the CALS table elements are
-                                   supported, you can convert CALS
-                                   tables to HTML format. See <xref
-                                   linkend="rebuild_cals"/>. </para></td>
+                                   using either CALS or HTML table
+                                   elements. CALS is an SGML standard
+                                   developed by the US military.
+                                   DocBook added HTML table elements,
+                                   starting with version 4.3 of the
+                                   DocBook DTD. </para>
+                                   <para>When you create tables,
+                                   choose the HTML format. Though the
+                                   CALS table elements are supported,
+                                   they might not format correctly.
+                                   You can convert CALS tables to HTML
+                                   format. See <xref
+                                   linkend="rebuild_cals"/>.
+                                   </para></td>
                                 </tr>
-                                <tr>
-                                    <td>Title</td>
-                                    <td><para>For a formal table, enter a
-                                   table title. Capitalize only the
-                                   first word of the table title.</para>
+                                <tr valign="top">
+                                   <td>Title</td>
+                                   <td><para>For a formal table, enter
+                                   a table title. Capitalize only the
+                                   first word of the table
+                                   title.</para>
                                    <para>For an informal table, clear
                                    the <guilabel>Title</guilabel>
                                    selection.</para></td>
                                 </tr>
-                                <tr>
-                                    <td>Table Size</td>
-                                    <td><para>Select or enter the number of
-                                   rows and columns in the table.</para></td>
+                                <tr valign="top">
+                                   <td>Table Size</td>
+                                   <td><para>Select or enter the
+                                   number of rows and columns in the
+                                   table.</para></td>
                                 </tr>
-                                <tr>
-                                    <td>Generate table header</td>
-                                    <td><para>Accept the default to generate a table head row. Clear this
-                                   selection to omit a table head
-                                   row.</para></td>
+                                <tr valign="top">
+                                   <td>Generate table header</td>
+                                   <td><para>Accept the default to
+                                   generate a table header row. </para>
+                                   <para>Clear this selection to omit
+                                   a table header row.</para></td>
                                 </tr>
-                                <tr>
-                                    <td>Generate table footer</td>
-                                    <td>Select to generate a table
-                                   footer. Otherwise, accept the
+                                <tr valign="top">
+                                   <td>Generate table footer</td>
+                                   <td><para>Select to generate a
+                                   table footer. Otherwise, accept the
                                    default, which is to omit a table
-                                   footer.</td>
+                                   footer.</para></td>
                                 </tr>
-                                <tr>
-                                    <td>Column widths</td>
-                                    <td>Select
+                                <tr valign="top">
+                                   <td>Column widths</td>
+                                   <td><para>Select
                                    <guilabel>proportional</guilabel>,
                                    <guilabel>dynamic</guilabel>, or
-                                   <guilabel>fixed</guilabel>.</td>
+                                   <guilabel>fixed</guilabel>.</para></td>
                                 </tr>
-                                <tr>
+                                <tr valign="top">
                                    <td>Frame</td>
-                                   <td>Select
+                                   <td><para>Select
                                    <guilabel>void</guilabel>. You will
                                    manually change this after your
-                                   table is created.</td>
+                                   table is created.</para></td>
                                 </tr>
                             </tbody>
-                        </informaltable></para></step>
+                        </informaltable></para>
+                </step>
+                <step>
+                    <para>Switch to text mode.</para>
+                    <para>Locate the table markup line. For an
+                        informal table, it looks like this:
+                        <programlisting>&lt;informaltable frame="void"></programlisting></para>
+                    <para>Update the table markup to remove
+                            <code>frame="void"</code> and change to
+                            <code>rules="all"</code>, as
+                        follows:<programlisting>&lt;informaltable <emphasis role="bold">rules="all"</emphasis>></programlisting></para>
+                </step>
+                <step>
+                    <para>Use the <guimenu>Rackbook</guimenu> >
+                            <guimenuitem>Table</guimenuitem> menu
+                        commands to add and delete rows and columns,
+                        or to join or split cells. </para>
+                    <para>You can also use the table toolbar.</para>
+                </step>
             </procedure>
         </para>
+
     </section>
     <section xml:id="format_tables">
         <title>Format Tables</title>
-        <para>To control the overall width of a table and the width of
-            each column, use the following markup:</para>
-        <programlisting>&lt;table rules="all" width="75%"&gt;
+        <section xml:id="table_width">
+            <title>Table and Column Widths</title>
+            <para>To control the overall width of a table, use the
+                    <literal>width</literal> attribute on the table
+                tag.</para>
+            <para>To control the width of columns, use the
+                    <literal>width</literal> attribute on the col
+                tag.</para>
+            <note>
+                <para>The <literal>width</literal> attribute is not
+                    supported in CALS tables. For how to control table
+                    and column widths in CALS tables, see <link
+                        xlink:href="http://www.sagehill.net/docbookxsl/Tables.html#TableWidth"
+                        >Table width</link>.</para>
+            </note>
+            <para>The following markup shows how to control table and
+                column widths: </para>
+            <programlisting>&lt;table rules="all" <emphasis role="bold">width="75%"</emphasis>&gt;
       &lt;caption&gt;Table Using Percentage Widths&lt;/caption&gt;
-      &lt;col width="16%"/&gt;
+      &lt;col <emphasis role="bold">width="16%"</emphasis>/&gt;
       &lt;col width="14%"/&gt;
       &lt;col width="42%"/&gt;
       &lt;col width="28%"/&gt;
       &lt;thead&gt;
-        &lt;tr align="center"&gt;
-          &lt;td&gt;Verb&lt;/td&gt;
-          &lt;td&gt;URI&lt;/td&gt;
-          &lt;td&gt;RegEx&lt;/td&gt;
-          &lt;td&gt;Default&lt;/td&gt;
-        &lt;/tr&gt;
+...
       &lt;/thead&gt;
       &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt; &amp;GET; &lt;/td&gt;
-          &lt;td&gt;/v\d+\.\d+/*&lt;/td&gt;
-          &lt;td&gt;/v\d+\.\d+/(\d+/domains).*&lt;/td&gt;
-          &lt;td&gt;5/second&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt; &amp;POST; &lt;/td&gt;
-          &lt;td&gt;/v\d+\.\d+/*&lt;/td&gt;
-          &lt;td&gt;/v\d+\.\d+/(\d+/domains).*&lt;/td&gt;
-          &lt;td&gt;2/second&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt; &amp;PUT; &lt;/td&gt;
-          &lt;td&gt;/v\d+\.\d+/*&lt;/td&gt;
-          &lt;td&gt;/v\d+\.\d+/(\d+/domains).*&lt;/td&gt;
-          &lt;td&gt;5/second&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt; &amp;DELETE; &lt;/td&gt;
-          &lt;td&gt;/v\d+\.\d+/*&lt;/td&gt;
-          &lt;td&gt;/v\d+\.\d+/(\d+/domains).*&lt;/td&gt;
-          &lt;td&gt;50/minute&lt;/td&gt;
-        &lt;/tr&gt;
+...
       &lt;/tbody&gt;
     &lt;/table&gt;</programlisting>
-        <para>When you create a table, check its appearance in all
-            generated output formats. Column widths that are
-            appropriate in HTML output might be unusable in PDF
-            output. You can describe a table differently for each
-            output format; see <link
-                xlink:href="https://one.rackspace.com/display/RED/Troubleshooting+badly+formatted+tables"
-                >Troubleshooting badly formatted tables</link>.</para>
+            <para>When you create a table, check its appearance in all
+                generated output formats. Column widths that are
+                appropriate in HTML output might be unusable in PDF
+                output. </para>
+            <para>To describe a table differently for each output
+                format, see <link
+                    xlink:href="https://one.rackspace.com/display/RED/Troubleshooting+badly+formatted+tables"
+                    >Troubleshooting badly formatted
+                tables</link>.</para>
+        </section>
     </section>
     <section xml:id="troubleshooting_tables">
         <title>Troubleshoot Tables</title>
