@@ -757,34 +757,6 @@ format="SVG" scale="60"/>
             </variablelist>
 
 
-            <table rules="all">
-                <caption>Test table</caption>
-                <thead>
-                    <tr>
-
-
-                        <th>Header column A</th>
-                        <th>Header column B</th>
-                    </tr>
-
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Row 1 column A</td>
-                        <td>Row 1 column B</td>
-                    </tr>
-                    <tr>
-                        <td>Row 2 column A</td>
-                        <td>Row 2 column B</td>
-                    </tr>
-                    <tr>
-                        <td>Row 3 column A</td>
-                        <td>Row 3 column B</td>
-                    </tr>
-                </tbody>
-            </table>
-
-
         </section>
     </section>
 
