@@ -659,14 +659,14 @@ format="SVG" scale="60"/>
 
             <table rules="all">
                 <caption>Test table</caption>
-                <thead valign="baseline" align="center">
+                <thead>
                     <tr>
                         <th>Header column A</th>
                         <th>Header column B</th>
                     </tr>
                   
                 </thead>
-                <tbody valign="bottom" align="">
+                <tbody>
                     <tr>
                         <td>Row 1 column A</td>
                         <td>Row 1 column B</td>
