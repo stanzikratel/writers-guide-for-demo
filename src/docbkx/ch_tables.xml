@@ -36,41 +36,38 @@ format="SVG" scale="60"/>
                 <para><emphasis role="bold">Formal</emphasis>.
                     Requires a caption. Are listed in the list of
                     tables, and you can cross-reference them from
-                    other sections in your book or from other
-                    books.</para>
-                <para>Tagged with <code>&lt;table></code> tag. </para>
+                    other sections in your book or from other books.
+                    Tagged with <code>&lt;table></code> tag. </para>
             </listitem>
             <listitem>
                 <para><emphasis role="bold">Informal</emphasis>. No
-                    caption. Are not listed in the list of tables. </para>
-                <para>Tagged with <code>&lt;informaltable></code>
+                    caption. Are not listed in the list of tables.
+                    Tagged with <code>&lt;informaltable></code>
                     tag.</para>
             </listitem>
         </itemizedlist></para>
     <para>For either type of table, you can control the following
         table characteristics: <itemizedlist>
             <listitem>
-                <para>Table and column widths </para>
-                <para><xref linkend="table_width"/></para>
+                <para>Table and column widths. See <xref
+                        linkend="table_width"/>.</para>
             </listitem>
             <listitem>
-                <para>Table alignment</para>
-                <para><xref linkend="table_alignment"/></para>
+                <para>Table alignment. See <xref
+                        linkend="table_alignment"/>. </para>
             </listitem>
 
             <listitem>
-                <para>Cell spacing and padding</para>
-                <para><link
+                <para>Cell spacing and padding. See <link
                         xlink:href="http://www.sagehill.net/docbookxsl/CellSpacing.html"
-                        >Cell spacing and cell padding</link></para>
+                        >Cell spacing and cell padding</link>. </para>
             </listitem>
             <listitem>
-                <para>Cell alignment and spanning</para>
-                <para><xref linkend="cell_spanning"/></para>
+                <para>Cell alignment and spanning. See <xref
+                        linkend="cell_spanning"/>. </para>
             </listitem>
             <listitem>
-                <para>Borders</para>
-                <para><xref linkend="borders"/></para>
+                <para>Borders. See <xref linkend="borders"/>.</para>
             </listitem>
 
         </itemizedlist></para>
@@ -179,15 +176,15 @@ format="SVG" scale="60"/>
                             rules="all">
                             <col width="25%"/>
                             <col width="75%"/>
-                            <thead>
+                            <thead valign="top">
                                 <tr>
                                    <th>Property</th>
                                    <th>Description</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody valign="top">
                                 <tr valign="top">
-                                   <td>Model</td>
+                                   <td><para>Model</para></td>
                                    <td><para>Select
                                    <guilabel>HTML</guilabel>. </para>
                                    <para>DocBook tables are written
@@ -198,16 +195,16 @@ format="SVG" scale="60"/>
                                    starting with version 4.3 of the
                                    DocBook DTD. </para>
                                    <para>When you create tables,
-                                   choose the HTML format. Though the
-                                   CALS table elements are supported,
-                                   they might not format correctly.
-                                   You can convert CALS tables to HTML
-                                   format. See <xref
+                                   choose the HTML format. Not all
+                                   elements of CALS tables are
+                                   supported, so they might not format
+                                   correctly. To convert existing CALS
+                                   tables to HTML format, see <xref
                                    linkend="rebuild_cals"/>.
                                    </para></td>
                                 </tr>
                                 <tr valign="top">
-                                   <td>Title</td>
+                                   <td><para>Title</para></td>
                                    <td><para>For a formal table, enter
                                    a table title. Capitalize only the
                                    first word of the table
@@ -217,7 +214,7 @@ format="SVG" scale="60"/>
                                    selection.</para></td>
                                 </tr>
                                 <tr valign="top">
-                                   <td>Table Size</td>
+                                   <td><para>Table Size</para></td>
                                    <td><para>Select or enter the
                                    number of rows and columns in the
                                    table.</para></td>
@@ -244,7 +241,7 @@ format="SVG" scale="60"/>
                                    <guilabel>fixed</guilabel>.</para></td>
                                 </tr>
                                 <tr valign="top">
-                                   <td>Frame</td>
+                                   <td><para>Frame</para></td>
                                    <td><para>Select
                                    <guilabel>void</guilabel>. You will
                                    manually change this after your
@@ -254,7 +251,7 @@ format="SVG" scale="60"/>
                         </informaltable></para>
                 </step>
                 <step>
-                    <para>Switch to text mode.</para>
+                    <para>Switch to Text mode.</para>
                     <para>Locate the table markup line. For an
                         informal table, it looks like this:
                         <programlisting>&lt;informaltable frame="void"></programlisting></para>
@@ -475,7 +472,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtable.png"
-                                   contentwidth="1in"/>
+                                   contentwidth=".75in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Use the following markup to join columns
@@ -508,7 +505,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtablejoincol.png"
-                                   contentwidth="1in"/>
+                                   contentwidth=".75in"/>
                                 </imageobject>
                             </mediaobject></para>
                     </step>
@@ -520,7 +517,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/join.png"
-                                   contentwidth="1in"/>
+                                   contentwidth=".75in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Alternatively, add the
@@ -564,7 +561,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtablejoinrow.png"
-                                   contentwidth="1in"/>
+                                   contentwidth=".75in"/>
                                 </imageobject>
                             </mediaobject></para>
                     </step>
