@@ -66,14 +66,20 @@ format="SVG" scale="60"/>
             </listitem>
             <listitem>
                 <para>Cell alignment and spanning</para>
+                <para><xref linkend="cell_spanning"/></para>
             </listitem>
             <listitem>
                 <para>Borders</para>
+                <para><xref linkend="borders"/></para>
             </listitem>
-            <listitem>
-                <para>Other table properties</para>
-            </listitem>
+
         </itemizedlist></para>
+    <para>For information about how to define other table properties,
+        see <link
+            xlink:href="http://www.sagehill.net/docbookxsl/Tables.html"
+            >Chapter 30: Tables</link>. However, please note that
+        RackBook does not support all the features described in that
+        chapter. </para>
     <section xml:id="table_guidelines">
         <title>Guidelines for Tables</title>
         <para>
@@ -437,16 +443,12 @@ format="SVG" scale="60"/>
             <para>Cell spanning means joining cells together to make a
                 larger cell. You can join cells horizontally,
                 vertically, or both. </para>
-            <para>Add either or both the <literal>colspan</literal>
-                and <literal>rowspan</literal> attributes to any of
-                the following table tags:<itemizedlist>
-                    <listitem>
-                        <para><literal>th</literal></para>
-                    </listitem>
-                    <listitem>
-                        <para><literal>td</literal></para>
-                    </listitem>
-                </itemizedlist></para>
+            <para>To join columns, add the <literal>colspan</literal>
+                attribute to the <literal>th</literal> tag or
+                    <literal>td</literal> tag in a table.</para>
+            <para>To join rows, add the <literal>rowspan</literal>
+                attribute to the <literal>th</literal> tag or
+                    <literal>td</literal> tag in a table.</para>
             <para>Set the <literal>colspan</literal> and
                     <literal>rowspan</literal> attributes to a numeric
                 value to define how many columns or rows to
@@ -455,59 +457,157 @@ format="SVG" scale="60"/>
                 <procedure>
                     <title>To define cell spanning</title>
                     <step>
-                        <title>Join columns or rows</title>
+                        <title>Join columns</title>
                         <para>Select the cells to join. Then, use the
-                            join toolbar to join the cells across
-                            rows, or from top to bottom or bottom to
-                            top. <mediaobject>
+                            join toolbar to join the columns across
+                            rows. <mediaobject>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/join.png"
                                    contentwidth="1in"/>
                                 </imageobject>
-                            </mediaobject></para><para>Alternatively, add the <literal>colspan</literal> attribute to a
-                            cell and specify the number of cells to
-                            join vertically. Or add the rowspan
-                            attribute to a cell and specify the number
-                            of cells to join across a row.</para>
-                        <para>For example, the following markup joins
-                            :<programlisting> &lt;table rules="all">
-                &lt;caption>Test&lt;/caption>
-                &lt;thead valign="baseline" align="center">
+                            </mediaobject></para>
+                        <para>Alternatively, add the
+                                <literal>colspan</literal> attribute
+                            to a cell and specify the number of cells
+                            to join horizontally. </para>
+                        <para>For example, for the following table:<mediaobject>
+                                <imageobject>
+                                   <imagedata
+                                   fileref="figures/testtable.png"
+                                   contentwidth="1in"/>
+                                </imageobject>
+                            </mediaobject></para>
+                        <para>Use the following markup to join columns
+                            A and B in row 1:
+                            <programlisting>&lt;table rules="all">
+                &lt;caption>Test table&lt;/caption>
+                &lt;thead>
                     &lt;tr>
-                        &lt;th>sadfssafafasfasfdasfadsadsfafaadsfdasff&lt;/th>
-                        &lt;th>sadfsaffasfafafadafddfafadfads&lt;/th>
+                        &lt;th>Header column A&lt;/th>
+                        &lt;th>Header column B&lt;/th>
                     &lt;/tr>
-                    &lt;tr>
-                        &lt;th/>
-                        &lt;th/>
-                    &lt;/tr>
+                  
                 &lt;/thead>
-                &lt;tbody valign="bottom" align="">
+                &lt;tbody>
                     &lt;tr>
-                        &lt;td colspan="2">xx&lt;/td>
+                        &lt;td colspan="2">Row 1 column ARow 1 column
+                            B&lt;/td>
                     &lt;/tr>
                     &lt;tr>
-                        &lt;td>x&lt;/td>
-                        &lt;td rowspan="2">x&lt;/td>
+                        &lt;td>Row 2 column A&lt;/td>
+                        &lt;td>Row 2 column B&lt;/td>
                     &lt;/tr>
                     &lt;tr>
-                        &lt;td/>
-                    &lt;/tr>
-                    &lt;tr>
-                        &lt;td/>
-                        &lt;td/>
+                        &lt;td>Row 3 column A&lt;/td>
+                        &lt;td>Row 3 column B&lt;/td>
                     &lt;/tr>
                 &lt;/tbody>
-            &lt;/table>
-</programlisting></para>
-                    
+            &lt;/table></programlisting></para>
+                        <para>The table appears as follows:<mediaobject>
+                                <imageobject>
+                                   <imagedata
+                                   fileref="figures/testtablejoincol.png"
+                                   contentwidth="1in"/>
+                                </imageobject>
+                            </mediaobject></para>
                     </step>
                     <step>
                         <title>Join rows</title>
-                        <para>Add the <literal>rowspan</literal>
-                            attribute to a row.</para>
-                        
+                        <para>Select the cells to join. Then, use the
+                            join toolbar to join the rows across
+                            columns. <mediaobject>
+                                <imageobject>
+                                   <imagedata
+                                   fileref="figures/join.png"
+                                   contentwidth="1in"/>
+                                </imageobject>
+                            </mediaobject></para>
+                        <para>Alternatively, add the
+                                <literal>rowspan</literal> attribute
+                            to a cell and specify the number of cells
+                            to join vertically. </para>
+                        <para>For example, for the following table:<mediaobject>
+                                <imageobject>
+                                   <imagedata
+                                   fileref="figures/testtable.png"
+                                   contentwidth="1in"/>
+                                </imageobject>
+                            </mediaobject></para>
+                        <para>Use the following markup to join rows 2
+                            and 3 in column B:
+                            <programlisting> &lt;table rules="all">
+                &lt;caption>Test table&lt;/caption>
+                &lt;thead>
+                    &lt;tr>
+                        &lt;th>Header column A&lt;/th>
+                        &lt;th>Header column B&lt;/th>
+                    &lt;/tr>
+
+                &lt;/thead>
+                &lt;tbody>
+                    &lt;tr>
+                        &lt;td>Row 1 column A&lt;/td>
+                        &lt;td>Row 1 column B&lt;/td>
+                    &lt;/tr>
+                    &lt;tr>
+                        &lt;td>Row 2 column A&lt;/td>
+                        &lt;td rowspan="2">Row 2 column BRow 3 column
+                            B&lt;/td>
+                    &lt;/tr>
+                    &lt;tr>
+                        &lt;td>Row 3 column A&lt;/td>
+                    &lt;/tr>
+                &lt;/tbody>
+            &lt;/table></programlisting></para>
+                        <para>The table appears as follows:<mediaobject>
+                                <imageobject>
+                                   <imagedata
+                                   fileref="figures/testtablejoinrow.png"
+                                   contentwidth="1in"/>
+                                </imageobject>
+                            </mediaobject></para>
+                    </step>
+                    <step>
+                        <title>Split columns or rows</title>
+                        <para>Put your cursor in the cell that you
+                            want to split. Then, use the correct tool
+                            icon on the split toolbar to split the
+                            cell into rows or columns. <mediaobject>
+                                <imageobject>
+                                   <imagedata
+                                   fileref="figures/split.png"
+                                   contentwidth="1in"/>
+                                </imageobject>
+                            </mediaobject></para>
+                        <para>Alternatively, remove the
+                                <literal>colspan</literal> or
+                                <literal>rowspan</literal> attribute,
+                            if they exist, from the cell markup.
+                        </para>
+                    </step>
+                </procedure>
+            </para>
+        </section>
+        <section xml:id="borders">
+            <title>Borders</title>
+            <para>By default, when you create a table in Author mode,
+                the table tag includes the
+                    <literal>frame="void"</literal> attribute, which
+                suppresses interior and frame borders from the
+                table.</para>
+            <para>
+                <procedure>
+                    <title>To define borders</title>
+                    <step>
+                        <para>In Text mode, remove the
+                                <literal>frame="void"</literal>
+                            attribute from the table tag and add the
+                                <literal>rules="all"</literal> tag, as
+                            shown in the following
+                            markup:<programlisting>&lt;table <emphasis role="bold">rules="all"</emphasis>>
+...
+&lt;/table></programlisting></para>
                     </step>
                 </procedure>
             </para>
@@ -516,14 +616,14 @@ format="SVG" scale="60"/>
     <section xml:id="troubleshooting_tables">
         <title>Troubleshoot Tables</title>
         <section xml:id="rebuild_cals">
-            <title>CALS Tables Format Incorrectly</title>
+            <title>CALS Tables Do Not Work</title>
             <variablelist>
                 <varlistentry>
                     <term>Problem</term>
                     <listitem>
-                        <para>CALS tables previously worked but no
-                            longer do. You might find one in an old
-                            document, as follows:</para>
+                        <para>CALS tables no longer work. You might
+                            find one in an old document, as
+                            follows:</para>
                         <programlisting language="xml"><xi:include href="samples/table_bad.xml" parse="text"/></programlisting>
                     </listitem>
                 </varlistentry>
@@ -661,10 +761,12 @@ format="SVG" scale="60"/>
                 <caption>Test table</caption>
                 <thead>
                     <tr>
+
+
                         <th>Header column A</th>
                         <th>Header column B</th>
                     </tr>
-                  
+
                 </thead>
                 <tbody>
                     <tr>

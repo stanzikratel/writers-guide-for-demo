@@ -32,11 +32,12 @@ format="SVG" scale="60"/>
     xml:id="ch_resources">
     <title>Resources</title>
     <para>For the latest version of this guide, see <link
-        xlink:href="http://docs-beta.rackspace.com/writers/writers-guide/content/index.html"
+            xlink:href="http://docs-beta.rackspace.com/writers/writers-guide/content/index.html"
             xmlns:svg="http://www.w3.org/2000/svg"
             xmlns:m="http://www.w3.org/1998/Math/MathML"
             xmlns:html="http://www.w3.org/1999/xhtml"
-                ><citetitle>Content Team Tools Guide</citetitle></link>. </para>
+                ><citetitle>Content Team Tools
+            Guide</citetitle></link>. </para>
     <para>Use the following resources in conjunction with this guide: <itemizedlist>
             <listitem>
                 <para><link
@@ -72,6 +73,12 @@ format="SVG" scale="60"/>
                         xlink:href="https://one.rackspace.com/display/RED/Maintaining+Documentation+Stored+in+SVN"
                         >Maintaining Documentation Stored in
                         SVN</link></para>
+            </listitem>
+            <listitem>
+                <para><link
+                        xlink:href=" http://racker.tv/play/Training/Using_the_Oxygen_XML_Editor_with_DocBookRackbook"
+                        >Using oXygen Author or Editor with RackBook -
+                        Video</link></para>
             </listitem>
         </itemizedlist></para>
 </chapter>

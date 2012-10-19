@@ -115,6 +115,10 @@ format="SVG" scale="60"/>
         </step>
     </procedure>
 
-
+    <para><emphasis role="bold">Additional resource:</emphasis>
+        <link
+            xlink:href=" http://racker.tv/play/Training/Using_the_Oxygen_XML_Editor_with_DocBookRackbook"
+            >Using oXygen Author or Editor with RackBook -
+            Video</link></para>
 
 </chapter>
