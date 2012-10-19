@@ -74,12 +74,13 @@ format="SVG" scale="60"/>
             </itemizedlist>
         </step>
         <step>
-            <para>When JWS finishes the download, click
-                    <guilabel>Start</guilabel>. </para>
+            <para>On the <guilabel>Opening author.jnlp</guilabel>
+                dialog box, accept the default selection, and click
+                    <guibutton>OK</guibutton>. </para>
             <para>After the oXygen application launches for the first
                 time, you must supply an oXygen Author or Editor
                 license. If you do not have one, request one from a
-                member of the DocTools team or your manager.</para>
+                member of the Doc Tools team or your manager.</para>
             <para>The download adds an icon to the Dock, which looks
                 like this:<mediaobject>
                     <imageobject>
