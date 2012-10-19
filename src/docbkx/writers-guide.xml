@@ -11,10 +11,18 @@
     </copyright>
     <releaseinfo>v1.0</releaseinfo>
     <productname>Content Team</productname>
-    <pubdate>2012-10-16</pubdate>
+    <pubdate>2012-10-19</pubdate>
     <revhistory>
       <revision>
-        <date>2012-10-16</date>
+        <date>2012-10-19</date>
+        <revdescription>
+          <para>Incorporated comments from Mike into <xref
+              linkend="ch_install"/> and <xref linkend="ch_review"
+            />.</para>
+        </revdescription>
+      </revision>
+      <revision>
+        <date>2012-10-12</date>
         <revdescription>
           <para>Initial doc creation.</para>
         </revdescription>
@@ -37,20 +45,20 @@
   </info>
 
   <xi:include href="preface.xml"/>
-  <xi:include href="ch_overview.xml"/> 
-  <xi:include href="ch_install.xml"/> 
+  <xi:include href="ch_overview.xml"/>
+  <xi:include href="ch_install.xml"/>
 
-  <xi:include href="ch_github.xml"/> 
-  <xi:include href="ch_newbook.xml"/> 
-  <xi:include href="ch_newapi.xml"/> 
-  <xi:include href="ch_tag_ref.xml"/> 
-  <xi:include href="ch_tables.xml"/> 
-  <xi:include href="ch_review.xml"/> 
-  <xi:include href="ch_publish_content.xml"/> 
-  <xi:include href="ch_troubleshooting.xml"/> 
+  <xi:include href="ch_github.xml"/>
+  <xi:include href="ch_newbook.xml"/>
+  <xi:include href="ch_newapi.xml"/>
+  <xi:include href="ch_tag_ref.xml"/>
+  <xi:include href="ch_tables.xml"/>
+  <xi:include href="ch_review.xml"/>
+  <xi:include href="ch_publish_content.xml"/>
+  <xi:include href="ch_troubleshooting.xml"/>
 
-  <xi:include href="prep-for-1.6.0.xml"/> 
+  <xi:include href="prep-for-1.6.0.xml"/>
 
-  <xi:include href="ch_dochistory.xml"/> 
-  <xi:include href="ch_resources.xml"/> 
+  <xi:include href="ch_dochistory.xml"/>
+  <xi:include href="ch_resources.xml"/>
 </book>

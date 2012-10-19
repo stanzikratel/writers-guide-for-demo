@@ -273,11 +273,11 @@ format="SVG" scale="60"/>
         <section xml:id="table_width">
             <title>Table and Column Widths</title>
             <para>To control the overall width of a table, use the
-                    <literal>width</literal> attribute on the table
-                tag.</para>
+                    <literal>width</literal> attribute on the
+                    <literal>table</literal> tag.</para>
             <para>To control the width of columns, use the
-                    <literal>width</literal> attribute on the col
-                tag.</para>
+                    <literal>width</literal> attribute on the
+                    <literal>col</literal> tag.</para>
             <note>
                 <para>The <literal>width</literal> attribute is not
                     supported in CALS tables. For how to control table
@@ -300,6 +300,9 @@ format="SVG" scale="60"/>
 ...
       &lt;/tbody&gt;
     &lt;/table&gt;</programlisting>
+            <para>The column widths are a percentage of the total
+                table width. In this example, the first column takes
+                up 16% of the total table width of 75%. </para>
             <para>When you create a table, check its appearance in all
                 outputs. Column widths that appear correctly in HTML
                 output might be incorrect in PDF output. </para>
@@ -311,46 +314,57 @@ format="SVG" scale="60"/>
         </section>
         <section xml:id="table_alignment">
             <title>Table Alignment</title>
-            <para>Tables that are less that the full page <anchor
-                    xml:id="d0e50945"/><anchor xml:id="d0e50950"
-                    /><anchor xml:id="d0e50955"/>width are generally
-                left-aligned. If you want a different alignment for
-                tables in HTML output, then you can use CSS. See <link
+            <para>Tables that are less that the full page width are
+                generally left-aligned. If you want a different
+                alignment for tables in HTML output, then you can use
+                CSS. See <link
                     xlink:href="http://www.sagehill.net/docbookxsl/TableAlignment.html"
                     >Table alignment</link>.</para>
         </section>
         <section xml:id="cell_alignment">
-            <title>Cell Alignment and Spanning</title>
+            <title>Cell Alignment</title>
             <para>To control the horizontal and vertical positioning
                 of content in a cell, use the <literal>align</literal>
                 and <literal>valign</literal> attributes,
                 respectively. </para>
+            <para>Add either or both the <literal>valign</literal> and
+                    <literal>align</literal> attributes to any of the
+                following table tags:<itemizedlist>
+                    <listitem>
+                        <para><literal>thead</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>th</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>tbody</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>tr</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>td</literal></para>
+                    </listitem>
+                </itemizedlist></para>
             <para>The scope of these attributes depends on the table
-                element in which you define the attributes. <procedure>
+                element in which you define the attributes. For
+                example, if you add the <literal>valign</literal>
+                attribute to the <literal>tbody</literal> tag, it
+                applies to all child <literal>tr</literal> and
+                    <literal>td</literal> tags in that
+                    <literal>tbody</literal> block unless it is
+                overridden by another <literal>valign</literal>
+                attribute in a child <literal>tr</literal> or
+                    <literal>td</literal> tag in the
+                    <literal>tbody</literal> block.<procedure>
                     <title>To define cell alignments and
                         spanning</title>
                     <step>
-                        <title>Set the horizontal alignment</title>
-                        <para>Add the <literal>align</literal>
-                            attribute to any of the following table tags:<itemizedlist>
-                                <listitem>
-                                   <para><literal>thead</literal></para>
-                                </listitem>
-                                <listitem>
-                                   <para><literal>th</literal></para>
-                                </listitem>
-                                <listitem>
-                                   <para><literal>tbody</literal></para>
-                                </listitem>
-                                <listitem>
-                                   <para><literal>tr</literal></para>
-                                </listitem>
-                                <listitem>
-                                   <para><literal>td</literal></para>
-                                </listitem>
-                            </itemizedlist></para>
+                        <title>Set the vertical alignment</title>
+                        <para>Add the <literal>valign</literal>
+                            attribute a table tag.</para>
                         <para>Valid values for the
-                                <literal>align</literal> attribute are:<itemizedlist>
+                                <literal>valign</literal> attribute are:<itemizedlist>
                                 <listitem>
                                    <para><literal>baseline</literal>.
                                    All cells in the same row as a cell
@@ -366,14 +380,14 @@ format="SVG" scale="60"/>
                                 <listitem>
                                    <para><literal>top</literal>.
                                    Aligns to top of cell. Flushes cell
-                                   data with the top of the cell. </para>
+                                   data with the top of the cell.
+                                   </para>
                                 </listitem>
                                 <listitem>
                                    <para><literal>middle</literal>.
                                    Aligns to center of cell or row.
                                    Centers cell data horizontally in
-                                   the cell. Default value is
-                                   <literal>middle</literal>.</para>
+                                   the cell. Default value.</para>
                                 </listitem>
                                 <listitem>
                                    <para><literal>bottom</literal>.
@@ -383,7 +397,120 @@ format="SVG" scale="60"/>
                                 </listitem>
                             </itemizedlist></para>
                     </step>
+                    <step>
+                        <title>Set the horizontal alignment</title>
+                        <para>Add the <literal>align</literal>
+                            attribute to a table tag.</para>
+                        <para>Valid values for the
+                                <literal>align</literal> attribute are:<itemizedlist>
+                                <listitem>
+                                   <para><literal>center</literal>.
+                                   Center text and center-justifies
+                                   text. Default for table
+                                   headers.</para>
+                                </listitem>
+                                <listitem>
+                                   <para><literal>char</literal>.
+                                   Aligns text around a specific
+                                   character. </para>
+                                </listitem>
+                                <listitem>
+                                   <para><literal>justify</literal>.
+                                   Double-justifies text.</para>
+                                </listitem>
+                                <listitem>
+                                   <para><literal>left</literal>.
+                                   Left-justifies text. Default value
+                                   for table data.</para>
+                                </listitem>
+                                <listitem>
+                                   <para><literal>right</literal>.
+                                   Right-flushes data and
+                                   right-justifies text.</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </step>
                 </procedure></para>
+        </section>
+        <section xml:id="cell_spanning">
+            <title>Cell Spanning</title>
+            <para>Cell spanning means joining cells together to make a
+                larger cell. You can join cells horizontally,
+                vertically, or both. </para>
+            <para>Add either or both the <literal>colspan</literal>
+                and <literal>rowspan</literal> attributes to any of
+                the following table tags:<itemizedlist>
+                    <listitem>
+                        <para><literal>th</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>td</literal></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>Set the <literal>colspan</literal> and
+                    <literal>rowspan</literal> attributes to a numeric
+                value to define how many columns or rows to
+                join.</para>
+            <para>
+                <procedure>
+                    <title>To define cell spanning</title>
+                    <step>
+                        <title>Join columns or rows</title>
+                        <para>Select the cells to join. Then, use the
+                            join toolbar to join the cells across
+                            rows, or from top to bottom or bottom to
+                            top. <mediaobject>
+                                <imageobject>
+                                   <imagedata
+                                   fileref="figures/join.png"
+                                   contentwidth="1in"/>
+                                </imageobject>
+                            </mediaobject></para><para>Alternatively, add the <literal>colspan</literal> attribute to a
+                            cell and specify the number of cells to
+                            join vertically. Or add the rowspan
+                            attribute to a cell and specify the number
+                            of cells to join across a row.</para>
+                        <para>For example, the following markup joins
+                            :<programlisting> &lt;table rules="all">
+                &lt;caption>Test&lt;/caption>
+                &lt;thead valign="baseline" align="center">
+                    &lt;tr>
+                        &lt;th>sadfssafafasfasfdasfadsadsfafaadsfdasff&lt;/th>
+                        &lt;th>sadfsaffasfafafadafddfafadfads&lt;/th>
+                    &lt;/tr>
+                    &lt;tr>
+                        &lt;th/>
+                        &lt;th/>
+                    &lt;/tr>
+                &lt;/thead>
+                &lt;tbody valign="bottom" align="">
+                    &lt;tr>
+                        &lt;td colspan="2">xx&lt;/td>
+                    &lt;/tr>
+                    &lt;tr>
+                        &lt;td>x&lt;/td>
+                        &lt;td rowspan="2">x&lt;/td>
+                    &lt;/tr>
+                    &lt;tr>
+                        &lt;td/>
+                    &lt;/tr>
+                    &lt;tr>
+                        &lt;td/>
+                        &lt;td/>
+                    &lt;/tr>
+                &lt;/tbody>
+            &lt;/table>
+</programlisting></para>
+                    
+                    </step>
+                    <step>
+                        <title>Join rows</title>
+                        <para>Add the <literal>rowspan</literal>
+                            attribute to a row.</para>
+                        
+                    </step>
+                </procedure>
+            </para>
         </section>
     </section>
     <section xml:id="troubleshooting_tables">
@@ -531,17 +658,26 @@ format="SVG" scale="60"/>
 
 
             <table rules="all">
-                <caption>Test</caption>
-                <thead valign="baseline">
+                <caption>Test table</caption>
+                <thead valign="baseline" align="center">
                     <tr>
-                        <th>sadfssafafasfasfdasfadsadsfafaadsfdasff</th>
-                        <th>sadfsaffasfafafadafddfafadfads</th>
+                        <th>Header column A</th>
+                        <th>Header column B</th>
                     </tr>
+                  
                 </thead>
-                <tbody valign="bottom">
+                <tbody valign="bottom" align="">
                     <tr>
-                        <td>x</td>
-                        <td>x</td>
+                        <td>Row 1 column A</td>
+                        <td>Row 1 column B</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2 column A</td>
+                        <td>Row 2 column B</td>
+                    </tr>
+                    <tr>
+                        <td>Row 3 column A</td>
+                        <td>Row 3 column B</td>
                     </tr>
                 </tbody>
             </table>

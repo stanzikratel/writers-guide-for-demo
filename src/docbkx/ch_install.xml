@@ -86,11 +86,13 @@ format="SVG" scale="60"/>
                         <imagedata fileref="figures/oxygen_coffee.png"
                             contentwidth="1in"/>
                     </imageobject>
-                </mediaobject> The download adds an application icon
-                to your <filename class="directory"
+                </mediaobject></para>
+            <para>The download adds an application icon to your
+                    <filename class="directory"
                     >Applications</filename> folder, which looks like this:<mediaobject>
                     <imageobject>
-                        <imagedata fileref="figures/oxygen_A.png" contentwidth="1in"/>
+                        <imagedata fileref="figures/oxygen_A.png"
+                            contentwidth="1in"/>
                     </imageobject>
                 </mediaobject></para>
         </step>
