@@ -39,7 +39,7 @@ format="SVG" scale="60"/>
             belongs to. </para>
         <para>For example, the Cloud Servers product contains the
             following API operation categories: </para>
-        <itemizedlist>
+        <itemizedlist role="compact">
             <listitem>
                 <para>Servers</para>
             </listitem>
@@ -76,13 +76,13 @@ format="SVG" scale="60"/>
                 <imageobject>
                     <imagedata
                         fileref="figures/SAMPLE-APIop-1verb.png"
-                        contentwidth="6in"/>
+                        contentwidth="2in"/>
                 </imageobject>
             </mediaobject><mediaobject>
                 <imageobject>
                     <imagedata
                         fileref="figures/SAMPLE-APIop-2verb.png"
-                        contentwidth="6in"/>
+                        contentwidth="2in"/>
                 </imageobject>
             </mediaobject></para>
         <para>For the new information, consider each element and
@@ -115,7 +115,7 @@ format="SVG" scale="60"/>
                             <imageobject>
                                 <imagedata
                                    fileref="figures/SAMPLE-APIop-table.png"
-                                   contentwidth="6in"/>
+                                   contentwidth="2in"/>
                             </imageobject>
                         </mediaobject>
                     </td>
@@ -165,7 +165,7 @@ format="SVG" scale="60"/>
                             <imageobject>
                                 <imagedata
                                    fileref="figures/SAMPLE-APIop-status.png"
-                                   contentwidth="6in"/>
+                                   contentwidth="2in"/>
                             </imageobject>
                         </mediaobject>
                     </td>
@@ -191,7 +191,7 @@ format="SVG" scale="60"/>
                             <imageobject>
                                 <imagedata
                                    fileref="figures/SAMPLE-APIop-request.png"
-                                   contentwidth="6in"/>
+                                   contentwidth="2in"/>
                             </imageobject>
                         </mediaobject>
                     </td>
@@ -203,38 +203,38 @@ format="SVG" scale="60"/>
                             <imageobject>
                                 <imagedata
                                    fileref="figures/SAMPLE-APIop-note.png"
-                                   contentwidth="6in"/>
+                                   contentwidth="2in"/>
                             </imageobject>
                         </mediaobject>
                     </td>
                 </tr>
             </tbody>
         </informaltable>
-        <section xml:id="more_stuff">
-            <title>Integrate </title>
-            <para>In addition to the detailed description itself,
-                update other areas of the document that refer to it.
-                At least:</para>
-            <itemizedlist>
-                <listitem>
-                    <para>Update the "What's Changed?" section (near
-                        the front of the <emphasis role="italic"
-                            >Guide</emphasis>) to summarize this
-                        change.</para>
-                </listitem>
-                <listitem>
-                    <para>Update the one-page "API Operations
-                        Reference Summary" (the back cover of the
-                            <emphasis role="italic">Guide</emphasis>)
-                        to include this change. <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                   fileref="figures/COVER-BACK.png"
-                                   contentwidth="6in"/>
-                            </imageobject>
-                        </mediaobject></para>
-                </listitem>
-            </itemizedlist>
-        </section>
+        
+    </section><section xml:id="more_stuff">
+        <title>Integrate </title>
+        <para>In addition to the detailed description itself,
+            update other areas of the document that refer to it.
+            At least:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Update the "What's Changed?" section (near
+                    the front of the <emphasis role="italic"
+                        >Guide</emphasis>) to summarize this
+                    change.</para>
+            </listitem>
+            <listitem>
+                <para>Update the one-page "API Operations
+                    Reference Summary" (the back cover of the
+                    <emphasis role="italic">Guide</emphasis>)
+                    to include this change. <mediaobject>
+                        <imageobject>
+                            <imagedata
+                                fileref="figures/COVER-BACK.png"
+                                contentwidth="2in"/>
+                        </imageobject>
+                    </mediaobject></para>
+            </listitem>
+        </itemizedlist>
     </section>
 </chapter>

@@ -50,7 +50,7 @@
 
   <xi:include href="ch_github.xml"/>
   <xi:include href="ch_newbook.xml"/>
-  <xi:include href="ch_newapi.xml"/>
+  <!-- <xi:include href="ch_newapi.xml"/> -->
 
   <xi:include href="ch_tables.xml"/>
   <xi:include href="ch_review.xml"/>
