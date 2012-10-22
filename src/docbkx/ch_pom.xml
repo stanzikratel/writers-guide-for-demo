@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+
+<!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="figures/Check_mark_23x20_02.svg"
+format="SVG" scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+
+<!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="figures/Arrow_east.svg"
+format="SVG" scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0"
+    xml:id="ch_pom" status="draft">
+    <title>Configure a Document</title>
+    <para>Set values in the pom.xml file, which is the configuration
+        file for a document, to configure the components for a
+        document. </para>
+    <para>You can configure the following document components:</para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>Table of contents </para>
+            </listitem>
+            <listitem>
+                <para>List of tables</para>
+            </listitem>
+            <listitem>
+                <para/>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <section xml:id="toc">
+        <title>Table of Contents and List of Tables</title>
+        <para>To suppress either the table of content from the preface
+            and generate it in other chapters, use the nop option. In
+            the &lt;configuration&gt; section for your document, add
+            the following markup:</para>
+
+        <programlisting>&lt;generateToc&gt; 
+appendix toc,title 
+article/appendix nop 
+article toc,title 
+book title,figure,table,example,equation 
+chapter toc,title 
+part toc,title 
+preface nop 
+qandadiv toc 
+qandaset toc 
+reference toc,title 
+section toc 
+set toc,title 
+&lt;/generateToc&gt;</programlisting>
+        <para>This is the default settings we use now, but I've
+            changed the entry for preface from:</para>
+        <para>preface toc,title</para>
+        <para>to</para>
+        <para>preface nop</para>
+        <para>Where "nop" stands for "no operation", which just means
+            "don't do anything for this one". We could add other
+            rules, like: preface/section nop That would say "if the
+            section is in a preface, don't give it a toc either",
+            which would override the more general rule of "section
+            toc" which says "Gives sections their own tocs).</para>
+        <para>This feature is documented here: <link
+                xlink:href="http://docbook.sourceforge.net/release/xsl/1.76.1/doc/html/generate.toc.html"
+                >http://docbook.sourceforge.net/release/xsl/1.76.1/doc/html/generate.toc.html</link></para>
+    </section>
+</chapter>

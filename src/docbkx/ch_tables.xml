@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE section [
+<!DOCTYPE chapter [
 <!-- Some useful entities borrowed from HTML -->
 <!ENTITY ndash  "&#x2013;">
 <!ENTITY mdash  "&#x2014;">
@@ -157,8 +157,14 @@ format="SVG" scale="60"/>
     <?dbhtml stop-chunking?>
     <section xml:id="create_table">
         <title>Create Tables</title>
-        <para>The easiest way to create a table is in the Author view
-            in oXygen. </para>
+        <para>The easiest way to create a table is in Author mode in
+            oXygen. </para>
+        <para>Alternatively, you can cut and paste the markup from an
+            existing table in Text mode.</para>
+       
+        
+       
+       
         <para>
             <procedure>
                 <title>To create a table</title>
