@@ -67,7 +67,7 @@
 						book title,figure,table,equation
 						chapter toc 
 						part toc,title 
-						preface toc
+						preface toc,title
 						qandadiv toc 
 						qandaset toc 
 						reference toc,title 

@@ -38,28 +38,41 @@ format="SVG" scale="60"/>
     <para>
         <itemizedlist>
             <listitem>
-                <para>Table of contents </para>
-            </listitem>
-            <listitem>
-                <para>List of tables</para>
-            </listitem>
-            <listitem>
-                <para/>
+                <para>Table of contents and lists of figures, tables,
+                    examples, and equations. </para>
             </listitem>
         </itemizedlist>
     </para>
     <section xml:id="toc">
-        <title>Table of Contents and List of Tables</title>
+        <title>Table of Contents, and Lists of Figures, Tables,
+            Examples, and Equations</title>
         <para>The <literal>generateToc</literal> tag in a
-                <literal>configuration</literal> section defines the
-            generation of the following tables and
-                lists:<informaltable rules="all">
-                <col width="50%"/>
-                <col width="50%"/>
+                <literal>configuration</literal> section contains a
+            series of white-space separated pairs, which define the
+            generation or suppression of the table of contents and
+            lists of figures, tables, examples, and equations. </para>
+        <para>The first word in each pair is an element name.</para>
+        <para>The second word is a comma-separated list that specifies
+            which lists the element should display. Most elements just
+            use toc, which is a list of section titles. But the entry
+            for the book element also generates tables of figures,
+            tables, examples, and equations. The
+                <literal>title</literal> tag generates a title for the
+            list, such as <quote>Table of Contents</quote>. </para>
+        <para>Use a value of <literal>nop</literal> to turn off the
+            table of contents and all lists for an element. You can
+            also turn off a table of contents by removing the element
+            from the parameter.</para>
+        <para>The following table describes the words that you use to
+            generate or suppress the table of contents and lists: </para>
+        <para>
+            <informaltable rules="all">
+                <col width="25%"/>
+                <col width="75%"/>
                 <thead>
                     <tr>
-                        <th>Tag</th>
-                        <th>Defines</th>
+                        <th>Word</th>
+                        <th>Generates</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -69,34 +82,37 @@ format="SVG" scale="60"/>
                     </tr>
                     <tr>
                         <td>title</td>
-                        <td/>
+                        <td>A title for the specified list, such as
+                                <quote>Table of Contents</quote>. </td>
                     </tr>
                     <tr>
                         <td>figure</td>
-                        <td/>
+                        <td>List of figurees</td>
                     </tr>
                     <tr>
                         <td>table</td>
-                        <td/>
+                        <td>List of tables</td>
                     </tr>
                     <tr>
                         <td>example</td>
-                        <td/>
+                        <td>List of examples</td>
                     </tr>
                     <tr>
                         <td>equation</td>
-                        <td/>
+                        <td>List of equations</td>
                     </tr>
                     <tr>
                         <td>nop</td>
-                        <td/>
+                        <td>No operation. Disables the table of
+                            contents and all lists for an element. You
+                            can also disable the table of contents or
+                            a list by removing the element from the
+                            parameter.</td>
                     </tr>
                 </tbody>
-            </informaltable></para>
-        <para>To suppress either the table of content from the preface
-            and generate it in other chapters, use the nop option. In
-            the &lt;configuration&gt; section for your document, add
-            the following markup:</para>
+            </informaltable>
+        </para>
+        <para>For example, you might add the following markup:</para>
 
         <programlisting>&lt;generateToc&gt; 
 appendix toc,title 
@@ -112,19 +128,44 @@ reference toc,title
 section toc 
 set toc,title 
 &lt;/generateToc&gt;</programlisting>
-        <para>This is the default settings we use now, but I've
-            changed the entry for preface from:</para>
-        <para>preface toc,title</para>
-        <para>to</para>
-        <para>preface nop</para>
-        <para>Where "nop" stands for "no operation", which just means
-            "don't do anything for this one". We could add other
-            rules, like: preface/section nop That would say "if the
-            section is in a preface, don't give it a toc either",
-            which would override the more general rule of "section
-            toc" which says "Gives sections their own tocs).</para>
-        <para>This feature is documented here: <link
+        <para>This markup generates the following items: <itemizedlist>
+                <listitem>
+                    <para>Appendix. Table of contents with a
+                        title.</para>
+                </listitem>
+                <listitem>
+                    <para>Appendix in an article. No table of contents
+                        or lists.</para>
+                </listitem>
+                <listitem>
+                    <para>Article. Table of contents with a
+                        title.</para>
+                </listitem>
+                <listitem>
+                    <para>Book. List of figures, tables, examples, and
+                        equations with titles.</para>
+                </listitem>
+                <listitem>
+                    <para>Chapter. Table of contents with a
+                        title.</para>
+                </listitem>
+                <listitem>
+                    <para>Part. Table of contents with a title.</para>
+                </listitem>
+                <listitem>
+                    <para>Preface. No table of contents or
+                        lists.</para>
+                </listitem>
+                <listitem>
+                    <para>And so on.</para>
+                </listitem>
+            </itemizedlist></para>
+        <para><emphasis role="bold">Additional resources:</emphasis>
+            <link
                 xlink:href="http://docbook.sourceforge.net/release/xsl/1.76.1/doc/html/generate.toc.html"
-                >http://docbook.sourceforge.net/release/xsl/1.76.1/doc/html/generate.toc.html</link></para>
+                >http://docbook.sourceforge.net/release/xsl/1.76.1/doc/html/generate.toc.html</link>
+            and <link
+                xlink:href="http://www.sagehill.net/docbookxsl/TOCcontrol.html"
+                >http://www.sagehill.net/docbookxsl/TOCcontrol.html</link></para>
     </section>
 </chapter>
