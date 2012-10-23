@@ -48,17 +48,22 @@ format="SVG" scale="60"/>
             Examples, and Equations</title>
         <para>The <literal>generateToc</literal> tag in a
                 <literal>configuration</literal> section contains a
-            series of white-space separated pairs, which define the
-            generation or suppression of the table of contents and
+            series of white-space separated word pairs, which define
+            the generation or suppression of the table of contents and
             lists of figures, tables, examples, and equations. </para>
-        <para>The first word in each pair is an element name.</para>
+        <para>The first word in each pair is the element name, such as
+                <literal>appendix</literal>,
+                <literal>article</literal>, <literal>book</literal>,
+                <literal>chapter</literal>,
+            <literal>section</literal>, and so on.</para>
         <para>The second word is a comma-separated list that specifies
             which lists the element should display. Most elements just
-            use toc, which is a list of section titles. But the entry
-            for the book element also generates tables of figures,
-            tables, examples, and equations. The
-                <literal>title</literal> tag generates a title for the
-            list, such as <quote>Table of Contents</quote>. </para>
+            use <literal>toc</literal>, which generates a list of
+            section titles. </para>
+        <para>But the entry for the book element also generates tables
+            of figures, tables, examples, and equations. </para>
+        <para>The <literal>title</literal> tag generates a title for
+            the list, such as <quote>Table of Contents</quote>. </para>
         <para>Use a value of <literal>nop</literal> to turn off the
             table of contents and all lists for an element. You can
             also turn off a table of contents by removing the element
@@ -112,7 +117,8 @@ format="SVG" scale="60"/>
                 </tbody>
             </informaltable>
         </para>
-        <para>For example, you might add the following markup:</para>
+        <para>For example, you might add the following markup to your
+                <filename>pom.xml</filename> file:</para>
 
         <programlisting>&lt;generateToc&gt; 
 appendix toc,title 
@@ -163,9 +169,10 @@ set toc,title
         <para><emphasis role="bold">Additional resources:</emphasis>
             <link
                 xlink:href="http://docbook.sourceforge.net/release/xsl/1.76.1/doc/html/generate.toc.html"
-                >http://docbook.sourceforge.net/release/xsl/1.76.1/doc/html/generate.toc.html</link>
-            and <link
+                >ToC/LoT/Index Generation</link>
+        </para>
+        <para><link
                 xlink:href="http://www.sagehill.net/docbookxsl/TOCcontrol.html"
-                >http://www.sagehill.net/docbookxsl/TOCcontrol.html</link></para>
+            >Tables of contents (TOC) - Chapter 10. General customizations</link></para>
     </section>
 </chapter>
