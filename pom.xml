@@ -61,6 +61,19 @@
 					<branding>rackspace</branding>
 					<showXslMessages>true</showXslMessages>
 					<formalProcedures>0</formalProcedures>
+					<generateToc> appendix toc,title
+						article/appendix nop 
+						article toc,title
+						book title,figure,table,equation
+						chapter toc 
+						part toc,title 
+						preface toc
+						qandadiv toc 
+						qandaset toc 
+						reference toc,title 
+						section toc 
+						set toc,title
+					</generateToc>
 				</configuration>
 			</plugin>
 		</plugins>

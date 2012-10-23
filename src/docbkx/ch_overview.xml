@@ -68,7 +68,7 @@ format="SVG" scale="60"/>
     &lt;goal&gt;generate-pdf&lt;/goal&gt;
     &lt;goal&gt;generate-webhelp&lt;/goal&gt;
 &lt;/goals&gt;</programlisting>
-                </listitem>
+                <para>For more information about the pom.xml file, see <xref linkend="ch_pom"/>.</para></listitem>
                 <listitem>
                     <para><emphasis role="bold">src
                             directory</emphasis></para>

@@ -29,11 +29,11 @@ format="SVG" scale="60"/>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0"
-    xml:id="ch_pom" status="draft">
+    xml:id="ch_pom">
     <title>Configure a Document</title>
-    <para>Set values in the pom.xml file, which is the configuration
-        file for a document, to configure the components for a
-        document. </para>
+    <para>To configure the components for a document, you set values
+        in the <filename>pom.xml</filename> file, which is the
+        configuration file for a document.</para>
     <para>You can configure the following document components:</para>
     <para>
         <itemizedlist>
@@ -50,6 +50,49 @@ format="SVG" scale="60"/>
     </para>
     <section xml:id="toc">
         <title>Table of Contents and List of Tables</title>
+        <para>The <literal>generateToc</literal> tag in a
+                <literal>configuration</literal> section defines the
+            generation of the following tables and
+                lists:<informaltable rules="all">
+                <col width="50%"/>
+                <col width="50%"/>
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Defines</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>toc</td>
+                        <td>Table of contents</td>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td>figure</td>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td>table</td>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td>example</td>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td>equation</td>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td>nop</td>
+                        <td/>
+                    </tr>
+                </tbody>
+            </informaltable></para>
         <para>To suppress either the table of content from the preface
             and generate it in other chapters, use the nop option. In
             the &lt;configuration&gt; section for your document, add
