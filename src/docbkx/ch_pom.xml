@@ -47,11 +47,11 @@ format="SVG" scale="60"/>
 
     <section xml:id="create_pom">
         <title>Create and Customize the pom.xml File</title>
+        <para>Maven uses the pom.xml configuration file to assemble
+            source components, including XML files, images, and code
+            samples, into PDF or HTML output.</para>
         <para><procedure>
-                <para>Maven uses the pom.xml configuration file to
-                    assemble source components, including XML files,
-                    images, and code samples, into PDF or HTML
-                    output.</para>
+
                 <title>To create and customize the pom.xml
                     file</title>
                 <step>
