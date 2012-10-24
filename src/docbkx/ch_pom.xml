@@ -62,11 +62,8 @@ format="SVG" scale="60"/>
                         Servers.</para>
                 </step>
                 <step>
-                    <para/>
-                    <para>Start with a working pom.xml such as the one
-                        used for cloud-files.docs.</para>
-                    <para>Customize it to suit the current
-                        project:</para>
+                    <para>Customize the <literal>pom.xml</literal>
+                        file to suit the current project:</para>
                     <itemizedlist>
                         <listitem>
                             <para><emphasis role="bold"
@@ -254,13 +251,165 @@ set toc,title
                 </listitem>
             </itemizedlist></para>
         <para><emphasis role="bold">Additional resources:</emphasis>
-            <link
-                xlink:href="http://docbook.sourceforge.net/release/xsl/1.76.1/doc/html/generate.toc.html"
-                >ToC/LoT/Index Generation</link>
+            <itemizedlist>
+                <listitem>
+                    <para><link
+                            xlink:href="http://docbook.sourceforge.net/release/xsl/1.76.1/doc/html/generate.toc.html"
+                            >ToC/LoT/Index Generation</link>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para><link
+                            xlink:href="http://www.sagehill.net/docbookxsl/TOCcontrol.html"
+                            >Tables of contents (TOC) - Chapter 10.
+                            General customizations</link></para>
+                </listitem>
+            </itemizedlist></para>
+    </section>
+    <section xml:id="pom_ref">
+        <title>Tags Reference - pom.xml Configuration File</title>
+        <para>
+            <table rules="both">
+                <caption>Tags Reference - pom.xml Configuration
+                    File</caption>
+                <col width="25%"/>
+                <col width="25%"/>
+                <col width="25%"/>
+                <col width="25%"/>
+                <thead>
+                    <tr>
+                        <th colspan="2">Tag</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                        <th>Reference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2">project</td>
+                        <td>Describes the project attributes. The
+                                <literal>project</literal> tag is the
+                            main tag in the pom.xml file.</td>
+                        <td>
+                            <programlisting>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/maven-v4_0_0.xsd"></programlisting>
+                        </td>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>modelVersion</td>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>groupId</td>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>artifactId</td>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>version</td>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>packaging</td>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>name</td>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>build</td>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td>profiles</td>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                </tbody>
+            </table>
         </para>
-        <para><link
-                xlink:href="http://www.sagehill.net/docbookxsl/TOCcontrol.html"
-                >Tables of contents (TOC) - Chapter 10. General
-                customizations</link></para>
+        <para>The following output shows a partial authentication
+            response in JSON format: <example>
+                <title>Authenticate: JSON Response</title>
+                <programlistingco>
+                    <areaspec>
+                        <area xml:id="pom_example.xml.project"
+                            units="linecolumn" coords="3 5"/>
+                        <area xml:id="pom_example.xml.modelVersion"
+                            units="linecolumn" coords="4 39"/>
+                        <area xml:id="pom_example.xml.groupId"
+                            units="linecolumn" coords="6 52"/>
+                        <area xml:id="pom_example.xml.artifactId"
+                            units="linecolumn" coords="7 38"/>
+                        <area xml:id="pom_example.xml.version"
+                            units="linecolumn" coords="8 38"/>
+
+                        <area xml:id="pom_example.xml.name"
+                            units="linecolumn" coords="10 22"/>
+                        <area xml:id="pom_example.xml.packaging"
+                            units="linecolumn" coords="11 31"/>
+                        <area xml:id="pom_example.xml.build"
+                            units="linecolumn" coords="20 12"/>
+                        <area xml:id="pom_example.xml.executions"
+                            units="linecolumn" coords="30 29"/>
+
+                    </areaspec>
+                    <programlisting language="xml"><?db-font-size 55%?><xi:include href="samples/pom_example.xml" parse="text"/></programlisting>
+                </programlistingco>
+            </example></para>
+        <para>The pom.xml file contains the following tags:<calloutlist>
+                <callout arearefs="pom_example.xml.project">
+                    <para><emphasis role="bold"
+                        >Project</emphasis></para>
+
+                    <para>Describes the project attributes. Is the
+                        main tag in the pom.xml file.</para>
+
+                </callout>
+                <callout arearefs="pom_example.xml.modelVersion">
+                    <para><emphasis role="bold">Model
+                            version</emphasis></para>
+                    <para>The model version.</para>
+
+                </callout>
+
+
+            </calloutlist></para>
     </section>
 </chapter>

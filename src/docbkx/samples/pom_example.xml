@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.rackspace.cloud.api.auth</groupId>
+	<artifactId>auth-doc</artifactId>
+	<version>1.1.2-SNAPSHOT</version>
+	
+	<name>Auth</name>
+	<packaging>jar</packaging>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>rackspace-research</id>
+			<name>Rackspace Research Repository</name>
+			<url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.rackspace.cloud.api</groupId>
+				<artifactId>clouddocs-maven-plugin</artifactId>
+				<!-- this <version> relates only to the *plugin* used for document formatting -->
+				<!-- the version of the *API* that is the subject of the document is indicated within each document -->
+				<!-- 1.0.4 of the plugin supports yyyy-mm-dd pubdate, OpenStack branding -->
+				<!-- 1.0.5-SNAPSHOT of the plugin supports images from /common/images/ -->
+				<version>1.0.4</version>
+				<executions>
+					<execution>
+						<id>g1</id>
+						<goals>
+							<!-- 2 output formats: PDF for print; HTML for online -->
+							<goal>generate-pdf</goal>
+							<goal>generate-webhelp</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+						  <enableGoogleAnalytics>0</enableGoogleAnalytics>
+							<!-- support inclusion from external /samples/, /figures/, etc -->
+							<xincludeSupported>true</xincludeSupported>
+							<!-- set branding to OPENSTACK or RACKSPACE -->
+							<branding>rackspace</branding>
+							<!-- for WebHelp: -->
+							<!-- enableDisqus turns on Disqus feature for feedback if any value other than 0; "intranet" for posting on our internal docs-beta.rackspace.com for internal review --> 
+							<!-- disqusShortname = Disqus account where moderator is collecting this feedback -->
+							<enableDisqus>intranet</enableDisqus>
+							<disqusShortname>rc-integration</disqusShortname>
+							<!--- open Webhelp at the front matter: copyright page, list of tables, list of examples -->
+							<htmlhelpDefaultTopic>index.html</htmlhelpDefaultTopic>
+							<!-- look here for the .xml and everything to include such as samples and figures -->
+							<sourceDirectory>src/resources</sourceDirectory>
+							<!-- highlightSource bolds some elements of sample code but disables linewrapping -->
+							<highlightSource>true</highlightSource>
+							<!-- use this .XML as the source for the book to be generated as .PDF & .HTML -->
+							<includes>auth-client-devguide.xml,auth-admin-devguide.xml</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
