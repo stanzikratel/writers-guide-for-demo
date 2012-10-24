@@ -44,6 +44,91 @@ format="SVG" scale="60"/>
             </listitem>
         </itemizedlist>
     </para>
+
+    <section xml:id="create_pom">
+        <title>Create and Customize the pom.xml File</title>
+        <para><procedure>
+                <para>Maven uses the pom.xml configuration file to
+                    assemble source components, including XML files,
+                    images, and code samples, into PDF or HTML
+                    output.</para>
+                <title>To create and customize the pom.xml
+                    file</title>
+                <step>
+                    <para>If your project does not have a
+                            <filename>pom.xml</filename> file, copy a
+                        working <filename>pom.xml</filename> file,
+                        such as from Cloud Files or Cloud
+                        Servers.</para>
+                </step>
+                <step>
+                    <para/>
+                    <para>Start with a working pom.xml such as the one
+                        used for cloud-files.docs.</para>
+                    <para>Customize it to suit the current
+                        project:</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para><emphasis role="bold"
+                                   >groupId</emphasis>: associates
+                                several related projects.</para>
+                            <para> For example,
+                                org.openstack.docs</para>
+                        </listitem>
+                    </itemizedlist>
+                    <itemizedlist>
+                        <listitem>
+                            <para><emphasis role="bold"
+                                   >artifactID</emphasis>: uniquely
+                                identifies a project within the
+                                group.</para>
+                            <para> For example,
+                                open-stack-guide.</para>
+                        </listitem>
+                    </itemizedlist>
+                    <itemizedlist>
+                        <listitem>
+                            <para><emphasis role="bold"
+                                   >version</emphasis>: 1.0.0-SNAPSHOT
+                                should always be the first version.
+                                Later, use Maven to modify the
+                                version.</para>
+                        </listitem>
+                    </itemizedlist>
+                    <itemizedlist>
+                        <listitem>
+                            <para>update the configuration section to
+                                identify the <emphasis role="bold"
+                                   >sourceDirectory</emphasis> and the
+                                material to be included.</para>
+                            <para> For example, /src/docbkx and
+                                os-book.xml:</para>
+                        </listitem>
+                    </itemizedlist>
+                    <informaltable border="0">
+                        <tbody>
+                            <tr>
+                                <td rowspan="1" colspan="1"
+                                   >&lt;configuration&gt;&lt;xincludeSupported&gt;true&lt;/xincludeSupported&gt;&lt;sourceDirectory&gt;src/docbkx&lt;/sourceDirectory&gt;&lt;includes&gt;os-book.xml&lt;/includes&gt;&lt;/configuration&gt;</td>
+                            </tr>
+                        </tbody>
+                    </informaltable>
+                    <para>You can see working pom.xmls in GitHub.
+                        There is one pom.xml per project; each project
+                        can include one or several books. For example,
+                        here is the <link
+                            xlink:href="https://github.rackspace.com/IX/auth-2.0/blob/master/pom.xml"
+                            >pom.xml for Cloud Identity (aka Auth)
+                            2.0</link>; it builds two books.</para>
+                    <para>Save the customized pom.xml in the file
+                        structure for the book, at the level above
+                        /src/.</para>
+                </step>
+                <step>
+                    <para/>
+                </step>
+            </procedure></para>
+    </section>
     <section xml:id="toc">
         <title>Table of Contents, and Lists of Figures, Tables,
             Examples, and Equations</title>
