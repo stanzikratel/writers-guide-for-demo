@@ -39,7 +39,8 @@ format="SVG" scale="60"/>
         <itemizedlist>
             <listitem>
                 <para>Table of contents and lists of figures, tables,
-                    examples, and equations. </para>
+                    examples, and equations. See <xref linkend="toc"
+                    />.</para>
             </listitem>
         </itemizedlist>
     </para>
@@ -88,7 +89,8 @@ format="SVG" scale="60"/>
                     <tr>
                         <td>title</td>
                         <td>A title for the specified list, such as
-                                <quote>Table of Contents</quote>. </td>
+                                <quote>Table of Contents</quote>.
+                        </td>
                     </tr>
                     <tr>
                         <td>figure</td>
@@ -173,6 +175,7 @@ set toc,title
         </para>
         <para><link
                 xlink:href="http://www.sagehill.net/docbookxsl/TOCcontrol.html"
-            >Tables of contents (TOC) - Chapter 10. General customizations</link></para>
+                >Tables of contents (TOC) - Chapter 10. General
+                customizations</link></para>
     </section>
 </chapter>
