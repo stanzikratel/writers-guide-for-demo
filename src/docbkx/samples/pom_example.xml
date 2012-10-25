@@ -1,64 +1,106 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	
-	<groupId>com.rackspace.cloud.api.auth</groupId>
-	<artifactId>auth-doc</artifactId>
-	<version>1.1.2-SNAPSHOT</version>
-	
-	<name>Auth</name>
-	<packaging>jar</packaging>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>rackspace-research</id>
-			<name>Rackspace Research Repository</name>
-			<url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
-		</pluginRepository>
-	</pluginRepositories>
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>com.rackspace.cloud.api</groupId>
-				<artifactId>clouddocs-maven-plugin</artifactId>
-				<!-- this <version> relates only to the *plugin* used for document formatting -->
-				<!-- the version of the *API* that is the subject of the document is indicated within each document -->
-				<!-- 1.0.4 of the plugin supports yyyy-mm-dd pubdate, OpenStack branding -->
-				<!-- 1.0.5-SNAPSHOT of the plugin supports images from /common/images/ -->
-				<version>1.0.4</version>
-				<executions>
-					<execution>
-						<id>g1</id>
-						<goals>
-							<!-- 2 output formats: PDF for print; HTML for online -->
-							<goal>generate-pdf</goal>
-							<goal>generate-webhelp</goal>
-						</goals>
-						<phase>generate-sources</phase>
-						<configuration>
-						  <enableGoogleAnalytics>0</enableGoogleAnalytics>
-							<!-- support inclusion from external /samples/, /figures/, etc -->
-							<xincludeSupported>true</xincludeSupported>
-							<!-- set branding to OPENSTACK or RACKSPACE -->
-							<branding>rackspace</branding>
-							<!-- for WebHelp: -->
-							<!-- enableDisqus turns on Disqus feature for feedback if any value other than 0; "intranet" for posting on our internal docs-beta.rackspace.com for internal review --> 
-							<!-- disqusShortname = Disqus account where moderator is collecting this feedback -->
-							<enableDisqus>intranet</enableDisqus>
-							<disqusShortname>rc-integration</disqusShortname>
-							<!--- open Webhelp at the front matter: copyright page, list of tables, list of examples -->
-							<htmlhelpDefaultTopic>index.html</htmlhelpDefaultTopic>
-							<!-- look here for the .xml and everything to include such as samples and figures -->
-							<sourceDirectory>src/resources</sourceDirectory>
-							<!-- highlightSource bolds some elements of sample code but disables linewrapping -->
-							<highlightSource>true</highlightSource>
-							<!-- use this .XML as the source for the book to be generated as .PDF & .HTML -->
-							<includes>auth-client-devguide.xml,auth-admin-devguide.xml</includes>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.rackspace.cloud.apidocs</groupId>
+  <artifactId>cloud-files</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>Cloud Files API Docs</name>
+  <build>
+    <plugins>
+      <plugin>
+	<groupId>com.rackspace.cloud.api</groupId>
+	<artifactId>clouddocs-maven-plugin</artifactId>
+	<version>1.5.1-SNAPSHOT</version>
+	<executions>
+	  <execution>
+	    <id>cf-intro</id>
+	    <goals>
+	      <goal>generate-webhelp</goal>
+	    </goals>
+	    <phase>generate-sources</phase>
+	    <configuration>
+	      <includes>cf-intro.xml</includes>
+	      <canonicalUrlBase>http://docs.rackspace.com/files/api/v1/cf-intro/content</canonicalUrlBase>
+	    </configuration>			
+	  </execution>
+	  <execution>
+	    <id>cf-devguide</id>
+	    <goals>
+	      <goal>generate-webhelp</goal>
+	    </goals>
+	    <phase>generate-sources</phase>
+	    <configuration>
+	      <includes>cf-devguide.xml</includes>
+	      <canonicalUrlBase>http://docs.rackspace.com/files/api/v1/cf-devguide/content</canonicalUrlBase>
+	    </configuration>
+	  </execution>
+	  <execution>
+	    <id>cf-releasenotes</id>
+	    <goals>
+	      <goal>generate-webhelp</goal>
+	    </goals>
+	    <phase>generate-sources</phase>
+	    <configuration>
+	      <includes>cf-releasenotes.xml</includes>
+	      <chapterAutolabel>0</chapterAutolabel>
+	      <canonicalUrlBase>http://docs.rackspace.com/files/api/v1/cf-releasenotes/content</canonicalUrlBase>
+	    </configuration>
+	  </execution>
+	</executions>
+	<configuration>
+	  <branding>rackspace</branding>
+	  <feedbackEmail>j.random.racker@rackspace.com</feedbackEmail>
+	  <socialIcons>1</socialIcons>
+	  <enableDisqus>internet</enableDisqus>
+	  <showXslMessages>true</showXslMessages>
+	</configuration>
+      </plugin>
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-assembly-plugin</artifactId>
+	<version>2.3</version>
+	<configuration>
+	  <descriptors>
+	    <descriptor>includewars.xml</descriptor>
+	  </descriptors>
+	</configuration>
+	<executions>
+	  <execution>
+	    <id>assembly</id>
+	    <goals>
+	      <goal>single</goal>
+	    </goals>
+	    <phase>package</phase>
+	  </execution>
+	</executions>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>Rackspace Research Repositories</id>
+      <activation>
+	<activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+	<repository>
+	  <id>rackspace-research</id>
+	  <name>Rackspace Research Repository</name>
+	  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+	</repository>
+      </repositories>
+      <pluginRepositories>
+	<pluginRepository>
+	  <id>rackspace-research</id>
+	  <name>Rackspace Research Repository</name>
+	  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+	</pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  <scm>
+    <connection>scm:git:ssh://git@github.rackspace.com:IX/cloud-files.git</connection>
+  </scm>
 </project>
