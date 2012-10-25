@@ -269,7 +269,7 @@ set toc,title
     <section xml:id="pom_ref">
         <title>Tags Reference - pom.xml Configuration File</title>
         <para>
-            <table rules="both">
+          <!--  <table rules="all">
                 <caption>Tags Reference - pom.xml Configuration
                     File</caption>
                 <col width="25%"/>
@@ -362,7 +362,7 @@ set toc,title
                         <td/>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
         </para>
         <para>The following output shows a partial authentication
             response in JSON format: <example>
