@@ -11,8 +11,14 @@
     </copyright>
     <releaseinfo>v1.0</releaseinfo>
     <productname>Content Team</productname>
-    <pubdate>2012-10-19</pubdate>
+    <pubdate>2012-11-07</pubdate>
     <revhistory>
+      <revision>
+        <date>2012-11-07</date>
+        <revdescription>
+          <para>Incorporated comments from Betsy.</para>
+        </revdescription>
+      </revision>
       <revision>
         <date>2012-10-19</date>
         <revdescription>
