@@ -34,7 +34,7 @@
 			<plugin>
 				<groupId>com.rackspace.cloud.api</groupId>
 				<artifactId>clouddocs-maven-plugin</artifactId>
-				<version>1.5.1-SNAPSHOT</version>
+				<version>1.6.1-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<goals>
@@ -61,6 +61,7 @@
 					<branding>rackspace</branding>
 					<showXslMessages>true</showXslMessages>
 					<formalProcedures>0</formalProcedures>
+					<useLatestSuffixInPdfUrl>0</useLatestSuffixInPdfUrl>
 					<generateToc> 
 						appendix toc,title
 						article/appendix nop 

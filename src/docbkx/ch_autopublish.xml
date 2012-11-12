@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter 
+    xmlns="http://docbook.org/ns/docbook"     
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    version="5.0-extension RackBook-2.0"
+  xml:id="autopublish">
+  <info><title>Continuous integration and auto-publish to production</title></info>
+  <?dbhtml stop-chunking?>
+  <para>The Rackspace publishing system supports continuous
+    integration and push-button publishing of content to our
+    production environment. Continuous integration refers to the
+    process of performing a sanity build of a set of documents each
+    time a change is pushed to the repository. <itemizedlist>
+      <listitem>
+        <para>Git/Github serves as our source control system. Writers
+          and developers commit changes to their local git repository
+          and then push those changes to a central repository in
+          Github:Enterprise (github.rackspace.com) or Github
+          (github.com). </para>
+      </listitem>
+      <listitem>
+        <para>Jenkins serves as our continuous integration server.
+          When someone pushes a change to the central github
+          repository, Jenkins notices the change and performs a build
+          of the project. If the build is successful, the content
+          appears in our staging servers. If the build fails, Jenkins
+          sends a notification email to a configured list of emails.
+        </para>
+      </listitem>
+      <listitem>
+        <para>We have two staging servers:<itemizedlist>
+            <listitem>
+              <para><link
+                  xlink:href="http://docs-staging.rackspace.com"
+                  >docs-staging</link> mirrors the external production
+                environment, <link
+                  xlink:href="http://docs.rackspace.com"
+                  >docs.rackspace.com</link>, which hosts our
+                customer-facing documentation.</para>
+            </listitem>
+            <listitem>
+              <para><link
+                  xlink:href="http://docs-internal-staging.rackspace.com"
+                  >docs-internal-staging</link> mirrors the internal
+                production environment, <link
+                  xlink:href="http://docs-internal.rackspace.com"
+                  >docs-internal.rackspace.com</link>, which hosts
+                internal documents not available to customers,
+                internal versions of external documentation, and, if
+                internal versions are not provided, the external
+                versions of documents. This internal site is primarily
+                used by Rackspace support and is only accessible on
+                the Rackspace network.</para>
+            </listitem>
+          </itemizedlist>From the staging servers writers can promote
+          documents from staging to production by selecting the
+          document and clicking a button. To view the autopublish UI,
+          browse to the appropriate URL and enter the correct credentials:<itemizedlist>
+            <listitem>
+              <para><link
+                  xlink:href="http://docs-staging.rackspace.com/publish"
+                  >docs-staging/publish</link></para>
+            </listitem>
+            <listitem>
+              <para><link
+                  xlink:href="http://docs-internal-staging.rackspace.com/publish"
+                  >docs-internal-staging/publish</link></para>
+            </listitem>
+          </itemizedlist></para>
+      </listitem>
+    </itemizedlist></para>
+  <section xml:id="metadata">
+    <title>Controlling the placement of links on the landing
+      page</title>
+    <para>The landing page for the internal and external staging and
+      production sites consists of a number of boxes for the various
+      products that Rackspace offers:<figure>
+        <title>docs.rackspace.com.png</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/docs.rackspace.com.png"
+              contentwidth="6in"/>
+          </imageobject>
+        </mediaobject>
+      </figure></para>
+    <para>You can control which group a given document appears in and
+      where it appears using metadata in the document:<programlisting language="xml">&lt;book xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    version="5.0-extension RackBook-2.0"
+    xml:id="os-cs-devguide">
+    &lt;title>Next Generation Cloud Servers™ Developer Guide&lt;/title>
+    &lt;info>
+     &lt;!-- ... stuff omitted ... -->
+        &lt;raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata"> <co xml:id="raxm-metadata"/>
+            &lt;raxm:displayname>API Developer Guide&lt;/raxm:displayname> <co xml:id="raxm-displayname"/>
+            &lt;raxm:product version="v2">servers&lt;/raxm:product> <co xml:id="raxm-product"/>
+            &lt;raxm:priority>20&lt;/raxm:priority> <co xml:id="raxm-priority"/>
+        &lt;/raxm:metadata>
+    &lt;/info>
+</programlisting><calloutlist>
+        <callout arearefs="raxm-metadata">
+          <para>The <tag>raxm:metadata</tag> element wraps the
+            metadata that controls where the document's link appears
+            on the landing page. This element also binds the prefix
+              <tag>raxm</tag> with the namespace URI
+              <systemitem>http://docs.rackspace.com/api/metadata</systemitem>.</para>
+        </callout>
+        <callout arearefs="raxm-displayname">
+          <para>The <tag>raxm:displayname</tag> element defines the
+            text to display on the landing page. For example,
+              <quote>API Developer Guide</quote>, <quote>Getting
+              Started Guide</quote>, or <quote>Release
+            Notes</quote>.</para>
+        </callout>
+        <callout arearefs="raxm-product">
+          <para>The <tag>raxm:product</tag> element and its
+              <tag>version</tag> attribute together control which
+            product box the link lands in. Currently supported values
+              are:<table frame="void">
+              <caption>Product and version values</caption>
+              <col width="51%"/>
+              <col width="26%"/>
+              <col width="23%"/>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Value</th>
+                  <th>Versions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cloud Servers</td>
+                  <td>servers</td>
+                  <td>v1.0 or v2</td>
+                </tr>
+                <tr>
+                  <td>Cloud Databases</td>
+                  <td>cdb</td>
+                  <td>v1.0</td>
+                </tr>
+                <tr>
+                  <td>Cloud Monitoring</td>
+                  <td>cm</td>
+                  <td>v1.0</td>
+                </tr>
+                <tr>
+                  <td>Cloud Files</td>
+                  <td>cloudfiles</td>
+                  <td>v1.0</td>
+                </tr>
+                <tr>
+                  <td>Cloud Loadbalancers</td>
+                  <td>loadbalancers</td>
+                  <td>v1.0</td>
+                </tr>
+                <tr>
+                  <td>Cloud Identity</td>
+                  <td>auth</td>
+                  <td>v1.1 or v2.0</td>
+                </tr>
+                <tr>
+                  <td>Cloud Sites</td>
+                  <td>sites</td>
+                  <td>v1.0</td>
+                </tr>
+                <tr>
+                  <td>Cloud Block Storage</td>
+                  <td>cbs</td>
+                  <td>v1.0</td>
+                </tr>
+                <tr>
+                  <td>Service Registry</td>
+                  <td>rsr</td>
+                  <td>v1.0</td>
+                </tr>
+                <tr>
+                  <td>SDKs</td>
+                  <td>sdks</td>
+                  <td>n/a</td>
+                </tr>
+              </tbody>
+            </table></para>
+        </callout>
+        <callout arearefs="raxm-priority">
+          <para>This value controls the sorting of items within a
+            product. The value is actually a sequence, so the lowest
+            number is the first in the list and the highest number the
+            last. A best practice is to number items with space
+            between so other items can be added later. For example,
+            you might number the first three documents 10, 20, and 30
+            so that items could be added between later. </para>
+        </callout>
+      </calloutlist></para>
+  </section>
+</chapter>
