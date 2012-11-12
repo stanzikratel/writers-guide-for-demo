@@ -46,6 +46,7 @@
 
   <xi:include href="preface.xml"/>
   <xi:include href="ch_overview.xml"/>
+  <xi:include href="ch_autopublish.xml"/>
   <xi:include href="ch_install.xml"/>
 
   <xi:include href="ch_github.xml"/>
