@@ -41,7 +41,7 @@ format="SVG" scale="60"/>
                         >Formal</emphasis></para>
                     <para>Tagged with <code>&lt;table></code> tag. </para>
                     <para>A formal table looks like this: <table
-                            rules="both" width="30%">
+                            rules="all" width="30%">
                             <caption>Formal Table</caption>
                             <col width="50%"/>
                             <col width="50%"/>
@@ -77,7 +77,7 @@ format="SVG" scale="60"/>
                     <para>Tagged with <code>&lt;informaltable></code>
                         tag. </para>
                     <para>An informal table looks like this:
-                            <informaltable rules="both" width="30%">
+                            <informaltable rules="all" width="30%">
                             <col width="50%"/>
                             <col width="50%"/>
                             <thead>
@@ -107,8 +107,8 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="table_properties">
         <title>Table Properties</title>
-        <para>For either type of table, you can control the following
-            table characteristics: <itemizedlist>
+        <para>For a formal or informal table, you can control the following
+            properties: <itemizedlist>
                 <listitem>
                     <para>Table and column widths. See <xref
                             linkend="table_width"/>.</para>
@@ -180,8 +180,8 @@ format="SVG" scale="60"/>
                 </listitem>
                 <listitem>
                     <para>If the table descriptions or construction is
-                        complex, consider using a variable or itemized
-                        list. </para>
+                        complex, consider using a variable list or
+                        itemized list instead of a table.</para>
                 </listitem>
                 <listitem>
                     <para>Avoid putting a variable list in a table.
@@ -208,11 +208,6 @@ format="SVG" scale="60"/>
                                    separate paragraph directly before
                                    the object of the lead-in. </para>
                             </listitem>
-                            <listitem>
-                                <para>Do not use “following” as a
-                                   noun, such as “The following is an
-                                   example of...”</para>
-                            </listitem>
                         </itemizedlist></para>
                 </listitem>
 
@@ -222,10 +217,10 @@ format="SVG" scale="60"/>
     <?dbhtml stop-chunking?>
     <section xml:id="create_table">
         <title>Create Tables</title>
-        <para>The easiest way to create a table is in Author mode in
-            oXygen. </para>
+        <para>The easiest way to create a table is in
+                <guilabel>Author</guilabel> mode in oXygen. </para>
         <para>Alternatively, you can cut and paste the markup from an
-            existing table in Text mode.</para>
+            existing table in <guilabel>Text</guilabel> mode.</para>
 
 
 
@@ -234,7 +229,7 @@ format="SVG" scale="60"/>
             <procedure>
                 <title>To create a table</title>
                 <step>
-                    <para>In Author mode, click
+                    <para>In <guilabel>Author</guilabel> mode, click
                             <guimenu>Rackbook</guimenu> >
                             <guimenuitem>Table</guimenuitem> >
                             <guisubmenu>Insert
