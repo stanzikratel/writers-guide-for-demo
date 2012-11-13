@@ -69,7 +69,14 @@
             </listitem>
           </itemizedlist></para>
       </listitem>
-    </itemizedlist></para>
+    </itemizedlist><figure>
+      <title>Auto-publish flow</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="figures/autopublish.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure></para>
   <section xml:id="metadata">
     <title>Controlling the placement of links on the landing
       page</title>
