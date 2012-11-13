@@ -142,6 +142,11 @@
                   <td>v1.0</td>
                 </tr>
                 <tr>
+                  <td>Cloud DNS</td>
+                  <td>cdns</td>
+                  <td>v1.0</td>
+                </tr>
+                <tr>
                   <td>Cloud Monitoring</td>
                   <td>cm</td>
                   <td>v1.0</td>
