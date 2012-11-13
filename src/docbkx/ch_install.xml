@@ -36,12 +36,14 @@ format="SVG" scale="60"/>
     <?dbhtml stop-chunking?>
 
 
-    <para>To install or update oXygen Author or Editor, you use a Java
-        web start (JWS) application. </para>
-    <para>When you run the JWS application for the first time, JWS
-        downloads the entire package, which contains multiple jar
-        files. The download takes a few minutes on a reasonably fast
-        connection. </para>
+    <para>To install or update oXygen Author or Editor, you use a JAva
+        Web Start (JAWS) application, which enables you to start
+        application software for the Java Platform directly from the
+        Internet by using a web browser. </para>
+    <para>When you run JAWS for the first time, it downloads the
+        entire oXygen package, <filename>author.jnlp</filename>. This
+        package contains multiple JAR files. The download takes a few
+        minutes on a reasonably fast connection. </para>
 
 
     <procedure>
@@ -58,33 +60,39 @@ format="SVG" scale="60"/>
                 <listitem>
                     <para><emphasis role="bold">Run
                                 <code>&lt;oXygen/></code>
-                            Author:</emphasis> Typically used by
-                        technical writers to edit Rackbook (DocBook)
-                        documents and WADL files. </para>
+                            Author:</emphasis> Use to edit RackBook
+                        (DocBook) documents and WADL files. </para>
                 </listitem>
                 <listitem>
                     <para><emphasis role="bold">Run
                                 <code>&lt;oXygen/></code>
-                            Editor:</emphasis> Typically used by
-                        members of the DocTools team to edit Rackbook
-                        (DocBook) documents and WADL files. Also
-                        includes XSD and XSLT-related features.
-                    </para>
+                            Editor:</emphasis> Use to edit RackBook
+                        documents and WADL files. Also includes XSD
+                        and XSLT-related features. </para>
                 </listitem>
             </itemizedlist>
         </step>
         <step>
             <para>On the <guilabel>Opening author.jnlp</guilabel>
-                dialog box, accept the default selection, and click
-                    <guibutton>OK</guibutton>. </para>
-            <para>After the oXygen application launches for the first
-                time, you must supply an oXygen Author or Editor
-                license. If you do not have one, request one from a
-                member of the Doc Tools team or your manager.</para>
+                dialog box, accept the default selection,
+                    <guilabel>Java Web Start (default)</guilabel>.
+                Then, click <guibutton>OK</guibutton>. </para>
+        </step>
+        <step>
+            <para>On the <guilabel>Security Warning</guilabel> dialog
+                box, click <guilabel>I accept the risk and I want to
+                    run this application.</guilabel> Then, click
+                    <guibutton>Run</guibutton>.</para>
+        </step>
+        <step>
+            <para>After oXygen launches for the first time, you must
+                supply an oXygen Author or Editor license. If you do
+                not have one, request one from a member of the Doc
+                Tools team or your manager.</para>
             <para>The download adds an icon to the Dock, which looks
                 like this:<mediaobject>
                     <imageobject>
-                        <imagedata fileref="figures/oxygen_coffee.png"
+                        <imagedata fileref="figures/jaws.png"
                             contentwidth="1in"/>
                     </imageobject>
                 </mediaobject></para>
@@ -98,23 +106,22 @@ format="SVG" scale="60"/>
                 </mediaobject></para>
         </step>
         <step>
-            <para>To start oXygen after the initial installation, add
-                the application to your Dock from your <filename
-                    class="directory">Applications</filename> folder,
-                or use JWS to download and update the oXygen.</para>
-            <para>When you launch the JWS application again to upgrade
-                oXygen, JWS downloads modified jar files only. If no
-                new jars are found or network connectivity is
-                unavailable, oXygen Author or Editor starts
-                immediately. </para>
+            <para>To use oXygen, click the coffee cup icon on your
+                Dock.</para></step></procedure>
+            <para>After you close oXygen, you can access it from your
+            <filename class="directory">Applications</filename>
+        folder, or use JAWS to download and update oXygen.</para>
+            <para>When you launch JAWS again to upgrade oXygen, it
+                downloads any modified jar files only. If no new jars
+                are found or network connectivity is unavailable,
+                oXygen Author or Editor starts immediately. </para>
             <note>
                 <para>If you install oXygen Author or Editor through
-                    JWS and add oXygen plugins to that installation,
-                    those plugins are removed when you use JWS to
+                    JAWS and add oXygen plugins to that installation,
+                    those plugins are removed when you use JAWS to
                     update oXygen.</para>
             </note>
-        </step>
-    </procedure>
+  
 
     <para><emphasis role="bold">Additional resource:</emphasis>
         <link

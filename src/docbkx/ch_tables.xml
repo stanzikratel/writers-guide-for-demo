@@ -33,17 +33,23 @@ format="SVG" scale="60"/>
     <title>Tables</title>
     <para>You can create the following types of tables:<itemizedlist>
             <listitem>
-                <para><emphasis role="bold">Formal</emphasis>.
-                    Requires a caption. Are listed in the list of
-                    tables, and you can cross-reference them from
-                    other sections in your book or from other books.
-                    Tagged with <code>&lt;table></code> tag. </para>
+                <para><emphasis role="bold">Formal</emphasis>. Tagged
+                    with <code>&lt;table></code> tag. Requires a
+                    caption. A caption describes the table. </para>
+                <para>If you configure tables to be listed in a list
+                    of tables in the front matter of your document,
+                    captions for formal tables are listed in the list
+                    of tables. You can cross-reference formal tables
+                    from other sections in your book or from other
+                    books. </para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Informal</emphasis>. No
-                    caption. Are not listed in the list of tables.
-                    Tagged with <code>&lt;informaltable></code>
-                    tag.</para>
+                <para><emphasis role="bold">Informal</emphasis>.
+                    Tagged with <code>&lt;informaltable></code> tag.
+                    Does not contain a caption. Is not listed in the
+                    list of tables. Though you can cross-reference
+                    informal tables, you must supply link text because
+                    no text is generated. <xref linkend="test_table"/>.</para>
             </listitem>
         </itemizedlist></para>
     <para>For either type of table, you can control the following
@@ -74,9 +80,9 @@ format="SVG" scale="60"/>
     <para>For information about how to define other table properties,
         see <link
             xlink:href="http://www.sagehill.net/docbookxsl/Tables.html"
-            >Chapter 30: Tables</link>. However, please note that
-        RackBook does not support all the features described in that
-        chapter. </para>
+            >DocBook XSL: The Complete Guide - Chapter 30:
+            Tables</link>. However, please note that RackBook does not
+        support all the features described in that chapter. </para>
     <section xml:id="table_guidelines">
         <title>Guidelines for Tables</title>
         <para>
@@ -179,7 +185,7 @@ format="SVG" scale="60"/>
                 </step>
                 <step>
                     <para>Make the following selections:<informaltable
-                            rules="all">
+                            rules="all" xml:id="test_table">
                             <col width="25%"/>
                             <col width="75%"/>
                             <thead valign="top">
