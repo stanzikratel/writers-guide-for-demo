@@ -31,58 +31,117 @@ format="SVG" scale="60"/>
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_tables">
     <title>Tables</title>
-    <para>You can create the following types of tables:<itemizedlist>
-            <listitem>
-                <para><emphasis role="bold">Formal</emphasis>. Tagged
-                    with <code>&lt;table></code> tag. Requires a
-                    caption. A caption describes the table. </para>
-                <para>If you configure tables to be listed in a list
-                    of tables in the front matter of your document,
-                    captions for formal tables are listed in the list
-                    of tables. You can cross-reference formal tables
-                    from other sections in your book or from other
-                    books. </para>
-            </listitem>
-            <listitem>
-                <para><emphasis role="bold">Informal</emphasis>.
-                    Tagged with <code>&lt;informaltable></code> tag.
-                    Does not contain a caption. Is not listed in the
-                    list of tables. Though you can cross-reference
-                    informal tables, you must supply link text because
-                    no text is generated. <xref linkend="test_table"/>.</para>
-            </listitem>
-        </itemizedlist></para>
-    <para>For either type of table, you can control the following
-        table characteristics: <itemizedlist>
-            <listitem>
-                <para>Table and column widths. See <xref
-                        linkend="table_width"/>.</para>
-            </listitem>
-            <listitem>
-                <para>Table alignment. See <xref
-                        linkend="table_alignment"/>. </para>
-            </listitem>
+    <para>You can create formal and informal tables in oXygen. Formal
+        tables have a caption while informal tables do not.</para>
+    <section xml:id="tabletypes">
+        <title>Types of Tables</title>
+        <para>You can create the following types of tables:<itemizedlist>
+                <listitem>
+                    <para><emphasis role="bold"
+                        >Formal</emphasis></para>
+                    <para>Tagged with <code>&lt;table></code> tag. </para>
+                    <para>A formal table looks like this: <table
+                            rules="both" width="30%">
+                            <caption>Formal Table</caption>
+                            <col width="50%"/>
+                            <col width="50%"/>
+                            <thead>
+                                <tr>
+                                   <th>Header</th>
+                                   <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                   <td>Term</td>
+                                   <td>Description</td>
+                                </tr>
+                                <tr>
+                                   <td>Term</td>
+                                   <td>Description</td>
+                                </tr>
+                            </tbody>
+                        </table></para>
+                    <para>A formal table requires a caption, which
+                        describes the table. If you configure tables
+                        to be listed in a list of tables in the front
+                        matter of your document, captions for formal
+                        tables are listed in the list of tables. </para>
+                    <para>You can cross-reference formal tables from
+                        other sections in your book or from other
+                        books. </para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold"
+                        >Informal</emphasis></para>
+                    <para>Tagged with <code>&lt;informaltable></code>
+                        tag. </para>
+                    <para>An informal table looks like this:
+                            <informaltable rules="both" width="30%">
+                            <col width="50%"/>
+                            <col width="50%"/>
+                            <thead>
+                                <tr>
+                                   <th>Header</th>
+                                   <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                   <td>Term</td>
+                                   <td>Description</td>
+                                </tr>
+                                <tr>
+                                   <td>Term</td>
+                                   <td>Description</td>
+                                </tr>
+                            </tbody>
+                        </informaltable></para>
+                    <para>An informal table does not contain a caption
+                        and is not listed in the list of tables. </para>
+                    <para>Though you can cross-reference informal
+                        tables, you must supply link text because no
+                        text is generated. </para>
+                </listitem>
+            </itemizedlist></para>
+    </section>
+    <section xml:id="table_properties">
+        <title>Table Properties</title>
+        <para>For either type of table, you can control the following
+            table characteristics: <itemizedlist>
+                <listitem>
+                    <para>Table and column widths. See <xref
+                            linkend="table_width"/>.</para>
+                </listitem>
+                <listitem>
+                    <para>Table alignment. See <xref
+                            linkend="table_alignment"/>. </para>
+                </listitem>
 
-            <listitem>
-                <para>Cell spacing and padding. See <link
-                        xlink:href="http://www.sagehill.net/docbookxsl/CellSpacing.html"
-                        >Cell spacing and cell padding</link>. </para>
-            </listitem>
-            <listitem>
-                <para>Cell alignment and spanning. See <xref
-                        linkend="cell_spanning"/>. </para>
-            </listitem>
-            <listitem>
-                <para>Borders. See <xref linkend="borders"/>.</para>
-            </listitem>
+                <listitem>
+                    <para>Cell spacing and padding. See <link
+                            xlink:href="http://www.sagehill.net/docbookxsl/CellSpacing.html"
+                            >Cell spacing and cell padding</link>.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>Cell alignment and spanning. See <xref
+                            linkend="cell_spanning"/>. </para>
+                </listitem>
+                <listitem>
+                    <para>Borders. See <xref linkend="borders"
+                        />.</para>
+                </listitem>
 
-        </itemizedlist></para>
-    <para>For information about how to define other table properties,
-        see <link
-            xlink:href="http://www.sagehill.net/docbookxsl/Tables.html"
-            >DocBook XSL: The Complete Guide - Chapter 30:
-            Tables</link>. However, please note that RackBook does not
-        support all the features described in that chapter. </para>
+            </itemizedlist></para>
+        <para>For information about how to define other table
+            properties, see <link
+                xlink:href="http://www.sagehill.net/docbookxsl/Tables.html"
+                >DocBook XSL: The Complete Guide - Chapter 30:
+                Tables</link>. However, please note that RackBook does
+            not support all the features described in that chapter.
+        </para>
+    </section>
     <section xml:id="table_guidelines">
         <title>Guidelines for Tables</title>
         <para>
@@ -167,10 +226,10 @@ format="SVG" scale="60"/>
             oXygen. </para>
         <para>Alternatively, you can cut and paste the markup from an
             existing table in Text mode.</para>
-       
-        
-       
-       
+
+
+
+
         <para>
             <procedure>
                 <title>To create a table</title>
