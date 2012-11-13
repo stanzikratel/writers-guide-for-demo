@@ -40,28 +40,28 @@ format="SVG" scale="60"/>
                     <para><emphasis role="bold"
                         >Formal</emphasis></para>
                     <para>Tagged with <code>&lt;table></code> tag. </para>
-                    <para>A formal table looks like this: <table
-                            rules="all" width="30%">
-                            <caption>Formal Table</caption>
-                            <col width="50%"/>
-                            <col width="50%"/>
-                            <thead>
-                                <tr>
-                                   <th>Header</th>
-                                   <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                   <td>Term</td>
-                                   <td>Description</td>
-                                </tr>
-                                <tr>
-                                   <td>Term</td>
-                                   <td>Description</td>
-                                </tr>
-                            </tbody>
-                        </table></para>
+                    <para>A formal table looks like this:</para>
+                    <table rules="all" width="30%">
+                        <caption>Formal Table</caption>
+                        <col width="50%"/>
+                        <col width="50%"/>
+                        <thead>
+                            <tr>
+                                <th>Header</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Term</td>
+                                <td>Description</td>
+                            </tr>
+                            <tr>
+                                <td>Term</td>
+                                <td>Description</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <para>A formal table requires a caption, which
                         describes the table. If you configure tables
                         to be listed in a list of tables in the front
@@ -225,33 +225,32 @@ format="SVG" scale="60"/>
 
 
 
-        <para>
-            <procedure>
-                <title>To create a table</title>
-                <step>
-                    <para>In <guilabel>Author</guilabel> mode, click
-                            <guimenu>Rackbook</guimenu> >
-                            <guimenuitem>Table</guimenuitem> >
-                            <guisubmenu>Insert
-                        Table</guisubmenu>.</para>
-                    <para>The <guilabel>Insert Table</guilabel> dialog
-                        box appears.</para>
-                </step>
-                <step>
-                    <para>Make the following selections:<informaltable
-                            rules="all" xml:id="test_table">
-                            <col width="25%"/>
-                            <col width="75%"/>
-                            <thead valign="top">
-                                <tr>
-                                   <th>Property</th>
-                                   <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody valign="top">
-                                <tr valign="top">
-                                   <td><para>Model</para></td>
-                                   <td><para>Select
+
+        <procedure>
+            <title>To create a table</title>
+            <step>
+                <para>In <guilabel>Author</guilabel> mode, click
+                        <guimenu>Rackbook</guimenu> >
+                        <guimenuitem>Table</guimenuitem> >
+                        <guisubmenu>Insert Table</guisubmenu>.</para>
+                <para>The <guilabel>Insert Table</guilabel> dialog box
+                    appears.</para>
+            </step>
+            <step>
+                <para>Make the following selections:<informaltable
+                        rules="all" xml:id="test_table">
+                        <col width="25%"/>
+                        <col width="75%"/>
+                        <thead valign="top">
+                            <tr>
+                                <th>Property</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody valign="top">
+                            <tr valign="top">
+                                <td><para>Model</para></td>
+                                <td><para>Select
                                    <guilabel>HTML</guilabel>. </para>
                                    <para>DocBook tables are written
                                    using either CALS or HTML table
@@ -268,76 +267,176 @@ format="SVG" scale="60"/>
                                    tables to HTML format, see <xref
                                    linkend="rebuild_cals"/>.
                                    </para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td><para>Title</para></td>
-                                   <td><para>For a formal table, enter
-                                   a table title. Capitalize only the
+                            </tr>
+                            <tr valign="top">
+                                <td><para>Title</para></td>
+                                <td><para>For a formal table, enter a
+                                   table title. Capitalize only the
                                    first word of the table
                                    title.</para>
                                    <para>For an informal table, clear
                                    the <guilabel>Title</guilabel>
                                    selection.</para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td><para>Table Size</para></td>
-                                   <td><para>Select or enter the
-                                   number of rows and columns in the
+                            </tr>
+                            <tr valign="top">
+                                <td><para>Table Size</para></td>
+                                <td><para>Select or enter the number
+                                   of rows and columns in the
                                    table.</para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td>Generate table header</td>
-                                   <td><para>Accept the default to
+                            </tr>
+                            <tr valign="top">
+                                <td>Generate table header</td>
+                                <td><para>Accept the default to
                                    generate a table header row. </para>
                                    <para>Clear this selection to omit
                                    a table header row.</para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td>Generate table footer</td>
-                                   <td><para>Accept the default to
-                                   omit a table footer.</para>
+                            </tr>
+                            <tr valign="top">
+                                <td>Generate table footer</td>
+                                <td><para>Accept the default to omit a
+                                   table footer.</para>
                                    <para>We do not use table
                                    footers.</para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td>Column widths</td>
-                                   <td><para>Select
+                            </tr>
+                            <tr valign="top">
+                                <td>Column widths</td>
+                                <td><para>Select
                                    <guilabel>proportional</guilabel>,
                                    <guilabel>dynamic</guilabel>, or
                                    <guilabel>fixed</guilabel>.</para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td><para>Frame</para></td>
-                                   <td><para>Select
+                            </tr>
+                            <tr valign="top">
+                                <td><para>Frame</para></td>
+                                <td><para>Select
                                    <guilabel>void</guilabel>. You will
                                    manually change this after your
                                    table is created.</para></td>
-                                </tr>
-                            </tbody>
-                        </informaltable></para>
-                </step>
-                <step>
-                    <para>Switch to <guilabel>Text</guilabel>
-                        mode.</para>
-                    <para>Locate the table markup line. For an
-                        informal table, it looks like this:
-                        <programlisting>&lt;informaltable frame="void"></programlisting></para>
-                    <para>For a formal table, it looks like this:
-                        <programlisting>&lt;table frame="void"></programlisting>Update
-                        the table markup to change
-                            <code>frame="void"</code> to
-                            <code>rules="all"</code>, as
-                        follows:<programlisting>&lt;informaltable <emphasis role="bold">rules="all"</emphasis>></programlisting></para>
-                </step>
-                <step>
-                    <para>Use the <guimenu>Rackbook</guimenu> >
-                            <guimenuitem>Table</guimenuitem> menu
-                        commands to add and delete rows and columns,
-                        or to join or split cells. </para>
-                    <para>You can also use the table toolbar.</para>
-                </step>
-            </procedure>
-        </para>
+                            </tr>
+                        </tbody>
+                    </informaltable></para>
+            </step>
+            <step>
+                <para>Switch to <guilabel>Text</guilabel> mode.</para>
+                <para>Locate the table markup line. For an informal
+                    table, it looks like this:
+                    <programlisting>&lt;informaltable frame="void"></programlisting></para>
+                <para>For a formal table, it looks like this:
+                    <programlisting>&lt;table frame="void"></programlisting>Update
+                    the table markup to change
+                        <code>frame="void"</code> to
+                        <code>rules="all"</code>, as
+                    follows:<programlisting>&lt;informaltable <emphasis role="bold">rules="all"</emphasis>></programlisting></para>
+            </step>
+            <step>
+                <para>Use the <guimenu>Rackbook</guimenu> >
+                        <guimenuitem>Table</guimenuitem> menu commands
+                    to add and delete rows and columns, or to join or
+                    split cells. </para>
+                <para>You can also use the table toolbar.</para>
+            </step>
+        </procedure>
+        <section xml:id="formal_table">
+            <title>Formal Table Markup</title>
+            <example>
+                <title>Markup for a Formal Table</title>
+                <screen><computeroutput>&lt;table rules="all" width="30%">
+ &lt;caption>Formal Table&lt;/caption>
+      &lt;col width="50%"/>
+      &lt;col width="50%"/>
+    &lt;thead>
+          &lt;tr>
+             &lt;th>Header&lt;/th>
+             &lt;th>Description&lt;/th>
+          &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+           &lt;tr>
+               &lt;td>Term&lt;/td>
+               &lt;td>Description&lt;/td>
+           &lt;/tr>
+           &lt;tr>
+               &lt;td>Term&lt;/td>
+               &lt;td>Description&lt;/td>
+           &lt;/tr>
+    &lt;/tbody>
+&lt;/table></computeroutput></screen>
+
+            </example>
+            <para>The markup produces a table that looks like
+                this:</para>
+            <table rules="all" width="30%">
+                <caption>Formal Table</caption>
+                <col width="50%"/>
+                <col width="50%"/>
+                <thead>
+                    <tr>
+                        <th>Header</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Term</td>
+                        <td>Description</td>
+                    </tr>
+                    <tr>
+                        <td>Term</td>
+                        <td>Description</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section xml:id="informal_table">
+            <title>Informal Table Markup</title>
+
+            <example>
+                <title>Markup for an Informal Table</title>
+                <screen><computeroutput>&lt;informaltable rules="all" width="30%">
+      &lt;col width="50%"/>
+      &lt;col width="50%"/>
+   &lt;thead>
+          &lt;tr>
+             &lt;th>Header&lt;/th>
+             &lt;th>Description&lt;/th>
+          &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+           &lt;tr>
+               &lt;td>Term&lt;/td>
+               &lt;td>Description&lt;/td>
+           &lt;/tr>
+           &lt;tr>
+               &lt;td>Term&lt;/td>
+               &lt;td>Description&lt;/td>
+           &lt;/tr>
+    &lt;/tbody>
+&lt;/table></computeroutput></screen>
+
+            </example>
+            <para>The markup produces an informal table that looks
+                like this:</para>
+            <informaltable rules="all" width="30%">
+
+                <col width="50%"/>
+                <col width="50%"/>
+                <thead>
+                    <tr>
+                        <th>Header</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Term</td>
+                        <td>Description</td>
+                    </tr>
+                    <tr>
+                        <td>Term</td>
+                        <td>Description</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+        </section>
 
     </section>
     <section xml:id="format_tables">
