@@ -107,8 +107,8 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="table_properties">
         <title>Table Properties</title>
-        <para>For a formal or informal table, you can control the following
-            properties: <itemizedlist>
+        <para>For a formal or informal table, you can control the
+            following properties: <itemizedlist>
                 <listitem>
                     <para>Table and column widths. See <xref
                             linkend="table_width"/>.</para>
@@ -294,10 +294,10 @@ format="SVG" scale="60"/>
                                 </tr>
                                 <tr valign="top">
                                    <td>Generate table footer</td>
-                                   <td><para>Select to generate a
-                                   table footer. Otherwise, accept the
-                                   default, which is to omit a table
-                                   footer.</para></td>
+                                   <td><para>Accept the default to
+                                   omit a table footer.</para>
+                                   <para>We do not use table
+                                   footers.</para></td>
                                 </tr>
                                 <tr valign="top">
                                    <td>Column widths</td>
@@ -317,12 +317,15 @@ format="SVG" scale="60"/>
                         </informaltable></para>
                 </step>
                 <step>
-                    <para>Switch to Text mode.</para>
+                    <para>Switch to <guilabel>Text</guilabel>
+                        mode.</para>
                     <para>Locate the table markup line. For an
                         informal table, it looks like this:
                         <programlisting>&lt;informaltable frame="void"></programlisting></para>
-                    <para>Update the table markup to remove
-                            <code>frame="void"</code> and change to
+                    <para>For a formal table, it looks like this:
+                        <programlisting>&lt;table frame="void"></programlisting>Update
+                        the table markup to change
+                            <code>frame="void"</code> to
                             <code>rules="all"</code>, as
                         follows:<programlisting>&lt;informaltable <emphasis role="bold">rules="all"</emphasis>></programlisting></para>
                 </step>
@@ -425,18 +428,18 @@ format="SVG" scale="60"/>
                 overridden by another <literal>valign</literal>
                 attribute in a child <literal>tr</literal> or
                     <literal>td</literal> tag in the
-                    <literal>tbody</literal> block.<procedure>
-                    <title>To define cell alignments and
-                        spanning</title>
-                    <step>
-                        <title>Set the vertical alignment</title>
-                        <para>Add the <literal>valign</literal>
-                            attribute a table tag.</para>
-                        <para>Valid values for the
-                                <literal>valign</literal> attribute are:<itemizedlist>
-                                <listitem>
-                                   <para><literal>baseline</literal>.
-                                   All cells in the same row as a cell
+                    <literal>tbody</literal> block.</para>
+            <procedure>
+                <title>To define cell alignments and spanning</title>
+                <step>
+                    <title>Set the vertical alignment</title>
+                    <para>Add the <literal>valign</literal> attribute
+                        a table tag.</para>
+                    <para>Valid values for the
+                            <literal>valign</literal> attribute are:<itemizedlist>
+                            <listitem>
+                                <para><literal>baseline</literal>. All
+                                   cells in the same row as a cell
                                    whose <literal>valign</literal>
                                    attribute has this value should
                                    have their textual data positioned
@@ -445,61 +448,59 @@ format="SVG" scale="60"/>
                                    in the row. This constraint does
                                    not apply to subsequent text lines
                                    in these cells.</para>
-                                </listitem>
-                                <listitem>
-                                   <para><literal>top</literal>.
-                                   Aligns to top of cell. Flushes cell
-                                   data with the top of the cell.
-                                   </para>
-                                </listitem>
-                                <listitem>
-                                   <para><literal>middle</literal>.
+                            </listitem>
+                            <listitem>
+                                <para><literal>top</literal>. Aligns
+                                   to top of cell. Flushes cell data
+                                   with the top of the cell. </para>
+                            </listitem>
+                            <listitem>
+                                <para><literal>middle</literal>.
                                    Aligns to center of cell or row.
                                    Centers cell data horizontally in
                                    the cell. Default value.</para>
-                                </listitem>
-                                <listitem>
-                                   <para><literal>bottom</literal>.
+                            </listitem>
+                            <listitem>
+                                <para><literal>bottom</literal>.
                                    Aligns to bottom of cell or row.
                                    Flushes cell data with the bottom
                                    of the cell.</para>
-                                </listitem>
-                            </itemizedlist></para>
-                    </step>
-                    <step>
-                        <title>Set the horizontal alignment</title>
-                        <para>Add the <literal>align</literal>
-                            attribute to a table tag.</para>
-                        <para>Valid values for the
-                                <literal>align</literal> attribute are:<itemizedlist>
-                                <listitem>
-                                   <para><literal>center</literal>.
-                                   Center text and center-justifies
-                                   text. Default for table
-                                   headers.</para>
-                                </listitem>
-                                <listitem>
-                                   <para><literal>char</literal>.
-                                   Aligns text around a specific
-                                   character. </para>
-                                </listitem>
-                                <listitem>
-                                   <para><literal>justify</literal>.
-                                   Double-justifies text.</para>
-                                </listitem>
-                                <listitem>
-                                   <para><literal>left</literal>.
-                                   Left-justifies text. Default value
-                                   for table data.</para>
-                                </listitem>
-                                <listitem>
-                                   <para><literal>right</literal>.
-                                   Right-flushes data and
-                                   right-justifies text.</para>
-                                </listitem>
-                            </itemizedlist></para>
-                    </step>
-                </procedure></para>
+                            </listitem>
+                        </itemizedlist></para>
+                </step>
+                <step>
+                    <title>Set the horizontal alignment</title>
+                    <para>Add the <literal>align</literal> attribute
+                        to a table tag.</para>
+                    <para>Valid values for the
+                            <literal>align</literal> attribute are: </para>
+                    <itemizedlist>
+                        <listitem>
+                            <para><literal>center</literal>. Center
+                                text and center-justifies text.
+                                Default for table headers.</para>
+                        </listitem>
+                        <listitem>
+                            <para><literal>char</literal>. Aligns text
+                                around a specific character. </para>
+                        </listitem>
+                        <listitem>
+                            <para><literal>justify</literal>.
+                                Double-justifies text.</para>
+                        </listitem>
+                        <listitem>
+                            <para><literal>left</literal>.
+                                Left-justifies text. Default value for
+                                table data.</para>
+                        </listitem>
+                        <listitem>
+                            <para><literal>right</literal>.
+                                Right-flushes data and right-justifies
+                                text.</para>
+                        </listitem>
+                    </itemizedlist>
+                </step>
+            </procedure>
         </section>
         <section xml:id="cell_spanning">
             <title>Cell Spanning</title>
