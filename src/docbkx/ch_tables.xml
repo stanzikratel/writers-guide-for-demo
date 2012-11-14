@@ -99,7 +99,15 @@ format="SVG" scale="60"/>
                 file:<programlisting language="bash" role="gutter: false">book      toc,title,figure,<emphasis role="bold">table</emphasis>,example,equation</programlisting></para>
             <para>The caption for the table appears in the list of
                 tables in the front matter of the book, as
-                follows:</para>
+                follows:<figure>
+                    <title>docs.rackspace.com.png</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="figures/lot.png"
+                                contentwidth="2in"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure></para>
         </section>
         <section xml:id="informal_tables">
             <title>Informal Tables</title>
