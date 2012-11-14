@@ -246,31 +246,33 @@ format="SVG" scale="60"/>
         <para>The easiest way to create a table is in
                 <guilabel>Author</guilabel> mode in oXygen. </para>
         <para>Alternatively, you can cut and paste the markup from an
-            existing table in <guilabel>Text</guilabel> mode.</para><procedure>
-            <title>To create a table</title>
-            <step>
-                <para>In <guilabel>Author</guilabel> mode, click
-                        <guimenu>Rackbook</guimenu> >
-                        <guimenuitem>Table</guimenuitem> >
-                        <guisubmenu>Insert Table</guisubmenu>.</para>
-                <para>The <guilabel>Insert Table</guilabel> dialog box
-                    appears.</para>
-            </step>
-            <step>
-                <para>Make the following selections:<informaltable
-                        rules="all" xml:id="test_table" width="60%">
-                        <col width="20%"/>
-                        <col width="80%"/>
-                        <thead valign="top">
-                            <tr>
-                                <th>Property</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody valign="top">
-                            <tr valign="top">
-                                <td><para>Model</para></td>
-                                <td><para>Select
+            existing table in <guilabel>Text</guilabel> mode.<procedure>
+                <title>To create a table</title>
+                <step>
+                    <para>In <guilabel>Author</guilabel> mode, click
+                            <guimenu>Rackbook</guimenu> >
+                            <guimenuitem>Table</guimenuitem> >
+                            <guisubmenu>Insert
+                        Table</guisubmenu>.</para>
+                    <para>The <guilabel>Insert Table</guilabel> dialog
+                        box appears.</para>
+                </step>
+                <step>
+                    <para>Make the following selections:<informaltable
+                            rules="all" xml:id="test_table"
+                            width="60%">
+                            <col width="20%"/>
+                            <col width="80%"/>
+                            <thead valign="top">
+                                <tr>
+                                   <th>Property</th>
+                                   <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody valign="top">
+                                <tr valign="top">
+                                   <td><para>Model</para></td>
+                                   <td><para>Select
                                    <guilabel>HTML</guilabel>. </para>
                                    <para>DocBook tables are written
                                    using either CALS or HTML table
@@ -287,75 +289,76 @@ format="SVG" scale="60"/>
                                    tables to HTML format, see <xref
                                    linkend="rebuild_cals"/>.
                                    </para></td>
-                            </tr>
-                            <tr valign="top">
-                                <td><para>Title</para></td>
-                                <td><para>For a formal table, enter a
-                                   table title. Capitalize only the
+                                </tr>
+                                <tr valign="top">
+                                   <td><para>Title</para></td>
+                                   <td><para>For a formal table, enter
+                                   a table title. Capitalize only the
                                    first word of the table
                                    title.</para>
                                    <para>For an informal table, clear
                                    the <guilabel>Title</guilabel>
                                    selection.</para></td>
-                            </tr>
-                            <tr valign="top">
-                                <td><para>Table Size</para></td>
-                                <td><para>Select or enter the number
-                                   of rows and columns in the
+                                </tr>
+                                <tr valign="top">
+                                   <td><para>Table Size</para></td>
+                                   <td><para>Select or enter the
+                                   number of rows and columns in the
                                    table.</para></td>
-                            </tr>
-                            <tr valign="top">
-                                <td>Generate table header</td>
-                                <td><para>Accept the default to
+                                </tr>
+                                <tr valign="top">
+                                   <td>Generate table header</td>
+                                   <td><para>Accept the default to
                                    generate a table header row. </para>
                                    <para>Clear this selection to omit
                                    a table header row.</para></td>
-                            </tr>
-                            <tr valign="top">
-                                <td>Generate table footer</td>
-                                <td><para>Accept the default to omit a
-                                   table footer.</para>
+                                </tr>
+                                <tr valign="top">
+                                   <td>Generate table footer</td>
+                                   <td><para>Accept the default to
+                                   omit a table footer.</para>
                                    <para>We do not use table
                                    footers.</para></td>
-                            </tr>
-                            <tr valign="top">
-                                <td>Column widths</td>
-                                <td><para>Select
+                                </tr>
+                                <tr valign="top">
+                                   <td>Column widths</td>
+                                   <td><para>Select
                                    <guilabel>proportional</guilabel>,
                                    <guilabel>dynamic</guilabel>, or
                                    <guilabel>fixed</guilabel>.</para></td>
-                            </tr>
-                            <tr valign="top">
-                                <td><para>Frame</para></td>
-                                <td><para>Select
+                                </tr>
+                                <tr valign="top">
+                                   <td><para>Frame</para></td>
+                                   <td><para>Select
                                    <guilabel>void</guilabel>. You will
                                    manually change this after your
                                    table is created.</para></td>
-                            </tr>
-                        </tbody>
-                    </informaltable></para>
-            </step>
-            <step>
-                <para>Switch to <guilabel>Text</guilabel> mode.</para>
-                <para>Locate the table markup line. For an informal
-                    table, it looks like this:
-                    <programlisting>&lt;informaltable frame="void"></programlisting></para>
-                <para>For a formal table, it looks like this:
-                    <programlisting>&lt;table frame="void"></programlisting>Update
-                    the table markup to change
-                        <code>frame="void"</code> to
-                        <code>rules="all"</code>, as
-                    follows:<programlisting>&lt;informaltable <emphasis role="bold">rules="all"</emphasis>></programlisting></para>
-            </step>
-            <step>
-                <para>Use the <guimenu>Rackbook</guimenu> >
-                        <guimenuitem>Table</guimenuitem> menu commands
-                    to add and delete rows and columns, or to join or
-                    split cells. </para>
-                <para>You can also use the table toolbar.</para>
-            </step>
-        </procedure>
-
+                                </tr>
+                            </tbody>
+                        </informaltable></para>
+                </step>
+                <step>
+                    <para>Switch to <guilabel>Text</guilabel>
+                        mode.</para>
+                    <para>Locate the table markup line. For an
+                        informal table, it looks like this:
+                        <programlisting>&lt;informaltable frame="void"></programlisting></para>
+                    <para>For a formal table, it looks like this:
+                        <programlisting>&lt;table frame="void"></programlisting>Update
+                        the table markup to change
+                            <code>frame="void"</code> to
+                            <code>rules="all"</code>, as
+                        follows:<programlisting>&lt;informaltable <emphasis role="bold">rules="all"</emphasis>></programlisting></para>
+                </step>
+                <step>
+                    <para>Use the <guimenu>Rackbook</guimenu> >
+                            <guimenuitem>Table</guimenuitem> menu
+                        commands to add and delete rows and columns,
+                        or to join or split cells. </para>
+                    <para>You can also use the table toolbar.</para>
+                </step>
+            </procedure>
+        </para>
 
 
     </section>
@@ -591,7 +594,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtable.png"
-                                   contentwidth="2in"/>
+                                   contentwidth="1in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Use the following markup to join columns
@@ -624,7 +627,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtablejoincol.png"
-                                   contentwidth="2in"/>
+                                   contentwidth="1in"/>
                                 </imageobject>
                             </mediaobject></para>
                     </step>
@@ -636,7 +639,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/join.png"
-                                   contentwidth="2in"/>
+                                   contentwidth="1in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Alternatively, add the
@@ -647,7 +650,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtable.png"
-                                   contentwidth="2in"/>
+                                   contentwidth="1in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Use the following markup to join rows 2
@@ -680,7 +683,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtablejoinrow.png"
-                                   contentwidth="2in"/>
+                                   contentwidth="1in"/>
                                 </imageobject>
                             </mediaobject></para>
                     </step>
@@ -693,7 +696,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/split.png"
-                                   contentwidth="2in"/>
+                                   contentwidth="1in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Alternatively, remove the
