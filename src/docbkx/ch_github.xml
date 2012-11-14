@@ -30,7 +30,7 @@ format="SVG" scale="60"/>
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_github">
-    <title>Clone an Existing Book</title>
-    <para/>
+    <title>Clone or Create a Book</title>
+    <para>github.</para>
 </chapter>
 

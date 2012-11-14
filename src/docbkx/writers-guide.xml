@@ -58,17 +58,18 @@
 
   <xi:include href="preface.xml"/>
   <xi:include href="ch_overview.xml"/>
-  <xi:include href="ch_autopublish.xml"/>
+
   <xi:include href="ch_install.xml"/>
 
   <xi:include href="ch_github.xml"/>
-  <xi:include href="ch_newbook.xml"/>
+
   <xi:include href="ch_pom.xml"/>
   <!-- <xi:include href="ch_newapi.xml"/> -->
 
   <xi:include href="ch_tables.xml"/>
   <xi:include href="ch_review.xml"/>
-  <xi:include href="ch_publish_content.xml"/>
+  <xi:include href="ch_autopublish.xml"/>
+  <!-- <xi:include href="ch_publish_content.xml"/> -->
   <xi:include href="ch_troubleshooting.xml"/>
 
   <xi:include href="prep-for-1.6.0.xml"/>

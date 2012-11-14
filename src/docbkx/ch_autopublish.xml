@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter 
-    xmlns="http://docbook.org/ns/docbook"     
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" 
-    version="5.0-extension RackBook-2.0"
-  xml:id="autopublish">
-  <info><title>Continuous integration and auto-publish to production</title></info>
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0-extension RackBook-2.0" xml:id="autopublish">
+  <info>
+    <title>Continuous Integration and Auto-Publish to
+      Production</title>
+  </info>
   <?dbhtml stop-chunking?>
   <para>The Rackspace publishing system supports continuous
     integration and push-button publishing of content to our
@@ -73,13 +74,13 @@
       <title>Auto-publish flow</title>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/autopublish.png"/>
+          <imagedata fileref="figures/autopublish.png"
+            contentwidth="4in"/>
         </imageobject>
       </mediaobject>
     </figure></para>
   <section xml:id="metadata">
-    <title>Controlling the placement of links on the landing
-      page</title>
+    <title>Configuring Links on the Landing Page</title>
     <para>The landing page for the internal and external staging and
       production sites consists of a number of boxes for the various
       products that Rackspace offers:<figure>
@@ -87,7 +88,7 @@
         <mediaobject>
           <imageobject>
             <imagedata fileref="figures/docs.rackspace.com.png"
-              contentwidth="6in"/>
+              contentwidth="4in"/>
           </imageobject>
         </mediaobject>
       </figure></para>
