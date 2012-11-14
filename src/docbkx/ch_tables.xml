@@ -35,49 +35,16 @@ format="SVG" scale="60"/>
         tables have a caption while informal tables do not.</para>
     <section xml:id="tabletypes">
         <title>Types of Tables</title>
-        <para>You can create the following types of tables:<itemizedlist>
-                <listitem>
-                    <para><emphasis role="bold"
-                        >Formal</emphasis></para>
-                    <para>Tagged with <code>&lt;table></code> tag. </para>
-                    <para>A formal table looks like this:</para>
-                    <table rules="all" width="30%">
-                        <caption>Formal Table</caption>
-                        <col width="50%"/>
-                        <col width="50%"/>
-                        <thead>
-                            <tr>
-                                <th>Header</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Term</td>
-                                <td>Description</td>
-                            </tr>
-                            <tr>
-                                <td>Term</td>
-                                <td>Description</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <para>A formal table requires a caption, which
-                        describes the table. If you configure tables
-                        to be listed in a list of tables in the front
-                        matter of your document, captions for formal
-                        tables are listed in the list of tables. </para>
-                    <para>You can cross-reference formal tables from
-                        other sections in your book or from other
-                        books. </para>
-                </listitem>
-                <listitem>
-                    <para><emphasis role="bold"
-                        >Informal</emphasis></para>
-                    <para>Tagged with <code>&lt;informaltable></code>
-                        tag. </para>
-                    <para>An informal table looks like this:
-                            <informaltable rules="all" width="30%">
+        <para>You can create the following types of
+                tables:<variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold"
+                        >Formal</emphasis></term>
+                    <listitem>
+                        <para>A formal table requires a caption and
+                            looks like this:</para>
+                        <table rules="all" width="30%">
+                            <caption>Formal Table</caption>
                             <col width="50%"/>
                             <col width="50%"/>
                             <thead>
@@ -96,14 +63,114 @@ format="SVG" scale="60"/>
                                    <td>Description</td>
                                 </tr>
                             </tbody>
-                        </informaltable></para>
-                    <para>An informal table does not contain a caption
-                        and is not listed in the list of tables. </para>
-                    <para>Though you can cross-reference informal
-                        tables, you must supply link text because no
-                        text is generated. </para>
-                </listitem>
-            </itemizedlist></para>
+                        </table>
+                        <para>A caption describes the table. </para>
+                        <para>The advantage of formal tables is that
+                            you can cross-reference them from other
+                            sections in your book or from other books.
+                            Additionally, if you configure tables to
+                            be listed in a list of tables in the front
+                            matter of your book, captions for formal
+                            tables are listed in the list of tables. </para>
+                        <para>A formal table is tagged with
+                                <code>&lt;table></code> tag, as
+                            follows:</para>
+                        <example>
+                            <title>Markup for a Formal Table</title>
+                            <screen><computeroutput>&lt;table rules="all" width="30%">
+ &lt;caption>Formal Table&lt;/caption>
+      &lt;col width="50%"/>
+      &lt;col width="50%"/>
+    &lt;thead>
+          &lt;tr>
+             &lt;th>Header&lt;/th>
+             &lt;th>Description&lt;/th>
+          &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+           &lt;tr>
+               &lt;td>Term&lt;/td>
+               &lt;td>Description&lt;/td>
+           &lt;/tr>
+           &lt;tr>
+               &lt;td>Term&lt;/td>
+               &lt;td>Description&lt;/td>
+           &lt;/tr>
+    &lt;/tbody>
+&lt;/table></computeroutput></screen>
+
+                        </example>
+                        <para>If you include the following markup in
+                            your pom.xml
+                            file:<programlisting language="bash" role="gutter: false">book      toc,title,figure,<emphasis role="bold">table</emphasis>,example,equation</programlisting></para>
+                        <para>The caption for the table appears in the
+                            list of tables in the front matter of the
+                            book, as follows:</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis role="bold"
+                        >Informal</emphasis></term>
+                    <listitem>
+                        <para>An informal table does not contain a
+                            caption and is not listed in the list of
+                            tables. </para>
+                        <para>An informal table looks like this:
+                                <informaltable rules="all" width="30%">
+                                <col width="50%"/>
+                                <col width="50%"/>
+                                <thead>
+                                   <tr>
+                                   <th>Header</th>
+                                   <th>Description</th>
+                                   </tr>
+                                </thead>
+                                <tbody>
+                                   <tr>
+                                   <td>Term</td>
+                                   <td>Description</td>
+                                   </tr>
+                                   <tr>
+                                   <td>Term</td>
+                                   <td>Description</td>
+                                   </tr>
+                                </tbody>
+                            </informaltable></para>
+                        <para>Though you can cross-reference informal
+                            tables, you must supply link text because
+                            no text is auto-generated. </para>
+                        <para>An informal table is tagged with
+                                <code>&lt;informaltable></code> tag,
+                            as follows:</para>
+                        <example>
+                            <title>Markup for an Informal
+                                Table</title>
+                            <screen><computeroutput>&lt;informaltable rules="all" width="30%">
+      &lt;col width="50%"/>
+      &lt;col width="50%"/>
+   &lt;thead>
+          &lt;tr>
+             &lt;th>Header&lt;/th>
+             &lt;th>Description&lt;/th>
+          &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+           &lt;tr>
+               &lt;td>Term&lt;/td>
+               &lt;td>Description&lt;/td>
+           &lt;/tr>
+           &lt;tr>
+               &lt;td>Term&lt;/td>
+               &lt;td>Description&lt;/td>
+           &lt;/tr>
+    &lt;/tbody>
+&lt;/table></computeroutput></screen>
+
+                        </example>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </para>
     </section>
     <section xml:id="table_properties">
         <title>Table Properties</title>
@@ -335,108 +402,8 @@ format="SVG" scale="60"/>
                 <para>You can also use the table toolbar.</para>
             </step>
         </procedure>
-        <section xml:id="formal_table">
-            <title>Formal Table Markup</title>
-            <example>
-                <title>Markup for a Formal Table</title>
-                <screen><computeroutput>&lt;table rules="all" width="30%">
- &lt;caption>Formal Table&lt;/caption>
-      &lt;col width="50%"/>
-      &lt;col width="50%"/>
-    &lt;thead>
-          &lt;tr>
-             &lt;th>Header&lt;/th>
-             &lt;th>Description&lt;/th>
-          &lt;/tr>
-    &lt;/thead>
-    &lt;tbody>
-           &lt;tr>
-               &lt;td>Term&lt;/td>
-               &lt;td>Description&lt;/td>
-           &lt;/tr>
-           &lt;tr>
-               &lt;td>Term&lt;/td>
-               &lt;td>Description&lt;/td>
-           &lt;/tr>
-    &lt;/tbody>
-&lt;/table></computeroutput></screen>
 
-            </example>
-            <para>The markup produces a table that looks like
-                this:</para>
-            <table rules="all" width="30%">
-                <caption>Formal Table</caption>
-                <col width="50%"/>
-                <col width="50%"/>
-                <thead>
-                    <tr>
-                        <th>Header</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Term</td>
-                        <td>Description</td>
-                    </tr>
-                    <tr>
-                        <td>Term</td>
-                        <td>Description</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section xml:id="informal_table">
-            <title>Informal Table Markup</title>
 
-            <example>
-                <title>Markup for an Informal Table</title>
-                <screen><computeroutput>&lt;informaltable rules="all" width="30%">
-      &lt;col width="50%"/>
-      &lt;col width="50%"/>
-   &lt;thead>
-          &lt;tr>
-             &lt;th>Header&lt;/th>
-             &lt;th>Description&lt;/th>
-          &lt;/tr>
-    &lt;/thead>
-    &lt;tbody>
-           &lt;tr>
-               &lt;td>Term&lt;/td>
-               &lt;td>Description&lt;/td>
-           &lt;/tr>
-           &lt;tr>
-               &lt;td>Term&lt;/td>
-               &lt;td>Description&lt;/td>
-           &lt;/tr>
-    &lt;/tbody>
-&lt;/table></computeroutput></screen>
-
-            </example>
-            <para>The markup produces an informal table that looks
-                like this:</para>
-            <informaltable rules="all" width="30%">
-
-                <col width="50%"/>
-                <col width="50%"/>
-                <thead>
-                    <tr>
-                        <th>Header</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Term</td>
-                        <td>Description</td>
-                    </tr>
-                    <tr>
-                        <td>Term</td>
-                        <td>Description</td>
-                    </tr>
-                </tbody>
-            </informaltable>
-        </section>
 
     </section>
     <section xml:id="format_tables">
