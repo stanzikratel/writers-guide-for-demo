@@ -18,36 +18,7 @@
                 <entry>Complex MIME Type with Vendor
                     Specification</entry>
                 <entry>
-                    <para> In the MIME type for the
-                            <code>Accept</code> HTTP header, a request
-                        may specify which <emphasis>vendor
-                            namespace</emphasis> it is expecting to
-                        format the response. </para>
-                    <para> For example, in
-                            <code>application/vnd.rackspace-v1.0+xml</code>,
-                        the vendor namespace has been specified as
-                            <code>vnd.rackspace</code> and version
-                            <code>v1.0</code> of the service API has
-                        been requested. </para>
-                    <para> Vendor specifications do not modify how the
-                        versioning service routes requests. The
-                        information is still parsed and stored,
-                        however, and may be utilized by other
-                        components further down the stack. </para>
-                </entry>
-            </row>
-            <row>
-                <entry>Complex MIME Type with Version
-                    Specification</entry>
-                <entry>
-                    <para> In the MIME type for the
-                            <code>Accept</code> HTTP header, a request
-                        may specify which <emphasis>version</emphasis>
-                        it is expecting to process the response. </para>
-                    <para> For example, in
-                            <code>application/v1.0+xml</code>, version
-                            <code>v1.0</code> of the service API has
-                        been requested. </para>
+                   <para> Vendor specifications do not modify ... </para>
                 </entry>
             </row>
         </tbody>

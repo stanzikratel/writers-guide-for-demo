@@ -31,7 +31,7 @@ format="SVG" scale="60"/>
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_tables">
     <title>Tables</title>
-    <para>You can create formal and informal tables in oXygen. Formal
+    <para>You can create formal and informal tables. Formal
         tables have a caption while informal tables do not.</para>
     <section xml:id="tabletypes">
         <title>Table Types</title>
@@ -166,43 +166,7 @@ format="SVG" scale="60"/>
             </example>
         </section>
     </section>
-    <section xml:id="table_properties">
-        <title>Table Properties</title>
-        <para>For a formal or informal table, you can control the
-            following properties: <itemizedlist>
-                <listitem>
-                    <para>Table and column widths. See <xref
-                            linkend="table_width"/>.</para>
-                </listitem>
-                <listitem>
-                    <para>Table alignment. See <xref
-                            linkend="table_alignment"/>. </para>
-                </listitem>
-
-                <listitem>
-                    <para>Cell spacing and padding. See <link
-                            xlink:href="http://www.sagehill.net/docbookxsl/CellSpacing.html"
-                            >Cell spacing and cell padding</link>.
-                    </para>
-                </listitem>
-                <listitem>
-                    <para>Cell alignment and spanning. See <xref
-                            linkend="cell_spanning"/>. </para>
-                </listitem>
-                <listitem>
-                    <para>Borders. See <xref linkend="borders"
-                        />.</para>
-                </listitem>
-
-            </itemizedlist></para>
-        <para>For information about how to define other table
-            properties, see <link
-                xlink:href="http://www.sagehill.net/docbookxsl/Tables.html"
-                >DocBook XSL: The Complete Guide - Chapter 30:
-                Tables</link>. However, please note that RackBook does
-            not support all the features described in that chapter.
-        </para>
-    </section>
+    
     <section xml:id="table_guidelines">
         <title>Guidelines for Tables</title>
         <para>
@@ -402,6 +366,40 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="format_tables">
         <title>Format Tables</title>
+        <!--<para>For a formal or informal table, you can control the
+            following properties: <itemizedlist>
+                <listitem>
+                    <para>Table and column widths. See <xref
+                        linkend="table_width"/>.</para>
+                </listitem>
+                <listitem>
+                    <para>Table alignment. See <xref
+                        linkend="table_alignment"/>. </para>
+                </listitem>
+                -->
+           <!--     <listitem>
+                    <para>Cell spacing and padding. See <link
+                        xlink:href="http://www.sagehill.net/docbookxsl/CellSpacing.html"
+                        >Cell spacing and cell padding</link>.
+                    </para>
+                </listitem> -->
+         <!--       <listitem>
+                    <para>Cell alignment and spanning. See <xref
+                        linkend="cell_spanning"/>. </para>
+                </listitem>
+                <listitem>
+                    <para>Borders. See <xref linkend="borders"
+                    />.</para>
+                </listitem>
+                
+            </itemizedlist></para> -->
+        <para>For information about how to define other table
+            properties, see <link
+                xlink:href="http://www.sagehill.net/docbookxsl/Tables.html"
+                >DocBook XSL: The Complete Guide - Chapter 30:
+                Tables</link>. However, please note that RackBook does
+            not support all the features described in that chapter.
+        </para>
         <section xml:id="table_width">
             <title>Table and Column Widths</title>
             <para>To control the overall width of a table, use the
@@ -599,7 +597,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtable.png"
-                                   contentwidth=".75in"/>
+                                   contentwidth="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Use the following markup to join columns
@@ -632,7 +630,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtablejoincol.png"
-                                   contentwidth=".75in"/>
+                                   contentwidth="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                     </step>
@@ -644,7 +642,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/join.png"
-                                   contentwidth=".75in"/>
+                                   contentwidth="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Alternatively, add the
@@ -655,7 +653,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtable.png"
-                                   contentwidth="1in"/>
+                                   contentwidth="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Use the following markup to join rows 2
@@ -688,7 +686,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtablejoinrow.png"
-                                   contentwidth=".75in"/>
+                                   contentwidth="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                     </step>
@@ -701,7 +699,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/split.png"
-                                   contentwidth="1in"/>
+                                   contentwidth="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Alternatively, remove the
@@ -742,13 +740,13 @@ format="SVG" scale="60"/>
         <section xml:id="rebuild_cals">
             <title>CALS Tables Do Not Work</title>
             <variablelist>
-                <varlistentry>
+                <varlistentry wordsize="10%">
                     <term>Problem</term>
                     <listitem>
                         <para>CALS tables no longer work. You might
-                            find one in an old document, as
+                            find one in an existing document, as
                             follows:</para>
-                        <programlisting language="xml"><xi:include href="samples/table_bad.xml" parse="text"/></programlisting>
+                        <programlisting language="xml"><?db-font-size 75%?><xi:include href="samples/table_bad.xml" parse="text"/></programlisting>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -756,13 +754,13 @@ format="SVG" scale="60"/>
                     <listitem>
                         <para>Rebuild the CALS table to match the
                             following markup:</para>
-                        <programlisting language="xml"><xi:include href="samples/table_good.xml" parse="text"/></programlisting>
+                        <programlisting language="xml"><?db-font-size 75%?><xi:include href="samples/table_good.xml" parse="text"/></programlisting>
                     </listitem>
                 </varlistentry>
             </variablelist>
 
         </section>
-        <section xml:id="table_size">
+       <!-- <section xml:id="table_size">
             <title>Tables Size Differently in PDF and HTML
                 Outputs</title>
 
@@ -806,11 +804,11 @@ format="SVG" scale="60"/>
                     </listitem>
                 </varlistentry>
             </variablelist>
-        </section>
+        </section> -->
         <section xml:id="edgeless_tables">
             <title>Tables Have No Borders</title>
 
-            <variablelist>
+            <variablelist wordsize="10%">
                 <varlistentry>
                     <term>Problem</term>
                     <listitem>
@@ -819,18 +817,15 @@ format="SVG" scale="60"/>
                 </varlistentry>
                 <varlistentry>
                     <term>Solution</term>
-                    <listitem>
-                        <para>In a CALS table, define the table as
-                            follows:<programlisting>&lt;table frame="all"></programlisting></para>
+                   <listitem>
                         <para>In an HTML table, define the table as
                             follows:<programlisting>&lt;table rules="all" frame="border"></programlisting></para>
-                    </listitem>
-                </varlistentry>
+                   </listitem> </varlistentry>
             </variablelist>
         </section>
         <section xml:id="problem3">
             <title>Long URLs Do Not Wrap Inside a Table Cell</title>
-            <variablelist>
+            <variablelist wordsize="10%">
                 <varlistentry>
                     <term>Problem</term>
                     <listitem>
@@ -850,7 +845,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/table-PDF-nowrapURLintable.png"
-                                   contentwidth="6in"/>
+                                   contentwidth="3in"/>
                                 </imageobject>
                             </mediaobject>
                         </para>
@@ -869,13 +864,13 @@ format="SVG" scale="60"/>
                             <imageobject>
                                 <imagedata
                                    fileref="figures/table-PDF-force2edge.png"
-                                   contentwidth="6in"/>
+                                   contentwidth="3in"/>
                             </imageobject>
                         </mediaobject>
                         <para>Then, specify column widths that add up
                             to greater than 100% of the space reserved
                             for the table, as shown in the following
-                            markup:<programlisting language="xml"><xi:include href="samples/table.xml" parse="text"/></programlisting></para>
+                            markup:<programlisting language="xml"><?db-font-size 75%?><xi:include href="samples/table.xml" parse="text"/></programlisting></para>
                     </listitem>
                 </varlistentry>
             </variablelist>
