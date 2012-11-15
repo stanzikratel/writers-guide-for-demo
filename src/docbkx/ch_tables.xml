@@ -31,8 +31,9 @@ format="SVG" scale="60"/>
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_tables">
     <title>Tables</title>
+    <?dbhtml stop-chunking?>
     <para>You can create formal and informal tables. Formal tables
-        have a caption while informal tables do not.</para>
+        have a caption while informal tables do not. </para>
     <section xml:id="tabletypes">
         <title>Table Types</title>
         <para>You can create formal and informal tables. Formal tables
@@ -75,29 +76,8 @@ format="SVG" scale="60"/>
                 shows how to tag a formal table and include a
                 caption:</para>
             <example>
-                <title>Markup for a Formal Table</title>
-                <screen><computeroutput>&lt;table rules="all" width="30%">
- &lt;caption>Formal Table&lt;/caption>
-      &lt;col width="50%"/>
-      &lt;col width="50%"/>
-    &lt;thead>
-          &lt;tr>
-             &lt;th>Header&lt;/th>
-             &lt;th>Description&lt;/th>
-          &lt;/tr>
-    &lt;/thead>
-    &lt;tbody>
-           &lt;tr>
-               &lt;td>Term&lt;/td>
-               &lt;td>Description&lt;/td>
-           &lt;/tr>
-           &lt;tr>
-               &lt;td>Term&lt;/td>
-               &lt;td>Description&lt;/td>
-           &lt;/tr>
-    &lt;/tbody>
-&lt;/table></computeroutput></screen>
-
+                <title>Markup for a formal table</title>
+                <programlisting language="xml"><xi:include href="samples/formal_table.xml" parse="text"/></programlisting>
             </example>
             <para>If you include the following markup in your
                     <filename>pom.xml</filename>
@@ -110,7 +90,7 @@ format="SVG" scale="60"/>
                 <mediaobject>
                     <imageobject>
                         <imagedata fileref="figures/lot.png"
-                            scale="1"/>
+                            width="2in"/>
                     </imageobject>
                 </mediaobject>
             </informalfigure>
@@ -147,27 +127,8 @@ format="SVG" scale="60"/>
                     <code>&lt;informaltable></code> tag. The following
                 markup shows how to tag an informal table:</para>
             <example>
-                <title>Markup for an Informal Table</title>
-                <screen><computeroutput>&lt;informaltable rules="all" width="30%">
-      &lt;col width="50%"/>
-      &lt;col width="50%"/>
-   &lt;thead>
-          &lt;tr>
-             &lt;th>Header&lt;/th>
-             &lt;th>Description&lt;/th>
-          &lt;/tr>
-    &lt;/thead>
-    &lt;tbody>
-           &lt;tr>
-               &lt;td>Term&lt;/td>
-               &lt;td>Description&lt;/td>
-           &lt;/tr>
-           &lt;tr>
-               &lt;td>Term&lt;/td>
-               &lt;td>Description&lt;/td>
-           &lt;/tr>
-    &lt;/tbody>
-&lt;/table></computeroutput></screen>
+                <title>Markup for an informal table</title>
+                <programlisting language="xml"><xi:include href="samples/informal_table.xml" parse="text"/></programlisting>
 
             </example>
         </section>
@@ -589,7 +550,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/join.png"
-                                   contentwidth="1in"/>
+                                   width="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Alternatively, add the
@@ -600,7 +561,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtable.png"
-                                   scale="1"/>
+                                   width="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Use the following markup to join columns
@@ -646,7 +607,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtablejoincol.png"
-                                   contentwidth="1in"/>
+                                   width="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                     </step>
@@ -658,7 +619,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/join.png"
-                                   contentwidth="1in"/>
+                                   width="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Alternatively, add the
@@ -669,7 +630,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtable.png"
-                                   contentwidth="1in"/>
+                                   width="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Use the following markup to join rows 2
@@ -702,7 +663,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtablejoinrow.png"
-                                   contentwidth="1in"/>
+                                   width="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                     </step>
@@ -715,7 +676,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/split.png"
-                                   contentwidth="1in"/>
+                                   width="2in"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Alternatively, remove the
@@ -751,6 +712,7 @@ format="SVG" scale="60"/>
             </para>
         </section>
     </section>
+    <?hard-pagebreak?>
     <section xml:id="troubleshooting_tables">
         <title>Troubleshoot Tables</title>
         <section xml:id="rebuild_cals">
@@ -862,7 +824,7 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/table-PDF-nowrapURLintable.png"
-                                   contentwidth="3in"/>
+                                   width="3in"/>
                                 </imageobject>
                             </mediaobject>
                         </para>
@@ -881,7 +843,7 @@ format="SVG" scale="60"/>
                             <imageobject>
                                 <imagedata
                                    fileref="figures/table-PDF-force2edge.png"
-                                   contentwidth="3in"/>
+                                   width="3in"/>
                             </imageobject>
                         </mediaobject>
                         <para>Then, specify column widths that add up
@@ -895,8 +857,6 @@ format="SVG" scale="60"/>
 
         </section>
     </section>
-
-
 
 
 

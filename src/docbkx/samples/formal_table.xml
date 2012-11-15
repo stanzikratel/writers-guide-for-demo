@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table rules="all" width="30%">
+    <caption>Formal table</caption>
+    <col width="50%"/>
+    <col width="50%"/>
+    <thead>
+        <tr>
+            <th>Header</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Term</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td>Term</td>
+            <td>Description</td>
+        </tr>
+    </tbody>
+</table>
