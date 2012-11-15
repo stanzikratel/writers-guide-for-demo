@@ -35,7 +35,8 @@ format="SVG" scale="60"/>
         have a caption while informal tables do not.</para>
     <section xml:id="tabletypes">
         <title>Table Types</title>
-
+        <para>You can create formal and informal tables. Formal tables
+            have a caption, while informal tables do not.</para>
         <section xml:id="formal_table">
             <title>Formal Tables</title>
             <para>A formal table requires a caption and looks like
@@ -64,12 +65,15 @@ format="SVG" scale="60"/>
             <para>A caption describes the table. </para>
             <para>The advantage of formal tables is that you can
                 cross-reference them from other sections in your book
-                or from other books. Additionally, if you configure
-                tables to be listed in a list of tables in the front
-                matter of your book, captions for formal tables are
-                listed in the list of tables. </para>
+                or from other books.</para>
+            <para>Additionally, if you configure tables to be listed
+                in a list of tables in the front matter of your book,
+                captions for formal tables are listed in the list of
+                tables. </para>
             <para>A formal table is tagged with
-                    <code>&lt;table></code> tag, as follows:</para>
+                    <code>&lt;table></code> tag. The following markup
+                shows how to tag a formal table and include a
+                caption:</para>
             <example>
                 <title>Markup for a Formal Table</title>
                 <screen><computeroutput>&lt;table rules="all" width="30%">
@@ -95,8 +99,9 @@ format="SVG" scale="60"/>
 &lt;/table></computeroutput></screen>
 
             </example>
-            <para>If you include the following markup in your pom.xml
-                file:<programlisting language="bash" role="gutter: false">book      toc,title,figure,<emphasis role="bold">table</emphasis>,example,equation</programlisting></para>
+            <para>If you include the following markup in your
+                    <filename>pom.xml</filename>
+                file:<programlisting language="bash" role="gutter: false">book   toc,title,figure,<emphasis role="bold">table</emphasis>,example,equation</programlisting></para>
             <para>The caption for the table appears in the list of
                 tables in the front matter of the book, as
                 follows:</para>
@@ -105,7 +110,7 @@ format="SVG" scale="60"/>
                 <mediaobject>
                     <imageobject>
                         <imagedata fileref="figures/lot.png"
-                            contentwidth="1in"/>
+                            scale="1"/>
                     </imageobject>
                 </mediaobject>
             </informalfigure>
@@ -139,8 +144,8 @@ format="SVG" scale="60"/>
                 must supply link text because no text is
                 auto-generated. </para>
             <para>An informal table is tagged with
-                    <code>&lt;informaltable></code> tag, as
-                follows:</para>
+                    <code>&lt;informaltable></code> tag. The following
+                markup shows how to tag an informal table:</para>
             <example>
                 <title>Markup for an Informal Table</title>
                 <screen><computeroutput>&lt;informaltable rules="all" width="30%">
@@ -167,7 +172,7 @@ format="SVG" scale="60"/>
             </example>
         </section>
     </section>
-
+    <?hard-pagebreak?>
     <section xml:id="table_guidelines">
         <title>Guidelines for Tables</title>
         <para>
@@ -240,7 +245,7 @@ format="SVG" scale="60"/>
             </itemizedlist>
         </para>
     </section>
-    <?dbhtml stop-chunking?>
+    <?hard-pagebreak?>
     <section xml:id="create_table">
         <title>Create Tables</title>
         <para>The easiest way to create a table is in
@@ -362,6 +367,7 @@ format="SVG" scale="60"/>
 
 
     </section>
+    <?hard-pagebreak?>
     <section xml:id="format_tables">
         <title>Format Tables</title>
         <!--<para>For a formal or informal table, you can control the
@@ -594,19 +600,24 @@ format="SVG" scale="60"/>
                                 <imageobject>
                                    <imagedata
                                    fileref="figures/testtable.png"
-                                   contentwidth="1in"/>
+                                   scale="1"/>
                                 </imageobject>
                             </mediaobject></para>
                         <para>Use the following markup to join columns
-                            A and B in row 1:
-                            <programlisting>&lt;table rules="all">
+                            A and B in row 1: <programlistingco>
+                                <areaspec>
+                                   <area xml:id="colspan"
+                                   units="linecolumn" coords="11 8"/>
+
+
+                                </areaspec>
+                                <programlisting>&lt;table rules="all">
                 &lt;caption>Test table&lt;/caption>
                 &lt;thead>
                     &lt;tr>
                         &lt;th>Header column A&lt;/th>
                         &lt;th>Header column B&lt;/th>
                     &lt;/tr>
-                  
                 &lt;/thead>
                 &lt;tbody>
                     &lt;tr>
@@ -622,7 +633,15 @@ format="SVG" scale="60"/>
                         &lt;td>Row 3 column B&lt;/td>
                     &lt;/tr>
                 &lt;/tbody>
-            &lt;/table></programlisting></para>
+            &lt;/table></programlisting>
+                            </programlistingco><calloutlist
+                                role="compact">
+                                <callout arearefs="colspan">
+                                   <para>Add the colspan attribute to
+                                   the td tag.</para>
+
+                                </callout>
+                            </calloutlist></para>
                         <para>The table appears as follows:<mediaobject>
                                 <imageobject>
                                    <imagedata
