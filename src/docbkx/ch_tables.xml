@@ -83,17 +83,16 @@ format="SVG" scale="60"/>
                     <filename>pom.xml</filename>
                 file:<programlisting language="bash" role="gutter: false">book   toc,title,figure,<emphasis role="bold">table</emphasis>,example,equation</programlisting></para>
             <para>The caption for the table appears in the list of
-                tables in the front matter of the book, as
-                follows:</para>
-            <informalfigure>
+                tables in the front matter of the book.</para>
+            <!-- <informalfigure>
 
                 <mediaobject>
                     <imageobject>
                         <imagedata fileref="figures/lot.png"
-                            width="2in"/>
+                            width="1in"/>
                     </imageobject>
                 </mediaobject>
-            </informalfigure>
+            </informalfigure> -->
         </section>
         <section xml:id="informal_tables">
             <title>Informal Tables</title>
@@ -224,84 +223,80 @@ format="SVG" scale="60"/>
                         box appears.</para>
                 </step>
                 <step>
-                    <para>Make the following selections:<informaltable
-                            rules="all" xml:id="test_table"
-                            width="60%">
-                            <col width="20%"/>
-                            <col width="80%"/>
-                            <thead valign="top">
-                                <tr>
-                                   <th>Property</th>
-                                   <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody valign="top">
-                                <tr valign="top">
-                                   <td><para>Model</para></td>
-                                   <td><para>Select
+                    <para>Make the following selections:<itemizedlist>
+
+                            <listitem>
+                                <para><emphasis role="bold"
+                                   >Model</emphasis></para>
+                                <para>Select
                                    <guilabel>HTML</guilabel>. </para>
-                                   <para>DocBook tables are written
-                                   using either CALS or HTML table
-                                   elements. CALS is an SGML standard
-                                   developed by the US military.
-                                   DocBook added HTML table elements,
-                                   starting with version 4.3 of the
-                                   DocBook DTD. </para>
-                                   <para>When you create tables,
-                                   choose the HTML format. Not all
-                                   elements of CALS tables are
-                                   supported, so they might not format
-                                   correctly. To convert existing CALS
-                                   tables to HTML format, see <xref
-                                   linkend="rebuild_cals"/>.
-                                   </para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td><para>Title</para></td>
-                                   <td><para>For a formal table, enter
-                                   a table title. Capitalize only the
+                                <para>DocBook tables are written using
+                                   either CALS or HTML table elements.
+                                   CALS is an SGML standard developed
+                                   by the US military. DocBook added
+                                   HTML table elements, starting with
+                                   version 4.3 of the DocBook DTD. </para>
+                                <para>When you create tables, choose
+                                   the HTML format. Not all elements
+                                   of CALS tables are supported, so
+                                   they might not format correctly. To
+                                   convert existing CALS tables to
+                                   HTML format, see <xref
+                                   linkend="rebuild_cals"/>. </para>
+                            </listitem>
+                            <listitem>
+                                <para><emphasis role="bold"
+                                   >Title</emphasis></para>
+                                <para>For a formal table, enter a
+                                   table title. Capitalize only the
                                    first word of the table
                                    title.</para>
-                                   <para>For an informal table, clear
-                                   the <guilabel>Title</guilabel>
-                                   selection.</para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td><para>Table Size</para></td>
-                                   <td><para>Select or enter the
-                                   number of rows and columns in the
-                                   table.</para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td>Generate table header</td>
-                                   <td><para>Accept the default to
-                                   generate a table header row. </para>
-                                   <para>Clear this selection to omit
-                                   a table header row.</para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td>Generate table footer</td>
-                                   <td><para>Accept the default to
-                                   omit a table footer.</para>
-                                   <para>We do not use table
-                                   footers.</para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td>Column widths</td>
-                                   <td><para>Select
+                                <para>For an informal table, clear the
+                                   <guilabel>Title</guilabel>
+                                   selection.</para>
+                            </listitem>
+                            <listitem>
+                                <para><emphasis role="bold">Table
+                                   Size</emphasis></para>
+                                <para>Select or enter the number of
+                                   rows and columns in the
+                                   table.</para>
+                            </listitem>
+                            <listitem>
+                                <para><emphasis role="bold">Generate
+                                   table header</emphasis></para>
+                                <para>Accept the default to generate a
+                                   table header row. </para>
+                                <para>Clear this selection to omit a
+                                   table header row.</para>
+                            </listitem>
+                            <listitem>
+
+                                <para><emphasis role="bold">Generate
+                                   table footer</emphasis></para>
+
+                                <para>Accept the default to omit a
+                                   table footer.</para>
+                                <para>We do not use table
+                                   footers.</para>
+                            </listitem>
+                            <listitem>
+                                <para><emphasis role="bold">Column
+                                   widths</emphasis></para>
+                                <para>Select
                                    <guilabel>proportional</guilabel>,
                                    <guilabel>dynamic</guilabel>, or
-                                   <guilabel>fixed</guilabel>.</para></td>
-                                </tr>
-                                <tr valign="top">
-                                   <td><para>Frame</para></td>
-                                   <td><para>Select
+                                   <guilabel>fixed</guilabel>.</para>
+                            </listitem>
+                            <listitem>
+                                <para><emphasis role="bold"
+                                   >Frame</emphasis></para>
+                                <para>Select
                                    <guilabel>void</guilabel>. You will
                                    manually change this after your
-                                   table is created.</para></td>
-                                </tr>
-                            </tbody>
-                        </informaltable></para>
+                                   table is created.</para>
+                            </listitem>
+                        </itemizedlist></para>
                 </step>
                 <step>
                     <para>Switch to <guilabel>Text</guilabel>
@@ -362,8 +357,8 @@ format="SVG" scale="60"/>
             properties, see <link
                 xlink:href="http://www.sagehill.net/docbookxsl/Tables.html"
                 >DocBook XSL: The Complete Guide - Chapter 30:
-                Tables</link>. However, please note that RackBook does
-            not support all the features described in that chapter. </para>
+                Tables</link>. However, RackBook does not support all
+            the features described in that chapter. </para>
         <section xml:id="table_width">
             <title>Table and Column Widths</title>
             <para>To control the overall width of a table, use the
@@ -557,59 +552,83 @@ format="SVG" scale="60"/>
                                 <literal>colspan</literal> attribute
                             to a cell and specify the number of cells
                             to join horizontally. </para>
-                        <para>For example, for the following table:<mediaobject>
-                                <imageobject>
-                                   <imagedata
-                                   fileref="figures/testtable.png"
-                                   width="2in"/>
-                                </imageobject>
-                            </mediaobject></para>
+                        <para>For example, for the following
+                                table:<table rules="all" width="50%">
+                                <caption>Test table</caption>
+                                <col width="50%"/>
+                                <col width="50%"/>
+                                <thead>
+                                   <tr>
+                                   <th>Header column A</th>
+                                   <th>Header column B</th>
+                                   </tr>
+                                </thead>
+                                <tbody>
+                                   <tr>
+                                   <td>Row 1 column A</td>
+                                   <td>Row 1 column B</td>
+                                   </tr>
+                                   <tr>
+                                   <td>Row 2 column A</td>
+                                   <td>Row 2 column B</td>
+                                   </tr>
+                                   <tr>
+                                   <td>Row 3 column A</td>
+                                   <td>Row 3 column B</td>
+                      
+                                   </tr>
+                                </tbody>
+                            </table></para>
                         <para>Use the following markup to join columns
                             A and B in row 1: <programlistingco>
                                 <areaspec>
-                                   <area xml:id="colspan"
+                                   <area
+                                   xml:id="test_table1.xml.colspan"
                                    units="linecolumn" coords="11 8"/>
 
 
                                 </areaspec>
-                                <programlisting>&lt;table rules="all">
-                &lt;caption>Test table&lt;/caption>
-                &lt;thead>
-                    &lt;tr>
-                        &lt;th>Header column A&lt;/th>
-                        &lt;th>Header column B&lt;/th>
-                    &lt;/tr>
-                &lt;/thead>
-                &lt;tbody>
-                    &lt;tr>
-                        &lt;td colspan="2">Row 1 column ARow 1 column
-                            B&lt;/td>
-                    &lt;/tr>
-                    &lt;tr>
-                        &lt;td>Row 2 column A&lt;/td>
-                        &lt;td>Row 2 column B&lt;/td>
-                    &lt;/tr>
-                    &lt;tr>
-                        &lt;td>Row 3 column A&lt;/td>
-                        &lt;td>Row 3 column B&lt;/td>
-                    &lt;/tr>
-                &lt;/tbody>
-            &lt;/table></programlisting>
+
+                                <programlisting language="xml"><xi:include href="samples/test_table1.xml" parse="text"/></programlisting>
+
+
                             </programlistingco><calloutlist
                                 role="compact">
-                                <callout arearefs="colspan">
-                                   <para>Add the colspan attribute to
-                                   the td tag.</para>
+                                <callout
+                                   arearefs="test_table1.xml.colspan">
+                                   <para>Add the
+                                   <literal>colspan</literal>
+                                   attribute to the
+                                   <literal>td</literal> tag.</para>
 
                                 </callout>
                             </calloutlist></para>
-                        <para>The table appears as follows:<mediaobject>
-                                <imageobject>
-                                   <imagedata
-                                   fileref="figures/testtablejoincol.png"
-                                   width="2in"/>
-                                </imageobject>
-                            </mediaobject></para>
+                        <para>The table appears as follows:<table
+                                rules="all" width="50%">
+                                <caption>Test table</caption>
+                                <col width="50%"/>
+                                <col width="50%"/>
+                                <thead>
+                                   <tr>
+                                   <th>Header column A</th>
+                                   <th>Header column B</th>
+                                   </tr>
+                                </thead>
+                                <tbody>
+                                   <tr>
+                                   <td colspan="2">Row 1 column ARow 1
+                                   column B</td>
+                                   </tr>
+                                   <tr>
+                                   <td>Row 2 column A</td>
+                                   <td>Row 2 column B</td>
+                                   </tr>
+                                   <tr>
+                                   <td>Row 3 column A</td>
+                                   <td>Row 3 column B</td>
+                                   </tr>
+                                </tbody>
+                            </table></para>
                     </step>
                     <step>
                         <title>Join rows</title>
