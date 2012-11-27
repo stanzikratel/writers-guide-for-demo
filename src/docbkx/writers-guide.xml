@@ -9,15 +9,13 @@
       <year>2012</year>
       <holder>Rackspace US, Inc.</holder>
     </copyright>
-    <copyright audience="os">
-      <copyright os="openstack">
+    <copyright os="openstack">
+    
        
         <year>2012</year>
         
         <holder>OpenStack LLC</holder>
-      </copyright>
-      <year>2012</year>
-      <holder>Rackspace US, Inc.</holder>
+   
     </copyright>
     <releaseinfo>v1.0</releaseinfo>
     <productname>Content Team</productname>
