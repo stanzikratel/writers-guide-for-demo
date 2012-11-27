@@ -46,7 +46,7 @@
 			
 					<execution>
 						<configuration>
-							<id>writers-guide-rackspace</id>
+							<!--<id>writers-guide-rackspace</id> -->
 							<includes>writers-guide.xml</includes>
 							<xincludeSupported>true</xincludeSupported>
 							<pdfUrl>../writers-guide.pdf</pdfUrl>
