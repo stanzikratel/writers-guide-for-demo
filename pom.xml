@@ -43,7 +43,7 @@
 						</goals>
 						<phase>generate-sources</phase>
 					</execution>
-
+			
 					<execution>
 						<configuration>
 							<id>writers-guide-rackspace</id>
@@ -86,48 +86,7 @@
 							</generateToc>
 						</configuration>
 					</execution>
-					<execution>
-						<configuration>
-							<id>writers-guide-openstack</id>
-							<includes>writers-guide.xml</includes>
-							<xincludeSupported>true</xincludeSupported>
-							<pdfUrl>../writers-guide.pdf</pdfUrl>
-							<enableDisqus>intranet</enableDisqus>
-							<!-- <security>internal</security> -->
-							<feedbackEmail>david.cramer@rackspace.com</feedbackEmail>
-						<!--	<preProcess> 
-							 <copy todir="target/docbkx/webhelp/example/content/figures"> 
-							     <fileset dir="src/docbkx/figures"> 
-							 	<include name="**/*.png" /> 
-							     </fileset> 
-							 </copy> 
-							 </preProcess> -->
-							<branding>openstack</branding>
-							<showXslMessages>true</showXslMessages>
-							<formalProcedures>0</formalProcedures>
-							<useLatestSuffixInPdfUrl>0</useLatestSuffixInPdfUrl>
-							<chapterAutolabel>1</chapterAutolabel>
-							<sectionAutolabel>0</sectionAutolabel>
-							<appendixAutolabel>0</appendixAutolabel>
-							<tocSectionDepth>1</tocSectionDepth>
-							<security>external</security>
-							<profileOs>openstack</profileOs>
-							<generateToc> 
-								appendix toc,title
-								article/appendix nop 
-								article toc,title
-								book toc,title,figure,table,equation
-								chapter toc 
-								part toc,title 
-								preface nop
-								qandadiv toc 
-								qandaset toc 
-								reference toc,title 
-								section toc 
-								set toc,title
-							</generateToc>
-						</configuration>
-					</execution>
+					
 				</executions>
 			</plugin>
 		</plugins>
