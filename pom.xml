@@ -46,7 +46,7 @@
 
 					<execution>
 						<configuration>
-							<id>writer-guide-rackspace</id>
+							<id>writers-guide-rackspace</id>
 							<includes>writers-guide.xml</includes>
 							<xincludeSupported>true</xincludeSupported>
 							<pdfUrl>../writers-guide.pdf</pdfUrl>
@@ -88,20 +88,20 @@
 					</execution>
 					<execution>
 						<configuration>
-							<id>writer-guide-openstack</id>
+							<id>writers-guide-openstack</id>
 							<includes>writers-guide.xml</includes>
 							<xincludeSupported>true</xincludeSupported>
 							<pdfUrl>../writers-guide.pdf</pdfUrl>
 							<enableDisqus>intranet</enableDisqus>
 							<!-- <security>internal</security> -->
 							<feedbackEmail>david.cramer@rackspace.com</feedbackEmail>
-							<!-- <preProcess> -->
-							<!--   <copy todir="target/docbkx/webhelp/example/content/figures"> -->
-							<!--     <fileset dir="src/docbkx/figures"> -->
-							<!-- 	<include name="**/*.png" /> -->
-							<!--     </fileset> -->
-							<!--   </copy> -->
-							<!-- </preProcess> -->
+						<!--	<preProcess> 
+							 <copy todir="target/docbkx/webhelp/example/content/figures"> 
+							     <fileset dir="src/docbkx/figures"> 
+							 	<include name="**/*.png" /> 
+							     </fileset> 
+							 </copy> 
+							 </preProcess> -->
 							<branding>openstack</branding>
 							<showXslMessages>true</showXslMessages>
 							<formalProcedures>0</formalProcedures>
