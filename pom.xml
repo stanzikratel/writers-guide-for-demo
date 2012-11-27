@@ -43,8 +43,9 @@
 						</goals>
 						<phase>generate-sources</phase>
 					</execution>
+				</executions>
 			
-					<execution>
+					
 						<configuration>
 							<!--<id>writers-guide-rackspace</id> -->
 							<includes>writers-guide.xml</includes>
@@ -85,9 +86,9 @@
 								set toc,title
 							</generateToc>
 						</configuration>
-					</execution>
 					
-				</executions>
+					
+				
 			</plugin>
 		</plugins>
 	</build>
