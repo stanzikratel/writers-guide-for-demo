@@ -37,11 +37,30 @@
 				<version>1.6.1-SNAPSHOT</version>
 				<executions>
 					<execution>
+					  <id>rackspace</id>
 						<goals>
 							<goal>generate-webhelp</goal>
-							<goal>generate-pdf</goal>
 						</goals>
 						<phase>generate-sources</phase>
+						<configuration>
+						  <profileOs>rack</profileOs>
+						  <postProcess>
+						    <move file="target/docbkx/webhelp/writers-guide-external" tofile="target/docbkx/webhelp/writers-guide-rackspace"/>
+						  </postProcess>
+						</configuration>
+					</execution>
+					<execution>
+					  <id>openstack</id>
+						<goals>
+							<goal>generate-webhelp</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+						  <profileOs>openstack</profileOs>
+						  <postProcess>
+						    <move file="target/docbkx/webhelp/writers-guide-external" tofile="target/docbkx/webhelp/writers-guide-openstack"/>
+						  </postProcess>
+						</configuration>
 					</execution>
 				</executions>
 			
@@ -70,7 +89,6 @@
 							<appendixAutolabel>0</appendixAutolabel>
 							<tocSectionDepth>1</tocSectionDepth>
 							<security>external</security>
-							<profileOs>rack</profileOs>
 							<generateToc> 
 								appendix toc,title
 								article/appendix nop 
