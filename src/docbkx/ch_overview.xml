@@ -54,15 +54,31 @@ format="SVG" scale="60"/>
                     <para><citetitle>Release Notes</citetitle></para>
                 </listitem>
             </itemizedlist></para>
-        <remark security="internal"><para>What can be a project? Dev
-                Guide, release notes, getting started guide, admin
-                guide, other?</para>
-            <para>anatomy of a pom file</para>
-            <para>anatomy of a book</para>
-            <para>generating output</para>
-            <para>editing source files</para>
-            <para>downloading source files</para>
-            <para>tools</para></remark>
+        <itemizedlist security="internal">
+            <listitem>
+                <para>What can be a project? Dev
+                    Guide, release notes, getting started guide, admin
+                    guide, other?</para>
+            </listitem>
+            <listitem>
+                <para>anatomy of a pom file</para>                  
+            </listitem>
+            <listitem>
+                <para>anatomy of a book</para>                
+            </listitem>
+            <listitem>
+                <para>generating output</para>    
+            </listitem>
+            <listitem>
+                <para>editing source files</para>     
+            </listitem>
+            <listitem>
+                <para>downloading source files</para>
+            </listitem>
+            <listitem>
+                <para>tools</para>
+            </listitem>
+        </itemizedlist> 
         <para>A documentation project resides in a <emphasis
                 role="italic">project directory</emphasis>, which you
             download from a git or subversion repository.</para>

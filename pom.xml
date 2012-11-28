@@ -44,8 +44,9 @@
 						<phase>generate-sources</phase>
 						<configuration>
 						  <profileOs>rack</profileOs>
+						  <security>internal</security>
 						  <postProcess>
-						    <move file="target/docbkx/webhelp/writers-guide-external" tofile="target/docbkx/webhelp/writers-guide-rackspace"/>
+						    <move file="target/docbkx/webhelp/writers-guide-internal" tofile="target/docbkx/webhelp/writers-guide-rackspace"/>
 						  </postProcess>
 						</configuration>
 					</execution>
@@ -57,6 +58,7 @@
 						<phase>generate-sources</phase>
 						<configuration>
 						  <profileOs>openstack</profileOs>
+						  <security>external</security>
 						  <postProcess>
 						    <move file="target/docbkx/webhelp/writers-guide-external" tofile="target/docbkx/webhelp/writers-guide-openstack"/>
 						  </postProcess>
@@ -88,7 +90,6 @@
 							<sectionAutolabel>1</sectionAutolabel> 
 							<appendixAutolabel>1</appendixAutolabel>
 							<tocSectionDepth>2</tocSectionDepth>
-							<security>external</security>
 							<generateToc> 
 								appendix toc,title
 								article/appendix nop 
