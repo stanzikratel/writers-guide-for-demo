@@ -38,7 +38,7 @@ format="SVG" scale="60"/>
 
     <para>To install or update oXygen Author or Editor, you use a JAva
         Web Start (JAWS) application, which enables you to start
-        application software for the Java Platform directly from the
+        application software for the Java platform directly from the
         Internet by using a web browser. </para>
     <para>When you run JAWS for the first time, it downloads the
         entire oXygen package, <filename>author.jnlp</filename>. This
@@ -48,6 +48,22 @@ format="SVG" scale="60"/>
 
     <procedure>
         <title>To download oXygen Author or Editor</title>
+        <step os="rack">
+            <para>After oXygen launches for the first time, you must
+                supply an oXygen Author or Editor license. If you do
+                not have one, request one from a member of the Doc
+                Tools team or your manager.</para>
+
+        </step>
+        <step os="openstack">
+            <para>After oXygen launches for the first time, you must
+                supply an oXygen Author or Editor license. If you do
+                not have one, you can request an open-source license,
+                see <link
+                    xlink:href="http://wiki.openstack.org/Documentation/HowTo#Editor_Options"
+                />..</para>
+           
+        </step>
         <step>
             <para>Click the following link: </para>
             <para><link xlink:href="http://docs.rackspace.com/oxygen/"
@@ -85,10 +101,8 @@ format="SVG" scale="60"/>
                     <guibutton>Run</guibutton>.</para>
         </step>
         <step>
-            <para>After oXygen launches for the first time, you must
-                supply an oXygen Author or Editor license. If you do
-                not have one, request one from a member of the Doc
-                Tools team or your manager.</para>
+            <para>After oXygen launches for the first time, supply
+                your oXygen Author or Editor license. </para>
             <para>The download adds an icon to the Dock, which looks
                 like this:<mediaobject>
                     <imageobject>
@@ -107,21 +121,22 @@ format="SVG" scale="60"/>
         </step>
         <step>
             <para>To use oXygen, click the coffee cup icon on your
-                Dock.</para></step></procedure>
-            <para>After you close oXygen, you can access it from your
+                Dock.</para>
+        </step>
+    </procedure>
+    <para>After you close oXygen, you can access it from your
             <filename class="directory">Applications</filename>
         folder, or use JAWS to download and update oXygen.</para>
-            <para>When you launch JAWS again to upgrade oXygen, it
-                downloads any modified jar files only. If no new jars
-                are found or network connectivity is unavailable,
-                oXygen Author or Editor starts immediately. </para>
-            <note>
-                <para>If you install oXygen Author or Editor through
-                    JAWS and add oXygen plugins to that installation,
-                    those plugins are removed when you use JAWS to
-                    update oXygen.</para>
-            </note>
-  
+    <para>When you launch JAWS again to upgrade oXygen, it downloads
+        any modified jar files only. If no new jars are found or
+        network connectivity is unavailable, oXygen Author or Editor
+        starts immediately. </para>
+    <note>
+        <para>If you install oXygen Author or Editor through JAWS and
+            add oXygen plugins to that installation, those plugins are
+            removed when you use JAWS to update oXygen.</para>
+    </note>
+
 
     <para><emphasis role="bold">Additional resource:</emphasis>
         <link

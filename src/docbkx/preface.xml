@@ -31,7 +31,8 @@ format="SVG" scale="60"/>
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_preface">
     <title>Preface</title>
-    <para>This guide assists OpenStack and Rackspace writers and
+    <para>This guide assists <phrase os="openstack">OpenStack and
+            </phrase><phrase os="rack">Rackspace</phrase> writers and
         developers to use an XML-based tool set to create content and
         generate documentation artifacts. </para>
     <para>The components of this tool chain are:<itemizedlist>
@@ -53,15 +54,14 @@ format="SVG" scale="60"/>
             <listitem>
                 <para><emphasis role="bold">Production</emphasis>.
                     Writers generate documentation artifacts from
-                    DocBook (XML) and WADL source files. The tools and
+                    DocBook XML and WADL source files. The tools and
                     build logic to generate documentation artifacts
-                    are implemented as a Maven plugin. Apache Maven is
-                    a build automation tool. Maven reads the
-                    configuration for a project from a
-                        <literal>pom.xml</literal> file, downloads any
-                    required dependencies, such as the tools required
-                    to perform the build, and proceeds to produce the
-                    specified artifacts. </para>
+                    are implemented as a Maven plugin. </para>
+                <para>Apache Maven is a build automation tool. </para>
+                <para>Maven reads the configuration for a project from
+                    a <literal>pom.xml</literal> file, downloads any
+                    required dependencies such as the tools required
+                    to build, and produces the specified artifacts. </para>
             </listitem>
         </itemizedlist></para>
 </preface>

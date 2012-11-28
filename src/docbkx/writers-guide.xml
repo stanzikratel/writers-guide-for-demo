@@ -22,6 +22,22 @@
     <pubdate>2012-11-28</pubdate>
     <revhistory>
       <revision>
+        <date>2012-11-28</date>
+        <revdescription>
+          <para>
+            <itemizedlist>
+              <listitem>
+                <para>Created two books from source - one for
+                  OpenStack, one for Rackspace.</para>
+              </listitem>
+              <listitem>
+                <para>Renamed the book.</para>
+              </listitem>
+            </itemizedlist>
+          </para>
+        </revdescription>
+      </revision>
+      <revision>
         <date>2012-11-13</date>
         <revdescription>
           <para>Incorporated more comments from Betsy.</para>
