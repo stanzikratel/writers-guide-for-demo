@@ -155,7 +155,8 @@ format="SVG" scale="60"/>
             <para> In &lt;book&gt;&lt;info&gt; find &lt;pubdate&gt;.
                 Be sure it's shaped like
                 &lt;pubdate&gt;2011-07-22&lt;/pubdate&gt;. Then retry
-                the build.</para>
+                the build. Optoinally, you can leave the pubdate tag empty and 
+	        build system will supply the current date as the pubdate.</para>
         </section>
         <section xml:id="build_failure_mvn">
             <title>Build failure due to Maven settings</title>
