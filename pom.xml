@@ -12,7 +12,7 @@
       <plugin>
 	<groupId>com.rackspace.cloud.api</groupId>
 	<artifactId>clouddocs-maven-plugin</artifactId>
-	<version>1.6.1-SNAPSHOT</version>
+	<version>1.7.0</version>
 	<executions>
 	  <execution>
 	    <id>rackspace</id>
@@ -73,6 +73,7 @@
 	    section toc 
 	    set toc,title
 	  </generateToc>
+	  <publicationNotificationEmails>david.cramer@rackspace.com</publicationNotificationEmails>
 	</configuration>
       </plugin>
       <plugin>
