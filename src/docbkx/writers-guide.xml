@@ -7,19 +7,20 @@
   <info>
     <copyright os="rack">
       <year>2012</year>
+      <year>2013</year>
       <holder>Rackspace US, Inc.</holder>
     </copyright>
     <copyright os="openstack">
     
        
         <year>2012</year>
-        
+      <year>2013</year>
         <holder>OpenStack LLC</holder>
    
     </copyright>
     <releaseinfo>v1.0</releaseinfo>
     <productname>Content Team</productname>
-    <pubdate>2012-11-28</pubdate>
+    <pubdate></pubdate>
     <revhistory>
       <revision>
         <date>2012-11-28</date>

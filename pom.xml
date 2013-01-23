@@ -58,6 +58,7 @@
 	  <chapterAutolabel>1</chapterAutolabel>
 	  <sectionAutolabel>1</sectionAutolabel> 
 	  <appendixAutolabel>1</appendixAutolabel>
+		<profileOs>rack</profileOs>
 	  <tocSectionDepth>2</tocSectionDepth>
 	  <generateToc> 
 	    appendix toc,title
