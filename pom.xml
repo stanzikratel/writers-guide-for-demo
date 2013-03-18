@@ -30,7 +30,7 @@
 	      <enableDisqus>intranet</enableDisqus>
 	    </configuration>
 	  </execution>
-	  <execution>
+	 <!-- <execution>
 	    <id>openstack</id>
 	    <goals>
 	      <goal>generate-webhelp</goal>
@@ -45,7 +45,7 @@
 	      <branding>openstack</branding>
 	      <enableDisqus>0</enableDisqus>
 	    </configuration>
-	  </execution>
+	  </execution> -->
 	</executions>
 	<configuration>
 	  <includes>writers-guide.xml</includes>
@@ -58,6 +58,7 @@
 	  <chapterAutolabel>1</chapterAutolabel>
 	  <sectionAutolabel>1</sectionAutolabel> 
 	  <appendixAutolabel>1</appendixAutolabel>
+		<profileOs>rack</profileOs>
 	  <tocSectionDepth>2</tocSectionDepth>
 	  <generateToc> 
 	    appendix toc,title
