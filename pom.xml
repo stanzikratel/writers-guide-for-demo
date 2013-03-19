@@ -30,8 +30,8 @@
 	      <enableDisqus>intranet</enableDisqus>
 	    </configuration>
 	  </execution>
-	 <!-- <execution>
-	    <id>openstack</id>
+	  <execution>
+	   <id>openstack</id>
 	    <goals>
 	      <goal>generate-webhelp</goal>
 	    </goals>
@@ -45,12 +45,11 @@
 	      <branding>openstack</branding>
 	      <enableDisqus>0</enableDisqus>
 	    </configuration>
-	  </execution> -->
+	 </execution> 
 	</executions>
 	<configuration>
 	  <includes>writers-guide.xml</includes>
 	  <xincludeSupported>true</xincludeSupported>
-	  <pdfUrl>../writers-guide.pdf</pdfUrl>
 	  <feedbackEmail>david.cramer@rackspace.com</feedbackEmail>
 	  <showXslMessages>true</showXslMessages>
 	  <formalProcedures>0</formalProcedures>
@@ -58,7 +57,7 @@
 	  <chapterAutolabel>1</chapterAutolabel>
 	  <sectionAutolabel>1</sectionAutolabel> 
 	  <appendixAutolabel>1</appendixAutolabel>
-		<profileOs>rack</profileOs>
+	  <profileOs>rack</profileOs>
 	  <tocSectionDepth>2</tocSectionDepth>
 	  <generateToc> 
 	    appendix toc,title
