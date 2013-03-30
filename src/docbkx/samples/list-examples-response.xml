@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Content-Length: 248
+Date: Wed, 25 Jan 2012 21:58:02 GMT
+
+<myexamples xmlns="http://docs.openstack.org/myexample/api/v1.0">
+	<myexample name="anotherexampledb"/>
+	<myexample name="exampledb"/>
+	<myexample name="nextround"/>
+	<myexample name="sampledb"/>
+	<myexample name="testingdb"/>
+</myexamples>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application [
+    <!ENTITY % common  SYSTEM "common.ent">
+    %common;
+]>
+
+<application xmlns="http://wadl.dev.java.net/2009/02"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
+    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+    xmlns:exmp="http://docs.openstack.org/example/api/v1.0">
+    <grammars>
+        <include href="test.xsd"/>
+    </grammars>
+    <resources base="https://ord.examples.api.rackspacecloud.com">
+        <resource id="versions" path="">
+            <method href="#getVersions"/>
+        </resource>
+        <resource id="version" path="{version}">
+            <method href="#getVersionInfo"/>
+            <resource id="accountID" path="{accountId}">
+                <param name="accountId" style="template"
+                    type="xsd:string">
+                    <doc>The account ID of the owner of the specified
+                        MyExample instance.</doc>
+                </param>
+                <resource id="instances" path="instances">
+                    <resource id="instanceId" path="{instanceId}">
+                        <param name="instanceId" style="template"
+                            type="xsd:string">
+                            <doc>The instance ID for the specified
+                                MyExample instance.</doc>
+                        </param>
+                        <resource id="examples" path="examples">
+                            <method href="#createExample"/>
+                            <method href="#getExamples"/>
+                            <resource id="exampleName"
+                                path="{exampleName}">
+                                <param name="exampleName"
+                                   style="template" type="xsd:string">
+                                   <doc>The name for the specified
+                                   MyExample.</doc>
+                                </param>
+                                <method href="#deleteExample"/>
+                            </resource>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resource>
+    </resources>
+    <!--Token Methods... -->
+
+    <!-- Database -->
+    <method name="POST" id="createExample">
+        <wadl:doc xml:lang="EN" title="Create MyExample"
+            xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Creates a new
+                    <glossterm>MyExample</glossterm> within the
+                specified instance.</para>
+            <para>The <code>name</code> is a required
+                attribute.</para>
+            <para>You can specify the following additional attributes
+                for each MyExample: <code>collate</code> and
+                    <code>character_set</code>.</para>
+            <table rules="all">
+                <caption>Required and Optional Attributes for Create
+                    MyExample</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">name</td>
+                        <td colspan="3">The name for MyExample. </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">character_set</td>
+                        <td colspan="3">Set of symbols and encodings.
+                            The default character set is
+                                <code>utf8</code>.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">collate</td>
+                        <td colspan="3">Set of rules for comparing
+                            characters in a character set. The default
+                            value for collate is
+                                <code>utf8_general_ci</code>.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json"
+                element="exmp:Database">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The
+                        following examples show the Create MyExample
+                        requests:<?rax-fo keep-with-next?></para>
+                    <xsdxt:code
+                        href="../samples/create-examples-request.json"
+                    />
+                </doc>
+            </representation>
+            <representation mediaType="application/xml"
+                element="exmp:Database">
+                <doc>
+                    <xsdxt:code
+                        href="../samples/create-examples-request.xml"
+                    />
+                </doc>
+            </representation>
+        </request>
+        <response status="202">
+
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The
+                        following examples show the Create MyExample
+                        responses:</para>
+                    <xsdxt:code
+                        href="../samples/create-examples-response.json"
+                    />
+                </doc>
+            </representation>
+            <representation mediaType="application/xml">
+                <doc>
+                    <xsdxt:code
+                        href="../samples/create-examples-response.xml"
+                    />
+                </doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
+
+    <method name="GET" id="getExamples">
+        <wadl:doc xml:lang="EN" title="List MyExamples for Instance"
+            xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists examples for the specified
+                instance.</para>
+            <note><para>This operation returns only the user-defined
+                    examples, not the system examples. The system
+                    examples (mysql, information_schema, lost+found)
+                    can only be viewed by a example
+                    administrator.</para></note>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The
+                        following examples show the List MyExamples
+                        for Instance requests:</para>
+                    <xsdxt:code
+                        href="../samples/list-examples-request.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/xml">
+                <doc>
+                    <xsdxt:code
+                        href="../samples/list-examples-request.xml"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="exmp:Databases">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The
+                        following examples show the List MyExamples
+                        for Instance responses:</para>
+                    <xsdxt:code
+                        href="../samples/list-examples-response.json"
+                    />
+                </doc>
+            </representation>
+            <representation mediaType="application/xml"
+                element="exmp:Databases">
+                <doc>
+                    <xsdxt:code
+                        href="../samples/list-examples-response.xml"/>
+                </doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
+
+    <method name="DELETE" id="deleteExample">
+        <wadl:doc xml:lang="EN" title="Delete MyExample"
+            xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Deletes the specified
+                example.</para>
+            <para>This operation deletes the requested example within
+                the specified example instance. All data associated
+                with the example is also deleted.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The
+                        following examples show the Delete MyExample
+                        requests:</para>
+                    <xsdxt:code
+                        href="../samples/delete-examples-request.json"
+                    />
+                </doc>
+            </representation>
+            <representation mediaType="application/xml">
+                <doc>
+                    <xsdxt:code
+                        href="../samples/delete-examples-request.xml"
+                    />
+                </doc>
+            </representation>
+        </request>
+        <response status="202">
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The
+                        following examples show the Delete MyExample
+                        responses:</para>
+                    <xsdxt:code
+                        href="../samples/delete-examples-response.json"
+                    />
+                </doc>
+            </representation>
+            <representation mediaType="application/xml">
+                <doc>
+                    <xsdxt:code
+                        href="../samples/delete-examples-response.xml"
+                    />
+                </doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
+</application>

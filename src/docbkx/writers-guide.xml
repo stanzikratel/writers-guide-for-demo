@@ -23,6 +23,19 @@
     <pubdate></pubdate>
     <revhistory>
       <revision>
+        <date>2013-03-26</date>
+        <revdescription>
+          <para>
+            <itemizedlist>
+              <listitem>
+                <para>Added chapter about how to create and use WADL files.</para>
+              </listitem>
+              
+            </itemizedlist>
+          </para>
+        </revdescription>
+      </revision>
+      <revision>
         <date>2012-11-28</date>
         <revdescription>
           <para>
@@ -90,7 +103,8 @@
 
   <xi:include href="ch_pom.xml"/>
   <!-- <xi:include href="ch_newapi.xml"/> -->
-
+  <xi:include href="ch_wadl.xml"/>
+  <!--<xi:include href="ch_wadl_examples.xml"/> -->
   <xi:include href="ch_tables.xml"/>
   <xi:include href="ch_review.xml"/>
   <xi:include href="ch_autopublish.xml"/>
