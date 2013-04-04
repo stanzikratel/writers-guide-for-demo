@@ -31,7 +31,7 @@ format="SVG" scale="60"/>
     xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0"
     xml:id="ch_wadl">
     <?dbhtml stop-chunking?>
-    <title>Use a WADL to Generate API Reference Outputs</title>
+    <title>Use WADLs to Generate API Reference Outputs</title>
     <para>You can use Web Application Description Language (WADL)
         files to describe HTTP-based Web applications and generate API
         reference outputs.</para>
@@ -67,11 +67,11 @@ format="SVG" scale="60"/>
                 <programlistingco>
                     <areaspec>
                         <area xml:id="test.wadl.application"
-                            units="linecolumn" coords="7 1"/>
+                            units="linecolumn" coords="6 1"/>
                         <area xml:id="test.wadl.grammars"
-                            units="linecolumn" coords="13 1"/>
+                            units="linecolumn" coords="12 1"/>
                         <area xml:id="test.wadl.resources"
-                            units="linecolumn" coords="17 1"/>
+                            units="linecolumn" coords="16 1"/>
                         <area xml:id="test.wadl.doc"
                             units="linecolumn" coords="18 1"/>
                         <area xml:id="test.wadl.resource"
@@ -79,17 +79,17 @@ format="SVG" scale="60"/>
                         <area xml:id="test.wadl.param"
                             units="linecolumn" coords="23 1"/>
                         <area xml:id="test.wadl.method_ref"
-                            units="linecolumn" coords="31 1"/>
+                            units="linecolumn" coords="32 1"/>
                         <area xml:id="test.wadl.method_def"
-                            units="linecolumn" coords="45 1"/>
+                            units="linecolumn" coords="46 1"/>
                         <area xml:id="test.wadl.request"
-                            units="linecolumn" coords="56 1"/>
+                            units="linecolumn" coords="57 1"/>
                         <area xml:id="test.wadl.representation"
-                            units="linecolumn" coords="58 1"/>
+                            units="linecolumn" coords="59 1"/>
                         <area xml:id="test.wadl.code"
-                            units="linecolumn" coords="65 1"/>
+                            units="linecolumn" coords="66 1"/>
                         <area xml:id="test.wadl.response"
-                            units="linecolumn" coords="80 1"/>
+                            units="linecolumn" coords="81 1"/>
                     </areaspec>
                     <programlisting language="xml"><?db-font-size 55%?><xi:include href="xsd/test.wadl" parse="text"/></programlisting>
                 </programlistingco>
@@ -233,6 +233,7 @@ format="SVG" scale="60"/>
 
 
     </section>
+    <?hard-pagebreak?>
     <section xml:id="include_wadl">
         <title>Generate API Reference Information</title>
         <para>The clouddocs Maven plugin enables you to include
@@ -328,43 +329,52 @@ format="SVG" scale="60"/>
         </table>-->
         <section xml:id="api-ref-section-or-chapter">
             <title>API Reference Section or Chapter</title>
-            <para>When you reference an entire, or one or more
-                elements in, WADL file in a DocBook file, the WADL
-                elements are transformed into various API reference
-                outputs. </para>
-            <para>You can reference all or part of a WADL file from a
-                DocBook file, as follows: <itemizedlist>
-                    <listitem>
-                        <para>Reference a resource and one or more
-                            child methods. API reference information
-                            is generated for the specified methods.
-                        </para>
-                    </listitem>
-                    <listitem>
-                        <para>Reference a specified resource. API
-                            reference information is generated for all
-                            child methods of the resource. </para>
-                    </listitem>
-                    <listitem>
-                        <para>Reference an entire WADL file. API
-                            reference information is generated for all
-                            resources and their child methods. </para>
-                    </listitem>
-                </itemizedlist></para>
-            <para>In each case, the structure of the resources and
-                methods is reflected in the generated API reference
-                output. </para>
-            <para>For all cases, the following API reference outputs
-                are generated:<itemizedlist>
+            <para>When you point to a WADL file or WADL elements from
+                a DocBook file, the elements are transformed into
+                various API reference outputs. </para>
+            <para>You can point to WADL files or WADL elements from a
+                DocBook file, as follows:<informaltable frame="void">
+                    <col width="50%"/>
+                    <col width="50%"/>
+                    <thead>
+                        <tr>
+                            <th>Point to</th>
+                            <th>Generates API reference outputs
+                                for</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A resource and one or more of its
+                                child methods</td>
+                            <td>The specified methods</td>
+                        </tr>
+                        <tr>
+                            <td>A specified resource</td>
+                            <td>All child methods</td>
+                        </tr>
+                        <tr>
+                            <td>Entire WADL file</td>
+                            <td>All resources and their child
+                                methods</td>
+                        </tr>
+                    </tbody>
+                </informaltable></para>
+            <para>In each case, the structure in the generated API
+                reference output reflects the structure of the
+                resources and methods in the WADL file. </para>
+            <para>The following API reference outputs are generated:<itemizedlist>
                     <listitem>
                         <para>A comprehensive roll-up table. Appears
                             at the top of the chapter or section where
-                            you include WADL references and lists the
-                            HTTP method, URI, and description for all
-                            referenced methods.</para>
+                            you point to WADL elements or files. Lists
+                            the HTTP method, URI, and description for
+                            all referenced methods.</para>
                     </listitem>
                     <listitem>
-                        <para>A section for each referenced
+                        <para>A section for each referenced resource.
+                            The section contains a roll-up table of
+                            all referenced methods in the
                             resource.</para>
                     </listitem>
                     <listitem>
@@ -372,7 +382,7 @@ format="SVG" scale="60"/>
                             in each referenced resource. The
                             sub-section starts with a roll-up table
                             for the method, followed by a detail
-                            description of the API.</para>
+                            description of the API method.</para>
                     </listitem>
                 </itemizedlist></para>
             <example xml:id="chapter_entire_wadl">
@@ -409,26 +419,9 @@ format="SVG" scale="60"/>
                     output, add the <code>&lt;?rax
                         start-sections?></code> directive to your
                     WADL:<programlisting language="xml"><xi:include href="samples/start_sections.xml" parse="text"/></programlisting></para>
-
             </example>
-            <simplesect xml:id="chapter_rollup_display">
-                <title>Output</title>
-                <para><link
-                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/API_Operations-d1e2264.html"
-                        >API Operations</link><informalfigure>
-                        <mediaobject>
-                            <imageobject>
-                                <imagedata
-                                   fileref="figures/reference_table_large.png"
-                                   contentwidth="6in"/>
-                            </imageobject>
-                        </mediaobject>
-                    </informalfigure></para>
-            </simplesect>
-
             <simplesect>
-                <title>Markup for Specified Methods in a Rollup
-                    Table</title>
+                <title>Markup for Specified Methods</title>
                 <para>To have more fine-grained control of what
                     resources appear in the final document, you can
                     use markup like the following in your DocBook
@@ -437,10 +430,6 @@ format="SVG" scale="60"/>
                     resources together in arbitrary
                     combinations:</para>
                 <programlisting language="xml"><xi:include href="samples/section_rollup_req.xml" parse="text"/></programlisting>
-            </simplesect>
-            <simplesect>
-                <title>Output</title>
-                <para/>
             </simplesect>
         </section>
 
