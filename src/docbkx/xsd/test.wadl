@@ -20,12 +20,14 @@
 
         <resource id="instances" path="instances">
             <resource id="instanceId" path="{instanceId}">
+                
                 <param name="instanceId" style="template"
                     type="xsd:string">
                     <doc>The instance ID for the specified example
                         instance.</doc>
                 </param>
                 <resource id="examples" path="examples">
+                    
                     <!-- Method Reference -->
                     <method href="#createExample2"/>
                     <resource id="exampleName" path="{exampleName}">
@@ -39,7 +41,7 @@
             </resource>
         </resource>
     </resources>
-
+    
     <!-- Method Definitions -->
     <method name="POST" id="createExample2">
         <wadl:doc xml:lang="EN" title="Create Example"
@@ -47,19 +49,20 @@
             <para role="shortdesc">Creates a new
                     <glossterm>example</glossterm> within the
                 specified instance.</para>
-            <para>The <code>name</code> is a required
-                attribute.</para>
             <para>You can specify the following additional attributes
                 for each example: <code>collate</code> and
                     <code>character_set</code>.</para>
         </wadl:doc>
+        <!-- Request -->       
         <request>
+            <!-- Representation -->
             <representation mediaType="application/json"
                 element="exmp:Database">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The
                         following examples show the create example
                         requests:<?rax-fo keep-with-next?></para>
+                    <!-- Code sample -->
                     <xsdxt:code
                         href="../samples/create-examples-request.json"
                     />
@@ -74,8 +77,8 @@
                 </doc>
             </representation>
         </request>
+        <!-- Response -->
         <response status="202">
-
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The
@@ -94,5 +97,4 @@
                 </doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
-
 </application>
