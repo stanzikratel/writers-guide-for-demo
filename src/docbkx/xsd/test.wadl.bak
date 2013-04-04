@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application [
+    <!ENTITY % common  SYSTEM "common.ent">
+    %common;
+]>
+
+<application xmlns="http://wadl.dev.java.net/2009/02"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
+    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+    xmlns:exmp="http://docs.openstack.org/example/api/v1.0">
+
+    <grammars>
+        <include href="test.xsd"/>
+    </grammars>
+
+    <resources base="https://ord.examples.api.rackspacecloud.com">
+        <wadl:doc xml:lang="EN" title="WADL Examples"
+            xmlns="http://docbook.org/ns/docbook"/>
+
+        <resource id="instances" path="instances">
+            <resource id="instanceId" path="{instanceId}">
+                <param name="instanceId" style="template"
+                    type="xsd:string">
+                    <doc>The instance ID for the specified example
+                        instance.</doc>
+                </param>
+                <resource id="examples" path="examples">
+                    <!-- Method Reference -->
+                    <method href="#createExample2"/>
+                    <resource id="exampleName" path="{exampleName}">
+                        <param name="exampleName" style="template"
+                            type="xsd:string">
+                            <doc>The name for the specified
+                                example.</doc>
+                        </param>
+                    </resource>
+                </resource>
+            </resource>
+        </resource>
+    </resources>
+
+    <!-- Method Definitions -->
+    <method name="POST" id="createExample2">
+        <wadl:doc xml:lang="EN" title="Create Example"
+            xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Creates a new
+                    <glossterm>example</glossterm> within the
+                specified instance.</para>
+            <para>The <code>name</code> is a required
+                attribute.</para>
+            <para>You can specify the following additional attributes
+                for each example: <code>collate</code> and
+                    <code>character_set</code>.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json"
+                element="exmp:Database">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The
+                        following examples show the create example
+                        requests:<?rax-fo keep-with-next?></para>
+                    <xsdxt:code
+                        href="../samples/create-examples-request.json"
+                    />
+                </doc>
+            </representation>
+            <representation mediaType="application/xml"
+                element="exmp:Database">
+                <doc>
+                    <xsdxt:code
+                        href="../samples/create-examples-request.xml"
+                    />
+                </doc>
+            </representation>
+        </request>
+        <response status="202">
+
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The
+                        following examples show the Create Example
+                        responses:</para>
+                    <xsdxt:code
+                        href="../samples/create-examples-response.json"
+                    />
+                </doc>
+            </representation>
+            <representation mediaType="application/xml">
+                <doc>
+                    <xsdxt:code
+                        href="../samples/create-examples-response.xml"
+                    />
+                </doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
+
+</application>

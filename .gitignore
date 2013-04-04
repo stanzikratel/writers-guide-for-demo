@@ -1,2 +1,7 @@
-*.bak
 target
+.DS_Store
+src/.DS-Store
+src/docbkx/.bak
+src/docbkx/figures/.bak
+src/docbkx/samples/.bak
+src/docbkx/xsd/.bak
