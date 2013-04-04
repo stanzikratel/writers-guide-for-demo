@@ -15,59 +15,48 @@
         <include href="test.xsd"/>
     </grammars>
     <resources base="https://ord.examples.api.rackspacecloud.com">
-        <resource id="versions" path="">
-            <method href="#getVersions"/>
-        </resource>
-        <resource id="version" path="{version}">
-            <method href="#getVersionInfo"/>
-            <resource id="accountID" path="{accountId}">
-                <param name="accountId" style="template"
+        <wadl:doc xml:lang="EN" title="WADL Examples"
+            xmlns="http://docbook.org/ns/docbook"/>
+        <resource id="instances" path="instances">
+            <resource id="instanceId" path="{instanceId}">
+                <param name="instanceId" style="template"
                     type="xsd:string">
-                    <doc>The account ID of the owner of the specified
-                        MyExample instance.</doc>
+                    <doc>The instance ID for the specified MyExample
+                        instance.</doc>
                 </param>
-                <resource id="instances" path="instances">
-                    <resource id="instanceId" path="{instanceId}">
-                        <param name="instanceId" style="template"
+                <resource id="examples" path="examples">
+                    <method href="#createExample"/>
+                    <method href="#getExamples"/>
+                    <resource id="exampleName" path="{exampleName}">
+                        <param name="exampleName" style="template"
                             type="xsd:string">
-                            <doc>The instance ID for the specified
-                                MyExample instance.</doc>
+                            <doc>The name for the specified
+                                MyExample.</doc>
                         </param>
-                        <resource id="examples" path="examples">
-                            <method href="#createExample"/>
-                            <method href="#getExamples"/>
-                            <resource id="exampleName"
-                                path="{exampleName}">
-                                <param name="exampleName"
-                                   style="template" type="xsd:string">
-                                   <doc>The name for the specified
-                                   MyExample.</doc>
-                                </param>
-                                <method href="#deleteExample"/>
-                            </resource>
-                        </resource>
+                        <method href="#deleteExample"/>
                     </resource>
                 </resource>
             </resource>
         </resource>
+
     </resources>
     <!--Token Methods... -->
 
     <!-- Database -->
     <method name="POST" id="createExample">
-        <wadl:doc xml:lang="EN" title="Create MyExample"
+        <wadl:doc xml:lang="EN" title="Create Example"
             xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a new
-                    <glossterm>MyExample</glossterm> within the
+                    <glossterm>example</glossterm> within the
                 specified instance.</para>
             <para>The <code>name</code> is a required
                 attribute.</para>
             <para>You can specify the following additional attributes
-                for each MyExample: <code>collate</code> and
+                for each example: <code>collate</code> and
                     <code>character_set</code>.</para>
             <table rules="all">
                 <caption>Required and Optional Attributes for Create
-                    MyExample</caption>
+                    Example</caption>
                 <thead>
                     <tr>
                         <td colspan="1">Name </td>
@@ -104,7 +93,7 @@
                 element="exmp:Database">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The
-                        following examples show the Create MyExample
+                        following examples show the example
                         requests:<?rax-fo keep-with-next?></para>
                     <xsdxt:code
                         href="../samples/create-examples-request.json"
@@ -125,7 +114,7 @@
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The
-                        following examples show the Create MyExample
+                        following examples show the example
                         responses:</para>
                     <xsdxt:code
                         href="../samples/create-examples-response.json"
@@ -142,10 +131,9 @@
         </response> &commonFaults; &getFaults; </method>
 
     <method name="GET" id="getExamples">
-        <wadl:doc xml:lang="EN" title="List MyExamples for Instance"
+        <wadl:doc xml:lang="EN" title="List Examples"
             xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists examples for the specified
-                instance.</para>
+            <para role="shortdesc">Lists examples.</para>
             <note><para>This operation returns only the user-defined
                     examples, not the system examples. The system
                     examples (mysql, information_schema, lost+found)
@@ -156,8 +144,8 @@
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The
-                        following examples show the List MyExamples
-                        for Instance requests:</para>
+                        following examples show the list examples for
+                        Instance requests:</para>
                     <xsdxt:code
                         href="../samples/list-examples-request.json"/>
                 </doc>
@@ -174,8 +162,8 @@
                 element="exmp:Databases">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The
-                        following examples show the List MyExamples
-                        for Instance responses:</para>
+                        following examples show the list examples for
+                        Instance responses:</para>
                     <xsdxt:code
                         href="../samples/list-examples-response.json"
                     />
@@ -191,7 +179,7 @@
         </response> &commonFaults; &getFaults; </method>
 
     <method name="DELETE" id="deleteExample">
-        <wadl:doc xml:lang="EN" title="Delete MyExample"
+        <wadl:doc xml:lang="EN" title="Delete Example"
             xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the specified
                 example.</para>
@@ -203,7 +191,7 @@
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The
-                        following examples show the Delete MyExample
+                        following examples show the delete example
                         requests:</para>
                     <xsdxt:code
                         href="../samples/delete-examples-request.json"
@@ -222,7 +210,7 @@
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The
-                        following examples show the Delete MyExample
+                        following examples show the delete example
                         responses:</para>
                     <xsdxt:code
                         href="../samples/delete-examples-response.json"

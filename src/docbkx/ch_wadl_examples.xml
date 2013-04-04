@@ -1,44 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter [
- <!-- Some useful entities borrowed from HTML -->
- <!ENTITY ndash  "&#x2013;">
- <!ENTITY mdash  "&#x2014;">
- <!ENTITY hellip "&#x2026;">
-        
- <!-- Useful for describing APIs -->
- <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
- <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
- <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
- <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
-        
- 
-]>
 <chapter xmlns="http://docbook.org/ns/docbook"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:svg="http://www.w3.org/2000/svg"
-    xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml"
-    xml:id="wadl_example_chapter" role="api-reference">
+    xml:id="wadl_example_chapter"
+    xmlns:wadl="http://wadl.dev.java.net/2009/02">
+    
     <title>WADL Examples</title>
-<!--<wadl:resources
-        href="xsd/dbaas.wadl"
-        xmlns:wadl="http://wadl.dev.java.net/2009/02"/> -->
-    <?hard-pagebreak?>
-
-
-    <section xml:id="wadl_examples">
-        <title>Example</title>
-        <para>This section describes the operations that are supported
-            for myExample.</para>
-        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <wadl:resource href="xsd/test.wadl#examples">
-                <wadl:method href="createExample"/>
-                <wadl:method href="getExamples"/>
-            </wadl:resource>
-            <wadl:resource href="xsd/test.wadl#exampleName">
-                <wadl:method href="deleteExample"/>
-            </wadl:resource>
-        </wadl:resources>
-    </section>
+    
+    <wadl:resources href="xsd/test.wadl"/>
 </chapter>

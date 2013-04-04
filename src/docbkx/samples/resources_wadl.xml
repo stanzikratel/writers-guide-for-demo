@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+    <wadl:resource href="../../../xsd/dbaas.wadl#versions">
+        <wadl:method href="getVersions"/>
+    </wadl:resource>
+    <wadl:resource href="../../../xsd/dbaas.wadl#version">
+        <wadl:method href="getVersionInfo"/>
+    </wadl:resource>
+</wadl:resources>

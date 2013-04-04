@@ -33,9 +33,9 @@ format="SVG" scale="60"/>
     <?dbhtml stop-chunking?>
     <title>WADL Files</title>
     <para>Writers and developers at Rackspace and in the OpenStack
-        community use Web Application Description Language (WADL) files to describe HTTP-based Web
-        applications and generate displayable API reference
-        information.</para>
+        community use Web Application Description Language (WADL)
+        files to describe HTTP-based Web applications and generate
+        displayable API reference information.</para>
 
 
     <para>This chapter helps you: <itemizedlist>
@@ -171,8 +171,8 @@ format="SVG" scale="60"/>
                                 <code>http://wadl.dev.java.net/2009/02</code>.</para></td>
                     <td>N/A</td>
                     <td><para><link
-                        xlink:href="http://www.w3.org/Submission/wadl/#x3-70002.2"
-                        >Application</link></para></td>
+                                xlink:href="http://www.w3.org/Submission/wadl/#x3-70002.2"
+                                >Application</link></para></td>
                 </tr>
                 <tr>
                     <td><para>
@@ -227,7 +227,7 @@ format="SVG" scale="60"/>
 
                             </callout>
                         </calloutlist></td>
-                    <td></td>
+                    <td/>
                     <td>Y</td>
                     <td>
                         <para>A container for the resources provided
@@ -402,7 +402,7 @@ format="SVG" scale="60"/>
 
                 </callout> -->
 
-       <!-- <table rules="all" xml:id="wadl_to_doc_mapping">
+        <!-- <table rules="all" xml:id="wadl_to_doc_mapping">
             <caption>WADL Elements and Attributes to Doc
                 Mappings</caption>
             <col width="25%"/>
