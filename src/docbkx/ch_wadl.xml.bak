@@ -51,43 +51,48 @@ format="SVG" scale="60"/>
             Application Description Language</link>. The information
         here comes from that document. </para>
     <section xml:id="outputs-overview">
-        <title>Overview</title>
+        <title>WADL Task Flow</title>
         <para>You use Web Application Description Language (WADL)
             files to describe HTTP-based Web applications and generate
-            various API reference outputs. </para>
-        <procedure>
-            <title>To use WADLs to generate API reference
-                outputs:</title>
-            <step>
-                <para>Create WADL files. See <xref
-                        linkend="create_wadl"/>.</para>
-            </step>
-            <step>
-                <para>Define and generate API reference outputs. Point
-                    to WADL files or specified WADL resources or
-                    methods from either a chapter or section in
-                    DocBook XML files, and then generate artifacts for
-                    your DocBook files. See <xref
-                        linkend="api-ref-outputs"/>. </para>
-            </step>
-            <step>
-                <para>The clouddocs Maven plugin transforms the
-                    specified WADL file elements into various API
-                    reference outputs.</para>
-            </step>
-        </procedure>
-
-        <para>The structure in the generated output reflects the
-            structure of the resources and methods in the WADL file.
-            For example, if the WADL lists the
-                <literal>createExample</literal> method before the
-                <literal>deleteExample</literal> method, the output
-            shows them in that same order.</para>
+            various API reference outputs. <procedure>
+                <title>To use WADLs to generate API reference
+                    outputs:</title>
+                <step>
+                    <para>Create WADL files. See <xref
+                            linkend="create_wadl"/>.</para>
+                </step>
+                <step>
+                    <para>Define and generate API reference outputs. </para>
+                    <para>Point to WADL files or specified WADL
+                        resources or methods from either a chapter or
+                        section in DocBook XML files. </para>
+                    <para>Then, generate artifacts for your DocBook
+                        files. See <xref linkend="api-ref-outputs"/>.
+                    </para>
+                </step>
+                <step>
+                    <para>The clouddocs Maven plugin transforms the
+                        specified WADL file elements into various API
+                        reference outputs. </para>
+                    <para>The structure in the generated output
+                        reflects the structure of the resources and
+                        methods in the WADL file. For example, if the
+                        WADL lists the
+                            <literal>createExample</literal> method
+                        before the <literal>deleteExample</literal>
+                        method, the methods appear in the same order
+                        in the output. </para>
+                </step>
+            </procedure></para>
+    </section>
+    <section xml:id="api_ref_outputs"><title>API Reference Outputs</title>
         <para>The following table describes the API reference
             outputs:</para>
-        <table rules="all" width="85%">
-            <caption>API Reference Outputs</caption>
+        <table rules="all" width="75%">
 
+            <caption>API Reference Outputs</caption>
+            <col width="75%"/>
+            <col width="25%"/>
             <thead align="center">
                 <tr>
                     <th colspan="2">Outputs</th>
@@ -126,7 +131,7 @@ format="SVG" scale="60"/>
 
                 </tr>
                 <tr>
-                    <th colspan="3">Comprehensive roll-up table</th>
+                    <th colspan="2">Comprehensive roll-up table</th>
                 </tr>
                 <tr>
                     <td><para>To show a <emphasis role="italic"

@@ -32,7 +32,7 @@ format="SVG" scale="60"/>
     xml:id="api-ref-outputs">
 
 
-    <title>Define and Generate API Reference Outputs</title>
+    <title>Step 2. Define and Generate API Reference Outputs</title>
 
     <section xml:id="api-ref-section-or-chapter">
         <title>API Reference Section or Chapter</title>
@@ -41,11 +41,11 @@ format="SVG" scale="60"/>
         <para>You point to WADL files or elements from either a
             chapter or section in a DocBook XML file, as
             follows:</para>
-        <informaltable rules="all" width="85%">
+        <informaltable rules="all">
             <col width="33%"/>
             <col width="33%"/>
             <col width="33%"/>
-            <thead valign="top" >
+            <thead valign="top">
                 <tr>
                     <th>Point to</th>
                     <th>Generates API reference chapter or section
@@ -53,7 +53,7 @@ format="SVG" scale="60"/>
                     <th>See</th>
                 </tr>
             </thead>
-            <tbody valign="top" >
+            <tbody valign="top">
 
                 <tr>
                     <td>Entire WADL file</td>
@@ -82,6 +82,30 @@ format="SVG" scale="60"/>
 
             </tbody>
         </informaltable>
+        <para>In all cases, the following API reference outputs are
+            generated:</para>
+        <itemizedlist>
+            <listitem>
+                <para><emphasis role="bold">A roll-up
+                    table</emphasis>. Appears by default at the top of
+                    any chapter or section from where you point to
+                    WADL elements or files. Lists the HTTP method,
+                    URI, and description for all referenced methods. </para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">A child section for each
+                        referenced resource</emphasis>. Shows a
+                    roll-up table of all referenced methods in the
+                    resource.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">A grandchild section for
+                        each referenced method in each referenced
+                        resource</emphasis>. Shows a roll-up table for
+                    the method, followed by a detail description of
+                    the API method.</para>
+            </listitem>
+        </itemizedlist>
        
         <simplesect xml:id="api-ref-entire-wadl">
             <title>API Reference Chapter or Section from a
@@ -261,7 +285,7 @@ format="SVG" scale="60"/>
     </section>
 
 
-
+<?hard-pagebreak?>
 
     <section xml:id="comp-rollup-tables">
         <title>Comprehensive Roll-up Table</title>
@@ -344,16 +368,14 @@ format="SVG" scale="60"/>
         </example>
 
     </section>
+    <?hard-pagebreak?>
     <section xml:id="api_ref_wadls">
         <title>API Reference Page</title>
         <para>The following example shows the markup for an API
             reference page and its resulting output.</para>
-        <example xml:id="api_ref_markup">
-            <title>API Reference Page - Markup</title>
+        
             <programlisting language="xml"><xi:include href="samples/api-ref-test.xml" parse="text"/></programlisting>
-        </example>
-        <example xml:id="api_ref_display">
-            <title>API Reference Page - Output</title>
+       <para>The following figure shows the output for the API reference page:</para>
 
             <informalfigure>
 
@@ -364,7 +386,7 @@ format="SVG" scale="60"/>
                     </imageobject>
                 </mediaobject>
             </informalfigure>
-        </example>
+   
         <para>To see the full page, go to <link
                 xlink:href="http://api.openstack.org/api-ref.html"
                 >OpenStack API Reference</link>. View the source to
