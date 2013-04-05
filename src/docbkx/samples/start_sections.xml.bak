@@ -16,8 +16,7 @@
                 <method href="#getInstance"/>
 
             </resource>
-            <!-- Start sections from here forward -->
-            <?rax start-sections?>
+            <?rax start-sections?>  
             <resource id="flavors" path="flavors">
                 <method href="#getFlavors"/>
 

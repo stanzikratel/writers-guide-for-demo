@@ -9,16 +9,16 @@
     xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
     xmlns:wadl="http://wadl.dev.java.net/2009/02"
     xmlns:exmp="http://docs.openstack.org/example/api/v1.0">
-<!-- Grammars -->
+    <!-- Grammars -->
     <grammars>
         <include href="test.xsd"/>
     </grammars>
-<!-- Resources -->
+    <!-- Resources -->
     <resources base="https://ord.examples.api.rackspacecloud.com">
         <!-- WADL doc - specifies the title that appears at the top of the chapter or section -->
         <wadl:doc xml:lang="EN" title="WADL Examples"
             xmlns="http://docbook.org/ns/docbook"/>
-<!-- Resource -->
+        <!-- Resource -->
         <resource id="instances" path="instances">
             <resource id="instanceId" path="{instanceId}">
 
@@ -56,35 +56,39 @@
         </wadl:doc>
         <!-- Request -->
         <request>
-            <!-- Representation -->
+            <!-- Representation of HTTP request in json format -->
             <representation mediaType="application/json"
                 element="exmp:Database">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The
                         following examples show the create example
                         requests:<?rax-fo keep-with-next?></para>
-                    <!-- Code sample -->
+                    <!-- Code sample for createExample in json -->
                     <xsdxt:code
                         href="../samples/create-examples-request.json"
                     />
                 </doc>
             </representation>
+            <!-- Representation of HTTP request in xml format -->
             <representation mediaType="application/xml"
                 element="exmp:Database">
                 <doc>
+                    <!-- Code sample for createExample in xml -->
                     <xsdxt:code
                         href="../samples/create-examples-request.xml"
                     />
                 </doc>
             </representation>
         </request>
-        <!-- Response -->
+        <!-- Response - shows 202 return code -->
         <response status="202">
+            <!-- Representation of HTTP response in json -->
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The
                         following examples show the Create Example
                         responses:</para>
+                    <!-- Sample response in json format -->
                     <xsdxt:code
                         href="../samples/create-examples-response.json"
                     />
@@ -92,10 +96,14 @@
             </representation>
             <representation mediaType="application/xml">
                 <doc>
+                    <!-- Sample response in xml format -->
                     <xsdxt:code
                         href="../samples/create-examples-response.xml"
                     />
                 </doc>
             </representation>
-        </response> &commonFaults; &getFaults; </method>
+        </response>
+        <!-- entities that are defined in common.ent, included in the prolog -->
+        &commonFaults; &getFaults; 
+    </method>
 </application>

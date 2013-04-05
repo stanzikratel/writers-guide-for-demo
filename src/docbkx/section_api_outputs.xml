@@ -31,20 +31,25 @@ format="SVG" scale="60"/>
     xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0"
     xml:id="api-ref-outputs">
 
+
     <title>Generate API Reference Outputs</title>
-    <section xml:id="outputs-overview">
-        <title>Overview</title>
-        <para>The clouddocs Maven plugin enables you to point to WADL
-            files or WADL elements from your DocBook XML files. You
-            can point to WADL files or WADL elements from either a
-            chapter or section in a DocBook file, as follows:</para>
-        <informaltable xml:id="point_wadl" rules="all">
-            <col width="50%"/>
-            <col width="50%"/>
+
+    <section xml:id="api-ref-section-or-chapter">
+        <title>API Reference Section or Chapter</title>
+        <para>You can use one of the following methods to generate an
+            API reference chapter or section. You point to WADL files
+            or elements from either a chapter or section in a DocBook
+            XML file, as follows:</para>
+        <informaltable rules="all" width="75%">
+            <col width="33%"/>
+            <col width="33%"/>
+            <col width="33%"/>
             <thead>
                 <tr>
                     <th>Point to</th>
-                    <th>Generates API reference outputs for</th>
+                    <th>Generates API reference chapter or section
+                        for</th>
+                    <th>See</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,223 +57,181 @@ format="SVG" scale="60"/>
                 <tr>
                     <td>Entire WADL file</td>
                     <td>All resources and their child methods</td>
+                    <td><xref linkend="api-ref-entire-wadl"/></td>
                 </tr>
                 <tr>
                     <td>Entire WADL file with a specified starting
                         point in the WADL</td>
                     <td>All resources and their child methods from the
-                        specified starting point</td>
+                        specified <emphasis role="bold"
+                            >resource</emphasis> starting point</td>
+                    <td><xref linkend="api-ref-start-sections"/></td>
                 </tr>
                 <tr>
                     <td>A specified resource</td>
-                    <td>All child methods</td>
+                    <td>The resource and its child methods</td>
+                    <td><xref linkend="api-ref-specified"/></td>
                 </tr>
                 <tr>
                     <td>A resource and one or more of its child
                         methods</td>
                     <td>The specified methods</td>
+                    <td><xref linkend="api-ref-specified"/></td>
                 </tr>
 
             </tbody>
         </informaltable>
-        <para>When you generate artifacts for your book, the WADL file
-            elements are transformed into the following API reference
-            outputs:</para>
-        <table rules="all">
-            <caption>API Reference Outputs</caption>
-            <col width="33%"/>
-            <col width="33%"/>
-            <col width="33%"/>
-            <thead>
-                <tr>
-                    <th colspan="3" align="center">Outputs</th>
-                </tr>
-                <tr align="center">
-                    <th>API reference section or chapter</th>
-                    <th>Comprehensive roll-up table</th>
-
-                    <th>API reference page</th>
-                </tr>
-            </thead>
-            <tbody valign="top">
-                <tr>
-                    <td><para>Shows the following components:</para><itemizedlist>
-                            <listitem>
-                                <para>A roll-up table. </para>
-                                <para>Appears by default at the top of
-                                   any chapter or section from where
-                                   you point to WADL elements or
-                                   files. Lists the HTTP method, URI,
-                                   and description for all referenced
-                                   methods. </para>
-                            </listitem>
-                            <listitem>
-                                <para>A child section for each
-                                   referenced resource. </para>
-                                <para>Shows a roll-up table of all
-                                   referenced methods in the
-                                   resource.</para>
-                            </listitem>
-                            <listitem>
-                                <para>A grandchild section for each
-                                   referenced method in each
-                                   referenced resource. </para>
-                                <para>Shows a roll-up table for the
-                                   method, followed by a detail
-                                   description of the API
-                                   method.</para>
-                            </listitem>
-                        </itemizedlist><para>See <xref
-                                linkend="api-ref-section-or-chapter"
-                            />.</para>
-                    </td>
-                    <td><para>Specify the
-                                <code>role="api-reference"</code>
-                            attribute on a <emphasis role="bold"
-                                >chapter</emphasis> or <emphasis
-                                role="bold">section</emphasis>
-                            element. This attribute causes a <emphasis
-                                role="italic">comprehensive</emphasis>
-                            roll-up table to appear at the top of the
-                            chapter or section.</para>
-                        <para>The table shows all methods for any
-                            resources that are pointed to from the
-                            chapter or section and their child
-                            sections.</para><note>
-                            <para>A comprehensive roll-up table
-                                appears by default in any section or
-                                chapter from where you point to a WADL
-                                file or elements. </para>
-                            <para>If you also specify the
-                                   <code>role="api-reference"</code>
-                                attribute in that same section or
-                                chapter, the roll-up table appears
-                                twice.</para>
-                        </note><para>See <xref
-                                linkend="comp-rollup-tables"
-                        />.</para></td>
-
-                    <td><para>Shows a summary of each referenced API
-                            resource and method. You can expand each
-                            method to see details about the
-                            method.</para><para>See <xref
-                                linkend="api_ref_display"
-                        />.</para></td>
-                </tr>
-            </tbody>
-        </table>
-        <para>For all outputs, the structure in the generated output
-            reflects the structure of the resources and methods in the
-            WADL file. </para>
-    </section>
-    <section xml:id="api-ref-section-or-chapter">
-        <title>API Reference Section or Chapter</title>
-
-        <para>The following API reference outputs are generated:<itemizedlist>
-                <listitem>
-                    <para>A roll-up table. </para>
-                    <para>Appears by default at the top of any chapter
-                        or section from where you point to WADL
-                        elements or files. Lists the HTTP method, URI,
-                        and description for all referenced methods.
-                    </para>
-                </listitem>
-                <listitem>
-                    <para>A child section for each referenced
-                        resource. </para>
-                    <para>Shows a roll-up table of all referenced
-                        methods in the resource.</para>
-                </listitem>
-                <listitem>
-                    <para>A grandchild section for each referenced
-                        method in each referenced resource.</para>
-                    <para>Shows a roll-up table for the method,
-                        followed by a detail description of the API
-                        method.</para>
-                </listitem>
-            </itemizedlist></para>
-        <example xml:id="chapter_entire_wadl">
-            <title>API Reference Chapter or Section Markup</title>
-            <para>You can use one of the following methods to generate
-                an API reference chapter or section. You point to WADL
-                files or WADL elements from either a chapter or
-                section in a DocBook file, as follows:</para>
-            <informaltable rules="all">
-                <col width="50%"/>
-                <col width="50%"/>
-                <thead>
-                    <tr>
-                        <th>Point to</th>
-                        <th>Generates API reference chapter or section
-                            for</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td>Entire WADL file</td>
-                        <td>All resources and their child methods</td>
-                    </tr>
-                    <tr>
-                        <td>Entire WADL file with a specified starting
-                            point in the WADL</td>
-                        <td>All resources and their child methods from
-                            the specified starting point</td>
-                    </tr>
-                    <tr>
-                        <td>A specified resource</td>
-                        <td>All child methods</td>
-                    </tr>
-                    <tr>
-                        <td>A resource and one or more of its child
-                            methods</td>
-                        <td>The specified methods</td>
-                    </tr>
-
-                </tbody>
-            </informaltable>
-
+        <para>In all cases, the following API reference outputs are
+            generated:</para>
+        <itemizedlist>
+            <listitem>
+                <para>A roll-up table. Appears by default at the top
+                    of any chapter or section from where you point to
+                    WADL elements or files. Lists the HTTP method,
+                    URI, and description for all referenced methods.
+                </para>
+            </listitem>
+            <listitem>
+                <para>A child section for each referenced resource.
+                    Shows a roll-up table of all referenced methods in
+                    the resource.</para>
+            </listitem>
+            <listitem>
+                <para>A grandchild section for each referenced method
+                    in each referenced resource. Shows a roll-up table
+                    for the method, followed by a detail description
+                    of the API method.</para>
+            </listitem>
+        </itemizedlist>
+        <simplesect xml:id="api-ref-entire-wadl">
+            <title>API Reference Chapter or Section from an Entire
+                WADL</title>
             <para>The simplest way to generate an API reference
-                chapter or section is to point to an entire WADL file.
-                This approach requires little effort, but it limits
+                chapter or section is to point to an entire WADL file. </para>
+            <para>This approach requires little effort, but it limits
                 your control over the organization of the reference
                 chapter or section. You can use this method at the
                 chapter or section level only.</para>
-            <!-- <title>To generate a roll-up table:</title>
-                <step>
-                <para>If you have included section rollup
-                tables in your API reference chapter,
-                simply include the
-                <code>role="api_reference"</code>
-                attribute on the
-                <code>&lt;chapter&gt;</code>
-                element, as follows:
-                <programlisting language="xml"><xi:include href="samples/chapter_rollup_req.xml" parse="text"/></programlisting></para>
-                <para>If you have <emphasis role="bold"
-                >not</emphasis> included section
-                rollup tables in your API reference
-                chapter, include the
-                <code>role="api_reference"</code>
-                attribute on the
-                <code>&lt;chapter&gt;</code>
-                element AND add a pointer to the WADL
-                file, as follows:</procedure>-->
-            <programlisting language="xml"><xi:include href="ch_wadl_examples.xml" parse="text"/></programlisting>
-            <para>To control where <code>&lt;resource&gt;</code>'s
-                start to turn into sections in the resulting output,
-                add the <code>&lt;?rax start-sections?></code>
-                directive to your
-                WADL:<programlisting language="xml"><xi:include href="samples/start_sections.xml" parse="text"/></programlisting></para>
-        </example>
-        <simplesect>
-            <title>Markup for Specified Methods</title>
-            <para>To have more fine-grained control of what resources
-                appear in the final document, you can use markup like
-                the following in your DocBook document to pull in all
-                the methods in some resources. With this technique you
-                can group the resources together in arbitrary
-                combinations:</para>
-            <programlisting language="xml"><xi:include href="samples/section_rollup_req.xml" parse="text"/></programlisting>
+            <informalexample xml:id="chapter_entire_wadl">
+
+                <programlistingco>
+                    <areaspec>
+                        <area xml:id="ch_wadl_examples.xml.wadl"
+                            units="linecolumn" coords="8 1"/>
+                    </areaspec>
+                    <programlisting language="xml"><xi:include href="ch_wadl_examples.xml" parse="text"/></programlisting>
+                </programlistingco>
+
+
+
+
+                <calloutlist>
+
+                    <callout arearefs="ch_wadl_examples.xml.wadl">
+                        <para><emphasis role="bold">wadl</emphasis>
+                            pointer. Points to the WADL file inside
+                            the <emphasis role="bold"
+                                >chapter</emphasis> or <emphasis
+                                role="bold">section</emphasis>
+                            element. </para>
+                        <para>The clouddocs plugin automatically
+                            creates a comprehensive roll-up table,
+                            sections with roll-up tables for each
+                            resource, and detailed sub-sections for
+                            each method.</para>
+                    </callout>
+
+
+                </calloutlist>
+
+
+            </informalexample>
+
+           <!-- <para>For example output for a chapter generated from a
+                single WADL, see <xref linkend="wadl_example_chapter"
+                />.</para> -->
+        </simplesect>
+        <simplesect xml:id="api-ref-start-sections">
+            <title>API Reference Chapter or Section from a Specified
+                Point in a WADL</title>
+            <para>To control where <emphasis role="bold"
+                    >resource</emphasis> elements start to turn into
+                sections in the output, add the <code>&lt;?rax
+                    start-sections?></code> directive to your WADL, as
+                follows:</para>
+            <informalexample>
+                <programlistingco>
+                    <areaspec>
+                        <area xml:id="start_sections.xml.start"
+                            units="linecolumn" coords="19 1"/>
+                    </areaspec>
+                    <programlisting language="xml"><xi:include href="samples/start_sections.xml" parse="text"/></programlisting>
+                </programlistingco>
+                <calloutlist>
+                    <callout arearefs="start_sections.xml.start">
+                        <para><emphasis role="bold">&lt;?rax
+                                start-sections?&gt;</emphasis></para>
+                        <para>Indicates where to start transforming
+                                <emphasis role="bold"
+                                >resource</emphasis> elements into
+                            sections.</para>
+                    </callout>
+                </calloutlist>
+            </informalexample>
+        </simplesect>
+        <simplesect xml:id="api-ref-specified">
+            <title>API Reference Chapter or Section for Specified WADL
+                Resources or Methods</title>
+            <para>To have more fine-grained control over which
+                resources appear in the output, you can use mark up
+                your DocBook XML file to pull in all the methods in
+                some resources, or some methods in a specified
+                resource. </para>
+            <para>With this technique you can group the resources
+                together in arbitrary combinations, as shown in the
+                following example:</para>
+            <programlistingco>
+                <areaspec>
+                    <area xml:id="section_rollup_req.xml.wadl"
+                        units="linecolumn" coords="24 1"/>
+                    <area xml:id="section_rollup_req.xml.resource"
+                        units="linecolumn" coords="35 1"/>
+                    <area xml:id="section_rollup_req.xml.method"
+                        units="linecolumn" coords="49 1"/>
+
+
+                </areaspec>
+                <programlisting language="xml"><?db-font-size 55%?><xi:include href="section_rollup_req.xml" parse="text"/></programlisting>
+            </programlistingco>
+
+
+
+            <calloutlist>
+
+                <callout arearefs="section_rollup_req.xml.wadl">
+                    <para><emphasis role="bold">wadl</emphasis>
+                        pointer </para>
+
+                    <para>Includes an entire WADL file in a
+                        section.</para>
+                </callout>
+                <callout arearefs="section_rollup_req.xml.resource">
+                    <para><emphasis role="bold">resource</emphasis>
+                        pointer </para>
+
+                    <para>Includes a specified WADL resource in a
+                        section.</para>
+                </callout>
+                <callout arearefs="section_rollup_req.xml.method">
+                    <para><emphasis role="bold">method</emphasis>
+                        pointer </para>
+
+                    <para>Includes a specified WADL method in a
+                        section.</para>
+                </callout>
+
+            </calloutlist>
+
         </simplesect>
     </section>
 
@@ -277,34 +240,98 @@ format="SVG" scale="60"/>
 
     <section xml:id="comp-rollup-tables">
         <title>Comprehensive Roll-up Table</title>
-        <para/>
-       <example><title>Comprehensive Roll-up Table Markup</title><programlisting language="xml"><xi:include href="samples/summary_table_req.xml" parse="text"/></programlisting></example>
-        <example><title>Comprehensive Roll-up Table Output</title>
-            
+        <para>Use the <code>role="api-reference"</code> attribute on a
+                <emphasis role="bold">chapter</emphasis> or <emphasis
+                role="bold">section</emphasis> element. Typically, you
+            use this attribute on a <emphasis role="bold"
+                >chapter</emphasis> element in a chapter that contains
+            sections that reference WADL files or elements. You could
+            also use this attribute on a <emphasis role="bold"
+                >section</emphasis> element in a section that contains
+            child sections that reference WADL files or
+            elements.</para>
+        <para>This attribute causes a comprehensive roll-up table to
+            appear at the top of the chapter or section. The table
+            shows all methods for any resources that are pointed to
+            from the chapter or section and their child
+            sections.</para>
+        <note>
+            <para>A comprehensive roll-up table appears by default in
+                any section or chapter from where you point to a WADL
+                file or elements. </para>
+            <para>If you also specify the
+                    <code>role="api-reference"</code> attribute in
+                that same section or chapter, the roll-up table
+                appears twice.</para>
+        </note>
+
+        <example>
+            <title>Comprehensive Roll-up Table Markup</title>
+            <programlistingco>
+                <areaspec>
+                    <area
+                        xml:id="ch_wadl_section_examples.xml.api-reference"
+                        units="linecolumn" coords="6 28"/>
+                    <area
+                        xml:id="ch_wadl_section_examples.xml.section"
+                        units="linecolumn" coords="12 49"/>
+
+                </areaspec>
+                <programlisting language="xml"><?db-font-size 55%?><xi:include href="ch_wadl_section_examples.xml" parse="text"/></programlisting>
+            </programlistingco>
+        </example>
+
+
+        <calloutlist>
+
+            <callout
+                arearefs="ch_wadl_section_examples.xml.api-reference">
+                <para><emphasis role="bold">api-reference</emphasis>
+                    attribute </para>
+                <para>Causes a comprehensive roll-up table to appear
+                    at the top of the chapter or section where the
+                    attribute is set. The table shows all methods for
+                    any resources that are pointed to from the chapter
+                    or section and their child sections.</para>
+
+            </callout>
+
+            <callout arearefs="ch_wadl_section_examples.xml.section">
+                <para><emphasis role="bold">section</emphasis> markup </para>
+                <para>Shows how to mark up the <emphasis role="bold"
+                        >section</emphasis> element to include the
+                    WADL file.</para>
+            </callout>
+        </calloutlist>
+
+        <example>
+            <title>Comprehensive Roll-up Table - Output</title>
+
             <informalfigure>
-                
+
                 <mediaobject>
                     <imageobject>
-                        <imagedata fileref="figures/reference_table_large.png"
+                        <imagedata fileref="figures/rollup_large.png"
                             contentwidth="6in"/>
                     </imageobject>
                 </mediaobject>
-            </informalfigure></example>
-       
+            </informalfigure>
+        </example>
+
     </section>
     <section xml:id="api_ref_wadls">
         <title>API Reference Page</title>
         <para>The following example shows the markup for an API
             reference page and its resulting output.</para>
         <example xml:id="api_ref_markup">
-            <title>API Reference Page Markup</title>
+            <title>API Reference Page - Markup</title>
             <programlisting language="xml"><xi:include href="samples/api-ref-test.xml" parse="text"/></programlisting>
         </example>
         <example xml:id="api_ref_display">
-            <title>API Reference Page Output</title>
+            <title>API Reference Page - Output</title>
 
             <informalfigure>
-                
+
                 <mediaobject>
                     <imageobject>
                         <imagedata fileref="figures/api_ref.png"

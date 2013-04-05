@@ -40,7 +40,9 @@
         </resource>
 
     </resources>
-    <!-- Method Definitions -->
+    <!--Token Methods... -->
+
+    <!-- Database -->
     <method name="POST" id="createExample">
         <wadl:doc xml:lang="EN" title="Create Example"
             xmlns="http://docbook.org/ns/docbook">

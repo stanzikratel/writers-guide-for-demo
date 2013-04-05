@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="API_Operations-d1e2264"
-    xmlns="http://docbook.org/ns/docbook" role="api-reference">
-    <title>API Operations</title>
-    <section xml:id="API_Versions">
-        <title>API Examples</title>
-        <para>This section describes the versions that are supported
-            for the myExample API.</para>
-        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <wadl:resource href="../../../xsd/dbaas.wadl#versions">
-                <wadl:method href="getVersions"/>
-            </wadl:resource>
-            <wadl:resource href="../../../xsd/dbaas.wadl#version">
-                    <wadl:method href="getVersionInfo" /> 
-                </wadl:resource>
-        </wadl:resources>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xml:id="wadl_example_section"
+    xmlns:wadl="http://wadl.dev.java.net/2009/02" role="api-reference">
 
+    <title>API Reference</title>
+
+    <section xml:id="test_example_wadl">
+        <title>Example API</title>
+        <wadl:resources href="../xsd/test_example.wadl"/>
     </section>
 </chapter>

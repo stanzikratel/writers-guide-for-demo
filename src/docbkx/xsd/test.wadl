@@ -21,14 +21,13 @@
         <!-- Resource -->
         <resource id="instances" path="instances">
             <resource id="instanceId" path="{instanceId}">
-
+                <!-- Parameter -->
                 <param name="instanceId" style="template"
                     type="xsd:string">
                     <doc>The instance ID for the specified example
                         instance.</doc>
                 </param>
                 <resource id="examples" path="examples">
-
                     <!-- Method Reference for createExample -->
                     <method href="#createExample"/>
                     <resource id="exampleName" path="{exampleName}">
@@ -104,6 +103,5 @@
             </representation>
         </response>
         <!-- entities that are defined in common.ent, included in the prolog -->
-        &commonFaults; &getFaults; 
-    </method>
+        &commonFaults; &getFaults; </method>
 </application>

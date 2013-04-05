@@ -7,6 +7,6 @@
     <title>API Reference</title>
 
     <section xml:id="test_wadl"><title>Example API</title>
-        <wadl:resources href="xsd/test.wadl"/>
+        <wadl:resources href="xsd/test_example.wadl"/>
     </section>
 </chapter>

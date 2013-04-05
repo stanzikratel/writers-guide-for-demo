@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="API_Operations-d1e2264"
-    xmlns="http://docbook.org/ns/docbook" role="api-reference">
-    <title>API Operations</title>
-    <note>
-        <para>Do not use trailing slashes (/) at the end of calls to
-            API operations, since this may cause the call to fail. For
-            example, do not use &GET; /instances/detail/ (with the
-            trailing slash at the end). Rather, use &GET;
-            /instances/detail instead.</para>
-    </note>
-    &ellip;
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xml:id="wadl_example_section"
+    xmlns:wadl="http://wadl.dev.java.net/2009/02" 
+    role="api-reference">  
+
+    <title>API Reference</title>
+
+    <section xml:id="test_example_wadl">
+        <title>Example API</title>
+        <wadl:resources href="../xsd/test_example.wadl"/>  
+    </section>
 </chapter>

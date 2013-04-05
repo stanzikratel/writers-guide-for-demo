@@ -3,8 +3,8 @@
     xmlns:html="http://www.w3.org/1999/xhtml"
     xml:id="wadl_example_chapter"
     xmlns:wadl="http://wadl.dev.java.net/2009/02">
-    
+
     <title>WADL Examples</title>
-    
-    <wadl:resources href="xsd/test.wadl"/>
+    <!-- Pointer to WADL file -->
+    <wadl:resources href="xsd/test_example.wadl"/>
 </chapter>
