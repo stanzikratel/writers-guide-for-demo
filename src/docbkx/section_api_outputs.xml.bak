@@ -289,8 +289,8 @@ format="SVG" scale="60"/>
                             contentwidth="6in"/>
                     </imageobject>
                 </mediaobject>
-            </informalfigure></example>
-       
+            </informalfigure>
+        <para/>
     </section>
     <section xml:id="api_ref_wadls">
         <title>API Reference Page</title>
