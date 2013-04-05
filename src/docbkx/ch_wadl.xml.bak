@@ -86,10 +86,8 @@ format="SVG" scale="60"/>
         <para>The following table describes the API reference
             outputs:</para>
         <table rules="all" width="85%">
-            
             <caption>API Reference Outputs</caption>
-            <col width="75%"/>
-            <col width="25%"/>
+
             <thead align="center">
                 <tr>
                     <th colspan="2">Outputs</th>

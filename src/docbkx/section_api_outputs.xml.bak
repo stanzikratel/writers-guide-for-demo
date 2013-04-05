@@ -82,30 +82,6 @@ format="SVG" scale="60"/>
 
             </tbody>
         </informaltable>
-        <para>In all cases, the following API reference outputs are
-            generated:</para>
-        <itemizedlist>
-            <listitem>
-                <para><emphasis role="bold">A roll-up
-                    table</emphasis>. Appears by default at the top of
-                    any chapter or section from where you point to
-                    WADL elements or files. Lists the HTTP method,
-                    URI, and description for all referenced methods. </para>
-            </listitem>
-            <listitem>
-                <para><emphasis role="bold">A child section for each
-                        referenced resource</emphasis>. Shows a
-                    roll-up table of all referenced methods in the
-                    resource.</para>
-            </listitem>
-            <listitem>
-                <para><emphasis role="bold">A grandchild section for
-                        each referenced method in each referenced
-                        resource</emphasis>. Shows a roll-up table for
-                    the method, followed by a detail description of
-                    the API method.</para>
-            </listitem>
-        </itemizedlist>
        
         <simplesect xml:id="api-ref-entire-wadl">
             <title>API Reference Chapter or Section from a
