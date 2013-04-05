@@ -36,12 +36,35 @@ format="SVG" scale="60"/>
 
     <section xml:id="api-ref-section-or-chapter">
         <title>API Reference Section or Chapter</title>
-        <para>You can use one of the following methods to generate an
-            API reference chapter or section. </para>
-        <para>You point to WADL files or elements from either a
-            chapter or section in a DocBook XML file, as
-            follows:</para>
-        <informaltable rules="all">
+        <para>To generate an API reference chapter or section, you
+            point to WADL files or elements from either a chapter or
+            section in a DocBook XML file. The following API reference
+            outputs are generated: <itemizedlist>
+                <listitem>
+                    <para>A <emphasis role="bold">roll-up
+                            table</emphasis></para>
+                    <para>Appears by default at the top of any chapter
+                        or section from where you point to WADL
+                        elements or files. Lists the HTTP method, URI,
+                        and description for all referenced methods. </para>
+                </listitem>
+                <listitem>
+                    <para>A <emphasis role="bold">child section for
+                            each referenced resource</emphasis></para>
+                    <para>Shows a roll-up table of all referenced
+                        methods in the resource.</para>
+                </listitem>
+                <listitem>
+                    <para>A <emphasis role="bold">grandchild section
+                            for each referenced method</emphasis> in
+                        each referenced resource</para>
+                    <para>Shows a roll-up table for the method,
+                        followed by a detail description of the API
+                        method.</para>
+                </listitem>
+            </itemizedlist></para>
+        <para>You point to WADL files or elements from either a chapter or section in a DocBook XML file, as follows:</para>
+        <informaltable rules="all" width="75%">
             <col width="33%"/>
             <col width="33%"/>
             <col width="33%"/>
@@ -82,30 +105,7 @@ format="SVG" scale="60"/>
 
             </tbody>
         </informaltable>
-        <para>In all cases, the following API reference outputs are
-            generated:</para>
-        <itemizedlist>
-            <listitem>
-                <para><emphasis role="bold">A roll-up
-                    table</emphasis>. Appears by default at the top of
-                    any chapter or section from where you point to
-                    WADL elements or files. Lists the HTTP method,
-                    URI, and description for all referenced methods. </para>
-            </listitem>
-            <listitem>
-                <para><emphasis role="bold">A child section for each
-                        referenced resource</emphasis>. Shows a
-                    roll-up table of all referenced methods in the
-                    resource.</para>
-            </listitem>
-            <listitem>
-                <para><emphasis role="bold">A grandchild section for
-                        each referenced method in each referenced
-                        resource</emphasis>. Shows a roll-up table for
-                    the method, followed by a detail description of
-                    the API method.</para>
-            </listitem>
-        </itemizedlist>
+        
        
         <simplesect xml:id="api-ref-entire-wadl">
             <title>API Reference Chapter or Section from a
@@ -207,8 +207,7 @@ format="SVG" scale="60"/>
             <para>The following example shows how to include specified resources in API reference output:</para>
             <programlistingco>
                 <areaspec>
-                    <area xml:id="section_rollup_req.xml.wadl"
-                        units="linecolumn" coords="26 1"/>
+                    
                     <area xml:id="section_rollup_req.xml.resource"
                         units="linecolumn" coords="27 1"/>
                   
@@ -222,13 +221,7 @@ format="SVG" scale="60"/>
 
             <calloutlist>
 
-                <callout arearefs="section_rollup_req.xml.wadl">
-                    <para><emphasis role="bold">wadl</emphasis>
-                        pointer </para>
-
-                    <para>Includes an entire WADL file in a
-                        section.</para>
-                </callout>
+                
                 <callout arearefs="section_rollup_req.xml.resource">
                     <para><emphasis role="bold">resource</emphasis>
                         pointer </para>

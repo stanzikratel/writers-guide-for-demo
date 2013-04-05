@@ -208,9 +208,9 @@ format="SVG" scale="60"/>
             <programlistingco>
                 <areaspec>
                     <area xml:id="section_rollup_req.xml.wadl"
-                        units="linecolumn" coords="24 1"/>
+                        units="linecolumn" coords="26 1"/>
                     <area xml:id="section_rollup_req.xml.resource"
-                        units="linecolumn" coords="35 1"/>
+                        units="linecolumn" coords="27 1"/>
                   
 
 
@@ -242,12 +242,11 @@ format="SVG" scale="60"/>
             <para>The following example shows how to include specified methods in the API reference output:</para>
             <programlistingco>
                 <areaspec>
-                    <area xml:id="section_rollup_specified_method.xml.wadl"
-                        units="linecolumn" coords="24 1"/>
+                   
                     <area xml:id="section_rollup_specified_method.xml.resource"
-                        units="linecolumn" coords="35 1"/>
+                        units="linecolumn" coords="22 1"/>
                     <area xml:id="section_rollup_specified_method.xml.method"
-                        units="linecolumn" coords="49 1"/>
+                        units="linecolumn" coords="23 1"/>
                     
                     
                 </areaspec>
@@ -258,13 +257,7 @@ format="SVG" scale="60"/>
             
             <calloutlist>
                 
-                <callout arearefs="section_rollup_specified_method.xml.wadl">
-                    <para><emphasis role="bold">wadl</emphasis>
-                        pointer </para>
-                    
-                    <para>Includes an entire WADL file in a
-                        section.</para>
-                </callout>
+                
                 <callout arearefs="section_rollup_specified_method.xml.resource">
                     <para><emphasis role="bold">resource</emphasis>
                         pointer </para>
@@ -289,9 +282,9 @@ format="SVG" scale="60"/>
 
     <section xml:id="comp-rollup-tables">
         <title>Comprehensive Roll-up Table</title>
-        <para>Use the <code>role="api-reference"</code> attribute on a
+        <para>To generate a comprehensive roll-up table, use the <code>role="api-reference"</code> attribute on a
                 <emphasis role="bold">chapter</emphasis> or <emphasis
-                role="bold">section</emphasis> element. Typically, you
+                role="bold">section</emphasis> element.</para><para>Typically, you
             use this attribute on a <emphasis role="bold"
                 >chapter</emphasis> element in a chapter that contains
             sections that reference WADL files or elements. You could
@@ -314,21 +307,21 @@ format="SVG" scale="60"/>
                 appears twice.</para>
         </note>
 
-        <example>
-            <title>Comprehensive Roll-up Table Markup</title>
+        <informalexample>
+            <para>The following example shows how to set the role="api-reference" attribute:</para>
             <programlistingco>
                 <areaspec>
                     <area
                         xml:id="ch_wadl_section_examples.xml.api-reference"
-                        units="linecolumn" coords="6 28"/>
+                        units="linecolumn" coords="6 1"/>
                     <area
                         xml:id="ch_wadl_section_examples.xml.section"
-                        units="linecolumn" coords="12 49"/>
+                        units="linecolumn" coords="10 1"/>
 
                 </areaspec>
                 <programlisting language="xml"><?db-font-size 55%?><xi:include href="ch_wadl_section_examples.xml" parse="text"/></programlisting>
             </programlistingco>
-        </example>
+        </informalexample>
 
 
         <calloutlist>
@@ -353,8 +346,8 @@ format="SVG" scale="60"/>
             </callout>
         </calloutlist>
 
-        <example>
-            <title>Comprehensive Roll-up Table - Output</title>
+        <informalexample>
+           <para>The following figure shows sample output for the markup:</para>
 
             <informalfigure>
 
@@ -365,33 +358,34 @@ format="SVG" scale="60"/>
                     </imageobject>
                 </mediaobject>
             </informalfigure>
-        </example>
+        </informalexample>
 
     </section>
     <?hard-pagebreak?>
     <section xml:id="api_ref_wadls">
         <title>API Reference Page</title>
-        <para>The following example shows the markup for an API
+       <informalexample> <para>The following example shows the markup for an API
             reference page and its resulting output.</para>
         
-            <programlisting language="xml"><xi:include href="samples/api-ref-test.xml" parse="text"/></programlisting>
-       <para>The following figure shows the output for the API reference page:</para>
-
+            <programlisting language="xml"><xi:include href="samples/api-ref-test.xml" parse="text"/></programlisting></informalexample>
+        <informalexample>
+            <para>The following figure shows the output for the API reference page:</para>
+            
             <informalfigure>
-
+                
                 <mediaobject>
                     <imageobject>
                         <imagedata fileref="figures/api_ref.png"
                             contentwidth="6in"/>
                     </imageobject>
                 </mediaobject>
-            </informalfigure>
-   
+            </informalfigure></informalexample>
+        
         <para>To see the full page, go to <link
-                xlink:href="http://api.openstack.org/api-ref.html"
-                >OpenStack API Reference</link>. View the source to
+            xlink:href="http://api.openstack.org/api-ref.html"
+            >OpenStack API Reference</link>. View the source to
             see the markup.</para>
     </section>
-
-
+    
+    
 </section>
