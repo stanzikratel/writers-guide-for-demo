@@ -94,6 +94,7 @@
         review.</para>
     </abstract>
     <raxm:metadata
+	security="internal"
 	xmlns:raxm="http://docs.rackspace.com/api/metadata">
       <raxm:displayname>Writer's Guide</raxm:displayname>
       <raxm:product version="v1">process</raxm:product>
