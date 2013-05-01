@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources base="https://ord.databases.api.rackspacecloud.com">
+    <resource id="versions" path="">
+        <method href="#getVersions"/>
+    </resource>
+    <resource id="version" path="{version}">
+        <method href="#getVersionInfo"/>
+        <resource id="accountID" path="{accountId}">
+            <param name="accountId" style="template" type="xsd:string">
+                <doc>The account ID of the owner of the specified
+                    instance.</doc>
+            </param>
+
+            <resource id="instances" path="instances">
+                <method href="#createInstance"/>
+                <method href="#getInstance"/>
+
+            </resource>
+            <!-- Start sections from here forward -->
+            <?rax start-sections?>
+            <resource id="flavors" path="flavors">
+                <method href="#getFlavors"/>
+
+                <resource id="flavorId" path="{flavorId}">
+                    <param name="flavorId" style="template"
+                        type="xsd:string">
+                        <doc>The flavor ID for the specified
+                            flavor.</doc>
+                    </param>
+                    <method href="#getFlavorById"/>
+                </resource>
+            </resource>
+        </resource>
+    </resource>
+</resources>

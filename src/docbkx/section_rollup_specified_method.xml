@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="ch_api_operations" role="api-reference">
+
+    <!-- role="api-reference" causes a roll-up table or "cheatsheet"
+    to appear in the chapter or section listing all of the methods
+    documented in the chapter/section or any of its children. -->
+
+    <title>API Operations</title>
+
+    <section xmlns="http://docbook.org/ns/docbook"
+        xml:id="specified_method">
+        <title>Example API - A specified method</title>
+
+        <!-- Specified method in a WADL - 
+            In the wadl markup, the href on the resource indicates
+            the name of the wadl file and the id of the resource.
+            All methods for this resource appear in this section. -->
+
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <wadl:resource href="xsd/test.wadl#examples">
+                <wadl:method href="createExample"/>
+            </wadl:resource>
+        </wadl:resources>
+
+    </section>
+</chapter>

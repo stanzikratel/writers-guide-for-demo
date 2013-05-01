@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+
+<!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="figures/Check_mark_23x20_02.svg"
+format="SVG" scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+
+<!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="figures/Arrow_east.svg"
+format="SVG" scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="api_operations" role="api-reference">
+
+    <!-- role="api-reference" causes a roll-up table or "cheatsheet"
+    to appear in the chapter or section listing all of the methods
+    documented in the chapter/section or any of its children. -->
+
+    <title>API Operations</title>
+    <section xml:id="Service_API_Client_Operations">
+
+        <!-- The section/chapter containing the wadl markup
+        does not need role="api-reference" because it automatically
+        gets a roll-up table. -->
+
+        <title>Examples API - All resources and methods in a
+            WADL</title>
+        <para>The operations described in this chapter allow clients
+            to authenticate and get access tokens and service
+            endpoints. The following calls are core Keystone Service
+            APIs in version 2.0:</para>
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02"
+            href="../xsd/test_example.wadl">
+            <!-- In the wadl markup, the href on the resource indicates
+            the name of the wadl file and the id of the resource.
+            The method's href lists the id of the method. -->
+        </wadl:resources>
+    </section>
+    <section xmlns="http://docbook.org/ns/docbook"
+        xml:id="Admin_API_Service_Developer_Operations-d1e1356">
+        <title>Examples API - All methods for a resource</title>
+        <!-- In the wadl markup, the href on the resource indicates
+            the name of the wadl file and the id of the resource.
+            All methods for this resource appear in this section. -->
+
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <wadl:resource href="../xsd/test.wadl#examples"/>
+        </wadl:resources>
+
+    </section>
+    <section xmlns="http://docbook.org/ns/docbook"
+        xml:id="specified_method">
+        <title>Examples API - A specified method</title>
+        <!-- In the wadl markup, the href on the resource indicates
+            the name of the wadl file and the id of the resource.
+            All methods for this resource appear in this section. -->
+
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <wadl:resource href="../xsd/test.wadl#examples">
+                <wadl:method href="createExample"/>
+            </wadl:resource>
+        </wadl:resources>
+
+    </section>
+</chapter>

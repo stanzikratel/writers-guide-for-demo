@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xml:id="wadl_example_chapter"
+    xmlns:wadl="http://wadl.dev.java.net/2009/02">
+
+    <title>WADL Examples</title>
+    <!-- Pointer to WADL file -->
+    <wadl:resources href="xsd/test_example.wadl"/>
+</chapter>

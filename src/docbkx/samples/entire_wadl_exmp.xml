@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xml:id="wadl_example_chapter">
+    <title>API Reference</title>
+
+    <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02" 
+        href="../xsd/test.wadl"/> 
+
+</chapter>

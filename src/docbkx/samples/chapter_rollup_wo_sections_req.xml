@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="api_operations">
+    <title>API Operations</title>
+    <wadl:resources href="test_example.wadl"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02"/>
+</chapter>

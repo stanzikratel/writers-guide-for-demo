@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  targetNamespace="http://docs.openstack.org/database/api/v1.0"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:exmp="http://docs.openstack.org/database/api/v1.0"
+  xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+
+  <annotation>
+    <xsd:appinfo xml:lang="EN" xmlns="http://www.w3.org/1999/xhtml">
+      <xsdxt:title>MyExample</xsdxt:title>
+    </xsd:appinfo>
+    <xsd:documentation xml:lang="EN"
+      xmlns="http://www.w3.org/1999/xhtml">
+      <p> This is the main index XML Schema document for MyExample API
+        Schema Types Version 1.0. </p>
+    </xsd:documentation>
+  </annotation>
+  <element name="database" type="exmp:Database">
+    <annotation>
+      <xsd:documentation xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+        <p>A Database.</p>
+      </xsd:documentation>
+    </annotation>
+  </element>
+  <element name="databases" type="exmp:Databases">
+    <annotation>
+      <xsd:documentation xml:lang="EN"
+        xmlns="http://www.w3.org/1999/xhtml">
+        <p>List of Databases.</p>
+      </xsd:documentation>
+    </annotation>
+  </element>
+
+  <!--Complex Types-->
+
+  <complexType name="instances">
+    <sequence>
+      <element name="instance" type="exmp:instance" minOccurs="0"
+        maxOccurs="unbounded">
+        <annotation>
+          <xsd:documentation xml:lang="EN"
+            xmlns="http://www.w3.org/1999/xhtml">
+            <p>A list of database instances.</p>
+          </xsd:documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+
+  <complexType name="instance">
+    <sequence>
+      <xsd:element name="databases" type="exmp:Database" minOccurs="0"
+        maxOccurs="unbounded">
+        <annotation>
+          <xsd:documentation xml:lang="EN"
+            xmlns="http://www.w3.org/1999/xhtml">
+            <p>A list of optional databases.</p>
+          </xsd:documentation>
+        </annotation>
+      </xsd:element>
+      <xsd:element name="users" type="exmp:User" minOccurs="0"
+        maxOccurs="unbounded">
+        <annotation>
+          <xsd:documentation xml:lang="EN"
+            xmlns="http://www.w3.org/1999/xhtml">
+            <p>A list of optional users.</p>
+          </xsd:documentation>
+        </annotation>
+      </xsd:element>
+      <xsd:element name="links" type="exmp:Links" minOccurs="0"
+        maxOccurs="1">
+        <annotation>
+          <xsd:documentation xml:lang="EN"
+            xmlns="http://www.w3.org/1999/xhtml">
+            <p>The links for the type of instance.</p>
+          </xsd:documentation>
+        </annotation>
+      </xsd:element>
+      <xsd:element name="volume" type="exmp:Volume" minOccurs="0"
+        maxOccurs="1">
+        <annotation>
+          <xsd:documentation xml:lang="EN"
+            xmlns="http://www.w3.org/1999/xhtml">
+            <p>The volume attached to the instance.</p>
+          </xsd:documentation>
+        </annotation>
+      </xsd:element>
+    </sequence>
+    <attribute name="id" type="xsd:ID" use="optional">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>A unique database instance id.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="created" type="xsd:dateTime" use="optional">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>Date/Time the instance was created.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="updated" type="xsd:dateTime" use="optional">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>Date/Time the instance was last updated.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="name" type="xsd:string" use="required">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>The name for the instance.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="flavorRef" type="xsd:string" use="required">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>The flavor reference of the instance.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="status" type="exmp:StatusType" use="required">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>The status of the instance.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="hostname" type="xsd:string" use="optional">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>The hostname attached to the instance.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="rootEnabled" type="xsd:boolean" use="optional">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>Whether or not root is enabled for the instance.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+
+  <complexType name="Link">
+    <attribute name="rel" type="xsd:string" use="required">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>The type of link.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="href" type="xsd:string" use="required">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>The URL.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="type" type="xsd:string" use="optional">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>The type of link.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+
+  <complexType name="Databases">
+    <sequence>
+      <element name="database" type="exmp:Database" minOccurs="0"
+        maxOccurs="unbounded">
+        <annotation>
+          <xsd:documentation xml:lang="EN"
+            xmlns="http://www.w3.org/1999/xhtml">
+            <p>A list of databases.</p>
+          </xsd:documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+
+  <complexType name="Database">
+    <attribute name="character_set" type="xsd:string" use="optional">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>The Database character set.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="name" type="xsd:string" use="required">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>The name for the instance.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <attribute name="collate" type="xsd:string" use="required">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p>The Collation type of the database.</p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+
+
+  <!-- Fault Elements -->
+  <element name="badRequest" type="exmp:BadRequestFault"/>
+  <element name="unauthorized" type="exmp:UnauthorizedFault"/>
+  <element name="forbidden" type="exmp:ForbiddenFault"/>
+  <element name="badMethod" type="exmp:BadMethodFault"/>
+  <element name="overLimit" type="exmp:OverLimitFault"/>
+  <element name="unprocessableEntity"
+    type="exmp:UnprocessableEntityFault"/>
+  <element name="instanceFault" type="exmp:InstanceFault"/>
+  <element name="notImplemented" type="exmp:NotImplementedFault"/>
+  <element name="serviceUnavailable"
+    type="exmp:ServiceUnavailableFault"/>
+  <element name="itemNotFound" type="exmp:ItemNotFoundFault"/>
+  <element name="badMediaType" type="exmp:BadMediaTypeFault"/>
+
+  <!-- Fault Types -->
+  <complexType name="BaseFault">
+    <sequence>
+      <element name="message" type="xsd:string">
+        <annotation>
+          <xsd:documentation xml:lang="EN"
+            xmlns="http://www.w3.org/1999/xhtml">
+            <p> A human readable message that is appropriate for
+              display to the end user. </p>
+          </xsd:documentation>
+        </annotation>
+      </element>
+      <element name="details" type="xsd:string" minOccurs="0">
+        <annotation>
+          <xsd:documentation xml:lang="EN"
+            xmlns="http://www.w3.org/1999/xhtml">
+            <p> The optional &lt;details&gt; element may contain
+              useful information for tracking down errors (e.g a stack
+              trace). This information may or may not be appropriate
+              for display to an end user. </p>
+          </xsd:documentation>
+        </annotation>
+      </element>
+      <any namespace="##other" processContents="lax" minOccurs="0"
+        maxOccurs="unbounded"/>
+    </sequence>
+    <attribute name="code" type="xsd:int" use="required">
+      <annotation>
+        <xsd:documentation xml:lang="EN"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <p> The HTTP status code associated with the current fault.
+          </p>
+        </xsd:documentation>
+      </annotation>
+    </attribute>
+    <anyAttribute namespace="##other" processContents="lax"/>
+  </complexType>
+
+  <complexType name="BadRequestFault">
+    <complexContent>
+      <extension base="exmp:BaseFault"> </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="UnauthorizedFault">
+    <complexContent>
+      <extension base="exmp:BaseFault"> </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="ForbiddenFault">
+    <complexContent>
+      <extension base="exmp:BaseFault"> </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="BadMethodFault">
+    <complexContent>
+      <extension base="exmp:BaseFault"> </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="OverLimitFault">
+    <complexContent>
+      <extension base="exmp:BaseFault">
+        <attribute name="retryAt" type="xsd:dateTime" use="optional">
+          <annotation>
+            <xsd:documentation xml:lang="EN"
+              xmlns="http://www.w3.org/1999/xhtml">
+              <p> An optional dateTime denoting when an operation
+                should be retried. </p>
+            </xsd:documentation>
+          </annotation>
+        </attribute>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="UnprocessableEntityFault">
+    <complexContent>
+      <extension base="exmp:BaseFault"> </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="InstanceFault">
+    <complexContent>
+      <extension base="exmp:BaseFault"> </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="NotImplementedFault">
+    <complexContent>
+      <extension base="exmp:BaseFault"> </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="ServiceUnavailableFault">
+    <complexContent>
+      <extension base="exmp:BaseFault"> </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="ItemNotFoundFault">
+    <complexContent>
+      <extension base="exmp:BaseFault"> </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="BadMediaTypeFault">
+    <complexContent>
+      <extension base="exmp:BaseFault"> </extension>
+    </complexContent>
+  </complexType>
+
+</schema>

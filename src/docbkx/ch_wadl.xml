@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+
+<!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="figures/Check_mark_23x20_02.svg"
+format="SVG" scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+
+<!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="figures/Arrow_east.svg"
+format="SVG" scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0"
+    xml:id="ch_wadl">
+
+    <title>Use WADLs to Generate API Reference Outputs</title>
+    <para>This chapter shows you how to create WADL files and generate
+        various API reference outputs from these files. </para>
+    <para>You can download a <link
+            xlink:href="http://docs-beta.rackspace.com/tools/rackspace-wadl2docbook-test.tar.gz"
+            >sample project</link> that illustrates the use of WADL
+        features.</para>
+
+
+    <note>
+        <para>Rackspace developers and writers also use WADL files to
+            configure Repose. This chapter does not cover this
+            topic.</para>
+    </note>
+
+    <para>For complete information about the WADL language, see <link
+            xlink:href="http://www.w3.org/Submission/wadl/">Web
+            Application Description Language</link>. The information
+        here comes from that document. </para>
+    <section xml:id="outputs-overview">
+        <title>WADL Task Flow</title>
+        <para>You use Web Application Description Language (WADL)
+            files to describe HTTP-based Web applications and generate
+            various API reference outputs. <procedure>
+                <title>To use WADLs to generate API reference
+                    outputs:</title>
+                <step>
+                    <para>Create WADL files. See <xref
+                            linkend="create_wadl"/>.</para>
+                </step>
+                <step>
+                    <para>Define and generate API reference outputs. </para>
+                    <para>Point to WADL files or specified WADL
+                        resources or methods from either a chapter or
+                        section in DocBook XML files. </para>
+                    <para>Then, generate artifacts for your DocBook
+                        files. See <xref linkend="api-ref-outputs"/>.
+                    </para>
+                </step>
+                <step>
+                    <para>The clouddocs Maven plugin transforms the
+                        specified WADL file elements into various API
+                        reference outputs. </para>
+                    <para>The structure in the generated output
+                        reflects the structure of the resources and
+                        methods in the WADL file. For example, if the
+                        WADL lists the
+                            <literal>createExample</literal> method
+                        before the <literal>deleteExample</literal>
+                        method, the methods appear in the same order
+                        in the output. </para>
+                </step>
+            </procedure></para>
+    </section>
+    <section xml:id="api_ref_outputs"><title>API Reference Outputs</title>
+        <para>The following table describes the API reference
+            outputs:</para>
+        <table rules="all" width="75%">
+
+            <caption>API Reference Outputs</caption>
+            <col width="75%"/>
+            <col width="25%"/>
+            <thead align="center">
+                <tr>
+                    <th colspan="2">Outputs</th>
+                </tr>
+
+            </thead>
+            <tbody valign="top">
+                <tr>
+                    <th colspan="2">API reference section or
+                        chapter</th>
+                </tr>
+                <tr>
+                    <td><para>Shows the following components:</para><itemizedlist>
+                            <listitem>
+                                <para>A roll-up table. </para>
+                            </listitem>
+                            <listitem>
+                                <para>A child section for each
+                                   referenced resource. Shows a
+                                   roll-up table of all referenced
+                                   methods in the resource.</para>
+                            </listitem>
+                            <listitem>
+                                <para>A grandchild section for each
+                                   referenced method in each
+                                   referenced resource. Shows a
+                                   roll-up table for the method,
+                                   followed by a detail description of
+                                   the API method.</para>
+                            </listitem>
+                        </itemizedlist></td>
+                    <td><para>See <xref
+                                linkend="api-ref-section-or-chapter"
+                            />.</para>
+                    </td>
+
+                </tr>
+                <tr>
+                    <th colspan="2">Comprehensive roll-up table</th>
+                </tr>
+                <tr>
+                    <td><para>To show a <emphasis role="italic"
+                                >comprehensive</emphasis> roll-up
+                            table at the top of a chapter or section,
+                            specify the
+                                <code>role="api-reference"</code>
+                            attribute on the <emphasis role="bold"
+                                >chapter</emphasis> or <emphasis
+                                role="bold">section</emphasis>
+                            element. </para>
+                        <para>The table shows all methods for any
+                            resources that are pointed to from the
+                            chapter or section and their child
+                            sections.</para><note>
+                            <para>A comprehensive roll-up table
+                                appears by default in any section or
+                                chapter from where you point to a WADL
+                                file or elements. If you also specify
+                                the <code>role="api-reference"</code>
+                                attribute in that same section or
+                                chapter, the roll-up table appears
+                                twice.</para>
+                        </note></td>
+                    <td><para>See <xref linkend="comp-rollup-tables"
+                            />.</para></td>
+                </tr>
+                <tr>
+                    <th colspan="2">API reference page</th>
+                </tr>
+                <tr>
+                    <td><para>Shows a summary of each referenced API
+                            resource and method. You can expand each
+                            method to see details about the
+                            method.</para></td>
+                    <td><para>See <xref linkend="api_ref_wadls"
+                            />.</para></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+    <section xml:id="create_wadl">
+
+        <title>Step 1. Create WADLs</title>
+
+        <para>The following example shows you how to tag elements and
+            attributes in a WADL file: <example>
+                <title>Example WADL File</title>
+                <programlistingco>
+                    <areaspec>
+                        <area xml:id="test.wadl.application"
+                            units="linecolumn" coords="6 1"/>
+                        <area xml:id="test.wadl.grammars"
+                            units="linecolumn" coords="12 1"/>
+                        <area xml:id="test.wadl.resources"
+                            units="linecolumn" coords="16 1"/>
+                        <area xml:id="test.wadl.doc"
+                            units="linecolumn" coords="18 1"/>
+                        <area xml:id="test.wadl.resource"
+                            units="linecolumn" coords="21 1"/>
+                        <area xml:id="test.wadl.param"
+                            units="linecolumn" coords="24 1"/>
+                        <area xml:id="test.wadl.method_ref"
+                            units="linecolumn" coords="31 1"/>
+                        <area xml:id="test.wadl.method_def"
+                            units="linecolumn" coords="45 1"/>
+                        <area xml:id="test.wadl.request"
+                            units="linecolumn" coords="56 1"/>
+                        <area xml:id="test.wadl.representation"
+                            units="linecolumn" coords="58 1"/>
+                        <area xml:id="test.wadl.code"
+                            units="linecolumn" coords="65 1"/>
+                        <area xml:id="test.wadl.response"
+                            units="linecolumn" coords="82 1"/>
+                    </areaspec>
+                    <programlisting language="xml"><?db-font-size 55%?><xi:include href="xsd/test.wadl" parse="text"/></programlisting>
+                </programlistingco>
+            </example></para>
+        <para>The main elements and attributes in a WADL are:</para>
+
+        <calloutlist>
+
+            <callout arearefs="test.wadl.application">
+                <para><emphasis role="bold">application</emphasis>.
+                    The root of a WADL description. Must contain the
+                        <literal>xmlns</literal> attribute, which
+                    defines the XML namespace name. For WADLs, this is
+                    always
+                        <code>http://wadl.dev.java.net/2009/02</code>.
+                    See <link
+                        xlink:href="http://www.w3.org/Submission/wadl/#x3-70002.2"
+                        >Application</link>.</para>
+            </callout>
+
+
+
+            <callout arearefs="test.wadl.doc">
+                <para><emphasis role="bold">doc</emphasis>. Documents
+                    its parent WADL element. See <link
+                        xlink:href="http://www.w3.org/Submission/wadl/#x3-80002.3"
+                        >Documentation</link>.</para>
+            </callout>
+
+            <callout arearefs="test.wadl.grammars">
+                <para><emphasis role="bold">grammars</emphasis>.
+                    Includes definitions of the format of data
+                    exchanged during execution of the protocol
+                    described by the WADL document. See <link
+                        xlink:href="http://www.w3.org/Submission/wadl/#x3-90002.4"
+                        >Grammars</link>.</para>
+            </callout>
+            <callout arearefs="test.wadl.resources">
+                <para><emphasis role="bold">resources</emphasis>. A
+                    container for the resources provided by the
+                    application. Must contain the <emphasis
+                        role="bold">base</emphasis> attribute, which
+                    provides the base URI for each child resource ID.
+                    See <link
+                        xlink:href="http://www.w3.org/Submission/wadl/#x3-110002.5"
+                        >Resources</link>.</para>
+            </callout>
+
+
+
+            <callout arearefs="test.wadl.resource">
+                <para><emphasis role="bold">resource</emphasis>.
+                    Describes a resource provided by the application.
+                    Each resource is identified by a URI that follows
+                    a common pattern. Must contain the <emphasis
+                        role="bold">id</emphasis> attribute, which
+                    identifies the resource element. Can contain the
+                        <emphasis role="bold">path</emphasis>
+                    attribute, which provides a relative URI template
+                    for the ID of the resource. See <link
+                        xlink:href="http://www.w3.org/Submission/wadl/#x3-120002.6"
+                        >Resource</link>.</para>
+
+
+            </callout>
+
+            <callout arearefs="test.wadl.param">
+                <para><emphasis role="bold">param</emphasis>. A
+                    parameterized component of its parent element. See
+                        <link
+                        xlink:href="http://www.w3.org/Submission/wadl/#x3-250002.12"
+                        >Parameter</link>.</para>
+            </callout>
+            <callout arearefs="test.wadl.method_ref">
+                <para><emphasis role="bold">method</emphasis>
+                    reference. Provides the <emphasis role="bold"
+                        >href</emphasis> attribute, which
+                    cross-references a <emphasis role="bold"
+                        >method</emphasis> definition element. See
+                        <link
+                        xlink:href="http://www.w3.org/Submission/wadl/#x3-160002.8.1"
+                        >Method Reference</link>. </para>
+            </callout>
+            <callout arearefs="test.wadl.method_def">
+                <para><emphasis role="bold">method</emphasis>
+                    definition. A child of a <emphasis role="bold"
+                        >resource</emphasis> or <emphasis role="bold"
+                        >application</emphasis> element. The <emphasis
+                        role="bold">name</emphasis> attribute
+                    indicates the HTTP method. The <emphasis
+                        role="bold">id</emphasis> attribute matches
+                    the value of the <emphasis role="bold"
+                        >href</emphasis> attribute on the
+                    corresponding method reference. See <link
+                        xlink:href="http://www.w3.org/Submission/wadl/#x3-170002.8.2"
+                        >Method Definition</link>.</para>
+            </callout>
+            <callout arearefs="test.wadl.request">
+                <para><emphasis role="bold">request</emphasis>.
+                    Describes a request to an HTTP method on a
+                    resource. See <link
+                        xlink:href="http://www.w3.org/Submission/wadl/#x3-180002.9"
+                        >Request</link>.</para>
+            </callout>
+
+            <callout arearefs="test.wadl.representation">
+                <para><emphasis role="bold">representation</emphasis>.
+                    Provides a representation of a resource's state.
+                    See <link
+                        xlink:href="http://www.w3.org/Submission/wadl/#x3-210002.11"
+                        >Representation</link>.</para>
+            </callout>
+
+            <callout arearefs="test.wadl.code">
+                <para><emphasis role="bold">code</emphasis>. An
+                    included JSON- or XML-formatted code sample.
+                </para>
+            </callout>
+
+            <callout arearefs="test.wadl.response">
+                <para><emphasis role="bold">response</emphasis>.
+                    Describes the output from performing an HTTP
+                    method on a resource. Can contain the <emphasis
+                        role="bold">status</emphasis> attribute, which
+                    lists the HTTP status codes associated with a
+                    particular response. See <link
+                        xlink:href="http://www.w3.org/Submission/wadl/#x3-200002.10"
+                        >Response</link>.</para>
+            </callout>
+        </calloutlist>
+
+
+    </section>
+    <?hard-pagebreak?>
+    <xi:include href="section_api_outputs.xml"/>
+
+</chapter>
