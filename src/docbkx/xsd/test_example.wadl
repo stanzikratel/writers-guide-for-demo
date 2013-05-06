@@ -47,46 +47,28 @@
             <para role="shortdesc">Creates a new
                     <glossterm>example</glossterm> within the
                 specified instance.</para>
-            <para>The <code>name</code> is a required
-                attribute.</para>
-            <para>You can specify the following additional attributes
-                for each example: <code>collate</code> and
-                    <code>character_set</code>.</para>
-            <table rules="all">
-                <caption>Required and Optional Attributes for Create
-                    Example</caption>
-                <thead>
-                    <tr>
-                        <td colspan="1">Name </td>
-                        <td colspan="3">Description</td>
-                        <td colspan="1">Required</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1">name</td>
-                        <td colspan="3">The name for MyExample. </td>
-                        <td colspan="1">Yes</td>
-                    </tr>
-                    <tr>
-                        <td colspan="1">character_set</td>
-                        <td colspan="3">Set of symbols and encodings.
-                            The default character set is
-                                <code>utf8</code>.</td>
-                        <td colspan="1">No</td>
-                    </tr>
-                    <tr>
-                        <td colspan="1">collate</td>
-                        <td colspan="3">Set of rules for comparing
-                            characters in a character set. The default
-                            value for collate is
-                                <code>utf8_general_ci</code>.</td>
-                        <td colspan="1">No</td>
-                    </tr>
-                </tbody>
-            </table>
         </wadl:doc>
         <request>
+            <param name="name" style="query" required="true"
+                type="xsd:string">
+                <doc xml:lang="EN">The name of the example.
+                </doc>
+            </param>
+            <param name="character_set" style="query" required="false"
+                type="xsd:string">
+                <doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">Set of symbols and encodings.
+                    The default character set is
+                    <code>utf8</code>.
+                </doc>
+            </param>
+            <param name="collate" style="query" required="false"
+                type="xsd:string">
+                <doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">Set of rules for comparing
+                    characters in a character set. The default
+                    value for collate is
+                    <code>utf8_general_ci</code>.
+                </doc>
+            </param>
             <representation mediaType="application/json"
                 element="exmp:Database">
                 <doc>

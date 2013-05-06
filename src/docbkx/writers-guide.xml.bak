@@ -10,11 +10,14 @@
       <year>2013</year>
       <holder>Rackspace US, Inc.</holder>
     </copyright>
-    <copyright os="openstack"> 
+    <!-- <copyright os="openstack">
+    
+       
         <year>2012</year>
       <year>2013</year>
-        <holder>OpenStack Foundation</holder> 
-</copyright> 
+        <holder>OpenStack LLC</holder>
+   
+    </copyright> -->
     <releaseinfo>v1.0</releaseinfo>
     <productname>Content Team</productname>
     <pubdate/>
@@ -28,6 +31,7 @@
                 <para>Added chapter about how to create and use WADL
                   files.</para>
               </listitem>
+
             </itemizedlist>
           </para>
         </revdescription>
@@ -97,22 +101,28 @@
       <raxm:priority>20</raxm:priority>
     </raxm:metadata>
   </info>
+
   <xi:include href="preface.xml"/>
   <xi:include href="ch_overview.xml"/>
+
   <xi:include href="ch_install.xml"/>
+
   <xi:include href="ch_github.xml"/>
+
   <xi:include href="ch_pom.xml"/>
   <!-- <xi:include href="ch_newapi.xml"/> -->
   <xi:include href="ch_wadl.xml"/>
   <!--<xi:include href="section_rollup_req.xml"/> -->
-  <xi:include href="ch_wadl_examples.xml"/>
+<xi:include href="ch_wadl_examples.xml"/>
   <!--<xi:include href="ch_wadl_section_examples.xml"/> -->
   <xi:include href="ch_tables.xml"/>
   <xi:include href="ch_review.xml"/>
   <xi:include href="ch_autopublish.xml"/>
   <!-- <xi:include href="ch_publish_content.xml"/> -->
   <xi:include href="ch_troubleshooting.xml"/>
+
   <xi:include href="prep-for-1.6.0.xml"/>
+
   <xi:include href="ch_dochistory.xml"/>
   <xi:include href="ch_resources.xml"/>
   <xi:include href="app_tag_ref.xml"/>

@@ -105,15 +105,16 @@ format="SVG" scale="60"/>
         <para>The following example shows you how to analyze an API
             call to determine which elements you'll need in its WADL
             file.</para>
-
+        <para>
             <procedure>
                 <title>To analyze the API:</title>
                 <step>
                     <para>Let's say you want to document the following
                         API call through a WADL file:</para>
+                    <literallayout role="monospace"></literallayout>
                 </step>
             </procedure>
-            
+        </para>    
     </section>
     <section xml:id="create_wadl">
 
