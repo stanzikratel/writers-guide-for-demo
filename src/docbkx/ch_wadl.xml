@@ -111,6 +111,23 @@ format="SVG" scale="60"/>
                 <step>
                     <para>Let's say you want to document the following
                         API call through a WADL file:</para>
+                    <programlisting language="bash">&POST; instances/{instanceId}/examples</programlisting>
+               <para>This call creates a new example within a specified instance.</para>
+                    <para>In the WADL file, you must include the following components:</para>
+                    <itemizedlist>
+                        <listitem><para>Resource definitions for <emphasis role="bold"
+                                >instances</emphasis>, the instanceID,
+                            and <emphasis role="bold"
+                                >examples</emphasis>. </para></listitem>
+                        <listitem><para>Method reference.</para></listitem>
+                        <listitem><para>Method definition, which includes the following components:</para>
+                        <itemizedlist><listitem><para>The verb.</para></listitem>
+                        <listitem><para>The title for the API page.</para></listitem>
+                        <listitem><para>The short description.</para></listitem>
+                        <listitem><para>Parameter descriptions.</para></listitem>
+                        <listitem><para>The request and response representations, including code samples, return codes, and so on.</para></listitem></itemizedlist></listitem>
+                        <listitem><para></para></listitem>
+                    </itemizedlist>
                 </step>
             </procedure>
             

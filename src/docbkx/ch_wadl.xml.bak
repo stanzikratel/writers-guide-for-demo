@@ -105,16 +105,29 @@ format="SVG" scale="60"/>
         <para>The following example shows you how to analyze an API
             call to determine which elements you'll need in its WADL
             file.</para>
-        <para>
+
             <procedure>
                 <title>To analyze the API:</title>
                 <step>
                     <para>Let's say you want to document the following
                         API call through a WADL file:</para>
-                    <literallayout role="monospace"></literallayout>
+                    <programlisting language="bash">&POST; instances/{instanceId}/examples</programlisting>
+               <para>This call creates a new example within a specified instance.</para>
+                    <para>In the WADL file, you must include the following components:</para>
+                    <itemizedlist>
+                        <listitem><para>Resource definitions instances, instanceID, and examples. </para></listitem>
+                        <listitem><para>Method reference.</para></listitem>
+                        <listitem><para>Method definition, which includes the following components:</para>
+                        <itemizedlist><listitem><para>The verb.</para></listitem>
+                        <listitem><para>The title for the API page.</para></listitem>
+                        <listitem><para>The short description.</para></listitem>
+                        <listitem><para>Parameter descriptions.</para></listitem>
+                        <listitem><para>The request and response representations, including code samples, return codes,</para></listitem></itemizedlist></listitem>
+                        <listitem><para></para></listitem>
+                    </itemizedlist>
                 </step>
             </procedure>
-        </para>    
+            
     </section>
     <section xml:id="create_wadl">
 
