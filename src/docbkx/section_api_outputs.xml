@@ -32,8 +32,97 @@ format="SVG" scale="60"/>
     xml:id="api-ref-outputs">
 
 
-    <title>Step 2. Define and Generate API Reference Outputs</title>
-
+    <title>Step 3. Define and Generate API Reference Outputs</title>
+    <para>The following table describes the outputs that you
+        can generate from WADL files:</para>
+    <table rules="all" width="75%">
+        
+        <caption>WADL Outputs</caption>
+        <col width="75%"/>
+        <col width="25%"/>
+        <thead align="center">
+            <tr>
+                <th colspan="2">Outputs</th>
+            </tr>
+            
+        </thead>
+        <tbody valign="top">
+            <tr>
+                <th colspan="2">API reference section or
+                    chapter</th>
+            </tr>
+            <tr>
+                <td><para>Shows the following
+                    components:</para><itemizedlist>
+                        <listitem>
+                            <para>A roll-up table. </para>
+                        </listitem>
+                        <listitem>
+                            <para>A child section for each
+                                referenced resource. Shows a
+                                roll-up table of all referenced
+                                methods in the resource.</para>
+                        </listitem>
+                        <listitem>
+                            <para>A grandchild section for each
+                                referenced method in each
+                                referenced resource. Shows a
+                                roll-up table for the method,
+                                followed by a detail description of
+                                the API method.</para>
+                        </listitem>
+                    </itemizedlist></td>
+                <td><para>See <xref
+                    linkend="api-ref-section-or-chapter"
+                />.</para>
+                </td>
+                
+            </tr>
+            <tr>
+                <th colspan="2">Comprehensive roll-up
+                    table</th>
+            </tr>
+            <tr>
+                <td><para>To show a <emphasis role="italic"
+                    >comprehensive</emphasis> roll-up
+                    table at the top of a chapter or
+                    section, specify the
+                    <code>role="api-reference"</code>
+                    attribute on the <emphasis role="bold"
+                        >chapter</emphasis> or <emphasis
+                            role="bold">section</emphasis>
+                    element. </para>
+                    <para>The table shows all methods for any
+                        resources that are pointed to from the
+                        chapter or section and their child
+                        sections.</para><note>
+                            <para>A comprehensive roll-up table
+                                appears by default in any section
+                                or chapter from where you point to
+                                a WADL file or elements. If you
+                                also specify the
+                                <code>role="api-reference"</code>
+                                attribute in that same section or
+                                chapter, the roll-up table appears
+                                twice.</para>
+                        </note></td>
+                <td><para>See <xref
+                    linkend="comp-rollup-tables"
+                />.</para></td>
+            </tr>
+            <tr>
+                <th colspan="2">API reference page</th>
+            </tr>
+            <tr>
+                <td><para>Shows a summary of each referenced
+                    API resource and method. You can
+                    expand each method to see details
+                    about the method.</para></td>
+                <td><para>See <xref linkend="api_ref_wadls"
+                />.</para></td>
+            </tr>
+        </tbody>
+    </table>
     <section xml:id="api-ref-section-or-chapter">
         <title>API Reference Section or Chapter</title>
         <para>To generate an API reference chapter or section, you

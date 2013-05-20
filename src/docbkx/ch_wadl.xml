@@ -31,13 +31,14 @@ format="SVG" scale="60"/>
     xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0"
     xml:id="ch_wadl">
 
-    <title>Use WADLs to Generate API Reference Outputs</title>
-    <para>This chapter shows you how to create WADL files and generate
-        various API reference outputs from these files. </para>
-    <para>You can download a <link
+    <title>WADL Files</title>
+    <para>This chapter shows you how to create Web Application
+        Description Language (WADL) files and generate various API
+        reference outputs from these files. </para>
+    <!-- <para>You can download a <link
             xlink:href="http://docs-beta.rackspace.com/tools/rackspace-wadl2docbook-test.tar.gz"
             >sample project</link> that illustrates the use of WADL
-        features.</para>
+        features.</para> -->
 
 
     <note>
@@ -50,134 +51,90 @@ format="SVG" scale="60"/>
             xlink:href="http://www.w3.org/Submission/wadl/">Web
             Application Description Language</link>. The information
         here comes from that document. </para>
-    <section xml:id="outputs-overview">
-        <title>WADL Task Flow</title>
-        <para>You use Web Application Description Language (WADL)
-            files to describe HTTP-based Web applications and generate
-            various API reference outputs. <procedure>
-                <title>To use WADLs to generate API reference
-                    outputs:</title>
-                <step>
-                    <para>Create WADL files. See <xref
-                            linkend="create_wadl"/>.</para>
-                </step>
-                <step>
-                    <para>Define and generate API reference outputs. </para>
-                    <para>Point to WADL files or specified WADL
-                        resources or methods from either a chapter or
-                        section in DocBook XML files. </para>
-                    <para>Then, generate artifacts for your DocBook
-                        files. See <xref linkend="api-ref-outputs"/>.
-                    </para>
-                </step>
-                <step>
-                    <para>The clouddocs Maven plugin transforms the
-                        specified WADL file elements into various API
-                        reference outputs. </para>
-                    <para>The structure in the generated output
-                        reflects the structure of the resources and
-                        methods in the WADL file. For example, if the
-                        WADL lists the
-                            <literal>createExample</literal> method
-                        before the <literal>deleteExample</literal>
-                        method, the methods appear in the same order
-                        in the output. </para>
-                </step>
-            </procedure></para>
-    </section>
-    <section xml:id="api_ref_outputs"><title>API Reference Outputs</title>
-        <para>The following table describes the API reference
-            outputs:</para>
-        <table rules="all" width="75%">
-
-            <caption>API Reference Outputs</caption>
-            <col width="75%"/>
-            <col width="25%"/>
-            <thead align="center">
-                <tr>
-                    <th colspan="2">Outputs</th>
-                </tr>
-
-            </thead>
-            <tbody valign="top">
-                <tr>
-                    <th colspan="2">API reference section or
-                        chapter</th>
-                </tr>
-                <tr>
-                    <td><para>Shows the following components:</para><itemizedlist>
-                            <listitem>
-                                <para>A roll-up table. </para>
-                            </listitem>
-                            <listitem>
-                                <para>A child section for each
-                                   referenced resource. Shows a
-                                   roll-up table of all referenced
-                                   methods in the resource.</para>
-                            </listitem>
-                            <listitem>
-                                <para>A grandchild section for each
-                                   referenced method in each
-                                   referenced resource. Shows a
-                                   roll-up table for the method,
-                                   followed by a detail description of
-                                   the API method.</para>
-                            </listitem>
-                        </itemizedlist></td>
-                    <td><para>See <xref
-                                linkend="api-ref-section-or-chapter"
-                            />.</para>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th colspan="2">Comprehensive roll-up table</th>
-                </tr>
-                <tr>
-                    <td><para>To show a <emphasis role="italic"
-                                >comprehensive</emphasis> roll-up
-                            table at the top of a chapter or section,
-                            specify the
-                                <code>role="api-reference"</code>
-                            attribute on the <emphasis role="bold"
-                                >chapter</emphasis> or <emphasis
-                                role="bold">section</emphasis>
-                            element. </para>
-                        <para>The table shows all methods for any
-                            resources that are pointed to from the
-                            chapter or section and their child
-                            sections.</para><note>
-                            <para>A comprehensive roll-up table
-                                appears by default in any section or
-                                chapter from where you point to a WADL
-                                file or elements. If you also specify
-                                the <code>role="api-reference"</code>
-                                attribute in that same section or
-                                chapter, the roll-up table appears
-                                twice.</para>
-                        </note></td>
-                    <td><para>See <xref linkend="comp-rollup-tables"
-                            />.</para></td>
-                </tr>
-                <tr>
-                    <th colspan="2">API reference page</th>
-                </tr>
-                <tr>
-                    <td><para>Shows a summary of each referenced API
-                            resource and method. You can expand each
-                            method to see details about the
-                            method.</para></td>
-                    <td><para>See <xref linkend="api_ref_wadls"
-                            />.</para></td>
-                </tr>
-            </tbody>
-        </table>
+    <section xml:id="overview-wadl">
+        <title>Overview</title>
+       
+            <para>You use WADL files to describe HTTP-based Web
+                applications and generate various API reference
+                outputs. <procedure>
+                    <title>To use WADLs to generate API reference
+                        outputs:</title>
+                    <step>
+                        <para>Create WADL files. See <xref
+                                linkend="create_wadl"/>.</para>
+                    </step>
+                    <step>
+                        <para>Analyze the API to determine how to
+                            design your WADL file. </para>
+                        <para>Take See <xref linkend="api-ref-outputs"
+                            />. </para>
+                    </step>
+                    <step>
+                        <para>Define and generate API reference
+                            outputs. </para>
+                        <para>Point to WADL files or specified WADL
+                            resources or methods from either a chapter
+                            or section in DocBook XML files. </para>
+                        <para>Then, generate artifacts for your
+                            DocBook files. See <xref
+                                linkend="api-ref-outputs"/>. </para>
+                    </step>
+                    <step>
+                        <para>The clouddocs Maven plugin transforms
+                            the specified WADL file elements into
+                            various API reference outputs. </para>
+                        <para>The structure in the generated output
+                            reflects the structure of the resources
+                            and methods in the WADL file. For example,
+                            if the WADL lists the
+                                <literal>createExample</literal>
+                            method before the
+                                <literal>deleteExample</literal>
+                            method, the methods appear in the same
+                            order in the output. </para>
+                    </step>
+                </procedure></para>
+          
 
     </section>
 
+    <section xml:id="analyze">
+        
+        <title>Step 1. Analyze the API</title>
+        
+        <para>The following example shows you how to analyze an API
+            call to determine which elements you'll need in its WADL
+            file.</para>
+
+            <procedure>
+                <title>To analyze the API:</title>
+                <step>
+                    <para>Let's say you want to document the following
+                        API call through a WADL file:</para>
+                    <programlisting language="bash">&POST; instances/{instanceId}/examples</programlisting>
+               <para>This call creates a new example within a specified instance.</para>
+                    <para>In the WADL file, you must include the following components:</para>
+                    <itemizedlist>
+                        <listitem><para>Resource definitions for <emphasis role="bold"
+                                >instances</emphasis>, the instanceID,
+                            and <emphasis role="bold"
+                                >examples</emphasis>. </para></listitem>
+                        <listitem><para>Method reference.</para></listitem>
+                        <listitem><para>Method definition, which includes the following components:</para>
+                        <itemizedlist><listitem><para>The verb.</para></listitem>
+                        <listitem><para>The title for the API page.</para></listitem>
+                        <listitem><para>The short description.</para></listitem>
+                        <listitem><para>Parameter descriptions.</para></listitem>
+                        <listitem><para>The request and response representations, including code samples, return codes, and so on.</para></listitem></itemizedlist></listitem>
+                        <listitem><para></para></listitem>
+                    </itemizedlist>
+                </step>
+            </procedure>
+            
+    </section>
     <section xml:id="create_wadl">
 
-        <title>Step 1. Create WADLs</title>
+        <title>Step 2. Create WADLs</title>
 
         <para>The following example shows you how to tag elements and
             attributes in a WADL file: <example>
