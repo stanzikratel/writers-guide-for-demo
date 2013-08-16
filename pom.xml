@@ -7,12 +7,15 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Writer's Guide</name>
+	<properties>
+	  <internal.security>reviewer</internal.security>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>com.rackspace.cloud.api</groupId>
 				<artifactId>clouddocs-maven-plugin</artifactId>
-				<version>1.8.1-SNAPSHOT</version>
+				<version>1.9.2-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<id>rackspace</id>
@@ -22,10 +25,10 @@
 						<phase>generate-sources</phase>
 						<configuration>
 							<profileOs>rack</profileOs>
-							<security>internal</security>
+							<security>${internal.security}</security>
 							<postProcess>
 								<move
-								file="target/docbkx/webhelp/writers-guide-internal"
+								file="target/docbkx/webhelp/writers-guide-${internal.security}"
 								tofile="target/docbkx/webhelp/writers-guide-rackspace"
 								/>
 							</postProcess>
