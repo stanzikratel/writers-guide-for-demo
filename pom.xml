@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 	<name>Writer's Guide</name>
 	<properties>
-	  <internal.security>internal</internal.security>
+	  <internal.security>reviewer</internal.security>
 	</properties>
 	<build>
 		<plugins>
