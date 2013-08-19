@@ -9,6 +9,7 @@
 	<name>Writer's Guide</name>
 	<properties>
 	  <internal.security>internal</internal.security>
+	  <external.security>reviewer</external.security>
 	</properties>
 	<build>
 		<plugins>
@@ -44,10 +45,10 @@
 						<phase>generate-sources</phase>
 						<configuration>
 							<profileOs>openstack</profileOs>
-							<security>reviewer</security>
+							<security>${external.security}</security>
 							<postProcess>
 								<move
-								file="target/docbkx/webhelp/writers-guide-external"
+								file="target/docbkx/webhelp/writers-guide-${external.security}"
 								tofile="target/docbkx/webhelp/writers-guide-openstack"
 								/>
 							</postProcess>
