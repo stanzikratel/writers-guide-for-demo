@@ -56,6 +56,23 @@
 							<enableDisqus>0</enableDisqus>
 						</configuration>
 					</execution>
+					<execution>
+						<id>dummy</id>
+						<goals>
+							<goal>generate-webhelp</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+						  <includes>dummy.xml</includes>
+						  <postProcess>
+						    <move
+							file="target/docbkx/webhelp/process-v1-writers-guide-reviewer.war"
+							tofile="target/docbkx/webhelp/writers-guide-reviewer.war"
+							/>
+						  </postProcess>
+						</configuration>
+					</execution>
+
 				</executions>
 				<configuration>
 					<includes>writers-guide.xml</includes>
