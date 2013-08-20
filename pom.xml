@@ -9,7 +9,7 @@
 	<name>Writer's Guide</name>
 	<properties>
 	  <internal.security>internal</internal.security>
-	  <external.security>reviewer</external.security>
+	  <external.security>external</external.security>
 	</properties>
 	<build>
 		<plugins>
