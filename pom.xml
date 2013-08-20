@@ -66,6 +66,7 @@
 						  <includes>dummy.xml</includes>
 						  <postProcess>
 						    <move
+							failonerror="false"
 							file="target/docbkx/webhelp/process-v1-writers-guide-reviewer.war"
 							tofile="target/docbkx/webhelp/writers-guide-reviewer.war"
 							/>
