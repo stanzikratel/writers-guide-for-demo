@@ -16,7 +16,7 @@
 			<plugin>
 				<groupId>com.rackspace.cloud.api</groupId>
 				<artifactId>clouddocs-maven-plugin</artifactId>
-				<version>1.9.2-SNAPSHOT</version>
+				<version>1.9.3-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<id>rackspace</id>
