@@ -31,7 +31,7 @@ format="SVG" scale="60"/>
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="ch_preface">
     <title>Preface</title>
-    <para>Test</para>
+    <para>Test Test2</para>
     <para>This guide assists <phrase os="openstack">OpenStack</phrase><phrase os="rack">Rackspace</phrase> writers and
         developers to use an XML-based tool set to create content and
         generate documentation artifacts. </para>
