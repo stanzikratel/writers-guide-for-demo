@@ -8,11 +8,25 @@
 	<packaging>jar</packaging>
 	<name>Writer's Guide</name>
 	<properties>
-	  <internal.security>reviewer</internal.security>
+	  <internal.security>internal</internal.security>
 	  <external.security>external</external.security>
 	</properties>
 	<build>
 		<plugins>
+		  <plugin>
+		    <groupId>com.rackspace.cloud.api</groupId>
+		    <artifactId>olink-maven-plugin</artifactId>
+		    <version>1.1-SNAPSHOT</version>
+		    <executions>
+		      <execution>
+			<phase>initialize</phase>
+			<goals>
+			  <goal>olink</goal>
+			</goals>
+		      </execution>
+		    </executions>
+		  </plugin>
+		  
 			<plugin>
 				<groupId>com.rackspace.cloud.api</groupId>
 				<artifactId>clouddocs-maven-plugin</artifactId>
