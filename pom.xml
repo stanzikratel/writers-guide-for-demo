@@ -67,6 +67,7 @@
 								tofile="target/docbkx/webhelp/writers-guide-openstack"
 								/>
 							</postProcess>
+							<test>
 							<branding>openstack</branding>
 							<enableDisqus>0</enableDisqus>
 						</configuration>
